@@ -35,7 +35,7 @@ MonoBehaviour:
     comSelBGColor: {r: 1, g: 0.16078432, b: 0.16078432, a: 0.5529412}
     selectionColor: {r: 0.17254902, g: 0.3647059, b: 0.5294118, a: 1}
     colorHeaderTitle: {r: 1, g: 1, b: 1, a: 1}
-    colorHeaderBackground: {r: 0.10902455, g: 0.59647065, b: 0.9245283, a: 1}
+    colorHeaderBackground: {r: 0.058072258, g: 0.6084985, b: 0.8207547, a: 1}
   playmodeTheme:
     colorRowEven: {r: 0.10388456, g: 0.10388456, b: 0.10388456, a: 1}
     colorRowOdd: {r: 0.10773214, g: 0.10773214, b: 0.10773214, a: 1}

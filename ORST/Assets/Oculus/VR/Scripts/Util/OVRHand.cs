@@ -59,7 +59,9 @@ public class OVRHand : MonoBehaviour,
 	private GameObject _pointerPoseGO;
 	private OVRPlugin.HandState _handState = new OVRPlugin.HandState();
 
-	public bool IsDataValid { get; private set; }
+    public OVRPlugin.HandState HandState => _handState;
+
+    public bool IsDataValid { get; private set; }
 	public bool IsDataHighConfidence { get; private set; }
 	public bool IsTracked { get; private set; }
 	public bool IsSystemGestureInProgress { get; private set; }
@@ -69,7 +71,7 @@ public class OVRHand : MonoBehaviour,
 	public TrackingConfidence HandConfidence { get; private set; }
 	public bool IsDominantHand { get; private set; }
 
-	private void Awake()
+    private void Awake()
 	{
 		_pointerPoseGO = new GameObject();
 		PointerPose = _pointerPoseGO.transform;
