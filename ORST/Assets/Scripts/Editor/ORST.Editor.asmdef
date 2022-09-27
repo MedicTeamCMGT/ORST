@@ -1,0 +1,18 @@
+{
+    "name": "ORST.Editor",
+    "rootNamespace": "ORST.Runtime",
+    "references": [
+        "GUID:35a90187a9ea2e347a95e4b1f3aede41"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
