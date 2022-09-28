@@ -1,6 +1,0 @@
-*.png !text !filter !merge !diff
-*.asset !text !filter !merge !diff
-*.bundle !text !filter !merge !diff
-*.dylib !text !filter !merge !diff
-*.unity !text !filter !merge !diff
-* !text !filter !merge !diff
