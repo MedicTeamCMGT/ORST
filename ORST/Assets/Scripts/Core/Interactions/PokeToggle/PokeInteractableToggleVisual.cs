@@ -25,6 +25,7 @@ namespace ORST.Core.Interactions {
         private HashSet<PokeInteractor> m_Interactors;
 
         private bool m_IsSelected;
+        private bool m_WasSelected;
         private InteractableState m_CurrentState = InteractableState.Normal;
         private InteractableState m_LastState = InteractableState.Normal;
         private bool m_IsTransitioningToHoverState;
@@ -155,6 +156,7 @@ namespace ORST.Core.Interactions {
             }
 
             m_LastState = state;
+            m_WasSelected = m_IsSelected;
         }
 
         public void SetSelected(bool selected) {
