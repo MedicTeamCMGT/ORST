@@ -98,7 +98,7 @@ namespace ORST.Core.Interactions {
                     }
 
                     // Start normal transition if switching from a different state
-                    if (m_LastState is InteractableState.Hover or InteractableState.Select) {
+                    if (m_LastState is InteractableState.Hover or InteractableState.Select || (m_WasSelected && !m_IsSelected)) {
                         m_IsTransitioningToNormalState = true;
                         m_TransitionToNormalTween = DOVirtual.Float(
                             1.0f,
