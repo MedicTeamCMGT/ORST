@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 4243142062883651352, guid: b9501095683f29143b221133102a68ea,
         type: 3}
       propertyPath: m_Name
-      value: Poke Toggle Button
+      value: PokeToggleButton
       objectReference: {fileID: 0}
     - target: {fileID: 4243142062883651353, guid: b9501095683f29143b221133102a68ea,
         type: 3}
@@ -66,6 +66,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549801619499754875, guid: b9501095683f29143b221133102a68ea,
+        type: 3}
+      propertyPath: _radiusTopLeft
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549801619499754875, guid: b9501095683f29143b221133102a68ea,
+        type: 3}
+      propertyPath: _radiusTopRight
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549801619499754875, guid: b9501095683f29143b221133102a68ea,
+        type: 3}
+      propertyPath: _radiusBottomLeft
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549801619499754875, guid: b9501095683f29143b221133102a68ea,
+        type: 3}
+      propertyPath: _radiusBottomRight
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7549801620355985382, guid: b9501095683f29143b221133102a68ea,
         type: 3}
