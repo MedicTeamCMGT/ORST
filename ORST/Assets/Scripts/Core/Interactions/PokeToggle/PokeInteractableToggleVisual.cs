@@ -108,7 +108,7 @@ namespace ORST.Core.Interactions {
                             1.0f,
                             m_NormalStateDistance,
                             m_StateTransitionDuration,
-                            value => transform.position = GetPositionAlongNormal(m_MaxOffsetAlongNormal * value)
+                            value => transform.position = GetVisualPosition(m_MaxOffsetAlongNormal * value)
                         ).OnComplete(() => {
                             m_TransitionToNormalTween = null;
                             m_IsTransitioningToNormalState = false;
@@ -145,7 +145,7 @@ namespace ORST.Core.Interactions {
                             m_NormalStateDistance,
                             1.0f,
                             m_StateTransitionDuration,
-                            value => transform.position = GetPositionAlongNormal(m_MaxOffsetAlongNormal * value)
+                            value => transform.position = GetVisualPosition(m_MaxOffsetAlongNormal * value)
                         ).OnComplete(() => {
                             m_TransitionToHoverTween = null;
                             m_IsTransitioningToHoverState = false;
@@ -171,16 +171,16 @@ namespace ORST.Core.Interactions {
             m_IsSelected = selected;
         }
 
-        private Vector3 GetPositionAlongNormal(float offset) {
+        private Vector3 GetVisualPosition(float distanceAlongNormal) {
             return m_ButtonBaseTransform.position +
-                   m_ButtonBaseTransform.forward * (-1.0f * offset) +
+                   m_ButtonBaseTransform.forward * (-1.0f * distanceAlongNormal) +
                    m_ButtonBaseTransform.right * m_PlanarOffset.x +
                    m_ButtonBaseTransform.up * m_PlanarOffset.y;
         }
 
         private void UpdateNormalState() {
             // Keep a constant distance from the base transform based on the normal state distance (ratio 0..1 of the max offset)
-            transform.position = GetPositionAlongNormal(m_MaxOffsetAlongNormal * m_NormalStateDistance);
+            transform.position = GetVisualPosition(m_MaxOffsetAlongNormal * m_NormalStateDistance);
         }
 
         private void UpdateHoverState() {
@@ -197,7 +197,7 @@ namespace ORST.Core.Interactions {
                 closestDistance = Mathf.Min(closestDistance, pokeDistance);
             }
 
-            transform.position = GetPositionAlongNormal(closestDistance);
+            transform.position = GetVisualPosition(closestDistance);
         }
 
         private void OnInteractorAdded(PokeInteractor interactor) => m_Interactors.Add(interactor);
