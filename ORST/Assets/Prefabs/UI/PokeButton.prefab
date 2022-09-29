@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 3710722557386727448}
   - component: {fileID: 7549801619437128042}
   m_Layer: 0
-  m_Name: Poke Button
+  m_Name: PokeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
