@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
 
-namespace ORST.Runtime.Interactions {
+namespace ORST.Core.Interactions {
     public class MainMenuViewController : SerializedMonoBehaviour {
         [Title("Main Menu")]
         [SerializeField, Required] private RectMask2D m_SidebarRectMask;
@@ -43,12 +43,15 @@ namespace ORST.Runtime.Interactions {
                 }
             }
 
-            Vector4 sidebarMaskPadding = m_SidebarRectMask.padding;
-            sidebarMaskPadding.z = m_RectMaskRightValues.x;
-            m_SidebarRectMask.padding = sidebarMaskPadding;
+            m_MainRectMask.enabled = true;
             Vector4 mainMaskPadding = m_MainRectMask.padding;
             mainMaskPadding.z = m_RectMaskRightValues.x;
             m_MainRectMask.padding = mainMaskPadding;
+
+            m_SidebarRectMask.enabled = true;
+            Vector4 sidebarMaskPadding = m_SidebarRectMask.padding;
+            sidebarMaskPadding.z = m_RectMaskRightValues.x;
+            m_SidebarRectMask.padding = sidebarMaskPadding;
 
             m_CanvasGroup.alpha = 1.0f;
         }

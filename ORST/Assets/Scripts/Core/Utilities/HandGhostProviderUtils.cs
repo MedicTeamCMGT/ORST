@@ -1,7 +1,7 @@
 ﻿using Oculus.Interaction.HandGrab.Visuals;
 using UnityEngine;
 
-namespace ORST.Runtime.Utilities {
+namespace ORST.Core.Utilities {
     public static class HandGhostProviderUtils {
         public static bool TryGetDefault(out HandGhostProvider provider) {
             HandGhostProvider[] providers = Resources.FindObjectsOfTypeAll<HandGhostProvider>();

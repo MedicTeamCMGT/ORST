@@ -3,7 +3,7 @@ using Oculus.Interaction.HandGrab;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 
-namespace ORST.Runtime.Interactions {
+namespace ORST.Core.Interactions {
     /// <summary>
     /// An <see cref="IActiveState"/> implementation that is active when the
     /// provided <see cref="IHandGrabState"/> is grabbing an object.

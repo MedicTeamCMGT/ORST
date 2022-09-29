@@ -4,7 +4,7 @@ using Oculus.Interaction;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace ORST.Runtime.Interactions {
+namespace ORST.Core.Interactions {
     public class PokeInteractableToggleGroup : SerializedMonoBehaviour {
         [SerializeField, Required] private List<PokeInteractableToggle> m_Toggles = new();
 

@@ -2,7 +2,7 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace ORST.Runtime.Interactions {
+namespace ORST.Core.Interactions {
     public class MainMenuPage : SerializedMonoBehaviour {
         [SerializeField, Required] private CanvasGroup m_CanvasGroup;
 

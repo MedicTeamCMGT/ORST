@@ -6,7 +6,7 @@ using Oculus.Interaction.Grab;
 using Oculus.Interaction.HandGrab;
 using Oculus.Interaction.HandGrab.Visuals;
 using Oculus.Interaction.Input;
-using ORST.Runtime.Utilities;
+using ORST.Core.Utilities;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
@@ -15,7 +15,7 @@ using UnityEditor;
 #endif
 
 // Taken, adapted and fixed from: https://github.com/dilmerv/MetaInteractionSDKDemos/blob/978ebb2fa45e76c87dbe018ebcb0d8385733fedf/Assets/Scripts/HandPoseRecorderPlus.cs
-namespace ORST.Runtime.Interactions {
+namespace ORST.Core.Interactions {
     public class HandPoseRecorderPlus : MonoBehaviour {
         [Title("Reference interactor used for Hand Grab:")]
         [SerializeField, Required] private HandGrabInteractor m_HandGrabInteractor;
