@@ -100,6 +100,10 @@ namespace ORST.Core.Interactions {
                     // Start normal transition if switching from a different state
                     if (m_LastState is InteractableState.Hover or InteractableState.Select || (m_WasSelected && !m_IsSelected)) {
                         m_IsTransitioningToNormalState = true;
+                        if (m_TransitionToNormalTween is { active: true }) {
+                            m_TransitionToNormalTween.Kill();
+                        }
+
                         m_TransitionToNormalTween = DOVirtual.Float(
                             1.0f,
                             m_NormalStateDistance,
@@ -133,6 +137,10 @@ namespace ORST.Core.Interactions {
                     // Start hover transition if switching from a different state
                     if (m_LastState == InteractableState.Normal) {
                         m_IsTransitioningToHoverState = true;
+                        if (m_TransitionToHoverTween is { active: true }) {
+                            m_TransitionToHoverTween.Kill();
+                        }
+
                         m_TransitionToHoverTween = DOVirtual.Float(
                             m_NormalStateDistance,
                             1.0f,
