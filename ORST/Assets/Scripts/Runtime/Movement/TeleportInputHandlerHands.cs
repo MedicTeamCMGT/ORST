@@ -5,17 +5,17 @@ using UnityEngine;
 
 public class TeleportInputHandlerHands : TeleportInputHandlerHMD
 {
-    public Transform LeftHand;
-    public Transform RightHand;
+    [SerializeField] private Transform m_LeftHand;
+    [SerializeField] private Transform m_RightHand;
 
     private Hand m_OvrHandLeft;
     private Hand m_OvrHandRight;
 
     private void Start() {
-        m_OvrHandLeft = LeftHand.GetComponent<Hand>();
-        m_OvrHandRight = RightHand.GetComponent<Hand>();
+        m_OvrHandLeft = m_LeftHand.GetComponent<Hand>();
+        m_OvrHandRight = m_RightHand.GetComponent<Hand>();
     }
-    
+
     public override LocomotionTeleport.TeleportIntentions GetIntention() {
         if (!isActiveAndEnabled) {
             return LocomotionTeleport.TeleportIntentions.None;
@@ -30,11 +30,10 @@ public class TeleportInputHandlerHands : TeleportInputHandlerHMD
         }
         return LocomotionTeleport.TeleportIntentions.None;
     }
-    
-    
+
     public override void GetAimData(out Ray aimRay)
     {
-        var t = LocomotionTeleport.LocomotionController.CameraRig.leftHandAnchor.GetComponentInChildren<OVRHand>().PointerPose;
-        aimRay = new Ray(LocomotionTeleport.LocomotionController.CameraRig.leftHandAnchor.position, transform.parent.TransformDirection(t.forward));
+        Transform pointerPose = LocomotionTeleport.LocomotionController.CameraRig.leftHandAnchor.GetComponentInChildren<OVRHand>().PointerPose;
+        aimRay = new Ray(LocomotionTeleport.LocomotionController.CameraRig.leftHandAnchor.position, transform.parent.TransformDirection(pointerPose.forward));
     }
 }
