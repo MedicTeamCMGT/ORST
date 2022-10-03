@@ -6,7 +6,6 @@ using ORST.Core.Utilities;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Assertions;
-using MonoBehaviourStartExtensions = ORST.Core.Utilities.MonoBehaviourStartExtensions;
 using Tween = DG.Tweening.Tween;
 
 namespace ORST.Core.Interactions {
