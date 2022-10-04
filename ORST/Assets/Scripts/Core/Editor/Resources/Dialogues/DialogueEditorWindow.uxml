@@ -1,0 +1,31 @@
+<UXML
+    xmlns="UnityEngine.UIElements"
+    xmlns:uie="UnityEditor.UIElements"
+    xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:orst="ORST.Core.Editor.UIElements"
+    noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd"
+    editor-extension-mode="False"
+>
+    <Style src="DialogueEditorWindow.uss"/>
+    <VisualElement name="root" class="dialogue-editor-root">
+        <VisualElement name="sidebar" class="sidebar">
+            <VisualElement name="sidebar-content" class="sidebar-content">
+                <Label name="sidebar-title" text="Dialogue Editor"/>
+                <VisualElement class="separator"/>
+                <VisualElement name="sidebar-content-container" class="sidebar-content-container">
+                    <Foldout text="NPCs" name="npc-container" class="dialogue-foldout">
+                        <ScrollView>
+                            <RadioButtonGroup value="-1" class="dialogue-radio-group" name="npc-radio-group"/>
+                        </ScrollView>
+                    </Foldout>
+                    <Foldout text="Dialogues" name="dialogues-container" class="dialogue-foldout">
+                        <ScrollView>
+                            <RadioButtonGroup value="-1" class="dialogue-radio-group" name="dialogues-radio-group"/>
+                        </ScrollView>
+                    </Foldout>
+                </VisualElement>
+            </VisualElement>
+            <orst:Dragger name="drag-area" class="sidebar-drag-area"/>
+        </VisualElement>
+    </VisualElement>
+</UXML>

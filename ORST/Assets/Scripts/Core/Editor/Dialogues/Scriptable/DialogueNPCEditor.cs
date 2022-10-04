@@ -40,21 +40,6 @@ namespace ORST.Core.Editor.Dialogues {
             return texture;
         }
 
-        /// <summary>
-        ///   <para>Override this method if you want to change the label of the Preview area.</para>
-        /// </summary>
-        public override GUIContent GetPreviewTitle() {
-            return new GUIContent("Hello");
-            DialogueNPC npc = target as DialogueNPC;
-            if (string.IsNullOrEmpty(npc!.Name)) {
-                return base.GetPreviewTitle();
-            }
-
-            GUIContent baseContent = base.GetPreviewTitle();
-            baseContent.text = npc.Name;
-            return baseContent;
-        }
-
         private struct CachedPreview {
             public Sprite Icon;
             public Texture2D PreviewTexture;
