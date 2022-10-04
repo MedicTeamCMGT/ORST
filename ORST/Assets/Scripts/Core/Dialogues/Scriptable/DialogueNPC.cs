@@ -5,14 +5,21 @@ using UnityEngine;
 namespace ORST.Core.Dialogues {
     [CreateAssetMenu(fileName = "New NPC", menuName = "ORST/Dialogues/NPC", order = 0)]
     public class DialogueNPC : SerializedScriptableObject {
-        [SerializeField, LabelWidth(80.0f), LabelText("Name"), Required] private string m_NPCName;
-        [SerializeField, LabelWidth(80.0f)] private Sprite m_Icon;
-        [SerializeField, LabelWidth(80.0f), LabelText("ID"), DisplayAsString] private Guid m_Identifier;
+        [SerializeField, LabelText("Name"), Required] private string m_NPCName = "John Doe";
+        [SerializeField, Required] private string m_Role = "CEO of John Doe Inc.";
+        [SerializeField] private Sprite m_Icon;
+        [Space]
+        [SerializeField, LabelText("ID"), DisplayAsString] private Guid m_Identifier;
 
         /// <summary>
         /// Gets a value representing the name of the NPC.
         /// </summary>
         public string Name => m_NPCName;
+
+        /// <summary>
+        /// Gets a value representing the role of the NPC.
+        /// </summary>
+        public string Role => m_Role;
 
         /// <summary>
         /// Gets a value representing the icon of the NPC. (Optional)

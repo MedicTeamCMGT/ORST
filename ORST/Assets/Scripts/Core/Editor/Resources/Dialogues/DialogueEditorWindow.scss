@@ -34,6 +34,7 @@
         }
     }
 }
+
 #create-npc-button {
     border-radius: 10000px;
     margin: 0;
@@ -41,6 +42,7 @@
     width: 20px;
     height: 20px;
 }
+
 #content-container {
     flex-grow: 1;
 }
@@ -101,62 +103,67 @@
 }
 
 .npc-editor {
-    $size: 80px;
-    $fontSize: 32px;
-    flex-direction: row;
     flex-grow: 1;
+    #npc-editor-header {
+        $size: 80px;
+        $fontSize: 32px;
+        flex-direction: row;
+        flex-grow: 0;
 
-    margin-top: 4px;
-    height: $size;
+        margin-top: 4px;
+        margin-bottom: 8px;
 
-    .npc-editor__icon-field {
-        margin: 0;
         height: $size;
-        width: $size;
 
-        ObjectField {
-            flex-grow: 1;
+        .npc-editor__icon-field {
             margin: 0;
             height: $size;
+            width: $size;
 
-            & > VisualElement {
-                border-width: 0;
-                border-radius: 0;
-            }
+            ObjectField {
+                flex-grow: 1;
+                margin: 0;
+                height: $size;
 
-            ObjectFieldSelector {
-                position: absolute;
-                right: 0;
-                bottom: 0;
-            }
-
-            ObjectFieldDisplay {
-                Label {
-                    display: none;
+                & > VisualElement {
+                    border-width: 0;
+                    border-radius: 0;
                 }
-                
-                Image {
-                    flex-grow: 1;
-                    max-width: none;
-                    max-height: none;
+
+                ObjectFieldSelector {
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                }
+
+                ObjectFieldDisplay {
+                    Label {
+                        display: none;
+                    }
+
+                    Image {
+                        flex-grow: 1;
+                        max-width: none;
+                        max-height: none;
+                    }
                 }
             }
         }
-    }
 
-    .npc-editor__name-field {
-        height: $size;
-        font-size: $fontSize;
-        flex-grow: 1;
-
-        TextField {
-            margin: 0;
+        .npc-editor__name-field {
+            height: $size;
+            font-size: $fontSize;
             flex-grow: 1;
 
-            TextInput {
-                padding-left: 16px;
-                border-width: 0;
-                border-radius: 0;
+            TextField {
+                margin: 0;
+                flex-grow: 1;
+
+                TextInput {
+                    padding-left: 16px;
+                    border-width: 0;
+                    border-radius: 0;
+                }
             }
         }
     }

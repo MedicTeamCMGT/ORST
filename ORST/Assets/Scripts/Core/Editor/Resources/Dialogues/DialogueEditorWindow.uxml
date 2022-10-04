@@ -11,7 +11,6 @@
         <VisualElement name="sidebar" class="sidebar">
             <VisualElement name="sidebar-content" class="sidebar-content">
                 <Label name="sidebar-title" text="Dialogue Editor"/>
-                <VisualElement class="separator"/>
                 <VisualElement name="sidebar-content-container" class="sidebar-content-container">
                     <Foldout text="NPCs" name="npc-container" class="dialogue-foldout">
                         <ScrollView>

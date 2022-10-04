@@ -94,48 +94,52 @@
 }
 
 .npc-editor {
-  flex-direction: row;
   flex-grow: 1;
+}
+.npc-editor #npc-editor-header {
+  flex-direction: row;
+  flex-grow: 0;
   margin-top: 4px;
+  margin-bottom: 8px;
   height: 80px;
 }
-.npc-editor .npc-editor__icon-field {
+.npc-editor #npc-editor-header .npc-editor__icon-field {
   margin: 0;
   height: 80px;
   width: 80px;
 }
-.npc-editor .npc-editor__icon-field ObjectField {
+.npc-editor #npc-editor-header .npc-editor__icon-field ObjectField {
   flex-grow: 1;
   margin: 0;
   height: 80px;
 }
-.npc-editor .npc-editor__icon-field ObjectField > VisualElement {
+.npc-editor #npc-editor-header .npc-editor__icon-field ObjectField > VisualElement {
   border-width: 0;
   border-radius: 0;
 }
-.npc-editor .npc-editor__icon-field ObjectField ObjectFieldSelector {
+.npc-editor #npc-editor-header .npc-editor__icon-field ObjectField ObjectFieldSelector {
   position: absolute;
   right: 0;
   bottom: 0;
 }
-.npc-editor .npc-editor__icon-field ObjectField ObjectFieldDisplay Label {
+.npc-editor #npc-editor-header .npc-editor__icon-field ObjectField ObjectFieldDisplay Label {
   display: none;
 }
-.npc-editor .npc-editor__icon-field ObjectField ObjectFieldDisplay Image {
+.npc-editor #npc-editor-header .npc-editor__icon-field ObjectField ObjectFieldDisplay Image {
   flex-grow: 1;
   max-width: none;
   max-height: none;
 }
-.npc-editor .npc-editor__name-field {
+.npc-editor #npc-editor-header .npc-editor__name-field {
   height: 80px;
   font-size: 32px;
   flex-grow: 1;
 }
-.npc-editor .npc-editor__name-field TextField {
+.npc-editor #npc-editor-header .npc-editor__name-field TextField {
   margin: 0;
   flex-grow: 1;
 }
-.npc-editor .npc-editor__name-field TextField TextInput {
+.npc-editor #npc-editor-header .npc-editor__name-field TextField TextInput {
   padding-left: 16px;
   border-width: 0;
   border-radius: 0;
