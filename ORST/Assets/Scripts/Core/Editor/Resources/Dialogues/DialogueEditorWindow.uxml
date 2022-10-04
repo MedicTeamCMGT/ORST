@@ -27,5 +27,6 @@
             </VisualElement>
             <orst:Dragger name="drag-area" class="sidebar-drag-area"/>
         </VisualElement>
+        <VisualElement name="content-container"/>
     </VisualElement>
 </UXML>

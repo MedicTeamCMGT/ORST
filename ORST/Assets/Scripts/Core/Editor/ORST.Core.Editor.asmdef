@@ -2,6 +2,7 @@
     "name": "ORST.Core.Editor",
     "rootNamespace": "ORST.Core.Editor",
     "references": [
+        "GUID:02d8cb16e809bde4b95b9443f1ce3b6a",
         "GUID:35a90187a9ea2e347a95e4b1f3aede41"
     ],
     "includePlatforms": [

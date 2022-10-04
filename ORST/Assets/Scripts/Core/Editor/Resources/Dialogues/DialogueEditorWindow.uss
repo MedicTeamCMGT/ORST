@@ -13,7 +13,7 @@
 #sidebar {
   width: 250px;
   min-width: 200px;
-  max-width: 90%;
+  max-width: 80%;
   flex-direction: row;
 }
 #sidebar #sidebar-content {
@@ -30,6 +30,18 @@
 #sidebar #drag-area:hover {
   background-color: #5a5a5a;
   border-right-color: #5a5a5a;
+}
+
+#create-npc-button {
+  border-radius: 10000px;
+  margin: 0;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+}
+
+#content-container {
+  flex-grow: 1;
 }
 
 .separator {
@@ -79,6 +91,54 @@
 }
 .dialogue-radio-button .unity-radio-button__label {
   flex-grow: 1;
+}
+
+.npc-editor {
+  flex-direction: row;
+  flex-grow: 1;
+  margin-top: 4px;
+  height: 80px;
+}
+.npc-editor .npc-editor__icon-field {
+  margin: 0;
+  height: 80px;
+  width: 80px;
+}
+.npc-editor .npc-editor__icon-field ObjectField {
+  flex-grow: 1;
+  margin: 0;
+  height: 80px;
+}
+.npc-editor .npc-editor__icon-field ObjectField > VisualElement {
+  border-width: 0;
+  border-radius: 0;
+}
+.npc-editor .npc-editor__icon-field ObjectField ObjectFieldSelector {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.npc-editor .npc-editor__icon-field ObjectField ObjectFieldDisplay Label {
+  display: none;
+}
+.npc-editor .npc-editor__icon-field ObjectField ObjectFieldDisplay Image {
+  flex-grow: 1;
+  max-width: none;
+  max-height: none;
+}
+.npc-editor .npc-editor__name-field {
+  height: 80px;
+  font-size: 32px;
+  flex-grow: 1;
+}
+.npc-editor .npc-editor__name-field TextField {
+  margin: 0;
+  flex-grow: 1;
+}
+.npc-editor .npc-editor__name-field TextField TextInput {
+  padding-left: 16px;
+  border-width: 0;
+  border-radius: 0;
 }
 
 /*# sourceMappingURL=DialogueEditorWindow.uss.map */
