@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace ORST.Core {
     [System.Serializable]
-    struct AudioClipInfo {
+    private struct AudioClipInfo {
         public AudioClip AudioClip;
         public bool Loop;
         public ushort Priority;
