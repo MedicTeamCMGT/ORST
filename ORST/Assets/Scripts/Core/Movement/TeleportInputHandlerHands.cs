@@ -1,4 +1,7 @@
+using Oculus.Interaction;
 using Oculus.Interaction.Input;
+using Sirenix.OdinInspector;
+using Sirenix.Serialization;
 using UnityEngine;
 
 namespace ORST.Core.Interactions.Movement {
@@ -7,6 +10,7 @@ namespace ORST.Core.Interactions.Movement {
 
         [SerializeField] private Transform m_LeftHand;
         [SerializeField] private Transform m_RightHand;
+        [OdinSerialize, Required] private IActiveState m_ActiveState;
 
         private Hand m_OvrHandLeft;
         private Hand m_OvrHandRight;
@@ -17,7 +21,7 @@ namespace ORST.Core.Interactions.Movement {
         }
 
         public override LocomotionTeleport.TeleportIntentions GetIntention() {
-            if (!isActiveAndEnabled) {
+            if (!isActiveAndEnabled || !m_ActiveState.Active) {
                 return LocomotionTeleport.TeleportIntentions.None;
             }
 
@@ -27,7 +31,6 @@ namespace ORST.Core.Interactions.Movement {
             }
 
             if (m_OvrHandLeft.GetIndexFingerIsPinching()) {
-                Debug.Log("VAR");
                 return LocomotionTeleport.TeleportIntentions.Aim;
             }
 
