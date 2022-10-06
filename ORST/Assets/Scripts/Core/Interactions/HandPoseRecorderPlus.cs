@@ -52,7 +52,7 @@ namespace ORST.Core.Interactions {
             m_RecordTimerText.text = m_RecordFrequency.ToString("0");
 
             if (m_GhostProvider == null) {
-                HandGhostProviderUtils.TryGetDefault(out m_GhostProvider);
+                HandGhostProviderUtilities.TryGetDefault(out m_GhostProvider);
             }
         }
 
