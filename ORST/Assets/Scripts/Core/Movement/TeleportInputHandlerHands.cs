@@ -4,10 +4,8 @@ using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 using UnityEngine;
 
-namespace ORST.Core.Interactions.Movement {
-
+namespace ORST.Core.Movement {
     public class TeleportInputHandlerHands : TeleportInputHandler {
-
         [SerializeField] private Transform m_LeftHand;
         [SerializeField] private Transform m_RightHand;
         [OdinSerialize, Required] private IActiveState m_ActiveState;

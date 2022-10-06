@@ -1,13 +1,7 @@
+using System;
 using UnityEngine;
 
-namespace ORST.Core {
-    [System.Serializable]
-    private struct AudioClipInfo {
-        public AudioClip AudioClip;
-        public bool Loop;
-        public ushort Priority;
-    }
-
+namespace ORST.Core.Movement {
     public class TeleportAudioHandler : TeleportSupport {
         [SerializeField] private AudioClipInfo m_EnterAim;
         [SerializeField] private AudioClipInfo m_CancelAim;
@@ -67,6 +61,13 @@ namespace ORST.Core {
 
         public void SetDestAudioSource(AudioSource audioSource) {
             m_DestAudioSource = audioSource;
+        }
+
+        [Serializable]
+        private struct AudioClipInfo {
+            public AudioClip AudioClip;
+            public bool Loop;
+            public ushort Priority;
         }
     }
 }
