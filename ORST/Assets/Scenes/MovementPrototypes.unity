@@ -3816,18 +3816,23 @@ MonoBehaviour:
   EnterAim:
     AudioClip: {fileID: 8300000, guid: 98e759dfda69aa7468d95f5a2c88e366, type: 3}
     Loop: 0
+    Priority: 1
   CancelAim:
     AudioClip: {fileID: 8300000, guid: 523f822c1c7b699489c49fea2353c2de, type: 3}
     Loop: 0
+    Priority: 1
   Teleporting:
     AudioClip: {fileID: 8300000, guid: 494bd1721199a40c5a79fa3011793556, type: 3}
     Loop: 0
+    Priority: 0
   IntersectEnter:
     AudioClip: {fileID: 8300000, guid: 452cab5cd4cc31a4bbda065fe1729e0d, type: 3}
     Loop: 0
+    Priority: 0
   IntersectExit:
     AudioClip: {fileID: 8300000, guid: 80fbb8c0c68727f429e4d50ddadd683b, type: 3}
     Loop: 0
+    Priority: 0
 --- !u!114 &4926590349058944346
 MonoBehaviour:
   m_ObjectHideFlags: 0
