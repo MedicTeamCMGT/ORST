@@ -2,7 +2,7 @@
 using UnityEngine;
 
 namespace ORST.Core.Utilities {
-    public static class HandGhostProviderUtils {
+    public static class HandGhostProviderUtilities {
         public static bool TryGetDefault(out HandGhostProvider provider) {
             HandGhostProvider[] providers = Resources.FindObjectsOfTypeAll<HandGhostProvider>();
             if (providers != null && providers.Length > 0) {
