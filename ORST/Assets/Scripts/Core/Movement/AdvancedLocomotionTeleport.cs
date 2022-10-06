@@ -1,7 +1,6 @@
 using System;
 
-namespace ORST.Core
-{
+namespace ORST.Core.Movement {
     public class AdvancedLocomotionTeleport : LocomotionTeleport {
         public TeleportTargetHandler TargetHandler { get; set; }
         public TeleportAudioHandler AudioHandler { get; set; }
