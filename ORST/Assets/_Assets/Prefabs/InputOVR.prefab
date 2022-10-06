@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 3779722142139684761}
   - component: {fileID: 3086634260056314332}
   m_Layer: 0
-  m_Name: Ray Could Have Candidate
+  m_Name: Ray Can Have Candidate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 9020137616452614008}
   - component: {fileID: 3074088267998546838}
   m_Layer: 0
-  m_Name: Ray Could Have Candidate
+  m_Name: Ray Can Have Candidate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
