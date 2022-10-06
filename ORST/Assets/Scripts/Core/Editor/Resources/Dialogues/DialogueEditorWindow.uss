@@ -32,7 +32,7 @@
   border-right-color: #5a5a5a;
 }
 
-#create-npc-button {
+.create-button {
   border-radius: 10000px;
   margin: 0;
   padding: 0;

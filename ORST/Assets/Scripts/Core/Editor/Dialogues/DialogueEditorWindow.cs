@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using ORST.Core.Dialogues;
 using ORST.Core.Editor.UIElements;
-using ORST.Foundation.Foundation.Extensions;
+using ORST.Foundation.Extensions;
 using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine;
@@ -44,8 +44,9 @@ namespace ORST.Core.Editor.Dialogues {
         private Dragger m_DragArea;
         private VisualElement m_ContentContainer;
 
-        private List<DialogueNPC> m_NPCs;
         private float m_SidebarWidthBeforeDrag;
+        private List<DialogueNPC> m_NPCs;
+        private List<Dialogue> m_Dialogues;
 
         private int m_SelectedNPCIndex = -1;
         private int m_SelectedDialogueIndex = -1;
@@ -58,11 +59,16 @@ namespace ORST.Core.Editor.Dialogues {
             s_windowTreeAsset.CloneTree(rootVisualElement);
 
             m_NpcFoldout = rootVisualElement.Q<Foldout>("npc-container");
-            m_NpcFoldout.AddManipulator(new ContextualMenuManipulator(evt => { evt.menu.AppendAction("Reload", action => { ReloadNPCAssets(); }); }));
+            m_NpcFoldout.AddManipulator(new ContextualMenuManipulator(evt => evt.menu.AppendAction("Reload", _ => ReloadNPCAssets())));
             Button createNPCButton = new(CreateNPCAsset) { text = "+", name = "create-npc-button" };
+            createNPCButton.AddToClassList("create-button");
             m_NpcFoldout.Q<Toggle>().Add(createNPCButton);
 
             m_DialoguesFoldout = rootVisualElement.Q<Foldout>("dialogues-container");
+            m_DialoguesFoldout.AddManipulator(new ContextualMenuManipulator(evt => evt.menu.AppendAction("Reload", _ => ReloadDialogueAssets())));
+            Button createDialogueButton = new(CreateDialogueAsset) { text = "+", name = "create-dialogue-button" };
+            createDialogueButton.AddToClassList("create-button");
+            m_DialoguesFoldout.Q<Toggle>().Add(createDialogueButton);
 
             m_NpcGroup = rootVisualElement.Q<RadioButtonGroup>("npc-radio-group");
             m_NpcGroup.RegisterValueChangedCallback(evt => {
@@ -76,15 +82,6 @@ namespace ORST.Core.Editor.Dialogues {
             });
 
             m_DialoguesGroup = rootVisualElement.Q<RadioButtonGroup>("dialogues-radio-group");
-            m_DialoguesGroup.choices = new List<string> { "Hello world", "Yeeet", "Lorem ipsum" };
-            foreach (VisualElement visualElement in m_DialoguesGroup.Q(className: "unity-base-field__input").Children()) {
-                if (visualElement is not RadioButton radioButton) {
-                    continue;
-                }
-
-                radioButton.AddToClassList("dialogue-radio-button");
-            }
-
             m_DialoguesGroup.RegisterValueChangedCallback(evt => {
                 OnDialogueSelected(evt.newValue);
 
@@ -103,6 +100,7 @@ namespace ORST.Core.Editor.Dialogues {
             m_ContentContainer = rootVisualElement.Q("content-container");
 
             ReloadNPCAssets();
+            ReloadDialogueAssets();
         }
 
         private void ReloadNPCAssets() {
@@ -127,6 +125,7 @@ namespace ORST.Core.Editor.Dialogues {
                         }
 
                         AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath((DialogueNPC)radioButton.userData));
+                        m_ContentContainer.Clear();
                         ReloadNPCAssets();
                     });
                 }));
@@ -142,6 +141,47 @@ namespace ORST.Core.Editor.Dialogues {
                 m_ContentContainer.Clear();
                 m_NpcGroup.SetValueWithoutNotify(-1);
                 m_NpcGroup.value = m_SelectedNPCIndex;
+            }
+        }
+
+        private void ReloadDialogueAssets() {
+            m_Dialogues = AssetDatabase.FindAssets("t:Dialogue")
+                                       .Select(AssetDatabase.GUIDToAssetPath)
+                                       .Select(AssetDatabase.LoadAssetAtPath<Dialogue>)
+                                       .ToList();
+            m_DialoguesGroup.choices = m_Dialogues.Select(dialogue => dialogue.name);
+
+            int dialogueIndex = 0;
+            foreach (VisualElement visualElement in m_DialoguesGroup.Q(className: "unity-base-field__input").Children()) {
+                if (visualElement is not RadioButton radioButton) {
+                    continue;
+                }
+
+                radioButton.userData = m_Dialogues[dialogueIndex];
+                radioButton.AddToClassList("dialogue-radio-button");
+                radioButton.AddManipulator(new ContextualMenuManipulator(evt => {
+                    evt.menu.AppendAction("Delete", _ => {
+                        if (!EditorUtility.DisplayDialog("Delete Dialogue", "Are you sure you want to delete this dialogue?", "Yes", "No")) {
+                            return;
+                        }
+
+                        AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath((Dialogue)radioButton.userData));
+                        m_ContentContainer.Clear();
+                        ReloadDialogueAssets();
+                    });
+                }));
+
+                dialogueIndex++;
+            }
+
+            if (m_SelectedDialogueIndex >= m_Dialogues.Count) {
+                m_SelectedDialogueIndex = -1;
+            }
+
+            if (m_SelectedDialogueIndex != -1) {
+                m_ContentContainer.Clear();
+                m_DialoguesGroup.SetValueWithoutNotify(-1);
+                m_DialoguesGroup.value = m_SelectedDialogueIndex;
             }
         }
 
@@ -253,6 +293,46 @@ namespace ORST.Core.Editor.Dialogues {
             m_SelectedDialogueIndex = dialogueIndex;
             m_SelectedNPCIndex = -1;
             m_ContentContainer.Clear();
+
+            if (dialogueIndex < 0 || dialogueIndex >= m_Dialogues.Count) {
+                return;
+            }
+
+            Dialogue dialogue = m_Dialogues[dialogueIndex];
+            VisualElement dialogueEditor = CreateDialogueEditor(dialogue, dialogueIndex);
+            m_ContentContainer.Add(dialogueEditor);
+        }
+
+        private VisualElement CreateDialogueEditor(Dialogue dialogue, int dialogueIndex) {
+            return new Label($"Dialogue Editor for {dialogue.name}");
+        }
+
+        private void CreateDialogueAsset() {
+            string basePath = m_Dialogues.Count > 0 ? Path.GetDirectoryName(AssetDatabase.GetAssetPath(m_Dialogues[0])) : "Assets";
+            string filePath = EditorUtility.SaveFilePanelInProject("Save Dialogue", "New Dialogue", "asset", "Save Dialogue", basePath);
+
+            if (string.IsNullOrEmpty(filePath)) {
+                return;
+            }
+
+            Dialogue dialogue = CreateInstance<Dialogue>();
+            AssetDatabase.CreateAsset(dialogue, filePath);
+            AssetDatabase.SaveAssets();
+
+            rootVisualElement.schedule.Execute(() => {
+                ReloadDialogueAssets();
+
+                // Find index of dialogue with asset path
+                int index = -1;
+                for (int i = 0; i < m_Dialogues.Count; i++) {
+                    if (AssetDatabase.GetAssetPath(m_Dialogues[i]) == filePath) {
+                        index = i;
+                        break;
+                    }
+                }
+
+                m_DialoguesGroup.value = index;
+            }).ExecuteLater(30);
         }
     }
 }
