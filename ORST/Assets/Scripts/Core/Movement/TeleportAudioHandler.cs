@@ -14,6 +14,7 @@ namespace ORST.Core {
         [SerializeField] private AudioClipInfo IntersectEnter;
         [SerializeField] private AudioClipInfo IntersectExit;
         private AudioSource m_PlayerAudioSource;
+        private AudioSource m_DestAudioSource;
 
         protected override void OnEnable() {
             base.OnEnable();
@@ -55,6 +56,10 @@ namespace ORST.Core {
             m_PlayerAudioSource.clip = audioClip.AudioClip;
             m_PlayerAudioSource.loop = audioClip.Loop;
             m_PlayerAudioSource.Play();
+        }
+
+        public void SetDestAudioSource(AudioSource audioSource) {
+            m_DestAudioSource = audioSource;
         }
     }
 }
