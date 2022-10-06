@@ -2,7 +2,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using System.Collections;
 
-namespace ORST.Core {
+namespace ORST.Core.Movement {
     public class AdvancedTeleportTargetHandlerNode : TeleportTargetHandlerNode {
         [SerializeField, Required, ShowIf(nameof(m_ShowInvalidPositionIndicator))] private GameObject m_InvalidTeleportPosIndicator;
         [SerializeField] private bool m_ShowInvalidPositionIndicator = true;
@@ -98,7 +98,7 @@ namespace ORST.Core {
                 return;
             }
             m_IsIntersectChanged = m_ValidCollisionOnSegment;
-            invalidTeleportPosIndicator.SetActive(false);
+            m_InvalidTeleportPosIndicator.SetActive(false);
         }
     }
 }
