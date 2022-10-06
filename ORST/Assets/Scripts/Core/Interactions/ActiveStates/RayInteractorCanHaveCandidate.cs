@@ -4,7 +4,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace ORST.Core.Interactions {
-    public class RayInteractorCouldHaveCandidate : MonoBehaviour, IActiveState {
+    public class RayInteractorCanHaveCandidate : MonoBehaviour, IActiveState {
         [SerializeField, Required] private RayInteractor m_Interactor;
 
         [ShowInInspector] public bool Active => CouldHaveCandidate();
