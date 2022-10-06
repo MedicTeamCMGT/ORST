@@ -9,11 +9,11 @@ namespace ORST.Core {
     }
 
     public class TeleportAudioHandler : TeleportSupport {
-        [SerializeField] private AudioClipInfo EnterAim;
-        [SerializeField] private AudioClipInfo CancelAim;
-        [SerializeField] private AudioClipInfo Teleporting;
-        [SerializeField] private AudioClipInfo IntersectEnter;
-        [SerializeField] private AudioClipInfo IntersectExit;
+        [SerializeField] private AudioClipInfo m_EnterAim;
+        [SerializeField] private AudioClipInfo m_CancelAim;
+        [SerializeField] private AudioClipInfo m_Teleporting;
+        [SerializeField] private AudioClipInfo m_IntersectEnter;
+        [SerializeField] private AudioClipInfo m_IntersectExit;
         private AudioClipInfo m_CurrentAudioClip;
         private AudioSource m_PlayerAudioSource;
         private AudioSource m_DestAudioSource;
@@ -48,11 +48,11 @@ namespace ORST.Core {
             LocomotionTeleport.EnterStateTeleporting -= TeleportState;
         }
 
-        private void EnterAimState() => OnStateSet(EnterAim);
-        private void ExitAimState() => OnStateSet(CancelAim);
-        private void TeleportState() => OnStateSet(Teleporting);
-        private void IntersectEnterState() => OnStateSet(IntersectEnter);
-        private void IntersectExitState() => OnStateSet(IntersectExit);
+        private void EnterAimState() => OnStateSet(m_EnterAim);
+        private void ExitAimState() => OnStateSet(m_CancelAim);
+        private void TeleportState() => OnStateSet(m_Teleporting);
+        private void IntersectEnterState() => OnStateSet(m_IntersectEnter);
+        private void IntersectExitState() => OnStateSet(m_IntersectExit);
 
         private void OnStateSet(AudioClipInfo audioClip) {
             if (m_PlayerAudioSource.isPlaying && audioClip.Priority < m_CurrentAudioClip.Priority) {
