@@ -50,13 +50,13 @@ public abstract class TeleportTargetHandler : TeleportSupport
 		LocomotionTeleport.EnterStateAim -= _startAimAction;
 	}
 
-	private readonly List<Vector3> _aimPoints = new List<Vector3>();
+	protected readonly List<Vector3> AimPoints = new List<Vector3>();
 
 	/// <summary>
 	/// This coroutine is active while the teleport system is in the aiming state.
 	/// </summary>
 	/// <returns></returns>
-	private IEnumerator TargetAimCoroutine()
+	protected virtual IEnumerator TargetAimCoroutine()
 	{
 		// While the teleport system is in the aim state, perform the aim logic and consider teleporting.
 		while (LocomotionTeleport.CurrentState == LocomotionTeleport.States.Aim)
@@ -74,12 +74,12 @@ public abstract class TeleportTargetHandler : TeleportSupport
 
 			// Enumerate through all the line segments provided by the aim handler, checking for a valid target on each segment,
 			// stopping at the first valid target or when the enumerable runs out of line segments.
-			_aimPoints.Clear();
-			LocomotionTeleport.AimHandler.GetPoints(_aimPoints);
+			AimPoints.Clear();
+			LocomotionTeleport.AimHandler.GetPoints(AimPoints);
 
-			for(int i = 0; i < _aimPoints.Count; i++)
+			for(int i = 0; i < AimPoints.Count; i++)
 			{
-				var adjustedPoint = _aimPoints[i];
+				var adjustedPoint = AimPoints[i];
 				AimData.TargetValid = ConsiderTeleport(current, ref adjustedPoint);
 				AimData.Points.Add(adjustedPoint);
 				if (AimData.TargetValid)
@@ -88,7 +88,7 @@ public abstract class TeleportTargetHandler : TeleportSupport
 					AimData.TargetValid = AimData.Destination.HasValue;
 					break;
 				}
-				current = _aimPoints[i];
+				current = AimPoints[i];
 			}
 			LocomotionTeleport.OnUpdateAimData(AimData);
 			yield return null;
