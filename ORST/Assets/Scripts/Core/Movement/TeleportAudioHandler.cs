@@ -5,6 +5,7 @@ namespace ORST.Core {
     struct AudioClipInfo {
         public AudioClip AudioClip;
         public bool Loop;
+        public ushort Priority;
     }
 
     public class TeleportAudioHandler : TeleportSupport {
@@ -13,6 +14,7 @@ namespace ORST.Core {
         [SerializeField] private AudioClipInfo Teleporting;
         [SerializeField] private AudioClipInfo IntersectEnter;
         [SerializeField] private AudioClipInfo IntersectExit;
+        private AudioClipInfo m_CurrentAudioClip;
         private AudioSource m_PlayerAudioSource;
         private AudioSource m_DestAudioSource;
 
@@ -53,8 +55,13 @@ namespace ORST.Core {
         private void IntersectExitState() => OnStateSet(IntersectExit);
 
         private void OnStateSet(AudioClipInfo audioClip) {
-            m_PlayerAudioSource.clip = audioClip.AudioClip;
-            m_PlayerAudioSource.loop = audioClip.Loop;
+            if (m_PlayerAudioSource.isPlaying && audioClip.Priority < m_CurrentAudioClip.Priority) {
+                return;
+            }
+
+            m_CurrentAudioClip = audioClip;
+            m_PlayerAudioSource.clip = m_CurrentAudioClip.AudioClip;
+            m_PlayerAudioSource.loop = m_CurrentAudioClip.Loop;
             m_PlayerAudioSource.Play();
         }
 

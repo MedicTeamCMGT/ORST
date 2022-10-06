@@ -21,7 +21,7 @@ namespace ORST.Core.Interactions.Movement {
         }
 
         public override LocomotionTeleport.TeleportIntentions GetIntention() {
-            if (!isActiveAndEnabled || !m_ActiveState.Active) {
+            if (!isActiveAndEnabled /*|| !m_ActiveState.Active*/) {
                 return LocomotionTeleport.TeleportIntentions.None;
             }
 
