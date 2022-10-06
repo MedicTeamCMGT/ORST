@@ -61,6 +61,7 @@ namespace ORST.Core {
                     if (!m_ValidCollisionOnSegment && AimData.TargetHitInfo.collider != null) {
                         m_ValidCollisionOnSegment = true;
                         segmentColliderPoint = AimData.TargetHitInfo.point;
+                        break;
                     }
 
                     current = AimPoints[i];
