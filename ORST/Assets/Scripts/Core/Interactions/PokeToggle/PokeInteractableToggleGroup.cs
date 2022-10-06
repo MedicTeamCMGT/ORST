@@ -7,7 +7,6 @@ using UnityEngine;
 namespace ORST.Core.Interactions {
     public class PokeInteractableToggleGroup : SerializedMonoBehaviour {
         [SerializeField, Required] private List<PokeInteractableToggle> m_Toggles = new();
-
         [ShowInInspector, ReadOnly] private int m_SelectedToggle = -1;
 
         public event Action<PokeInteractableToggle> ToggleSelected;
@@ -21,13 +20,10 @@ namespace ORST.Core.Interactions {
 
         private void OnPokeInteractableStateChanged(int toggleIndex, InteractableStateChangeArgs args) {
             if (args.NewState != InteractableState.Select) {
-                Debug.Log($"Ignoring state change for toggle {toggleIndex} to {args.NewState}");
                 return;
             }
 
-            Debug.Log($"Selecting toggle {toggleIndex} (was {m_SelectedToggle})");
             if (toggleIndex == m_SelectedToggle) {
-                Debug.Log("Deselecting active toggle");
                 m_SelectedToggle = -1;
                 m_Toggles[toggleIndex].SetSelected(false);
                 ToggleSelected?.Invoke(null);
