@@ -5,6 +5,6 @@ public class MovementController : MonoBehaviour {
     [SerializeField] private CapsuleCollider m_CharacterCapsule;
     [SerializeField] private SimpleStickMovement m_SimpleStickMovement;
 
-    public OVRCameraRig OvrCameraRig => m_OvrCameraRig;
+   public OVRCameraRig OvrCameraRig => m_OvrCameraRig;
     public CapsuleCollider CapsuleCollider => m_CharacterCapsule;
 }
