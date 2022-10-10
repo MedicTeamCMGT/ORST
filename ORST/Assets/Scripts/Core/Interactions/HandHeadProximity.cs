@@ -21,9 +21,6 @@ namespace ORST.Core.Interactions
             Color color = m_InnerColliderMaterial.color;
             color.a = 0;
             m_InnerColliderMaterial.color = color;
-
-            OnForbiddenSpaceEnter += () => Debug.Log("Entered");
-            OnForbiddenSpaceExit += () => Debug.Log("Exited");
         }
 
         private void Update() {
