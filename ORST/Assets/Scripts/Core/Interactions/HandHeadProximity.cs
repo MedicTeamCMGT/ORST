@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using ORST.Foundation.Foundation.Extensions;
 using UnityEngine;
 
 namespace ORST.Core.Interactions
@@ -26,10 +27,7 @@ namespace ORST.Core.Interactions
         }
 
         private void Update() {
-
-            Color color = m_InnerColliderMaterial.color;
-            color.a = GetClosestIntersectLinear();
-            m_InnerColliderMaterial.color = color;
+            m_InnerColliderMaterial.SetMaterialAlpha(GetClosestIntersectLinear());
         }
 
         private float GetClosestIntersectLinear() {
