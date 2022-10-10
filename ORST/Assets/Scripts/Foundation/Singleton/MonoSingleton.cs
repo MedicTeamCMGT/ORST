@@ -21,8 +21,8 @@ namespace ORST.Foundation.Singleton {
         private void Awake() {
             if (s_Instance != null && s_Instance != this) {
                 Debug.LogError($"Multiple instances of {typeof(T).Name} found");
-                Destroy(this);
                 OnAwake();
+                Destroy(this);
                 return;
             }
 
