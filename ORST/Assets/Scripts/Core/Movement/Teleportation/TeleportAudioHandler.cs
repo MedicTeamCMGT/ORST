@@ -16,8 +16,8 @@ namespace ORST.Core.Movement {
             base.OnEnable();
             if (LocomotionTeleport is AdvancedLocomotionTeleport teleport) {
                 teleport.AudioHandler = this;
-                teleport.OnIntersectEnter += IntersectEnterState;
-                teleport.OnIntersectExit += IntersectExitState;
+                teleport.EnteredIntersection += IntersectEnterState;
+                teleport.ExitedIntersection += IntersectExitState;
             }
 
             m_PlayerAudioSource = gameObject.AddComponent<AudioSource>();

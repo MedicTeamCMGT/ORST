@@ -5,15 +5,15 @@ namespace ORST.Core.Movement {
         public TeleportTargetHandler TargetHandler { get; set; }
         public TeleportAudioHandler AudioHandler { get; set; }
 
-        public event Action OnIntersectEnter;
-        public event Action OnIntersectExit;
+        public event Action EnteredIntersection;
+        public event Action ExitedIntersection;
 
         public void InvokeOnIntersectEnter() {
-            OnIntersectEnter?.Invoke();
+            EnteredIntersection?.Invoke();
         }
 
         public void InvokeOnIntersectExit() {
-            OnIntersectExit?.Invoke();
+            ExitedIntersection?.Invoke();
         }
     }
 }
