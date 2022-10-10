@@ -9,6 +9,8 @@ namespace ORST.Core.Movement {
         private bool m_IsIntersectChanged;
         private bool m_ValidCollisionOnSegment;
 
+        public new LocomotionTeleport.AimData AimData => base.AimData;
+
         protected override void OnEnable() {
             base.OnEnable();
             if (LocomotionTeleport is AdvancedLocomotionTeleport teleport) {
