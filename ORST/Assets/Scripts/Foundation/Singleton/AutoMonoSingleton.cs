@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using ORST.Foundation.Core;
+using UnityEngine;
 
 namespace ORST.Foundation.Singleton {
-    public abstract class AutoMonoSingleton<T> : MonoBehaviour where T : AutoMonoSingleton<T> {
+    public abstract class AutoMonoSingleton<T> : BaseMonoBehaviour where T : AutoMonoSingleton<T> {
         private static T s_Instance;
 
         public static T Instance {
