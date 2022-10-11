@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -10,6 +11,6 @@ namespace ORST.Core.Dialogues {
         [SerializeField, Required] private List<DialogueOption> m_Options = new();
 
         public string Text => m_Text;
-        public List<DialogueOption> Options => m_Options;
+        public ReadOnlyCollection<DialogueOption> Options => m_Options.AsReadOnly();
     }
 }
