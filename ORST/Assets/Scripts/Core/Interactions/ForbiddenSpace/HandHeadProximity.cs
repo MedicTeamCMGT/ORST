@@ -1,30 +1,22 @@
 using System;
 using System.Collections.Generic;
-using ORST.Foundation.Foundation.Extensions;
 using UnityEngine;
 
 namespace ORST.Core.Interactions
 {
     public class HandHeadProximity : MonoBehaviour {
-        public event Action OnForbiddenSpaceEnter;
-        public event Action OnForbiddenSpaceExit;
+        public event Action ForbiddenSpaceEntered;
+        public event Action ForbiddenSpaceExited;
+        public event Action<float> ForbiddenSpaceUpdated;
 
         [SerializeField] private Collider m_InnerCollider;
         [SerializeField] private Collider m_OuterCollider;
 
         private readonly List<Transform> m_Intersector = new ();
         private GameObject m_ForbiddenGameObject;
-        private Material m_InnerColliderMaterial;
-
-        private void Start() {
-            m_InnerColliderMaterial = m_InnerCollider.transform.GetComponent<MeshRenderer>().material;
-            Color color = m_InnerColliderMaterial.color;
-            color.a = 0;
-            m_InnerColliderMaterial.color = color;
-        }
 
         private void Update() {
-            m_InnerColliderMaterial.SetMaterialAlpha(GetClosestIntersectLinear());
+            ForbiddenSpaceUpdated?.Invoke(GetClosestIntersectLinear());
         }
 
         private float GetClosestIntersectLinear() {
@@ -48,7 +40,7 @@ namespace ORST.Core.Interactions
                     //the inner collider.
                     if (m_InnerCollider.bounds.Contains(intersect.position) && m_ForbiddenGameObject == null) {
                         m_ForbiddenGameObject = intersect.gameObject;
-                        OnForbiddenSpaceEnter?.Invoke();
+                        ForbiddenSpaceEntered?.Invoke();
                     }
 
                     return 1;
@@ -57,7 +49,7 @@ namespace ORST.Core.Interactions
                 if (m_ForbiddenGameObject != null
                  && m_ForbiddenGameObject.Equals(intersect.gameObject)) {
                     m_ForbiddenGameObject = null;
-                    OnForbiddenSpaceExit?.Invoke();
+                    ForbiddenSpaceExited?.Invoke();
                 }
 
                 if (hit.distance < shortestDist) {
