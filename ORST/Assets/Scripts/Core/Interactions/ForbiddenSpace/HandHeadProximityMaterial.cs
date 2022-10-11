@@ -15,14 +15,10 @@ namespace ORST.Core
         }
 
         private void OnEnable() {
-            //m_HandHeadProximity.ForbiddenSpaceEntered += OnForbiddenSpaceEntered;
-            //m_HandHeadProximity.ForbiddenSpaceExited += OnForbiddenSpaceExited;
             m_HandHeadProximity.ForbiddenSpaceUpdated += m_Material.SetMaterialAlpha;
         }
 
         private void OnDisable() {
-            //m_HandHeadProximity.ForbiddenSpaceEntered -= OnForbiddenSpaceEntered;
-            //m_HandHeadProximity.ForbiddenSpaceExited -= OnForbiddenSpaceExited;
             m_HandHeadProximity.ForbiddenSpaceUpdated -= m_Material.SetMaterialAlpha;
         }
     }
