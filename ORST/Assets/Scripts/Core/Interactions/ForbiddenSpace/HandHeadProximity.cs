@@ -12,7 +12,7 @@ namespace ORST.Core.Interactions
         [SerializeField] private Collider m_InnerCollider;
         [SerializeField] private Collider m_OuterCollider;
 
-        private readonly List<Transform> m_Intersector = new ();
+        private readonly List<Transform> m_Intersector = new();
         private GameObject m_ForbiddenGameObject;
 
         private void Update() {
@@ -21,7 +21,7 @@ namespace ORST.Core.Interactions
 
         private float GetClosestIntersectLinear() {
             if (m_Intersector.Count <= 0) {
-                return 0;
+                return 0.0f;
             }
 
             Vector3 innerColliderPosition =  m_InnerCollider.transform.position;
@@ -43,7 +43,7 @@ namespace ORST.Core.Interactions
                         ForbiddenSpaceEntered?.Invoke();
                     }
 
-                    return 1;
+                    return 1.0f;
                 }
 
                 if (m_ForbiddenGameObject != null
@@ -59,19 +59,19 @@ namespace ORST.Core.Interactions
             }
 
             if (shortestTransform == null) {
-                return 0;
+                return 0.0f;
             }
 
             Vector3 shortestTransformPos = shortestTransform.position;
             Vector3 outerPoint = shortestTransformPos + (shortestTransformPos - innerColliderPosition).normalized * m_OuterCollider.transform.lossyScale.magnitude;
             Ray ray = new(outerPoint, (innerColliderPosition - shortestTransformPos).normalized * 10.0f);
 
-            float inBetweenTotalDist = 1;
+            float inBetweenTotalDist = 1.0f;
             if (m_OuterCollider.Raycast(ray, out RaycastHit hit2, 100.0f)) {
                 inBetweenTotalDist = shortestDist + (hit2.point - shortestTransform.position).magnitude;
             }
 
-            return 1 - shortestDist / inBetweenTotalDist;
+            return 1.0f - shortestDist / inBetweenTotalDist;
         }
 
         private void OnTriggerEnter(Collider other) {
