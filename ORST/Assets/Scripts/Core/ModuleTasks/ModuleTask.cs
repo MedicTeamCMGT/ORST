@@ -61,8 +61,9 @@ namespace ORST.Core.ModuleTasks
         private ModuleTaskState AdvanceModuleSubtasks() {
             switch (m_CurrentModuleSubtask.ExecuteModuleTask()) {
                 case ModuleTaskState.Successful:
+                    //Subtask was successful
                     if (m_ModuleSubtaskQueue.Count > 0) {
-                        Debug.Log("Task::Task successful - Advancing...");
+                        Debug.Log("Task::Subtask successful - Advancing...");
                         m_CurrentModuleSubtask = m_ModuleSubtaskQueue.Dequeue();
                         if (m_CurrentModuleSubtask != null) {
                             m_CurrentModuleSubtask.StartModuleTask();
