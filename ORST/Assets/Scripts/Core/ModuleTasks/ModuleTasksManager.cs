@@ -1,9 +1,10 @@
 using System.Collections.Generic;
+using ORST.Foundation.Singleton;
 using UnityEngine;
 
 namespace ORST.Core.ModuleTasks
 {
-    public class ModuleTasksManager : MonoBehaviour {
+    public class ModuleTasksManager : MonoSingleton<ModuleTasksManager> {
 
         [SerializeField] private List<ModuleTask> m_AllTasks;
         private Queue<ModuleTask> m_TaskQueue;
