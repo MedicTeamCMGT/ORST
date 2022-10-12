@@ -20,6 +20,10 @@ namespace ORST.Core.ModuleTasks
         private Queue<ModuleTask> m_ModuleSubtaskQueue;
         private ModuleTask m_CurrentModuleSubtask;
 
+        public bool IsEligibleForRandom() {
+            return m_IsEligibleForRandom;
+        }
+
         private void Start() {
             InitializeModuleTask();
         }
@@ -96,7 +100,7 @@ namespace ORST.Core.ModuleTasks
         public List<ModuleTask> GetRemainingModuleTasks() {
             //Note: Not perfect since this currently loses information by flattening the hierarchy
             if (m_ModuleSubtasks.Count <= 0) {
-                return new List<ModuleTask>() { this };
+                return new List<ModuleTask> { this };
             }
 
             //First get the current task and its remaining subtasks
