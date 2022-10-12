@@ -9,15 +9,15 @@ namespace ORST.Core.Tasks
 {
     public enum TaskState {
         Successful,
-        Failure
+        Failure,
+        Running
     }
 
     public class Task : MonoBehaviour {
-
-        public event Action<TaskState> TaskEvent;
         [SerializeField, InlineButton(nameof(FindSubtasks), "Find Subtasks")] private List<Task> m_Subtasks;
-        [SerializeField] private bool IsEligibleForRandom;
-        [ShowInInspector] private Queue<Task> m_SubtaskQueue;
+        [SerializeField] private bool m_IsEligibleForRandom;
+
+        private Queue<Task> m_SubtaskQueue;
         private Task m_CurrentSubtask;
 
         private void Start() {
@@ -29,12 +29,14 @@ namespace ORST.Core.Tasks
         }
 
         private void InitializeTask() {
-            //On Subtasks this will be an empty queue and will be skipped
-            m_SubtaskQueue = new Queue<Task>(m_Subtasks);
-            if (m_SubtaskQueue.Count > 0) {
-                Debug.Log("Task::Added subtasks: " + m_SubtaskQueue.Count);
-                m_CurrentSubtask = m_SubtaskQueue.Dequeue();
+            //On Subtasks this will be an empty list and will be skipped
+            if (m_Subtasks.Count <= 0) {
+                return;
             }
+
+            m_SubtaskQueue = new Queue<Task>(m_Subtasks);
+            Debug.Log("Task::Added subtasks: " + m_SubtaskQueue.Count);
+            m_CurrentSubtask = m_SubtaskQueue.Dequeue();
         }
 
         private void RandomizeEligibleSubtasks() {
@@ -42,45 +44,52 @@ namespace ORST.Core.Tasks
             throw new NotImplementedException();
         }
 
-        public virtual void StartTask(Task baseTask) {
-            //For tasks this will be null
-            //Tasks will use this implementation, while subtasks will override it to implement functionality.
+        public void StartTask() {
             if (m_CurrentSubtask != null) {
-                //We have subtasks
-                m_CurrentSubtask.StartTask(this);
-                m_CurrentSubtask.TaskEvent += AdvanceSubtasks;
+                //We have subtasks, start subtask
+                m_CurrentSubtask.StartTask();
             } else {
                 Debug.Log("Task::Subtask started...");
             }
         }
 
-        private void AdvanceSubtasks(TaskState taskState) {
-            switch (taskState) {
+        public virtual TaskState ExecuteTask() {
+            //Task implementation here, subtask will override it to implement functionality
+            return AdvanceSubtasks();
+        }
+
+        private TaskState AdvanceSubtasks() {
+            switch (m_CurrentSubtask.ExecuteTask()) {
                 case TaskState.Successful:
                     if (m_SubtaskQueue.Count > 0) {
                         Debug.Log("Task::Task successful - Advancing...");
                         m_CurrentSubtask = m_SubtaskQueue.Dequeue();
                         if (m_CurrentSubtask != null) {
-                            m_CurrentSubtask.StartTask(this);
-                            m_CurrentSubtask.TaskEvent += AdvanceSubtasks;
+                            m_CurrentSubtask.StartTask();
+                            //Not all subtasks all done - task returns running
+                            return TaskState.Running;
                         }
                     } else {
-                        //Subtasks all done
+                        //Subtasks all done - task returns successful
                         Debug.Log("Task::All subtasks done.");
+                        return TaskState.Successful;
                     }
                     break;
 
                 case TaskState.Failure:
-                    //E.g.: Restart subtasks or whole task
+                    //Subtask was failure
+                    break;
+
+                case TaskState.Running:
+                    //Subtask is running
                     break;
 
                 default:
-                    throw new SwitchExpressionException("Task::Hit default case in task: " + gameObject.name);
+                    throw new SwitchExpressionException(
+                        "Task::Hit default case in 'AdvanceSubtask'. This should not happen.");
             }
-        }
 
-        public void InvokeTaskEvent(TaskState taskState) {
-            TaskEvent?.Invoke(taskState);
+            return TaskState.Failure;
         }
     }
 }

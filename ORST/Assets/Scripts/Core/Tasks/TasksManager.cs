@@ -13,11 +13,21 @@ namespace ORST.Core.Tasks
             InitiateTaskManager();
         }
 
+        private void Update() {
+            if (m_CurrentTask == null) {
+                return;
+            }
+            if (m_CurrentTask.ExecuteTask() == TaskState.Successful) {
+                m_CurrentTask = null;
+                Debug.Log("Task::Task done.");
+            }
+        }
+
         private void InitiateTaskManager() {
             m_TaskQueue = new Queue<Task>(m_AllTasks);
             if (m_TaskQueue.Count > 0) {
                 m_CurrentTask = m_TaskQueue.Dequeue();
-                m_CurrentTask.StartTask(null);
+                m_CurrentTask.StartTask();
             }
         }
     }
