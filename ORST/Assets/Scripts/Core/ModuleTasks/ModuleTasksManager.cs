@@ -22,6 +22,14 @@ namespace ORST.Core.ModuleTasks
                 m_CurrentModuleTask = null;
                 Debug.Log("Task::Task done.");
             }
+
+            if (Input.GetKeyDown(KeyCode.O)) {
+                List<ModuleTask> allRemainingTasks = m_CurrentModuleTask.GetRemainingModuleTasks();
+
+                foreach (ModuleTask task in allRemainingTasks) {
+                    Debug.Log("Task::Task: " + task.gameObject.name);
+                }
+            }
         }
 
         private void InitiateModuleTaskManager() {

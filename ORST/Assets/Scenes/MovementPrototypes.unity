@@ -814,7 +814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d7dce80cb3c37b4ca9a3dcf582a0594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Subtasks:
+  m_ModuleSubtasks:
   - {fileID: 1418311520}
   - {fileID: 1731835263}
   m_IsEligibleForRandom: 0
@@ -1623,7 +1623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63bde878f62b67d42932c780ad91eb51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Subtasks: []
+  m_ModuleSubtasks: []
   m_IsEligibleForRandom: 0
   TestTransform: {fileID: 1946678740}
 --- !u!4 &1418311521
@@ -1927,7 +1927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63bde878f62b67d42932c780ad91eb51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Subtasks: []
+  m_ModuleSubtasks: []
   m_IsEligibleForRandom: 0
   TestTransform: {fileID: 1504531916}
 --- !u!4 &1731835264

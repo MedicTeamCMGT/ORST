@@ -91,5 +91,19 @@ namespace ORST.Core.ModuleTasks
 
             return ModuleTaskState.Failure;
         }
+
+        public List<ModuleTask> GetRemainingModuleTasks() {
+            if (m_ModuleSubtasks.Count <= 0) {
+                return new List<ModuleTask>() { this };
+            }
+
+            List<ModuleTask> moduleTaskList = new() {this, m_CurrentModuleSubtask};
+            //@Maurice - Note: Currently only returns this tasks subtasks
+            foreach (var currentModuleTask in m_ModuleSubtaskQueue) {
+                List<ModuleTask> moduleTaskTest = currentModuleTask.GetRemainingModuleTasks();
+                moduleTaskList.AddRange(moduleTaskTest);
+            }
+            return moduleTaskList;
+        }
     }
 }
