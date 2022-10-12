@@ -1,12 +1,13 @@
 using System.Collections.Generic;
+using ORST.Foundation.Foundation.Extensions;
 using ORST.Foundation.Singleton;
 using UnityEngine;
 
-namespace ORST.Core.ModuleTasks
-{
+namespace ORST.Core.ModuleTasks {
     public class ModuleTasksManager : MonoSingleton<ModuleTasksManager> {
 
         [SerializeField] private List<ModuleTask> m_AllTasks;
+        [SerializeField] private bool m_RandomizeEligibleModuleTasks;
         private Queue<ModuleTask> m_TaskQueue;
         private ModuleTask m_CurrentModuleTask;
 
@@ -15,6 +16,7 @@ namespace ORST.Core.ModuleTasks
         }
 
         private void Update() {
+            //This stops execution when all tasks are done or there weren't tasks in the first place
             if (m_CurrentModuleTask == null) {
                 return;
             }
@@ -30,6 +32,7 @@ namespace ORST.Core.ModuleTasks
                         m_CurrentModuleTask = null;
                         Debug.Log("TaskManager::All tasks done.");
                     }
+
                     break;
                 case ModuleTaskState.Failure:
                     break;
@@ -59,10 +62,32 @@ namespace ORST.Core.ModuleTasks
         }
 
         private void InitiateModuleTaskManager() {
-            m_TaskQueue = new Queue<ModuleTask>(m_AllTasks);
-            if (m_TaskQueue.Count > 0) {
-                m_CurrentModuleTask = m_TaskQueue.Dequeue();
-                m_CurrentModuleTask.StartModuleTask();
+            List<ModuleTask> adjustedList = new();
+            bool lastTaskRandomizable = false;
+            if (m_RandomizeEligibleModuleTasks) {
+                List<ModuleTask> randomModuleTasks = new();
+                //Randomize task list before adding to queue
+                foreach (ModuleTask currentTask in m_AllTasks) {
+                    if (!currentTask.IsEligibleForRandom()) {
+                        if (lastTaskRandomizable) {
+                            randomModuleTasks.Shuffle();
+                            adjustedList.AddRange(randomModuleTasks);
+                            randomModuleTasks.Clear();
+                        }
+
+                        lastTaskRandomizable = false;
+                        adjustedList.Add(currentTask);
+                    } else {
+                        randomModuleTasks.Add(currentTask);
+                        lastTaskRandomizable = true;
+                    }
+                }
+
+                m_TaskQueue = new Queue<ModuleTask>(adjustedList);
+                if (m_TaskQueue.Count > 0) {
+                    m_CurrentModuleTask = m_TaskQueue.Dequeue();
+                    m_CurrentModuleTask.StartModuleTask();
+                }
             }
         }
     }
