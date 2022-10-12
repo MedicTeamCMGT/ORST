@@ -93,12 +93,15 @@ namespace ORST.Core.ModuleTasks
         }
 
         public List<ModuleTask> GetRemainingModuleTasks() {
+            //Note: Not perfect since this currently loses information by flattening the hierarchy
             if (m_ModuleSubtasks.Count <= 0) {
                 return new List<ModuleTask>() { this };
             }
 
+            //First get the current task and its remaining subtasks
             List<ModuleTask> moduleTaskList = new() {this, m_CurrentModuleSubtask};
-            //@Maurice - Note: Currently only returns this tasks subtasks
+            moduleTaskList.AddRange(m_CurrentModuleSubtask.GetRemainingModuleTasks());
+            //Then fetch the ones still in the queue
             foreach (var currentModuleTask in m_ModuleSubtaskQueue) {
                 List<ModuleTask> moduleTaskTest = currentModuleTask.GetRemainingModuleTasks();
                 moduleTaskList.AddRange(moduleTaskTest);
