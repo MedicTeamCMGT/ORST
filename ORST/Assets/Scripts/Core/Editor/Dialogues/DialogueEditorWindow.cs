@@ -94,6 +94,8 @@ namespace ORST.Core.Editor.Dialogues {
             });
 
             m_Sidebar = rootVisualElement.Q("sidebar");
+            float sidebarWidth = EditorPrefs.GetFloat("ORST.DialogueEditorWindow.SidebarWidth", 250.0f);
+            m_Sidebar.style.width = sidebarWidth;
             m_DragArea = rootVisualElement.Q<Dragger>("drag-area");
             m_DragArea.DragStarted += OnSidebarResizeStarted;
             m_DragArea.DragUpdated += OnSidebarResizeUpdated;
@@ -193,6 +195,7 @@ namespace ORST.Core.Editor.Dialogues {
         private void OnSidebarResizeUpdated(Vector2 initialPosition, Vector2 currentPosition) {
             Vector2 delta = currentPosition - initialPosition;
             float newWidth = m_SidebarWidthBeforeDrag + delta.x;
+            EditorPrefs.SetFloat("ORST.DialogueEditorWindow.SidebarWidth", newWidth);
             m_Sidebar.style.width = Mathf.Max(m_Sidebar.resolvedStyle.minWidth.value, newWidth);
         }
 
