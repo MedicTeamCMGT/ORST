@@ -5,9 +5,34 @@
     min-height: 40px;
 }
 
-.dialogue-editor-root {
+#dialogue-editor-root {
     flex-direction: row;
     flex-grow: 1;
+}
+
+.dialogue-editor__text-field {
+    flex-grow: 1;
+
+    .unity-base-field__label {
+        min-width: 64px;
+    }
+
+    .unity-text-field__label {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    #unity-text-input {
+        max-height: 61px;
+        font-size: 14px;
+        padding: 4px;
+    }
+
+    &.wide {
+        .unity-base-field__label {
+            min-width: 80px;
+        }
+    }
 }
 
 #sidebar {
@@ -74,6 +99,7 @@
         background-color: #323232;
         min-height: 24px;
     }
+
 }
 
 .dialogue-radio-button {
@@ -104,6 +130,7 @@
 
 .npc-editor {
     flex-grow: 1;
+
     #npc-editor-header {
         $size: 80px;
         $fontSize: 32px;
@@ -167,4 +194,36 @@
             }
         }
     }
+}
+
+.dialogue-editor {
+    flex-grow: 1;
+
+    .dialogue-editor__nodes-list {
+        & #unity-content-container {
+            padding-right: 8px;
+        }
+    }
+
+    .dialogue-editor__title {
+        color: whitesmoke;
+        font-size: 24px;
+        -unity-text-align: middle-center;
+        min-height: 40px;
+    }
+
+    #dialogue-editor__add-node {
+        border-radius: 10000px;
+        margin: 0;
+        margin-right: 17px;
+        margin-top: 4px;
+        margin-bottom: 4px;
+        padding: 0;
+        width: 26px;
+        height: 26px;
+    }
+}
+
+.display-none {
+    display: none;
 }

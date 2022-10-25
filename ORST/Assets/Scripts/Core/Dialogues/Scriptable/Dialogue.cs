@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -8,6 +7,10 @@ namespace ORST.Core.Dialogues {
     public class Dialogue : SerializedScriptableObject {
         [SerializeField, Required] private List<DialogueNode> m_Nodes = new();
 
-        public ReadOnlyCollection<DialogueNode> Nodes => m_Nodes.AsReadOnly();
+        public List<DialogueNode> Nodes => m_Nodes;
+
+#if UNITY_EDITOR
+        public const string NODES_FIELD_NAME = nameof(m_Nodes);
+#endif
     }
 }

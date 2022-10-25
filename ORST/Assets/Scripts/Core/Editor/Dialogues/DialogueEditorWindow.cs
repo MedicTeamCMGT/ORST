@@ -50,6 +50,7 @@ namespace ORST.Core.Editor.Dialogues {
 
         private int m_SelectedNPCIndex = -1;
         private int m_SelectedDialogueIndex = -1;
+        private int m_LastDialogueNodeCount = -1;
 
         private void CreateGUI() {
             if (s_windowTreeAsset == null) {
@@ -255,6 +256,7 @@ namespace ORST.Core.Editor.Dialogues {
             SerializedProperty roleProperty = serializedObject.FindProperty("m_Role");
             PropertyField roleField = new(roleProperty);
             roleField.AddToClassList("npc-editor__role-field");
+            roleField.AddToClassList("dialogue-editor__text-field");
             roleField.Bind(serializedObject);
             roleField.BindProperty(roleProperty);
             settingsContainer.Add(roleField);
@@ -304,7 +306,64 @@ namespace ORST.Core.Editor.Dialogues {
         }
 
         private VisualElement CreateDialogueEditor(Dialogue dialogue, int dialogueIndex) {
-            return new Label($"Dialogue Editor for {dialogue.name}");
+            SerializedObject serializedObject = new(dialogue);
+            serializedObject.Update();
+
+            VisualElement root = new();
+            root.AddToClassList("dialogue-editor");
+
+            Label titleLabel = new() {
+                text = dialogue.name
+            };
+            titleLabel.AddToClassList("dialogue-editor__title");
+            root.Add(titleLabel);
+
+            SerializedProperty nodesProperty = serializedObject.FindProperty(Dialogue.NODES_FIELD_NAME);
+            Foldout nodesFoldout = new() { text = "Nodes", name = "dialogue-editor__nodes-foldout" };
+            nodesFoldout.AddToClassList("dialogue-foldout");
+
+            Button addNodeButton = new(() => {
+                Undo.RegisterCompleteObjectUndo(dialogue, "Add Dialogue Node");
+                dialogue.Nodes.Add(new DialogueNode());
+            }) { text = "+", tooltip = "Add Node", name = "dialogue-editor__add-node" };
+            nodesFoldout.Q<Toggle>().Add(addNodeButton);
+
+
+            ScrollView nodesContainer = new();
+            nodesContainer.AddToClassList("dialogue-editor__nodes-list");
+            nodesFoldout.Add(nodesContainer);
+            m_LastDialogueNodeCount = dialogue.Nodes.Count;
+            IMGUIContainer nodesUpdateChecker = new(() => {
+                if (dialogue.Nodes.Count == m_LastDialogueNodeCount) {
+                    return;
+                }
+
+                m_LastDialogueNodeCount = dialogue.Nodes.Count;
+                UpdateDialogueNodes(dialogue, nodesContainer, nodesProperty);
+            });
+
+            nodesUpdateChecker.cullingEnabled = false;
+            nodesFoldout.Add(nodesUpdateChecker);
+            root.Add(nodesFoldout);
+
+            UpdateDialogueNodes(dialogue, nodesContainer, nodesProperty);
+
+            return root;
+        }
+
+        private static void UpdateDialogueNodes(Dialogue dialogue, ScrollView nodesContainer, SerializedProperty nodesProperty) {
+            nodesContainer.Clear();
+            nodesProperty.serializedObject.Update();
+            int index = 0;
+            foreach (DialogueNode dialogueNode in dialogue.Nodes) {
+                if (index >= 0 && index < nodesProperty.arraySize) {
+                    DialogueNodeElement nodeElement = new();
+                    nodeElement.BindToNode(nodesProperty.GetArrayElementAtIndex(index++), dialogue, dialogueNode);
+                    nodesContainer.Add(nodeElement);
+                } else {
+                    Debug.LogError($"Dialogue node count mismatch: {dialogue.Nodes.Count} != {nodesProperty.arraySize}");
+                }
+            }
         }
 
         private void CreateDialogueAsset() {

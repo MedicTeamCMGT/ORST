@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace ORST.Core.Dialogues {
     [Serializable]
     public class DialogueNode {
-        [SerializeField, Required] private string m_Text;
-        [SerializeField, Required] private List<DialogueOption> m_Options = new();
+        [SerializeField] private string m_Text;
+        [SerializeField] private List<DialogueOption> m_Options = new();
 
         public string Text => m_Text;
-        public ReadOnlyCollection<DialogueOption> Options => m_Options.AsReadOnly();
+        public List<DialogueOption> Options => m_Options;
+
+#if UNITY_EDITOR
+        public const string TEXT_FIELD_NAME = nameof(m_Text);
+        public const string OPTIONS_FIELD_NAME = nameof(m_Options);
+#endif
     }
 }

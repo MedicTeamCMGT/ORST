@@ -7,7 +7,7 @@
     editor-extension-mode="False"
 >
     <Style src="DialogueEditorWindow.uss"/>
-    <VisualElement name="root" class="dialogue-editor-root">
+    <VisualElement name="dialogue-editor-root">
         <VisualElement name="sidebar" class="sidebar">
             <VisualElement name="sidebar-content" class="sidebar-content">
                 <Label name="sidebar-title" text="Dialogue Editor"/>
@@ -26,6 +26,7 @@
             </VisualElement>
             <orst:Dragger name="drag-area" class="sidebar-drag-area"/>
         </VisualElement>
+<!--        <orst:DialogueOptionElement text="Hello" correct="false" feedback="This is the feedback"/>-->
         <VisualElement name="content-container"/>
     </VisualElement>
 </UXML>

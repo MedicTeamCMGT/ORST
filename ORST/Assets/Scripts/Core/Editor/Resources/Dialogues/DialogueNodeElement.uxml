@@ -1,0 +1,20 @@
+<UXML
+    xmlns="UnityEngine.UIElements"
+    xmlns:uie="UnityEditor.UIElements"
+    xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:orst="ORST.Core.Editor.UIElements"
+    noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd"
+    editor-extension-mode="False"
+>
+    <Style src="DialogueNodeElement.uss"/>
+    <VisualElement class="dialogue-node-root">
+        <VisualElement name="dialogue-node__top-container">
+            <TextField name="text-field" label="NPC Text" multiline="true" class="dialogue-editor__text-field wide"/>
+            <Button name="dialogue-node__remove-button" text="-" tooltip="Remove"/>
+        </VisualElement>
+        <Foldout text="Options" name="dialogue-node-options__foldout" class="dialogue-foldout">
+            <ScrollView name="dialogue-node-options" />
+        </Foldout>
+        <IMGUIContainer name="dialogue-node__update-checker"/>
+    </VisualElement>
+</UXML>

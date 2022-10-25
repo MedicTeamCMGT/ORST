@@ -68,7 +68,7 @@ namespace ORST.Core.Dialogues {
             }
 
             m_IncorrectAnswerContainer.SetActive(true);
-            m_IncorrectHint.text = selectedOption.HintText;
+            m_IncorrectHint.text = selectedOption.Feedback;
             m_IncorrectContinueButton.onClick.RemoveAllListeners();
             m_IncorrectContinueButton.onClick.AddListener(() => {
                 m_IncorrectAnswerContainer.SetActive(false);

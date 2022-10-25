@@ -4,6 +4,8 @@
     <attachedFolders />
     <explicitIncludes>
       <Path>Assets/Scripts/Core/Editor/Resources/Dialogues/DialogueEditorWindow.scss</Path>
+      <Path>Assets/Scripts/Core/Editor/Resources/Dialogues/DialogueNodeElement.scss</Path>
+      <Path>Assets/Scripts/Core/Editor/Resources/Dialogues/DialogueOptionElement.scss</Path>
     </explicitIncludes>
     <explicitExcludes />
   </component>

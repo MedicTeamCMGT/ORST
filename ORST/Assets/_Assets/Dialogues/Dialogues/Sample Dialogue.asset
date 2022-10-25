@@ -26,17 +26,15 @@ MonoBehaviour:
     m_Options:
     - m_Text: Hello
       m_IsCorrect: 1
-      m_HintText: 
+      m_Feedback: lmao
     - m_Text: "Adi\xF3s"
       m_IsCorrect: 0
-      m_HintText: no no no
-  - m_Text: What is your name
+      m_Feedback: no no no
+  - m_Text: What is your name?
     m_Options:
     - m_Text: name iz <...>
       m_IsCorrect: 1
-      m_HintText: 
+      m_Feedback: 
     - m_Text: Ligma
       m_IsCorrect: 0
-      m_HintText: balls lmao got dem
-  - m_Text: Click the button again to finish
-    m_Options: []
+      m_Feedback: balls lmao got dem

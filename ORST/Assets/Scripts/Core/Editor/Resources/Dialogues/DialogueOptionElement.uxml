@@ -1,0 +1,18 @@
+<UXML
+    xmlns="UnityEngine.UIElements"
+    xmlns:uie="UnityEditor.UIElements"
+    xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:orst="ORST.Core.Editor.UIElements"
+    noNamespaceSchemaLocation="../../../../../../UIElementsSchema/UIElements.xsd"
+    editor-extension-mode="False"
+>
+    <Style src="DialogueOptionElement.uss"/>
+    <VisualElement class="dialogue-option-root">
+        <VisualElement class="dialogue-option__text-container">
+            <TextField name="dialogue-option__text-field" label="Text" multiline="true" class="dialogue-editor__text-field"/>
+            <Toggle name="dialogue-option__is-correct-toggle" label="Correct"/>
+            <Button name="dialogue-option__remove-button" text="-" tooltip="Remove"/>
+        </VisualElement>
+        <TextField name="dialogue-option__feedback-field" label="Feedback" multiline="true" class="dialogue-editor__text-field"/>
+    </VisualElement>
+</UXML>
