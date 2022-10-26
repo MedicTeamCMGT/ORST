@@ -1,4 +1,5 @@
-﻿using Oculus.Interaction.Input;
+﻿using System;
+using Oculus.Interaction.Input;
 using ORST.Foundation.Singleton;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -7,6 +8,8 @@ namespace ORST.Core.Interactions {
     public class HandednessManager : MonoSingleton<HandednessManager> {
         [SerializeField, Required] private Hand m_LeftHand;
         [SerializeField, Required] private Hand m_RightHand;
+
+        public static event Action<Handedness> HandednessChanged = delegate { };
 
         /// <summary>
         /// Gets a value representing the dominant hand.
@@ -25,6 +28,7 @@ namespace ORST.Core.Interactions {
             get => Instance.m_Handedness;
             set {
                 Instance.m_Handedness = value;
+                HandednessChanged(value);
                 PlayerPrefs.SetInt("ORST.Interactions.Handedness", (int)value);
             }
         }
