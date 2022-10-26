@@ -1,14 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DG.Tweening;
+using ORST.Core.Interactions;
+using ORST.Foundation.Core;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.UI;
 
-namespace ORST.Core.Interactions {
-    public class MainMenuViewController : SerializedMonoBehaviour {
+namespace ORST.Core.UI {
+    public class MainMenuViewController : BaseMonoBehaviour {
         [Title("Main Menu")]
         [SerializeField, Required] private RectMask2D m_SidebarRectMask;
         [SerializeField, Required] private RectMask2D m_MainRectMask;
