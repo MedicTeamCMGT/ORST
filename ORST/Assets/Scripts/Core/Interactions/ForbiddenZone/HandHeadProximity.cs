@@ -11,6 +11,9 @@ namespace ORST.Core.Interactions
 
         [SerializeField] private Collider m_InnerCollider;
         [SerializeField] private Collider m_OuterCollider;
+        [Header("Title & Message")]
+        [SerializeField] private string m_TitleOnInnerEnter;
+        [SerializeField] private string m_MessageOnInnerEnter;
 
         private readonly List<Transform> m_Intersector = new();
         private GameObject m_ForbiddenGameObject;
@@ -31,6 +34,15 @@ namespace ORST.Core.Interactions
                 //
                 if (!m_OuterCollider.bounds.Contains(intersect.position)) {
                     continue;
+                }
+
+                if (m_InnerCollider.bounds.Contains(intersect.position)) {
+                    if (!PopupManager.Instance.IsPopupShown()) {
+                        PopupManager.Instance.OpenPopup();
+                        PopupManager.Instance.DisplayInfo(m_TitleOnInnerEnter, m_MessageOnInnerEnter);
+                    }
+                } else {
+                    PopupManager.Instance.ClosePopup();
                 }
 
                 Vector3 innerColliderDirVec = m_InnerCollider.transform.position - intersect.position;
