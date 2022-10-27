@@ -68,7 +68,7 @@ namespace ORST.Core.ModuleTasks {
                 List<ModuleTask> randomModuleTasks = new();
                 //Randomize task list before adding to queue
                 foreach (ModuleTask currentTask in m_AllTasks) {
-                    if (!currentTask.IsEligibleForRandom()) {
+                    if (!currentTask.IsEligibleForRandom) {
                         if (lastTaskRandomizable) {
                             randomModuleTasks.Shuffle();
                             adjustedList.AddRange(randomModuleTasks);
