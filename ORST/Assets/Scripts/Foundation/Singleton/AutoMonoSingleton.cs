@@ -17,6 +17,8 @@ namespace ORST.Foundation.Singleton {
             }
         }
 
+        public abstract bool IsPersistentThroughScenes { get; }
+
         private void Awake() {
             if (s_Instance != null && s_Instance != this) {
                 Debug.LogError($"Multiple instances of {typeof(T).Name} found");
@@ -26,6 +28,11 @@ namespace ORST.Foundation.Singleton {
             }
 
             s_Instance = this as T;
+
+            if (IsPersistentThroughScenes) {
+                DontDestroyOnLoad(gameObject);
+            }
+
             OnAwake();
         }
 
