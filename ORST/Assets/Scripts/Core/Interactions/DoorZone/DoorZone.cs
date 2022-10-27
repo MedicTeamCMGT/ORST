@@ -5,8 +5,7 @@ using ORST.Core.ModuleTasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace ORST.Core.Interactions
-{
+namespace ORST.Core.Interactions {
     public class DoorZone : MonoBehaviour {
         private bool m_DoorsUnlocked;
         private Grabbable m_DoorHandle;
@@ -17,17 +16,19 @@ namespace ORST.Core.Interactions
         }
 
         private void OnTriggerEnter(Collider other) {
-            if (other.CompareTag("Player")) {
-                m_Player = other.gameObject;
-                List<ModuleTask> remModuleTasks = ModuleTasksManager.Instance.GetRemainingTasks();
-                m_DoorsUnlocked = remModuleTasks.Count <= 0;
-                if (!m_DoorsUnlocked) {
-                    PopupManager.Instance.DisplayTasks(remModuleTasks);
-                    PopupManager.Instance.OpenPopup();
-                }
-                
-                DoorHandleMoved();
+            if (!other.CompareTag("Player")) {
+                return;
             }
+
+            m_Player = other.gameObject;
+            List<ModuleTask> remainingTasks = ModuleTasksManager.Instance.GetRemainingTasks();
+            m_DoorsUnlocked = remainingTasks.Count <= 0;
+            if (!m_DoorsUnlocked) {
+                PopupManager.Instance.DisplayTasks(remainingTasks);
+                PopupManager.Instance.OpenPopup();
+            }
+
+            DoorHandleMoved();
         }
 
         private void OnTriggerExit(Collider other) {

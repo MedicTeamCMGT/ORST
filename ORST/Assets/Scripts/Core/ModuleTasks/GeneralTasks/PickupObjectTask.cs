@@ -3,8 +3,7 @@ using Oculus.Interaction.HandGrab;
 using UnityEngine;
 using ORST.Core.ModuleTasks;
 
-namespace ORST.Core
-{
+namespace ORST.Core {
     public class PickupObjectTask : ModuleTask {
         [SerializeField] private GameObject m_ObjectToPick;
         private bool m_ObjectPickedUp;
@@ -24,9 +23,7 @@ namespace ORST.Core
         }
 
         private void ProcessPointerEvent(PointerEvent pointerEvent) {
-            if (pointerEvent.Type == PointerEventType.Select) {
-                m_ObjectPickedUp = true;
-            }
+            m_ObjectPickedUp = pointerEvent.Type == PointerEventType.Select;
         }
     }
 }

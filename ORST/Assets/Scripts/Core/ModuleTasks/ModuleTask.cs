@@ -5,8 +5,7 @@ using System.Runtime.CompilerServices;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace ORST.Core.ModuleTasks
-{
+namespace ORST.Core.ModuleTasks {
     public enum ModuleTaskState {
         Successful,
         Failure,
@@ -20,9 +19,7 @@ namespace ORST.Core.ModuleTasks
         private Queue<ModuleTask> m_ModuleSubtaskQueue;
         private ModuleTask m_CurrentModuleSubtask;
 
-        public bool IsEligibleForRandom() {
-            return m_IsEligibleForRandom;
-        }
+        public bool IsEligibleForRandom => m_IsEligibleForRandom;
 
         private void Start() {
             InitializeModuleTask();
@@ -97,21 +94,25 @@ namespace ORST.Core.ModuleTasks
             return ModuleTaskState.Failure;
         }
 
-        public List<ModuleTask> GetRemainingModuleTasks() {
-            //Note: Not perfect since this currently loses information by flattening the hierarchy
+        //Note: Not perfect since this currently loses information by flattening the hierarchy
+        public IEnumerable<ModuleTask> GetRemainingModuleTasks() {
+            yield return this;
+
             if (m_ModuleSubtasks.Count <= 0) {
-                return new List<ModuleTask> { this };
+                yield break;
             }
 
             //First get the current task and its remaining subtasks
-            List<ModuleTask> moduleTaskList = new() {this, m_CurrentModuleSubtask};
-            moduleTaskList.AddRange(m_CurrentModuleSubtask.GetRemainingModuleTasks());
-            //Then fetch the ones still in the queue
-            foreach (var currentModuleTask in m_ModuleSubtaskQueue) {
-                List<ModuleTask> moduleTaskTest = currentModuleTask.GetRemainingModuleTasks();
-                moduleTaskList.AddRange(moduleTaskTest);
+            foreach (ModuleTask task in m_CurrentModuleSubtask.GetRemainingModuleTasks()) {
+                yield return task;
             }
-            return moduleTaskList;
+
+            //Then fetch the ones still in the queue
+            foreach (ModuleTask task in m_ModuleSubtaskQueue) {
+                foreach (ModuleTask subTask in task.GetRemainingModuleTasks()) {
+                    yield return subTask;
+                }
+            }
         }
     }
 }

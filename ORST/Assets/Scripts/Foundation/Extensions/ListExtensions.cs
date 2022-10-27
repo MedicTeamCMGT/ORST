@@ -5,8 +5,7 @@ namespace ORST.Foundation.Foundation.Extensions {
     public static class ListExtensions {
         private static readonly Random rng = new();
 
-        public static void Shuffle<T>(this IList<T> list)
-        {
+        public static void Shuffle<T>(this IList<T> list) {
             int n = list.Count;
             while (n > 1) {
                 n--;

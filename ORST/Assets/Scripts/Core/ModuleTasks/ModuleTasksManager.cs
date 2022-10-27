@@ -6,7 +6,6 @@ using UnityEngine;
 
 namespace ORST.Core.ModuleTasks {
     public class ModuleTasksManager : MonoSingleton<ModuleTasksManager> {
-
         [SerializeField] private List<ModuleTask> m_AllTasks;
         [SerializeField] private bool m_RandomizeEligibleModuleTasks;
         [ShowInInspector] private Queue<ModuleTask> m_TaskQueue;
@@ -42,7 +41,7 @@ namespace ORST.Core.ModuleTasks {
             }
 
             if (Input.GetKeyDown(KeyCode.O)) {
-                List<ModuleTask> allRemainingTasks = m_CurrentModuleTask.GetRemainingModuleTasks();
+                IEnumerable<ModuleTask> allRemainingTasks = m_CurrentModuleTask.GetRemainingModuleTasks();
 
                 foreach (ModuleTask task in allRemainingTasks) {
                     Debug.Log("Task::Task: " + task.gameObject.name);
@@ -57,7 +56,7 @@ namespace ORST.Core.ModuleTasks {
         }
 
         public List<ModuleTask> GetRemainingTasks() {
-            List<ModuleTask> remainingModuleTasks = new() { m_CurrentModuleTask };
+            List<ModuleTask> remainingModuleTasks = new(m_TaskQueue.Count + 1) { m_CurrentModuleTask };
             remainingModuleTasks.AddRange(m_TaskQueue);
             return remainingModuleTasks;
         }

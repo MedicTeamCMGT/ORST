@@ -1,8 +1,7 @@
 using UnityEngine;
 using ORST.Core.ModuleTasks;
 
-namespace ORST.Core
-{
+namespace ORST.Core {
     public class WaitTask : ModuleTask {
         [SerializeField] private float m_TimeToWait;
         private float m_TimePassed;

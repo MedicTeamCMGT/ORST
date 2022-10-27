@@ -4,8 +4,7 @@ using UnityEngine;
 using ORST.Core.ModuleTasks;
 using Oculus.Interaction;
 
-namespace ORST.Core
-{
+namespace ORST.Core {
     public class GoToTeleportPointTask : ModuleTask {
         [SerializeField] private LocomotionTeleport m_LocomotionTeleport;
         
