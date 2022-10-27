@@ -5,11 +5,14 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace ORST.Core.Interactions {
-    public class HandednessManager : MonoSingleton<HandednessManager> {
+    public class HandednessManager : AutoMonoSingleton<HandednessManager> {
+        public override bool IsPersistentThroughScenes => true;
+
         [SerializeField, Required] private Hand m_LeftHand;
         [SerializeField, Required] private Hand m_RightHand;
 
         public static event Action<Handedness> HandednessChanged = delegate { };
+
 
         /// <summary>
         /// Gets a value representing the dominant hand.
