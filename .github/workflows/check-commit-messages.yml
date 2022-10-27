@@ -21,6 +21,6 @@ jobs:
         uses: mristin/opinionated-commit-message@v3.0.0
         with:
           max-subject-line-length: '100'
-          max-body-line-length: '100'
+          skip-body-check: 'true'
           allow-one-liners: 'true'
           additional-verbs: 'cleanup'
