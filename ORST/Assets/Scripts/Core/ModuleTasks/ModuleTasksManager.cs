@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using ORST.Foundation.Foundation.Extensions;
 using ORST.Foundation.Singleton;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace ORST.Core.ModuleTasks {
@@ -8,7 +9,7 @@ namespace ORST.Core.ModuleTasks {
 
         [SerializeField] private List<ModuleTask> m_AllTasks;
         [SerializeField] private bool m_RandomizeEligibleModuleTasks;
-        private Queue<ModuleTask> m_TaskQueue;
+        [ShowInInspector] private Queue<ModuleTask> m_TaskQueue;
         private ModuleTask m_CurrentModuleTask;
 
         private void Start() {
@@ -55,7 +56,7 @@ namespace ORST.Core.ModuleTasks {
             }
         }
 
-        private List<ModuleTask> GetRemainingTasks() {
+        public List<ModuleTask> GetRemainingTasks() {
             List<ModuleTask> remainingModuleTasks = new() { m_CurrentModuleTask };
             remainingModuleTasks.AddRange(m_TaskQueue);
             return remainingModuleTasks;
@@ -82,12 +83,13 @@ namespace ORST.Core.ModuleTasks {
                         lastTaskRandomizable = true;
                     }
                 }
+            }
 
-                m_TaskQueue = new Queue<ModuleTask>(adjustedList);
-                if (m_TaskQueue.Count > 0) {
-                    m_CurrentModuleTask = m_TaskQueue.Dequeue();
-                    m_CurrentModuleTask.StartModuleTask();
-                }
+            m_TaskQueue = new Queue<ModuleTask>(m_RandomizeEligibleModuleTasks ? adjustedList : m_AllTasks);
+
+            if (m_TaskQueue.Count > 0) {
+                m_CurrentModuleTask = m_TaskQueue.Dequeue();
+                m_CurrentModuleTask.StartModuleTask();
             }
         }
     }
