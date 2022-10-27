@@ -35,6 +35,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Oculus/Interaction/Samples/Scenes/Examples/TransformerExamples.unity
     guid: 7475942f60c376744ba1ec487d140105
+  - enabled: 1
+    path: Assets/Scenes/PrototypeScene_1.unity
+    guid: 64fecd8b5a3a401499a237177e9d35ff
+  - enabled: 1
+    path: Assets/Scenes/PrototypeScene_0.unity
+    guid: 6a252ef03820bba47ba556d83709b7b8
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}
