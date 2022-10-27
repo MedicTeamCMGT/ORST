@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using ORST.Core.UI;
 
 namespace ORST.Core.Interactions {
     public class HandHeadProximity : MonoBehaviour {
