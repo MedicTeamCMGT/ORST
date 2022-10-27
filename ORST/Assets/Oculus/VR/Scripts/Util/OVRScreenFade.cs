@@ -210,7 +210,7 @@ public class OVRScreenFade : MonoBehaviour
 			elapsedTime += Time.deltaTime;
 			animatedFadeAlpha = Mathf.Lerp(startAlpha, endAlpha, Mathf.Clamp01(elapsedTime / fadeTime));
 			SetMaterialAlpha();
-			yield return new WaitForEndOfFrame();
+            yield return null;//new WaitForEndOfFrame();
 		}
 		animatedFadeAlpha = endAlpha;
 		SetMaterialAlpha();
