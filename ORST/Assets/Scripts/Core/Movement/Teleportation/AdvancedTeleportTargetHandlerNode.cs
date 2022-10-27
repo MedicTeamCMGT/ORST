@@ -40,7 +40,7 @@ namespace ORST.Core.Movement {
                 // The first test won't be added to the aim data results because the visual effects should be from
                 // the aiming origin.
 
-                var current = LocomotionTeleport.transform.position;
+                Vector3 current = LocomotionTeleport.transform.position;
 
                 // Enumerate through all the line segments provided by the aim handler, checking for a valid target on each segment,
                 // stopping at the first valid target or when the enumerable runs out of line segments.
@@ -50,7 +50,7 @@ namespace ORST.Core.Movement {
                 m_ValidCollisionOnSegment = false;
                 Vector3 segmentColliderPoint = Vector3.zero;
                 for (int i = 0; i < AimPoints.Count; i++) {
-                    var adjustedPoint = AimPoints[i];
+                    Vector3 adjustedPoint = AimPoints[i];
                     AimData.TargetValid = ConsiderTeleport(current, ref adjustedPoint);
                     AimData.Points.Add(adjustedPoint);
 
@@ -95,10 +95,40 @@ namespace ORST.Core.Movement {
             }
         }
 
+        /// <summary>
+        /// This method will be called while the LocmotionTeleport component is in the aiming state, once for each
+        /// line segment that the targeting beam requires.
+        /// The function should return true whenever an actual target location has been selected.
+        /// </summary>
+        protected override bool ConsiderTeleport(Vector3 start, ref Vector3 end) {
+            // If the ray hits the world, consider it valid and update the aimRay to the end point.
+            if (!LocomotionTeleport.AimCollisionTest(start, end, AimCollisionLayerMask | TeleportLayerMask, out AimData.TargetHitInfo)) {
+                return false;
+            }
+
+            if (AimData.TargetHitInfo.collider.gameObject.GetComponent<TeleportPointORST>() is not {} tp) {
+                return false;
+            }
+
+            // The targeting test discovered a valid teleport node. Now test to make sure there is line of sight to the 
+            // actual destination. Since the teleport destination is expected to be right on the ground, use the LOSOffset 
+            // to bump the collision check up off the ground a bit.
+            Vector3 destination = tp.DestinationTransform.position;
+            Vector3 offsetEnd = new(destination.x, destination.y + LOSOffset, destination.z);
+
+            if (LocomotionTeleport.AimCollisionTest(start, offsetEnd, AimCollisionLayerMask & ~TeleportLayerMask, out AimData.TargetHitInfo)) {
+                return false;
+            }
+
+            end = destination;
+            return true;
+        }
+
         private void TargetAimExit() {
             if (LocomotionTeleport.CurrentIntention == LocomotionTeleport.TeleportIntentions.Aim) {
                 return;
             }
+
             m_IsIntersectChanged = m_ValidCollisionOnSegment;
             m_InvalidTeleportPosIndicator.SetActive(false);
         }

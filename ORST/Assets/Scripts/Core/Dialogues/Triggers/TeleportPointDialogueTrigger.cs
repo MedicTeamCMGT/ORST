@@ -6,7 +6,7 @@ namespace ORST.Core.Dialogues {
     public class TeleportPointDialogueTrigger : MonoBehaviour, IDialogueTrigger {
         [SerializeField, Required] private Dialogue m_Dialogue;
         [SerializeField, Required] private AdvancedLocomotionTeleport m_LocomotionTeleport;
-        [SerializeField, Required] private TeleportPoint m_TeleportPoint;
+        [SerializeField, Required] private TeleportPointORST m_TeleportPoint;
 
 
         private void OnEnable() {
@@ -17,7 +17,7 @@ namespace ORST.Core.Dialogues {
             m_LocomotionTeleport.TeleportedToPoint -= OnTeleportedToPoint;
         }
 
-        private void OnTeleportedToPoint(TeleportPoint teleportPoint) {
+        private void OnTeleportedToPoint(TeleportPointORST teleportPoint) {
             if (teleportPoint != m_TeleportPoint) {
                 if (ReferenceEquals(DialogueManager.ActiveDialogue, m_Dialogue)) {
                     DialogueManager.EndDialogue();

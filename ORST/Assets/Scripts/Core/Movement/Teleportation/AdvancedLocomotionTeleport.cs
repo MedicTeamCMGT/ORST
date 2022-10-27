@@ -8,7 +8,7 @@ namespace ORST.Core.Movement {
 
         public event Action EnteredIntersection;
         public event Action ExitedIntersection;
-        public event Action<TeleportPoint> TeleportedToPoint;
+        public event Action<TeleportPointORST> TeleportedToPoint;
 
         /// <summary>
         /// Start the state machine coroutines.
@@ -40,7 +40,7 @@ namespace ORST.Core.Movement {
             }
 
             if (nodeHandler.AimData.TargetHitInfo.collider == null ||
-                nodeHandler.AimData.TargetHitInfo.collider.GetComponent<TeleportPoint>() is not {} teleportPoint) {
+                nodeHandler.AimData.TargetHitInfo.collider.GetComponent<TeleportPointORST>() is not {} teleportPoint) {
                 return;
             }
 
