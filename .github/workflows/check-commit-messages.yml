@@ -1,11 +1,5 @@
 name: 'Check commit message style'
 on:
-  pull_request:
-    types:
-      - opened
-      - edited
-      - reopened
-      - synchronize
   push:
     branches:
       - feature/*
@@ -20,7 +14,7 @@ jobs:
       - name: Check
         uses: mristin/opinionated-commit-message@v3.0.0
         with:
-          max-subject-line-length: '100'
-          skip-body-check: 'true'
+          max-subject-line-length: '80'
+          max-body-line-length: '100'
           allow-one-liners: 'true'
           additional-verbs: 'cleanup'
