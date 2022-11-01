@@ -106,7 +106,8 @@ namespace ORST.Core.Movement {
                 return false;
             }
 
-            if (AimData.TargetHitInfo.collider.gameObject.GetComponent<TeleportPointORST>() is not {} tp) {
+            if (AimData.TargetHitInfo.collider.gameObject.GetComponent<TeleportPointORST>() is not { } tp
+             || !TeleportPointManager.IsAvailable(tp)) {
                 return false;
             }
 
