@@ -7,6 +7,11 @@ namespace ORST.Core.Movement {
         private static HashSet<TeleportPointORST> s_RestrictedTeleportPoints;
 
         /// <summary>
+        /// Event invoked when teleportation is restricted or unrestricted.
+        /// </summary>
+        public static event Action<bool> TeleportationRestrictionChanged = delegate {  };
+
+        /// <summary>
         /// Gets a value indicating whether teleportation is restricted.
         /// </summary>
         public static bool IsTeleportationRestricted => s_RestrictedTeleportPoints != null;
@@ -53,21 +58,29 @@ namespace ORST.Core.Movement {
         /// <summary>
         /// Restricts teleportation to the given <see cref="TeleportPointORST"/>s.
         /// </summary>
-        public static void RestrictTeleportation(HashSet<TeleportPointORST> teleportPoints) {
+        public static void RestrictTeleportation(IEnumerable<TeleportPointORST> teleportPoints) {
             if (s_RestrictedTeleportPoints != null) {
-                UnrestrictTeleportation();
+                UnrestrictTeleportationImpl();
             }
 
-            s_RestrictedTeleportPoints = teleportPoints;
-            foreach (TeleportPointORST teleportPoint in teleportPoints) {
-                s_TeleportPoints[teleportPoint].Enabled = true;
-            }
+            RestrictTeleportationImpl(teleportPoints);
+            TeleportationRestrictionChanged(true);
         }
 
         /// <summary>
-        /// Unrestricts teleportation.
+        /// Stops restricting teleportation.
         /// </summary>
         public static void UnrestrictTeleportation() {
+            UnrestrictTeleportationImpl();
+            TeleportationRestrictionChanged(false);
+        }
+
+        private static void RestrictTeleportationImpl(IEnumerable<TeleportPointORST> teleportPoints) {
+            s_RestrictedTeleportPoints = HashSetPool<TeleportPointORST>.Get();
+            s_RestrictedTeleportPoints.UnionWith(teleportPoints);
+        }
+
+        private static void UnrestrictTeleportationImpl() {
             HashSetPool<TeleportPointORST>.Release(s_RestrictedTeleportPoints);
             s_RestrictedTeleportPoints = null;
         }
