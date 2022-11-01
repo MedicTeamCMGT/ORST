@@ -21,7 +21,7 @@ namespace ORST.Core.ModuleTasks {
                 return;
             }
 
-            switch (m_CurrentModuleTask.ExecuteModuleTask()) {
+            switch (m_CurrentModuleTask.UpdateModuleTask()) {
                 case ModuleTaskState.Successful:
                     //Task was successful
                     if (m_TaskQueue.Count > 0) {

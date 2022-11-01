@@ -11,7 +11,7 @@ namespace ORST.Core {
             m_TimePassed = 0.0f;
         }
 
-        public override ModuleTaskState ExecuteModuleTask() {
+        protected override ModuleTaskState ExecuteModuleTask() {
             //Note: ExecuteModuleTask is executed each frame.
             m_TimePassed += Time.deltaTime;
             return m_TimePassed >= m_TimeToWait ? ModuleTaskState.Successful : ModuleTaskState.Running;

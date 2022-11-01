@@ -55,32 +55,38 @@ namespace ORST.Core.ModuleTasks {
             m_CurrentModuleSubtask = m_ModuleSubtaskQueue.Dequeue();
         }
 
-        private void RandomizeEligibleSubtasks() {
-            //TODO: Implement randomization
-            throw new NotImplementedException();
-        }
-
         public void StartModuleTask() {
             if (m_CurrentModuleSubtask != null) {
                 //We have subtasks, start subtask
                 m_CurrentModuleSubtask.StartModuleTask();
                 Debug.Log("Task::Subtask started...");
             } else {
-                m_Completed = false;
-                m_Started = true;
-                OnModuleTaskStarted();
+                Debug.Log("Task::Task started...");
             }
+
+            OnModuleTaskStarted();
+            m_Completed = false;
+            m_Started = true;
+        }
+
+        public ModuleTaskState UpdateModuleTask() {
+            ModuleTaskState state = ExecuteModuleTask();
+            if (state == ModuleTaskState.Successful) {
+                m_Started = false;
+                m_Completed = true;
+                OnModuleTaskCompleted();
+            }
+
+            return state;
         }
 
         protected virtual void OnModuleTaskStarted() {
-            Debug.Log("Task::Task started...");
         }
 
         protected virtual void OnModuleTaskCompleted() {
-            Debug.Log("Task::Task completed...");
         }
 
-        public virtual ModuleTaskState ExecuteModuleTask() {
+        protected virtual ModuleTaskState ExecuteModuleTask() {
             //Task implementation here, subtask will override it to implement functionality
             return AdvanceModuleSubtasks();
         }
@@ -100,9 +106,6 @@ namespace ORST.Core.ModuleTasks {
                     } else {
                         //Subtasks all done - task returns successful
                         Debug.Log("Task::All subtasks done.");
-                        m_Started = false;
-                        m_Completed = true;
-                        OnModuleTaskCompleted();
                         return ModuleTaskState.Successful;
                     }
                     break;

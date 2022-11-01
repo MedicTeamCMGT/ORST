@@ -12,7 +12,7 @@ namespace ORST.Core {
 
         private bool m_ObjectPickedUp;
 
-        public override ModuleTaskState ExecuteModuleTask() {
+        protected override ModuleTaskState ExecuteModuleTask() {
             return m_ObjectPickedUp ? ModuleTaskState.Successful : ModuleTaskState.Running;
         }
 

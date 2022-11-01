@@ -32,7 +32,7 @@ namespace ORST.Core {
             }
         }
 
-        public override ModuleTaskState ExecuteModuleTask() {
+        protected override ModuleTaskState ExecuteModuleTask() {
             return m_Teleported ? ModuleTaskState.Successful : ModuleTaskState.Running;
         }
     }
