@@ -115,7 +115,7 @@ namespace ORST.Core.UI {
         #region Private
 
         private void UpdateToLookAtCamera() {
-            Vector3 axisAngle = Camera.main.transform.rotation.eulerAngles;
+            Vector3 axisAngle = m_Camera.transform.rotation.eulerAngles;
             transform.DORotate(new Vector3(0f, axisAngle.y, 0f), followLatency);
         }
 
