@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using ORST.Core.Dialogues;
 using ORST.Core.Editor.UIElements;
+using ORST.Core.Editor.Utilities;
 using ORST.Foundation.Extensions;
 using UnityEditor;
 using UnityEditor.UIElements;
@@ -30,11 +31,8 @@ namespace ORST.Core.Editor.Dialogues {
             }
         }
 
-        private static VisualTreeAsset s_windowTreeAsset;
-
-        private static void InitializeResources() {
-            s_windowTreeAsset = Resources.Load<VisualTreeAsset>("Dialogues/DialogueEditorWindow");
-        }
+        private static string s_WindowTreeAssetPath;
+        private static VisualTreeAsset s_WindowTreeAsset;
 
         private Foldout m_NpcFoldout;
         private Foldout m_DialoguesFoldout;
@@ -53,11 +51,13 @@ namespace ORST.Core.Editor.Dialogues {
         private int m_LastDialogueNodeCount = -1;
 
         private void CreateGUI() {
-            if (s_windowTreeAsset == null) {
-                InitializeResources();
+            if (string.IsNullOrEmpty(s_WindowTreeAssetPath)) {
+                s_WindowTreeAssetPath = AssetDatabase.GUIDToAssetPath(AssetDatabase.FindAssets("DialogueEditorWindow t:VisualTreeAsset").FirstOrDefault());
             }
 
-            s_windowTreeAsset.CloneTree(rootVisualElement);
+            AssetUtilities.LoadIfNull(ref s_WindowTreeAsset, s_WindowTreeAssetPath);
+
+            s_WindowTreeAsset.CloneTree(rootVisualElement);
 
             m_NpcFoldout = rootVisualElement.Q<Foldout>("npc-container");
             m_NpcFoldout.AddManipulator(new ContextualMenuManipulator(evt => evt.menu.AppendAction("Reload", _ => ReloadNPCAssets())));
