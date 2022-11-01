@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine.Pool;
 
 namespace ORST.Core.Movement {
@@ -14,28 +14,28 @@ namespace ORST.Core.Movement {
         /// <summary>
         /// Registers the given <see cref="TeleportPointORST"/>.
         /// </summary>
-        public static void Register(TeleportPointORST teleportPoint) {
+        public static void RegisterPoint(TeleportPointORST teleportPoint) {
             s_TeleportPoints[teleportPoint] = new TeleportPointInfo();
         }
 
         /// <summary>
         /// Unregisters the given <see cref="TeleportPointORST"/>.
         /// </summary>
-        public static void Unregister(TeleportPointORST teleportPoint) {
+        public static void UnregisterPoint(TeleportPointORST teleportPoint) {
             s_TeleportPoints.Remove(teleportPoint);
         }
 
         /// <summary>
         /// Enables teleportation to the given <see cref="TeleportPointORST"/>.
         /// </summary>
-        public static void Enable(TeleportPointORST teleportPoint) {
+        public static void EnablePoint(TeleportPointORST teleportPoint) {
             s_TeleportPoints[teleportPoint].Enabled = true;
         }
 
         /// <summary>
         /// Disables teleportation to the given <see cref="TeleportPointORST"/>.
         /// </summary>
-        public static void Disable(TeleportPointORST teleportPoint) {
+        public static void DisablePoint(TeleportPointORST teleportPoint) {
             s_TeleportPoints[teleportPoint].Enabled = false;
         }
 

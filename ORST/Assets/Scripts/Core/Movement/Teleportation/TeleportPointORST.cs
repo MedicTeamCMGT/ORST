@@ -9,11 +9,11 @@ namespace ORST.Core.Movement {
         public Transform DestinationTransform => m_DestinationTransform;
 
         private void OnEnable() {
-            TeleportPointManager.Register(this);
+            TeleportPointManager.RegisterPoint(this);
         }
 
         private void OnDisable() {
-            TeleportPointManager.Unregister(this);
+            TeleportPointManager.UnregisterPoint(this);
         }
     }
 }
