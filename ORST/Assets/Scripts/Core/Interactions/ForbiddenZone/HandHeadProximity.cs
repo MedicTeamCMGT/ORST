@@ -2,8 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ORST.Core.Interactions
-{
+namespace ORST.Core.Interactions {
     public class HandHeadProximity : MonoBehaviour {
         public event Action ForbiddenSpaceEntered;
         public event Action ForbiddenSpaceExited;
@@ -31,7 +30,6 @@ namespace ORST.Core.Interactions
             float shortestDist = float.PositiveInfinity;
             Transform shortestTransform = null;
             foreach (Transform intersect in m_Intersector) {
-                //
                 if (!m_OuterCollider.bounds.Contains(intersect.position)) {
                     continue;
                 }
