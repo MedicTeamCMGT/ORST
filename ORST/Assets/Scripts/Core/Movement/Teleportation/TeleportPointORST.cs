@@ -7,5 +7,13 @@ namespace ORST.Core.Movement {
         [SerializeField, Required] private Transform m_DestinationTransform;
 
         public Transform DestinationTransform => m_DestinationTransform;
+
+        private void OnEnable() {
+            TeleportPointManager.Register(this);
+        }
+
+        private void OnDisable() {
+            TeleportPointManager.Unregister(this);
+        }
     }
 }
