@@ -1,10 +1,15 @@
 using UnityEngine;
 using ORST.Core.ModuleTasks;
+using Sirenix.OdinInspector;
 
 namespace ORST.Core {
     public class WaitTask : ModuleTask {
-        [SerializeField] private float m_TimeToWait;
+        [SerializeField, SuffixLabel("seconds")] private float m_TimeToWait;
         private float m_TimePassed;
+
+        protected override void OnModuleTaskStarted() {
+            m_TimePassed = 0.0f;
+        }
 
         public override ModuleTaskState ExecuteModuleTask() {
             //Note: ExecuteModuleTask is executed each frame.
