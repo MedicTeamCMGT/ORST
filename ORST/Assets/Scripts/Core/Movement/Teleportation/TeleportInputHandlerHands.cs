@@ -1,45 +1,64 @@
+using DG.Tweening;
 using Oculus.Interaction;
 using Oculus.Interaction.Input;
+using Oculus.Interaction.PoseDetection;
 using ORST.Foundation.Extensions;
 using Sirenix.Serialization;
 using UnityEngine;
+using Tween = DG.Tweening.Tween;
 
 namespace ORST.Core.Movement {
     public class TeleportInputHandlerHands : TeleportInputHandler {
-        [SerializeField] private Transform m_LeftHand;
-        [SerializeField] private Transform m_RightHand;
+        [SerializeField] private Hand m_LeftHand;
+        [SerializeField] private Hand m_RightHand;
         [OdinSerialize] private IActiveState m_ActiveState;
+        [SerializeField] private ShapeRecognizerActiveState m_ShapeRecognizerAim;
+        [SerializeField] private ShapeRecognizerActiveState m_ShapeRecognizerTeleport;
 
-        private Hand m_OvrHandLeft;
-        private Hand m_OvrHandRight;
-
-        private void Start() {
-            m_OvrHandLeft = m_LeftHand.GetComponent<Hand>();
-            m_OvrHandRight = m_RightHand.GetComponent<Hand>();
-        }
+        private readonly float m_AimThreshold = 0.1f;
+        private Tween m_HoldAimIntention;
+        private LocomotionTeleport.TeleportIntentions m_CurrentIntention;
 
         public override LocomotionTeleport.TeleportIntentions GetIntention() {
             if (!isActiveAndEnabled || m_ActiveState.OrNull() is { Active: false }) {
-                return LocomotionTeleport.TeleportIntentions.None;
+                StopHoldAimIntention();
+                m_CurrentIntention = LocomotionTeleport.TeleportIntentions.None;
+                return m_CurrentIntention;
             }
 
-            if (m_OvrHandRight.GetIndexFingerIsPinching() &&
-                LocomotionTeleport.CurrentIntention == LocomotionTeleport.TeleportIntentions.Aim) {
-                return LocomotionTeleport.TeleportIntentions.Teleport;
+            if (m_ShapeRecognizerTeleport.Active &&
+                m_CurrentIntention == LocomotionTeleport.TeleportIntentions.Aim) {
+                StopHoldAimIntention();
+                m_CurrentIntention = LocomotionTeleport.TeleportIntentions.Teleport;
+                return m_CurrentIntention;
             }
 
-            if (m_OvrHandLeft.GetIndexFingerIsPinching()) {
-                return LocomotionTeleport.TeleportIntentions.Aim;
+            if (m_ShapeRecognizerAim.Active) {
+                m_CurrentIntention = LocomotionTeleport.TeleportIntentions.Aim;
+                StopHoldAimIntention();
+                return m_CurrentIntention;
             }
 
-            return LocomotionTeleport.TeleportIntentions.None;
+            if (m_CurrentIntention == LocomotionTeleport.TeleportIntentions.Aim && m_HoldAimIntention == null) {
+                m_HoldAimIntention = DOVirtual.DelayedCall(m_AimThreshold, () => {
+                    m_CurrentIntention = LocomotionTeleport.TeleportIntentions.None;
+                });
+            }
+
+            return m_CurrentIntention;
+        }
+
+        private void StopHoldAimIntention() {
+            if (m_HoldAimIntention is { active: true }) {
+                m_HoldAimIntention.Kill();
+            }
+
+            m_HoldAimIntention = null;
         }
 
         public override void GetAimData(out Ray aimRay) {
-            Transform pointerPose = LocomotionTeleport.LocomotionController.CameraRig.leftHandAnchor
-                                                      .GetComponentInChildren<OVRHand>().PointerPose;
-            aimRay = new Ray(LocomotionTeleport.LocomotionController.CameraRig.leftHandAnchor.position,
-                             transform.parent.TransformDirection(pointerPose.forward));
+            m_LeftHand.GetJointPose(HandJointId.HandIndex2, out Pose pose);
+            aimRay = new Ray(pose.position - pose.right * 0.05f, -pose.right);
         }
     }
 }
