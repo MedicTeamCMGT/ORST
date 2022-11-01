@@ -1,3 +1,4 @@
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine.Pool;
 
@@ -5,6 +6,12 @@ namespace ORST.Core.Movement {
     public static class TeleportPointManager {
         private static readonly Dictionary<TeleportPointORST, TeleportPointInfo> s_TeleportPoints = new();
         private static HashSet<TeleportPointORST> s_RestrictedTeleportPoints;
+        private static bool s_IsTeleportationEnabled = true;
+
+        /// <summary>
+        /// Event invoked when teleportation is enabled or disabled.
+        /// </summary>
+        public static event Action<bool> TeleportationEnabledChanged = delegate {  };
 
         /// <summary>
         /// Event invoked when teleportation is restricted or unrestricted.
@@ -15,6 +22,21 @@ namespace ORST.Core.Movement {
         /// Gets a value indicating whether teleportation is restricted.
         /// </summary>
         public static bool IsTeleportationRestricted => s_RestrictedTeleportPoints != null;
+
+        /// <summary>
+        /// Gets or sets a value indicating whether teleportation is enabled.
+        /// </summary>
+        public static bool IsTeleportationEnabled {
+            get => s_IsTeleportationEnabled;
+            set {
+                if (s_IsTeleportationEnabled == value) {
+                    return;
+                }
+
+                s_IsTeleportationEnabled = value;
+                TeleportationEnabledChanged(value);
+            }
+        }
 
         /// <summary>
         /// Registers the given <see cref="TeleportPointORST"/>.
@@ -48,6 +70,10 @@ namespace ORST.Core.Movement {
         /// Returns <see langword="true"/> if the given <see cref="TeleportPointORST"/> is available.
         /// </summary>
         public static bool IsAvailable(TeleportPointORST teleportPoint) {
+            if (!IsTeleportationEnabled) {
+                return false;
+            }
+
             if (s_RestrictedTeleportPoints != null) {
                 return s_RestrictedTeleportPoints.Contains(teleportPoint);
             }
