@@ -64,11 +64,20 @@ namespace ORST.Core.ModuleTasks {
             if (m_CurrentModuleSubtask != null) {
                 //We have subtasks, start subtask
                 m_CurrentModuleSubtask.StartModuleTask();
+                Debug.Log("Task::Subtask started...");
             } else {
                 m_Completed = false;
                 m_Started = true;
-                Debug.Log("Task::Subtask started...");
+                OnModuleTaskStarted();
             }
+        }
+
+        protected virtual void OnModuleTaskStarted() {
+            Debug.Log("Task::Task started...");
+        }
+
+        protected virtual void OnModuleTaskCompleted() {
+            Debug.Log("Task::Task completed...");
         }
 
         public virtual ModuleTaskState ExecuteModuleTask() {
@@ -93,6 +102,7 @@ namespace ORST.Core.ModuleTasks {
                         Debug.Log("Task::All subtasks done.");
                         m_Started = false;
                         m_Completed = true;
+                        OnModuleTaskCompleted();
                         return ModuleTaskState.Successful;
                     }
                     break;
