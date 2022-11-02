@@ -7,36 +7,12 @@ namespace ORST.Core.UI {
         private const float Y_TRIGGER_DISTANCE = 20;
         private const float X_TRIGGER_DISTANCE = 20;
 
-        /// <summary>
-        ///     Should the component look at camera?
-        /// </summary>
         [SerializeField] private bool lookAtCamera = true;
-
-        /// <summary>
-        ///     Should the component follow the camera?
-        /// </summary>
         [SerializeField] private bool shouldFollowCamera = true;
-
-        /// <summary>
-        ///     Is the component following?
-        /// </summary>
         [SerializeField] private bool isFollowing;
-
         [SerializeField] private Vector3 positionOffeset = new Vector3(0, 0, 0);
-
-        /// <summary>
-        ///     The follow latency.
-        /// </summary>
         [SerializeField] private float followLatency = 0.5f;
-
-        /// <summary>
-        ///     The distance from camera that the component should pe placed.
-        /// </summary>
         [SerializeField] private float distanceFromCamera = float.NegativeInfinity;
-
-        /// <summary>
-        ///     The follow axis.
-        /// </summary>
         [SerializeField] private AxisConstraint followAxis;
 
         private Camera m_Camera;
@@ -54,7 +30,6 @@ namespace ORST.Core.UI {
         [FormerlySerializedAs("vrPlayer")]
         [SerializeField] private Transform m_TargetTransform;
 
-        #region Public
 
         /// <summary>
         ///     Reposition the component.
@@ -72,11 +47,7 @@ namespace ORST.Core.UI {
             transform.SetPositionAndRotation(targetPosition, Quaternion.Euler(popupRotation));
         }
 
-        #endregion
 
-        #region Lifecycle
-
-        /// <inheritdoc />
         protected void Start() {
             m_Camera = Camera.main;
 
@@ -85,7 +56,6 @@ namespace ORST.Core.UI {
             m_PanelRectTransform = GetComponent<RectTransform>();
         }
 
-        /// <inheritdoc />
         protected void Update() {
             m_CurrentScreenCenter = m_Camera.transform.position + m_Camera.transform.forward * distanceFromCamera;
             m_PanelHeight = m_PanelRectTransform.rect.height;
@@ -110,9 +80,6 @@ namespace ORST.Core.UI {
             }
         }
 
-        #endregion
-
-        #region Private
 
         private void UpdateToLookAtCamera() {
             Vector3 axisAngle = m_Camera.transform.rotation.eulerAngles;
@@ -132,6 +99,5 @@ namespace ORST.Core.UI {
             m_TweenMove = transform.DOMove(m_CurrentScreenCenter, followLatency);
         }
 
-        #endregion
     }
 }

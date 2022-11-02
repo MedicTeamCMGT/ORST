@@ -2,8 +2,7 @@ using TMPro;
 using UnityEngine;
 
 namespace ORST.Core.UI {
-    public class PopupInfoUI : MonoBehaviour
-    {
+    public class PopupInfoUI : MonoBehaviour {
         [SerializeField] private TMP_Text m_InfoTitle;
         [SerializeField] private TMP_Text m_InfoMessage;
 

@@ -22,7 +22,6 @@ namespace ORST.Core.UI {
             return m_PopupCanvas.gameObject.activeInHierarchy;
         }
 
-#region DisplayMethods
         public void DisplayTasks(in List<ModuleTask> moduleTasksList) {
             DestroyVerticalPanelSubs();
 
@@ -37,7 +36,6 @@ namespace ORST.Core.UI {
             popupInfo.SetInfoTitle(infoTitle);
             popupInfo.SetInfoMessage(infoMessage);
         }
-#endregion
 
         private void DestroyVerticalPanelSubs() {
             for (int i = m_VerticalLayoutPanel.childCount - 1; i >= 0; i--) {
