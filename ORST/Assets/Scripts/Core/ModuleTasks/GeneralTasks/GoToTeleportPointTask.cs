@@ -1,9 +1,8 @@
 using UnityEngine;
-using ORST.Core.ModuleTasks;
 using ORST.Core.Movement;
 using Sirenix.OdinInspector;
 
-namespace ORST.Core {
+namespace ORST.Core.ModuleTasks {
     public class GoToTeleportPointTask : ModuleTask {
         [SerializeField, Required] private AdvancedLocomotionTeleport m_LocomotionTeleport;
         [SerializeField, Required] private TeleportPointORST m_TeleportPoint;

@@ -1,10 +1,9 @@
 using Oculus.Interaction;
 using Oculus.Interaction.HandGrab;
 using UnityEngine;
-using ORST.Core.ModuleTasks;
 using Sirenix.OdinInspector;
 
-namespace ORST.Core {
+namespace ORST.Core.ModuleTasks {
     public class PickupObjectTask : ModuleTask {
         [SerializeField, Required] private GameObject m_ObjectToPick;
         [LabelText("[?] Track Only When Running"), Tooltip("If this is enabled then the task will only update while the task is running.")]

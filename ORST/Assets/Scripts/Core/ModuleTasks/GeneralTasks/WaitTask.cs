@@ -1,8 +1,7 @@
 using UnityEngine;
-using ORST.Core.ModuleTasks;
 using Sirenix.OdinInspector;
 
-namespace ORST.Core {
+namespace ORST.Core.ModuleTasks {
     public class WaitTask : ModuleTask {
         [SerializeField, SuffixLabel("seconds")] private float m_TimeToWait;
         private float m_TimePassed;
