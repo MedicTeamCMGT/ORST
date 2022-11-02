@@ -12,11 +12,13 @@ namespace ORST.Core.UI {
         public void Hide(float duration) {
             m_CanvasGroup.DOKill();
             m_CanvasGroup.DOFade(0.0f, duration);
+            m_CanvasGroup.blocksRaycasts = false;
         }
 
         public void Show(float duration) {
             m_CanvasGroup.DOKill();
             m_CanvasGroup.DOFade(1.0f, duration);
+            m_CanvasGroup.blocksRaycasts = true;
         }
     }
 }

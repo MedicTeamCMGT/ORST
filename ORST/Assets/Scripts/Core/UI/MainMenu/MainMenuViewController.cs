@@ -38,6 +38,7 @@ namespace ORST.Core.UI {
         private void Start() {
             foreach (MainMenuPage page in m_TogglePages.Values) {
                 page.CanvasGroup.alpha = 0.0f;
+                page.CanvasGroup.blocksRaycasts = false;
 
                 if (!page.gameObject.activeSelf) {
                     page.gameObject.SetActive(true);
