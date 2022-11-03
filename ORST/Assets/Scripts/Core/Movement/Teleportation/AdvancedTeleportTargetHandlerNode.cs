@@ -9,6 +9,7 @@ namespace ORST.Core.Movement {
         private bool m_IsIntersectChanged;
         private bool m_ValidCollisionOnSegment;
 
+        public TeleportPointORST TargetPoint { get; private set; }
         public new LocomotionTeleport.AimData AimData => base.AimData;
 
         protected override void OnEnable() {
@@ -34,6 +35,8 @@ namespace ORST.Core.Movement {
                 // With each targeting test, we need to reset the AimData to clear the point list and reset flags.
                 ResetAimData();
 
+                TargetPoint = null;
+
                 // Start the testing with the character's current position to the aiming origin to ensure they 
                 // haven't just stuck their hand through something that should have prevented movement.
                 //
@@ -46,6 +49,7 @@ namespace ORST.Core.Movement {
                 // stopping at the first valid target or when the enumerable runs out of line segments.
                 AimPoints.Clear();
                 LocomotionTeleport.AimHandler.GetPoints(AimPoints);
+
 
                 m_ValidCollisionOnSegment = false;
                 Vector3 segmentColliderPoint = Vector3.zero;
@@ -122,6 +126,7 @@ namespace ORST.Core.Movement {
             }
 
             end = destination;
+            TargetPoint = tp;
             return true;
         }
 
