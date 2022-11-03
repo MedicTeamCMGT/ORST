@@ -49,9 +49,13 @@ namespace ORST.Core.Interactions {
             }
         }
 
-        public void DoorHandleMoved() {
-            Debug.LogWarning("Teleport to next room");
+        private void DoorHandleMoved() {
+            if (!m_DoorsUnlocked) {
+                return;
+            }
+            m_TransitionStarted = true;
             StartCoroutine(ChangeScene());
+            Debug.LogWarning("Teleport to next room");
         }
 
         private IEnumerator ChangeScene() {
@@ -71,8 +75,7 @@ namespace ORST.Core.Interactions {
                 return;
             }
 
-            StartCoroutine(ChangeScene());
-            m_TransitionStarted = true;
+            DoorHandleMoved();
         }
     }
 }
