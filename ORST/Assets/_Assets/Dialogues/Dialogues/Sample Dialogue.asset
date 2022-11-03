@@ -38,3 +38,5 @@ MonoBehaviour:
     - m_Text: Ligma
       m_IsCorrect: 0
       m_Feedback: balls lmao got dem
+  - m_Text: Click the button again to finish the dialogue
+    m_Options: []
