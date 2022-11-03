@@ -12,6 +12,7 @@ namespace ORST.Core
         private Material m_Material;
         private void Awake() {
             m_Material = GetComponent<MeshRenderer>().material;
+            m_Material.SetMaterialAlpha(0.0f);
         }
 
         private void OnEnable() {

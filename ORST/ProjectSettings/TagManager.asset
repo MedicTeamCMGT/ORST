@@ -7,6 +7,7 @@ TagManager:
   - Floor
   - LeftHand
   - RightHand
+  - InnerCollider
   layers:
   - Default
   - TransparentFX
@@ -14,12 +15,12 @@ TagManager:
   - TeleportPoint
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Popup
+  - Head
+  - Hands
+  - ForbiddenZone
+  - Interactable
+  - Player
   - 
   - 
   - 

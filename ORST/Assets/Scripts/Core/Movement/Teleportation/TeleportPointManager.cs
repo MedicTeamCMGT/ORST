@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Pool;
 
 namespace ORST.Core.Movement {
@@ -77,8 +78,10 @@ namespace ORST.Core.Movement {
             if (s_RestrictedTeleportPoints != null) {
                 return s_RestrictedTeleportPoints.Contains(teleportPoint);
             }
-
-            return s_TeleportPoints.TryGetValue(teleportPoint, out TeleportPointInfo info) && info.Enabled;
+            
+            bool tryGetValue = s_TeleportPoints.TryGetValue(teleportPoint, out TeleportPointInfo info);
+            Debug.Log($"tryGetValue: {tryGetValue}; info.Enabled: {info?.Enabled ?? false}");
+            return tryGetValue && info!.Enabled;
         }
 
         /// <summary>
