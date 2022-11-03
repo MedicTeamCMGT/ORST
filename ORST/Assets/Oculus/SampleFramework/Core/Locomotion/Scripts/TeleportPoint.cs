@@ -22,7 +22,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class TeleportPoint : MonoBehaviour {
+public class TeleportPoint : MonoBehaviour, ITeleportPoint {
 
     public float dimmingSpeed = 1;
     public float fullIntensity = 1;
@@ -39,10 +39,7 @@ public class TeleportPoint : MonoBehaviour {
 
 	}
 
-    public Transform GetDestTransform()
-    {
-        return destTransform;
-    }
+    public Transform DestinationTransform => destTransform;
 
 
 

@@ -38,7 +38,7 @@ public class TeleportTargetHandlerNode : TeleportTargetHandler
 		{
 			return false;
 		}
-		TeleportPoint tp = AimData.TargetHitInfo.collider.gameObject.GetComponent<TeleportPoint>();
+		ITeleportPoint tp = AimData.TargetHitInfo.collider.gameObject.GetComponent<ITeleportPoint>();
 		if (tp == null)
 		{
 			return false;
@@ -47,7 +47,7 @@ public class TeleportTargetHandlerNode : TeleportTargetHandler
 		// The targeting test discovered a valid teleport node. Now test to make sure there is line of sight to the 
 		// actual destination. Since the teleport destination is expected to be right on the ground, use the LOSOffset 
 		// to bump the collision check up off the ground a bit.
-		var dest = tp.destTransform.position;
+		var dest = tp.DestinationTransform.position;
 		var offsetEnd = new Vector3(dest.x, dest.y + LOSOffset, dest.z);
 		if (LocomotionTeleport.AimCollisionTest(start, offsetEnd, AimCollisionLayerMask & ~TeleportLayerMask, out AimData.TargetHitInfo))
 		{
