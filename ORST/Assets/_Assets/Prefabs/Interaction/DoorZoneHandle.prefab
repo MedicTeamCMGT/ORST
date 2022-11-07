@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4844168707528448176}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 20, y: 1.25, z: 10.91}
-  m_LocalScale: {x: 1.0000002, y: 1, z: 1.0000002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7234860571750030855}
@@ -387,10 +387,10 @@ MonoBehaviour:
   _rotationAxis: 2
   _constraints:
     MinAngle:
-      Constrain: 0
+      Constrain: 1
       Value: 0
     MaxAngle:
-      Constrain: 0
+      Constrain: 1
       Value: 30
 --- !u!1 &8010975711430149309
 GameObject:
