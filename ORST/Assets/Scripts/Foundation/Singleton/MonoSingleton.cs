@@ -19,6 +19,11 @@ namespace ORST.Foundation.Singleton {
             }
         }
 
+        /// <summary>
+        /// Returns <see langword="true"/> if the underlying instance is not <see langword="null"/>.
+        /// </summary>
+        public static bool InstanceExists => s_Instance != null;
+
         private void Awake() {
             if (s_Instance != null && s_Instance != this) {
                 Debug.LogError($"Multiple instances of {typeof(T).Name} found");
