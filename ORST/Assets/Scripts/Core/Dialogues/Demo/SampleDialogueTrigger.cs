@@ -12,7 +12,7 @@ namespace ORST.Core.Dialogues.Demo {
             DialogueManager.DialogueEnded -= OnDialogueEnded;
         }
 
-        private void OnDialogueEnded(Dialogue dialogue) {
+        private void OnDialogueEnded(Dialogue dialogue, bool completed) {
             if (dialogue == Dialogue) {
                 m_DialogueStarted = false;
             }

@@ -50,14 +50,14 @@ namespace ORST.Core.Dialogues.Demo {
 
             Destroy(m_DialogueView.gameObject);
             m_DialogueView = null;
-            DialogueManager.EndDialogue();
+            DialogueManager.EndDialogue(true);
 
             m_FinishedInteractingWithUI = false;
             m_State = default;
         }
 
-        public void HandleDialogueEnded() {
-            Debug.Log("Dialogue ended");
+        public void HandleDialogueEnded(bool completed) {
+            Debug.Log($"Dialogue ended. Completed: {completed}");
         }
     }
 }

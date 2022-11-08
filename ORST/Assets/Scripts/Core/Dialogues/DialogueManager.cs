@@ -23,7 +23,7 @@ namespace ORST.Core.Dialogues {
         /// <summary>
         /// Event called when a dialogue has ended.
         /// </summary>
-        public static event Action<Dialogue> DialogueEnded;
+        public static event Action<Dialogue, bool> DialogueEnded;
 
         /// <summary>
         /// Gets a reference to the active dialogue.
@@ -44,7 +44,7 @@ namespace ORST.Core.Dialogues {
         /// </summary>
         public static void StartDialogue(Dialogue dialogue) {
             if (Instance.m_ActiveDialogue != null) {
-                EndDialogue();
+                EndDialogue(false);
             }
 
             Instance.m_ActiveDialogueHandler = Instance.m_DialogueHandlerDictionary[dialogue];
@@ -57,13 +57,14 @@ namespace ORST.Core.Dialogues {
         /// <summary>
         /// End the current dialogue.
         /// </summary>
-        public static void EndDialogue() {
+        /// <param name="completed">Whether the dialogue was completed or not.</param>
+        public static void EndDialogue(bool completed) {
             if (Instance.m_ActiveDialogue == null) {
                 return;
             }
 
-            Instance.m_ActiveDialogueHandler.HandleDialogueEnded();
-            DialogueEnded?.Invoke(Instance.m_ActiveDialogue);
+            Instance.m_ActiveDialogueHandler.HandleDialogueEnded(completed);
+            DialogueEnded?.Invoke(Instance.m_ActiveDialogue, completed);
 
             Instance.m_ActiveDialogue = null;
             Instance.m_ActiveDialogueHandler = null;

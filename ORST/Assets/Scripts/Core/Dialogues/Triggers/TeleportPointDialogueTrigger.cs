@@ -20,7 +20,9 @@ namespace ORST.Core.Dialogues {
         private void OnTeleportedToPoint(TeleportPointORST teleportPoint) {
             if (teleportPoint != m_TeleportPoint) {
                 if (ReferenceEquals(DialogueManager.ActiveDialogue, m_Dialogue)) {
-                    DialogueManager.EndDialogue();
+                    // If you teleport away while the dialogue is active then it will be considered
+                    // cancelled instead of completed.
+                    DialogueManager.EndDialogue(false);
                 }
 
                 return;

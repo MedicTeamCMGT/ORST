@@ -3,6 +3,6 @@
         Dialogue Dialogue { get; }
 
         void HandleDialogueStarted();
-        void HandleDialogueEnded();
+        void HandleDialogueEnded(bool completed);
     }
 }
