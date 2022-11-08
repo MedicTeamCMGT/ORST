@@ -39,11 +39,16 @@ namespace Oculus.Interaction.HandGrab.Visuals.Editor
             HandPuppet puppet = target as HandPuppet;
             if (GUILayout.Button("Auto-Assign Bones"))
             {
-                SkinnedMeshRenderer skinnedHand = puppet.GetComponentInChildren<SkinnedMeshRenderer>();
+                SkinnedMeshRenderer skinnedHand = puppet!.GetComponentInChildren<SkinnedMeshRenderer>();
                 if (skinnedHand != null)
                 {
                     SetPrivateValue(puppet, "_jointMaps", AutoAsignBones(skinnedHand));
                 }
+            }
+
+            if (GUILayout.Button("Reset JointsCache"))
+            {
+                puppet!.ResetJointsCache();
             }
         }
 

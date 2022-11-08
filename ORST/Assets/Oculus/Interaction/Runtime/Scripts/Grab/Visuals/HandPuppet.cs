@@ -77,6 +77,11 @@ namespace Oculus.Interaction.HandGrab.Visuals
             }
         }
 
+        public void ResetJointsCache()
+        {
+            _jointsCache = null;
+        }
+
         /// <summary>
         /// Rotates all the joints in this puppet to the desired pose.
         /// </summary>
