@@ -17,4 +17,4 @@ jobs:
           max-subject-line-length: '80'
           max-body-line-length: '100'
           allow-one-liners: 'true'
-          additional-verbs: 'cleanup'
+          additional-verbs: 'cleanup, rework'
