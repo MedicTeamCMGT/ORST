@@ -33,6 +33,7 @@ namespace ORST.Core.Dialogues {
         protected override void OnAwake() {
             base.OnAwake();
 
+            FindAllDialogueHandlers();
             m_DialogueHandlerDictionary = new Dictionary<Dialogue, IDialogueHandler>();
             foreach (IDialogueHandler dialogueHandler in m_DialogueHandlers) {
                 m_DialogueHandlerDictionary.Add(dialogueHandler.Dialogue, dialogueHandler);
