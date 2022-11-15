@@ -33,7 +33,6 @@ namespace ORST.Core.Movement {
 
         private void OnTeleported(Transform controllerTransform, Vector3 position, Quaternion rotation) {
             if (TargetHandler is not AdvancedTeleportTargetHandlerNode {TargetPoint: { } targetPoint}) {
-                Debug.LogWarning("[Teleportation] Couldn't find target point when teleporting.");
                 return;
             }
 

@@ -3,15 +3,16 @@ using ORST.Foundation.Foundation.Extensions;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace ORST.Core
-{
+namespace ORST.Core {
     [RequireComponent(typeof(MeshRenderer))]
     public class HandHeadProximityMaterial : MonoBehaviour {
         [SerializeField, Required] private HandHeadProximity m_HandHeadProximity;
 
         private Material m_Material;
+
         private void Awake() {
             m_Material = GetComponent<MeshRenderer>().material;
+            m_Material.SetMaterialAlpha(0.0f);
         }
 
         private void OnEnable() {

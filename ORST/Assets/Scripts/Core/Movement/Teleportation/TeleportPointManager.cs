@@ -77,7 +77,7 @@ namespace ORST.Core.Movement {
             if (s_RestrictedTeleportPoints != null) {
                 return s_RestrictedTeleportPoints.Contains(teleportPoint);
             }
-
+            
             return s_TeleportPoints.TryGetValue(teleportPoint, out TeleportPointInfo info) && info.Enabled;
         }
 
