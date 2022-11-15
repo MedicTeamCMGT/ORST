@@ -20,7 +20,6 @@ namespace ORST.Core.ModuleTasks {
         }
 
         private void OnTeleportedToPoint(TeleportPointORST teleportPoint) {
-            Debug.LogError("Teleported to point");
             if ((!m_TrackOnlyWhenRunning || Started) && teleportPoint == m_TeleportPoint) {
                 m_Teleported = true;
             }
