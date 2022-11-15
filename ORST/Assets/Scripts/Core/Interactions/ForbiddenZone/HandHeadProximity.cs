@@ -36,12 +36,12 @@ namespace ORST.Core.Interactions {
                 }
 
                 Vector3 innerColliderDirVec = m_InnerCollider.transform.position - intersect.position;
-                if (m_OuterCollider.Raycast(new Ray(intersect.position, innerColliderDirVec), out RaycastHit hit1, 1000.0f)) {
+                if (m_OuterCollider.Raycast(new Ray(intersect.position, innerColliderDirVec), out _, 1000.0f)) {
                     //We're still outside the outer collider
                     continue;
                 }
 
-                if (!m_InnerCollider.Raycast(new Ray(intersect.position, innerColliderDirVec), out RaycastHit hit3, 1000.0f)) {
+                if (!m_InnerCollider.Raycast(new Ray(intersect.position, innerColliderDirVec), out RaycastHit hit, 1000.0f)) {
                     //We did not hit the inner collider; we're inside.
                     if (m_ForbiddenGameObject == null) {
                         m_ForbiddenGameObject = intersect.gameObject;
@@ -55,15 +55,11 @@ namespace ORST.Core.Interactions {
                     return 1.0f;
                 }
 
-                if (m_ForbiddenGameObject != null && m_ForbiddenGameObject.Equals(intersect.gameObject)) {
+                if (m_ForbiddenGameObject == intersect.gameObject) {
                     m_ForbiddenGameObject = null;
                     ForbiddenSpaceExited?.Invoke();
                     PopupManager.Instance.ClosePopup();
                 }
-
-                //Note: This should always be successful at this point.
-                m_InnerCollider.Raycast(new Ray(intersect.position, innerColliderDirVec),
-                                        out RaycastHit hit, innerColliderDirVec.magnitude * 5.0f);
 
                 if (hit.distance < shortestDist) {
                     shortestDist = hit.distance;
