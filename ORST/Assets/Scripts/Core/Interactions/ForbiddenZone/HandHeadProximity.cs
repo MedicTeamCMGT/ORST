@@ -28,17 +28,16 @@ namespace ORST.Core.Interactions {
                 return 0.0f;
             }
 
-            Vector3 innerColliderPosition =  m_InnerCollider.transform.position;
+            Vector3 innerColliderPosition = m_InnerCollider.transform.position;
             float shortestDist = float.PositiveInfinity;
             Transform shortestTransform = null;
             foreach (Transform intersect in m_Intersector) {
-
                 if (m_ForbiddenGameObject != null && intersect.gameObject != m_ForbiddenGameObject) {
                     continue;
                 }
 
                 Vector3 innerColliderDirVec = m_InnerCollider.transform.position - intersect.position;
-                if(m_OuterCollider.Raycast(new Ray(intersect.position, innerColliderDirVec), out RaycastHit hit1, 1000.0f)) {
+                if (m_OuterCollider.Raycast(new Ray(intersect.position, innerColliderDirVec), out RaycastHit hit1, 1000.0f)) {
                     //We're still outside the outer collider
                     continue;
                 }
@@ -66,7 +65,6 @@ namespace ORST.Core.Interactions {
                 //Note: This should always be successful at this point.
                 m_InnerCollider.Raycast(new Ray(intersect.position, innerColliderDirVec),
                                         out RaycastHit hit, innerColliderDirVec.magnitude * 5.0f);
-
 
                 if (hit.distance < shortestDist) {
                     shortestDist = hit.distance;
@@ -105,6 +103,7 @@ namespace ORST.Core.Interactions {
             if (!m_Intersector.Contains(other.transform)) {
                 return;
             }
+
             m_Intersector.Remove(other.transform);
         }
     }
