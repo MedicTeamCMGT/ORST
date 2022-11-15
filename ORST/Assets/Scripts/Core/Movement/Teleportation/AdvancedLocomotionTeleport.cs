@@ -32,16 +32,11 @@ namespace ORST.Core.Movement {
         }
 
         private void OnTeleported(Transform controllerTransform, Vector3 position, Quaternion rotation) {
-            if (TargetHandler is not AdvancedTeleportTargetHandlerNode nodeHandler) {
+            if (TargetHandler is not AdvancedTeleportTargetHandlerNode {TargetPoint: { } targetPoint}) {
                 return;
             }
 
-            if (nodeHandler.AimData.TargetHitInfo.collider == null ||
-                nodeHandler.AimData.TargetHitInfo.collider.GetComponent<TeleportPointORST>() is not {} teleportPoint) {
-                return;
-            }
-
-            TeleportedToPoint?.Invoke(teleportPoint);
+            TeleportedToPoint?.Invoke(targetPoint);
         }
     }
 }

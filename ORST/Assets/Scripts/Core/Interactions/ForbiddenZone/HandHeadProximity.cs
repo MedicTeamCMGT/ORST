@@ -19,8 +19,7 @@ namespace ORST.Core.Interactions {
         private GameObject m_ForbiddenGameObject;
 
         private void Update() {
-            float test = GetClosestIntersectLinear();
-            ForbiddenSpaceUpdated?.Invoke(test);
+            ForbiddenSpaceUpdated?.Invoke(GetClosestIntersectLinear());
         }
 
         private float GetClosestIntersectLinear() {
