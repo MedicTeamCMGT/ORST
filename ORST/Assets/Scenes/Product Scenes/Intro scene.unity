@@ -2323,9 +2323,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  <Dialogue>k__BackingField: {fileID: 11400000, guid: f0b2a70c659fdac41bdf13c3cac97ae7,
+  <Dialogue>k__BackingField: {fileID: 11400000, guid: 905ab923586dd3d47befb980fc9c580f,
     type: 2}
-  m_NPC: {fileID: 11400000, guid: ed9855758140c984481e5858579a23b0, type: 2}
+  m_NPC: {fileID: 11400000, guid: 4d40e34b0a8684d429a011840c0f8637, type: 2}
   m_Button: {fileID: 1831024008}
   m_DialogueViewPrefab: {fileID: 553621068}
 --- !u!4 &450858051
@@ -2372,7 +2372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2c60db8c154c56b0989dd847f4dcf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Dialogue: {fileID: 11400000, guid: f0b2a70c659fdac41bdf13c3cac97ae7, type: 2}
+  m_Dialogue: {fileID: 11400000, guid: 905ab923586dd3d47befb980fc9c580f, type: 2}
 --- !u!4 &469673329
 Transform:
   m_ObjectHideFlags: 0
