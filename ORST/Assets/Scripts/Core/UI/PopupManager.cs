@@ -4,6 +4,7 @@ using ORST.Foundation.Singleton;
 using UnityEngine;
 
 namespace ORST.Core.UI {
+    [DefaultExecutionOrder(-10)]
     public class PopupManager : MonoSingleton<PopupManager> {
         [SerializeField] private Canvas m_PopupCanvas;
         [SerializeField] private GameObject m_TaskPrefab;
