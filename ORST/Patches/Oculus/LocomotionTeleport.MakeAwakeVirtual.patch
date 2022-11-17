@@ -1,0 +1,13 @@
+diff --git a/ORST/Assets/Oculus/SampleFramework/Core/Locomotion/Scripts/LocomotionTeleport.cs b/ORST/Assets/Oculus/SampleFramework/Core/Locomotion/Scripts/LocomotionTeleport.cs
+index bbb80f5..b57e84c 100644
+--- a/ORST/Assets/Oculus/SampleFramework/Core/Locomotion/Scripts/LocomotionTeleport.cs
++++ b/ORST/Assets/Oculus/SampleFramework/Core/Locomotion/Scripts/LocomotionTeleport.cs
+@@ -404,7 +404,7 @@ private void EnableMotion(bool enableLinear, bool enableRotation)
+ 	/// When the component first wakes up, cache the LocomotionController and the initial
+ 	/// TeleportDestination object.
+ 	/// </summary>
+-	private void Awake()
++	protected virtual void Awake()
+ 	{
+ 		LocomotionController = GetComponent<LocomotionController>();
+ 		CreateNewTeleportDestination();

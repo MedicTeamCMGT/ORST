@@ -404,7 +404,7 @@ public class LocomotionTeleport : MonoBehaviour
 	/// When the component first wakes up, cache the LocomotionController and the initial
 	/// TeleportDestination object.
 	/// </summary>
-	private void Awake()
+	protected virtual void Awake()
 	{
 		LocomotionController = GetComponent<LocomotionController>();
 		CreateNewTeleportDestination();
