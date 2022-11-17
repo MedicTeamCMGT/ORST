@@ -267,6 +267,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   m_DestinationTransform: {fileID: 7800715316199245808}
+  m_Visuals: {fileID: 2398267620922182847}
 --- !u!136 &7800715317871015967
 CapsuleCollider:
   m_ObjectHideFlags: 0
