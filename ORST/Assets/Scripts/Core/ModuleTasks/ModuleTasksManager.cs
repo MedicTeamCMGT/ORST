@@ -5,6 +5,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace ORST.Core.ModuleTasks {
+    [DefaultExecutionOrder(-10)]
     public class ModuleTasksManager : MonoSingleton<ModuleTasksManager> {
         [SerializeField] private List<ModuleTask> m_AllTasks;
         [SerializeField] private bool m_RandomizeEligibleModuleTasks;

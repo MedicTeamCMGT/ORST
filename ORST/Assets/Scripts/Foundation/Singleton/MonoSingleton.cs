@@ -2,6 +2,7 @@
 using UnityEngine;
 
 namespace ORST.Foundation.Singleton {
+    [DefaultExecutionOrder(-10)]
     public abstract class MonoSingleton<T> : BaseMonoBehaviour where T : MonoSingleton<T> {
         private static T s_Instance;
 

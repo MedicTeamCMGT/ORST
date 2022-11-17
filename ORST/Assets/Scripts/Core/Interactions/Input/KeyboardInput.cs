@@ -6,6 +6,7 @@ using TMPro;
 using UnityEngine;
 
 namespace ORST.Core.Interactions {
+    [DefaultExecutionOrder(-10)]
     public class KeyboardInput : AutoMonoSingleton<KeyboardInput> {
         public override bool IsPersistentThroughScenes => true;
 
