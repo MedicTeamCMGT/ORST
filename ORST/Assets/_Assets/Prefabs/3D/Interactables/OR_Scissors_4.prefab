@@ -135,7 +135,7 @@ MonoBehaviour:
   _pointableElement: {fileID: 9101613647135302301}
   _rigidbody: {fileID: 7884538599597363032}
   _resetGrabOnGrabsUpdated: 1
-  _physicsGrabbable: {fileID: 0}
+  _physicsGrabbable: {fileID: -2332982187222450569}
   _scoringModifier:
     _maxDistance: 0.1
     _positionRotationWeight: 0.8
