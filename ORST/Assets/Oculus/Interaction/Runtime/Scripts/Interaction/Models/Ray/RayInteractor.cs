@@ -25,8 +25,10 @@ using Oculus.Interaction.Surfaces;
 
 namespace Oculus.Interaction
 {
-    public class RayInteractor : PointerInteractor<RayInteractor, RayInteractable>
+    public class RayInteractor : PointerInteractor<RayInteractor, RayInteractable>, IRayInteractorProvider
     {
+        public RayInteractor Value => this;
+
         [SerializeField, Interface(typeof(ISelector))]
         private MonoBehaviour _selector;
 
