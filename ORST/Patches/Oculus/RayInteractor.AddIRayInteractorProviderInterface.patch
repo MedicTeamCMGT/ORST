@@ -1,0 +1,38 @@
+diff --git a/ORST/Assets/Oculus/Interaction/Runtime/Scripts/Interaction/Models/Ray/IRayInteractorProvider.cs b/ORST/Assets/Oculus/Interaction/Runtime/Scripts/Interaction/Models/Ray/IRayInteractorProvider.cs
+new file mode 100644
+index 0000000..22b99cd
+--- /dev/null
++++ b/ORST/Assets/Oculus/Interaction/Runtime/Scripts/Interaction/Models/Ray/IRayInteractorProvider.cs
+@@ -0,0 +1,5 @@
++﻿namespace Oculus.Interaction {
++    public interface IRayInteractorProvider {
++        RayInteractor Value { get; }
++    }
++}
+\ No newline at end of file
+diff --git a/ORST/Assets/Oculus/Interaction/Runtime/Scripts/Interaction/Models/Ray/IRayInteractorProvider.cs.meta b/ORST/Assets/Oculus/Interaction/Runtime/Scripts/Interaction/Models/Ray/IRayInteractorProvider.cs.meta
+new file mode 100644
+index 0000000..969751c
+--- /dev/null
++++ b/ORST/Assets/Oculus/Interaction/Runtime/Scripts/Interaction/Models/Ray/IRayInteractorProvider.cs.meta
+@@ -0,0 +1,3 @@
++﻿fileFormatVersion: 2
++guid: 413609d0c4194d29ad42eec7244694dc
++timeCreated: 1668686310
+\ No newline at end of file
+diff --git a/ORST/Assets/Oculus/Interaction/Runtime/Scripts/Interaction/Models/Ray/RayInteractor.cs b/ORST/Assets/Oculus/Interaction/Runtime/Scripts/Interaction/Models/Ray/RayInteractor.cs
+index 12a5fe8..caccbc8 100644
+--- a/ORST/Assets/Oculus/Interaction/Runtime/Scripts/Interaction/Models/Ray/RayInteractor.cs
++++ b/ORST/Assets/Oculus/Interaction/Runtime/Scripts/Interaction/Models/Ray/RayInteractor.cs
+@@ -25,8 +25,10 @@
+ 
+ namespace Oculus.Interaction
+ {
+-    public class RayInteractor : PointerInteractor<RayInteractor, RayInteractable>
++    public class RayInteractor : PointerInteractor<RayInteractor, RayInteractable>, IRayInteractorProvider
+     {
++        public RayInteractor Value => this;
++
+         [SerializeField, Interface(typeof(ISelector))]
+         private MonoBehaviour _selector;
+ 
