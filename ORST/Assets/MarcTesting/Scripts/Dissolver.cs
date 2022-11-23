@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class Dissolver : MonoBehaviour
 {
-    private Material mat;
     public bool hideObject;
     public float dissolveSpeed = 2f;
-
+    public Material dissolveMaterial;
+    private float dissolveAmount = 0;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        mat = GetComponent<Renderer>().material;
+        dissolveAmount = dissolveMaterial.GetFloat("_DissolveAmount");
+        //Material newMat = Resources.Load("Floor mask", typeof(Material)) as Material;
+        //mat = this.GetComponent<Renderer>().material;
     }
 
     // Update is called once per frame
@@ -24,11 +26,12 @@ public class Dissolver : MonoBehaviour
             hideObject = !hideObject;
         }
         if(hideObject){
-            mat.SetFloat("_Progress", Mathf.MoveTowards(mat.GetFloat("_Progress"), 1.25f, dissolveSpeed * Time.deltaTime));
+            dissolveAmount = Mathf.MoveTowards(dissolveAmount, 1.25f, dissolveSpeed * Time.deltaTime);
         } else {
-            
-            mat.SetFloat("_Progress", Mathf.MoveTowards(mat.GetFloat("_Progress"), -.25f, dissolveSpeed * Time.deltaTime));
+            dissolveAmount = Mathf.MoveTowards(dissolveAmount, -.25f, dissolveSpeed * Time.deltaTime);
         }
+
+        dissolveMaterial.SetFloat("_DissolveAmount", dissolveAmount);
 
         
     }

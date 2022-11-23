@@ -36,6 +36,9 @@ Shader "Custom/OutlineShader"
 	 
 		float3 norm   = mul ((float3x3)UNITY_MATRIX_IT_MV, v.normal);
 		float2 offset = TransformViewToProjection(norm.xy);
+
+		o.Metallic = _Metallic;
+        o.Smoothness = _Glossiness;
 	 
 		o.pos.xy += offset * o.pos.z * _Outline;
 		o.color = _OutlineColor;
