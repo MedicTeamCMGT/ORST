@@ -14,7 +14,7 @@ namespace ORST.Core.Interactions {
         public bool Active => IsActive();
 
         [OdinSerialize, Required, ShowIf("@(" + nameof(m_Filters) + " & Filters.Grabbing) == Filters.Grabbing")]
-        private IHandGrabState m_GrabState;
+        private IHandGrabStateProvider m_GrabState;
         [OdinSerialize, Required, ShowIf("@(" + nameof(m_Filters) + " & Filters.Teleporting) == Filters.Teleporting")]
         private TeleportInputHandler m_TeleportInputHandler;
         [OdinSerialize, Required, ShowIf("@(" + nameof(m_Filters) + " & Filters.RayCanHaveCandidate) == Filters.RayCanHaveCandidate")]
@@ -61,7 +61,7 @@ namespace ORST.Core.Interactions {
 
         private bool EvaluateFilter(Filters filter, bool invert) {
             return filter switch {
-                Filters.Grabbing => invert ^ (m_GrabState?.IsGrabbing ?? false),
+                Filters.Grabbing => invert ^ (m_GrabState?.Value?.IsGrabbing ?? false),
                 Filters.RayCanHaveCandidate => invert ^ EvaluateRayCanHaveCandidate(),
                 Filters.Teleporting => invert ^ (m_TeleportInputHandler.OrNull()?.GetIntention() != LocomotionTeleport.TeleportIntentions.None),
                 _ => throw new ArgumentOutOfRangeException(nameof(filter), filter, null)
