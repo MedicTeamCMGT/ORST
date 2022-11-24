@@ -9,21 +9,64 @@ public class Countdown : MonoBehaviour
 {
     [SerializeField] private Image countdownCircleTimer;
     [SerializeField] private TextMeshProUGUI countdownText;
-    [SerializeField] private float startTime = 30.0f;
+    [SerializeField] private float startTime = 3.0f;
+    [SerializeField] public GameObject home;
+    [SerializeField] public GameObject time;
 
      private float currentTime;
      private bool updateTime;
 
+
+
+     
+
      private void Start()
-     { 
-         currentTime = startTime;
-         countdownCircleTimer.fillAmount = 1.0f;
-         // Easy way to represent only the seconds and skip the
-         // float     
-        countdownText.text = (int)currentTime+ "";
-         // update the countdown on the update
-        updateTime = true;
+     {
+
+      StartCoroutine(CountdownTimer());
+   
+      
+      /*
+            if (Input.GetKeyDown(KeyCode.Space))
+      {   }
+      currentTime = startTime;
+      countdownCircleTimer.fillAmount = 1.0f;
+      // Easy way to represent only the seconds and skip the
+      // float     
+      countdownText.text = (int)currentTime+ "";
+      // update the countdown on the update
+      updateTime = true;
+
+      */
      }
+   private IEnumerator CountdownTimer()
+   {
+      
+      float duration = startTime;  
+      //to whatever you want
+      float normalizedTime = 0;
+
+      while(normalizedTime <= 1f)
+      {
+      currentTime += Time.deltaTime;
+      countdownCircleTimer.fillAmount = normalizedTime;
+      normalizedTime += Time.deltaTime / duration;
+      countdownText.text = (int)currentTime+ "";
+      yield return null;
+      }
+      yield return new WaitForSeconds(1.0f);
+      showHome();
+
+   }
+
+   void showHome()
+   {
+      time.SetActive(false);
+      home.SetActive(true);
+   }
+
+
+/*
       private void Update()
       {
           if (updateTime)
@@ -41,4 +84,6 @@ public class Countdown : MonoBehaviour
            countdownCircleTimer.fillAmount = normalizedValue;
          }
     }
+
+    */
 }
