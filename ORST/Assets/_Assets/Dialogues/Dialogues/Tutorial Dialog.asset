@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cb7a3d70b7440efbbe7e1441d19c8da, type: 3}
+  m_Name: Tutorial Dialog
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  m_Nodes:
+  - m_Text: Most interactions with Health Care Professionals are done using dialog
+      windows like this. Here it says the text spoken by the Health Care Professional
+      and below are all of the possible answer possibilities. To progress, you have
+      to find the correct answers. Try to select one of the using the gestures shown
+      before.
+    m_Options:
+    - m_Text: I understand
+      m_IsCorrect: 1
+      m_Feedback: 
+    - m_Text: I don't understand
+      m_IsCorrect: 0
+      m_Feedback: A popup text like this will tell you why your answer was incorrect.
+  - m_Text: Good job, There can be up to 4 possible answers but only one will always
+      be the correct answer. Answering the correct one will progress the dialog.
+      You can now teleport to the next teleport point to your left.
+    m_Options:
+    - m_Text: I don't understand
+      m_IsCorrect: 0
+      m_Feedback: A popup text like this will tell you why your answer was incorrect.
+    - m_Text: I understand
+      m_IsCorrect: 1
+      m_Feedback: 
+  - m_Text: Good Job!
+    m_Options: []
