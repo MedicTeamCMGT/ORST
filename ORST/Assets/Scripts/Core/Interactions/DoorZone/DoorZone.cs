@@ -30,7 +30,7 @@ namespace ORST.Core.Interactions {
         }
 
         private void OnTriggerEnter(Collider other) {
-            if (!other.CompareTag("Player")) {
+            if (!other.CompareTag("Player") || m_Player != null) {
                 return;
             }
 
@@ -44,8 +44,9 @@ namespace ORST.Core.Interactions {
         }
 
         private void OnTriggerExit(Collider other) {
-            if (m_Player == other.gameObject) {
+            if (m_Player != null && m_Player == other.gameObject) {
                 PopupManager.Instance.ClosePopup();
+                m_Player = null;
             }
         }
 
@@ -53,15 +54,15 @@ namespace ORST.Core.Interactions {
             if (!m_DoorsUnlocked) {
                 return;
             }
+
             m_TransitionStarted = true;
             StartCoroutine(ChangeScene());
-            Debug.LogWarning("Teleport to next room");
         }
 
         private IEnumerator ChangeScene() {
             OVRScreenFade.instance.FadeOut();
             yield return new WaitUntil(() => OVRScreenFade.instance.currentAlpha >= 1.0f);
-            SceneManager.LoadScene(10);
+            //  SceneManager.LoadScene(10);
         }
 
         private void ProcessPointerEvent(PointerEvent pointerEvent) {
