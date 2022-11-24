@@ -3,15 +3,14 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Serialization;
 
-public class TeleportAimLaserVisualBezier : TeleportSupport
-{
+public class TeleportAimLaserVisualBezier : TeleportSupport {
 	/// <summary>
 	/// This prefab will be instantiated when the aim visual is awakened, and will be set active when the 
 	/// user is aiming, and deactivated when they are done aiming.
 	/// </summary>
-	[Tooltip("This prefab will be instantiated when the aim visual is awakened, and will be set active when the user is aiming, and deactivated when they are done aiming.")]
+	[Tooltip("This prefab will be instantiated when the aim visual is awakened, and will be set active when the user is aiming," +
+             " and deactivated when they are done aiming.")]
 	public LineRenderer LaserPrefab;
-    
     [SerializeField, Range(3, 100)] private int m_Resolution = 500;
 
 	private readonly Action _enterAimStateAction;
@@ -20,31 +19,26 @@ public class TeleportAimLaserVisualBezier : TeleportSupport
 	private LineRenderer _lineRenderer;
 	private Vector3[] _linePoints;
 
-	public TeleportAimLaserVisualBezier()
-	{
+	public TeleportAimLaserVisualBezier() {
 		_enterAimStateAction = EnterAimState;
 		_exitAimStateAction = ExitAimState;
 		_updateAimDataAction = UpdateAimData;
 	}
 
-	private void EnterAimState()
-	{
+	private void EnterAimState() {
 		_lineRenderer.gameObject.SetActive(true);
 	}
 
-	private void ExitAimState()
-	{
+	private void ExitAimState() {
 		_lineRenderer.gameObject.SetActive(false);
 	}
 
-	void Awake()
-	{
+	void Awake() {
 		LaserPrefab.gameObject.SetActive(false);
 		_lineRenderer = Instantiate(LaserPrefab);
 	}
 
-	protected override void AddEventHandlers()
-	{
+	protected override void AddEventHandlers() {
 		base.AddEventHandlers();
 		LocomotionTeleport.EnterStateAim += _enterAimStateAction;
 		LocomotionTeleport.ExitStateAim += _exitAimStateAction;
@@ -55,8 +49,7 @@ public class TeleportAimLaserVisualBezier : TeleportSupport
 	/// Derived classes that need to use event handlers need to override this method and
 	/// call the base class to ensure all event handlers are removed as intended.
 	/// </summary>
-	protected override void RemoveEventHandlers()
-	{
+	protected override void RemoveEventHandlers() {
 		LocomotionTeleport.EnterStateAim -= _enterAimStateAction;
 		LocomotionTeleport.ExitStateAim -= _exitAimStateAction;
 		LocomotionTeleport.UpdateAimData -= _updateAimDataAction;
@@ -81,8 +74,7 @@ public class TeleportAimLaserVisualBezier : TeleportSupport
         LocomotionTeleport.InputHandler.GetAimData(out Ray aimRay);
         Vector3 inBetween = (lastElement - firstElement) / 2;
 
-        for (int i = 0; i < m_Resolution; i++)
-		{
+        for (int i = 0; i < m_Resolution; i++) {
             float t = i / (float)(m_Resolution - 1);
             _lineRenderer.SetPosition(i, GetPoint(firstElement, firstElement + aimRay.direction * inBetween.magnitude, lastElement, t));
 		}
