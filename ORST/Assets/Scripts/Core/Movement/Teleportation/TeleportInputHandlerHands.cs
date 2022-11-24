@@ -1,4 +1,3 @@
-using System;
 using DG.Tweening;
 using Oculus.Interaction;
 using Oculus.Interaction.PoseDetection;
@@ -6,14 +5,13 @@ using ORST.Core.Interactions;
 using ORST.Foundation.Extensions;
 using Sirenix.Serialization;
 using UnityEngine;
-using  Oculus.Interaction.Input;
+using Oculus.Interaction.Input;
 using Tween = DG.Tweening.Tween;
 
 namespace ORST.Core.Movement {
     public class TeleportInputHandlerHands : TeleportInputHandler {
         [OdinSerialize] private IActiveState m_ActiveState;
         [SerializeField] private ShapeRecognizerActiveState m_AimRecognizer;
-        private bool m_TeleportTested;
         private readonly float m_AimThreshold = 0.1f;
         private Tween m_HoldAimIntention;
         private LocomotionTeleport.TeleportIntentions m_CurrentIntention;
@@ -26,8 +24,8 @@ namespace ORST.Core.Movement {
                 return m_CurrentIntention;
             }
 
-            if (m_CurrentIntention == LocomotionTeleport.TeleportIntentions.Aim && HandednessManager.NonDominantHand.GetIndexFingerIsPinching()
-                && !m_ExecutedTeleport) {
+            if (m_CurrentIntention == LocomotionTeleport.TeleportIntentions.Aim
+             && HandednessManager.NonDominantHand.GetIndexFingerIsPinching() && !m_ExecutedTeleport) {
                 StopHoldAimIntention();
                 m_CurrentIntention = LocomotionTeleport.TeleportIntentions.Teleport;
                 m_ExecutedTeleport = true;
@@ -48,6 +46,7 @@ namespace ORST.Core.Movement {
                 return m_CurrentIntention;
             }
 
+            //Note: This is kept in case we use hand shapes again and need rollback.
             // if (m_CurrentIntention == LocomotionTeleport.TeleportIntentions.Aim && m_HoldAimIntention == null) {
             //     m_HoldAimIntention = DOVirtual.DelayedCall(m_AimThreshold, () => {
             //         m_CurrentIntention = LocomotionTeleport.TeleportIntentions.None;
