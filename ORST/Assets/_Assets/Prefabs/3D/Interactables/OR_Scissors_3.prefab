@@ -151,9 +151,9 @@ MonoBehaviour:
   _maxInteractors: -1
   _maxSelectingInteractors: -1
   _pointableElement: {fileID: 4463551476657769111}
-  _rigidbody: {fileID: 0}
+  _rigidbody: {fileID: 4463551476657769112}
   _resetGrabOnGrabsUpdated: 1
-  _physicsGrabbable: {fileID: 0}
+  _physicsGrabbable: {fileID: 2369526862525050992}
   _scoringModifier:
     _maxDistance: 0.1
     _positionRotationWeight: 0.8

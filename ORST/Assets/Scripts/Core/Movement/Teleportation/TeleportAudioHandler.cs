@@ -21,6 +21,7 @@ namespace ORST.Core.Movement {
             }
 
             m_PlayerAudioSource = gameObject.AddComponent<AudioSource>();
+            m_PlayerAudioSource.playOnAwake = false;
         }
 
         protected override void OnDisable() {

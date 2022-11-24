@@ -1,23 +1,21 @@
 using DG.Tweening;
 using Oculus.Interaction;
-using Oculus.Interaction.Input;
 using Oculus.Interaction.PoseDetection;
+using ORST.Core.Interactions;
 using ORST.Foundation.Extensions;
 using Sirenix.Serialization;
 using UnityEngine;
+using Oculus.Interaction.Input;
 using Tween = DG.Tweening.Tween;
 
 namespace ORST.Core.Movement {
     public class TeleportInputHandlerHands : TeleportInputHandler {
-        [SerializeField] private Hand m_LeftHand;
-        [SerializeField] private Hand m_RightHand;
         [OdinSerialize] private IActiveState m_ActiveState;
-        [SerializeField] private ShapeRecognizerActiveState m_ShapeRecognizerAim;
-        [SerializeField] private ShapeRecognizerActiveState m_ShapeRecognizerTeleport;
-
+        [SerializeField] private ShapeRecognizerActiveState m_AimRecognizer;
         private readonly float m_AimThreshold = 0.1f;
         private Tween m_HoldAimIntention;
         private LocomotionTeleport.TeleportIntentions m_CurrentIntention;
+        private bool m_ExecutedTeleport;
 
         public override LocomotionTeleport.TeleportIntentions GetIntention() {
             if (!isActiveAndEnabled || m_ActiveState.OrNull() is { Active: false }) {
@@ -26,25 +24,36 @@ namespace ORST.Core.Movement {
                 return m_CurrentIntention;
             }
 
-            if (m_ShapeRecognizerTeleport.Active &&
-                m_CurrentIntention == LocomotionTeleport.TeleportIntentions.Aim) {
+            if (m_CurrentIntention == LocomotionTeleport.TeleportIntentions.Aim
+             && HandednessManager.NonDominantHand.GetIndexFingerIsPinching() && !m_ExecutedTeleport) {
                 StopHoldAimIntention();
                 m_CurrentIntention = LocomotionTeleport.TeleportIntentions.Teleport;
+                m_ExecutedTeleport = true;
                 return m_CurrentIntention;
             }
 
-            if (m_ShapeRecognizerAim.Active) {
+            if (HandednessManager.NonDominantHand.GetFingerPinchStrength(HandFinger.Index) < 0.5f) {
+                m_ExecutedTeleport = false;
+            }
+
+            if (m_ExecutedTeleport) {
+                return m_CurrentIntention;
+            }
+
+            if (m_AimRecognizer.Active) {
                 m_CurrentIntention = LocomotionTeleport.TeleportIntentions.Aim;
                 StopHoldAimIntention();
                 return m_CurrentIntention;
             }
 
-            if (m_CurrentIntention == LocomotionTeleport.TeleportIntentions.Aim && m_HoldAimIntention == null) {
-                m_HoldAimIntention = DOVirtual.DelayedCall(m_AimThreshold, () => {
-                    m_CurrentIntention = LocomotionTeleport.TeleportIntentions.None;
-                });
-            }
+            //Note: This is kept in case we use hand shapes again and need rollback.
+            // if (m_CurrentIntention == LocomotionTeleport.TeleportIntentions.Aim && m_HoldAimIntention == null) {
+            //     m_HoldAimIntention = DOVirtual.DelayedCall(m_AimThreshold, () => {
+            //         m_CurrentIntention = LocomotionTeleport.TeleportIntentions.None;
+            //     });
+            // }
 
+            m_CurrentIntention = LocomotionTeleport.TeleportIntentions.None;
             return m_CurrentIntention;
         }
 
@@ -57,8 +66,8 @@ namespace ORST.Core.Movement {
         }
 
         public override void GetAimData(out Ray aimRay) {
-            m_LeftHand.GetJointPose(HandJointId.HandIndex2, out Pose pose);
-            aimRay = new Ray(pose.position - pose.right * 0.05f, -pose.right);
+            HandednessManager.NonDominantHand.GetPointerPose(out Pose pose);
+            aimRay = new Ray(pose.position, pose.forward);
         }
     }
 }
