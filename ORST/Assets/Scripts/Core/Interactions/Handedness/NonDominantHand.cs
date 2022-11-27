@@ -1,6 +1,6 @@
 ﻿using System;
 using Oculus.Interaction.Input;
-using ORST.Foundation.Core;
+using ORST.Foundation;
 using UnityEngine;
 
 namespace ORST.Core.Interactions {
