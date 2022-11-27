@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using ORST.Foundation.Random;
 
-namespace ORST.Foundation.Foundation.Extensions {
+namespace ORST.Foundation.Extensions {
     public static class ListExtensions {
-        private static readonly Random rng = new();
-
         public static void Shuffle<T>(this IList<T> list) {
             int n = list.Count;
             while (n > 1) {
                 n--;
-                int k = rng.Next(n + 1);
+                int k = Rand.Range(n + 1);
                 (list[k], list[n]) = (list[n], list[k]);
             }
         }

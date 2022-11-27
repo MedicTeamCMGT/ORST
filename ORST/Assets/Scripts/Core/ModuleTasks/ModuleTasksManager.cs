@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using ORST.Foundation.Foundation.Extensions;
+using ORST.Foundation.Extensions;
 using ORST.Foundation.Singleton;
 using Sirenix.OdinInspector;
 using UnityEngine;
