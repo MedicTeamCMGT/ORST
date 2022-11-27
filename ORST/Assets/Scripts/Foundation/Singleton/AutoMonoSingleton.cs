@@ -1,5 +1,4 @@
-﻿using ORST.Foundation.Core;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace ORST.Foundation.Singleton {
     [DefaultExecutionOrder(-10)]

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Oculus.Interaction;
 using Oculus.Interaction.HandGrab;
-using ORST.Foundation.Core;
+using ORST.Foundation;
 using ORST.Foundation.Extensions;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;

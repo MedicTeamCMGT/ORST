@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using JetBrains.Annotations;
-using ORST.Foundation.Core;
+using ORST.Foundation;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;

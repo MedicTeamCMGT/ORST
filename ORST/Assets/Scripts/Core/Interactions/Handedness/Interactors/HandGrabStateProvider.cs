@@ -1,7 +1,7 @@
 ﻿using Oculus.Interaction;
 using Oculus.Interaction.HandGrab;
 using Oculus.Interaction.Input;
-using ORST.Foundation.Core;
+using ORST.Foundation;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 using UnityEngine;

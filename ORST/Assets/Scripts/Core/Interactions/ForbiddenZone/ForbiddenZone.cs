@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading;
 using ORST.Core.Attributes;
-using ORST.Foundation.Core;
+using ORST.Foundation;
 using Sirenix.OdinInspector;
 using UnityEngine;
 

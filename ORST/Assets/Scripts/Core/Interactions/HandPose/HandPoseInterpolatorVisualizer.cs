@@ -1,7 +1,7 @@
 ﻿using System;
 using Oculus.Interaction.HandGrab;
 using Oculus.Interaction.HandGrab.Visuals;
-using ORST.Foundation.Core;
+using ORST.Foundation;
 using Sirenix.OdinInspector;
 using UnityEngine;
 

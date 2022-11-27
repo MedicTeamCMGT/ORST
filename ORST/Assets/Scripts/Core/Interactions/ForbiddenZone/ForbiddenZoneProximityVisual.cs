@@ -1,5 +1,5 @@
 ﻿using System;
-using ORST.Foundation.Core;
+using ORST.Foundation;
 using ORST.Foundation.Extensions;
 using Sirenix.OdinInspector;
 using UnityEngine;

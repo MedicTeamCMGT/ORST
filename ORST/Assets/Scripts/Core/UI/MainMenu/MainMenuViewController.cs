@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using DG.Tweening;
 using ORST.Core.Interactions;
-using ORST.Foundation.Core;
+using ORST.Foundation;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
 using UnityEngine;
