@@ -138,7 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7829597254967582127}
   - component: {fileID: 4307699105058783074}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: PopupCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}

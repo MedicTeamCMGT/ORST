@@ -5,9 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - Floor
-  - LeftHand
-  - RightHand
-  - InnerCollider
   layers:
   - Default
   - TransparentFX
@@ -17,7 +14,7 @@ TagManager:
   - UI
   - Popup
   - Player
-  - ForbiddenZone
+  - 
   - Interactable
   - 
   - 
