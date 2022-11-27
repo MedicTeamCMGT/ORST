@@ -412,7 +412,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88a3bb76548f4b44d89f608ebf72fba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ActiveState: {fileID: 0}
   m_AimRecognizer: {fileID: 0}
 --- !u!114 &1226063607
 MonoBehaviour:
@@ -423,11 +422,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8040552422308573136}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb3df03d3a364a31a95c5e043cb7dad4, type: 3}
+  m_Script: {fileID: 11500000, guid: 83b589595a572484a8c0e58ee126ae86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LaserPrefab: {fileID: 120000014163304990, guid: 95b2b00d2fc56fa4c806f2cda99f5f89,
-    type: 3}
+  LaserPrefab: {fileID: 0}
   m_Resolution: 500
 --- !u!114 &1226063608
 MonoBehaviour:
@@ -454,35 +452,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4159926949008633755, guid: 470946c88bf2b374baf65cf3cc693b12,
-        type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 991
-      objectReference: {fileID: 0}
-    - target: {fileID: 4159926951250112513, guid: 470946c88bf2b374baf65cf3cc693b12,
-        type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 991
-      objectReference: {fileID: 0}
     - target: {fileID: 4178225971018816553, guid: 470946c88bf2b374baf65cf3cc693b12,
         type: 3}
       propertyPath: m_Name
       value: OVRCameraRig
-      objectReference: {fileID: 0}
-    - target: {fileID: 4178225971018816559, guid: 470946c88bf2b374baf65cf3cc693b12,
-        type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4178225971018819301, guid: 470946c88bf2b374baf65cf3cc693b12,
-        type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4178225971018821745, guid: 470946c88bf2b374baf65cf3cc693b12,
-        type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4178225971018907657, guid: 470946c88bf2b374baf65cf3cc693b12,
         type: 3}
@@ -628,60 +601,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8040552421205695959}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &6226734122698277368 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4178225971018816559, guid: 470946c88bf2b374baf65cf3cc693b12,
-    type: 3}
-  m_PrefabInstance: {fileID: 8040552421205695959}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &3165281367995365835
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6226734122698277368}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5, z: 0.5}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &6226734122698288550 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4178225971018821745, guid: 470946c88bf2b374baf65cf3cc693b12,
-    type: 3}
-  m_PrefabInstance: {fileID: 8040552421205695959}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &5607471856121809747
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6226734122698288550}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.15, y: 0.15, z: 0.15}
-  m_Center: {x: 0.05, y: 0, z: 0}
---- !u!1 &6226734122698292018 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4178225971018819301, guid: 470946c88bf2b374baf65cf3cc693b12,
-    type: 3}
-  m_PrefabInstance: {fileID: 8040552421205695959}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &4751335586836415784
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6226734122698292018}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.15, y: 0.15, z: 0.15}
-  m_Center: {x: 0.05, y: 0, z: 0}
