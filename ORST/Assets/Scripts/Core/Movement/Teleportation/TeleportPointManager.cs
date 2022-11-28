@@ -57,6 +57,7 @@ namespace ORST.Core.Movement {
         /// </summary>
         public static void EnablePoint(TeleportPointORST teleportPoint) {
             s_TeleportPoints[teleportPoint].Enabled = true;
+            teleportPoint.Visuals.SetActive(true);
         }
 
         /// <summary>
@@ -64,6 +65,7 @@ namespace ORST.Core.Movement {
         /// </summary>
         public static void DisablePoint(TeleportPointORST teleportPoint) {
             s_TeleportPoints[teleportPoint].Enabled = false;
+            teleportPoint.Visuals.SetActive(false);
         }
 
         /// <summary>
@@ -77,7 +79,7 @@ namespace ORST.Core.Movement {
             if (s_RestrictedTeleportPoints != null) {
                 return s_RestrictedTeleportPoints.Contains(teleportPoint);
             }
-            
+
             return s_TeleportPoints.TryGetValue(teleportPoint, out TeleportPointInfo info) && info.Enabled;
         }
 

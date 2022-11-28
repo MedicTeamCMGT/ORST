@@ -1,0 +1,43 @@
+diff --git a/ORST/Assets/Oculus/Interaction/Runtime/Scripts/Interaction/Models/HandGrab/IHandGrabState.cs b/ORST/Assets/Oculus/Interaction/Runtime/Scripts/Interaction/Models/HandGrab/IHandGrabState.cs
+index 9fb4adf..caa28c5 100644
+--- a/ORST/Assets/Oculus/Interaction/Runtime/Scripts/Interaction/Models/HandGrab/IHandGrabState.cs
++++ b/ORST/Assets/Oculus/Interaction/Runtime/Scripts/Interaction/Models/HandGrab/IHandGrabState.cs
+@@ -41,7 +41,7 @@ public enum HandAlignType
+     /// Contains information to drive the HandGrabVisual moving
+     /// the fingers and wrist.
+     /// </summary>
+-    public interface IHandGrabState
++    public interface IHandGrabState : IHandGrabStateProvider
+     {
+         bool IsGrabbing { get; }
+         float FingersStrength { get; }
+@@ -49,5 +49,7 @@ public interface IHandGrabState
+         Pose WristToGrabPoseOffset { get; }
+         HandFingerFlags GrabbingFingers();
+         HandGrabTarget HandGrabTarget { get; }
++
++        IHandGrabState IHandGrabStateProvider.Value => this;
+     }
+ }
+diff --git a/ORST/Assets/Oculus/Interaction/Runtime/Scripts/Interaction/Models/HandGrab/IHandGrabStateProvider.cs b/ORST/Assets/Oculus/Interaction/Runtime/Scripts/Interaction/Models/HandGrab/IHandGrabStateProvider.cs
+new file mode 100644
+index 0000000..ec7fb2a
+--- /dev/null
++++ b/ORST/Assets/Oculus/Interaction/Runtime/Scripts/Interaction/Models/HandGrab/IHandGrabStateProvider.cs
+@@ -0,0 +1,5 @@
++﻿namespace Oculus.Interaction.HandGrab {
++    public interface IHandGrabStateProvider {
++        IHandGrabState Value { get; }
++    }
++}
+\ No newline at end of file
+diff --git a/ORST/Assets/Oculus/Interaction/Runtime/Scripts/Interaction/Models/HandGrab/IHandGrabStateProvider.cs.meta b/ORST/Assets/Oculus/Interaction/Runtime/Scripts/Interaction/Models/HandGrab/IHandGrabStateProvider.cs.meta
+new file mode 100644
+index 0000000..dc6f08f
+--- /dev/null
++++ b/ORST/Assets/Oculus/Interaction/Runtime/Scripts/Interaction/Models/HandGrab/IHandGrabStateProvider.cs.meta
+@@ -0,0 +1,3 @@
++﻿fileFormatVersion: 2
++guid: b8eaa70a1333473ab508eff180a3de99
++timeCreated: 1669201210
+\ No newline at end of file

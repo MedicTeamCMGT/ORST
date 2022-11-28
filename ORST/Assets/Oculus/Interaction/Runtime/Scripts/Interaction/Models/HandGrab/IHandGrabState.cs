@@ -41,7 +41,7 @@ namespace Oculus.Interaction.HandGrab
     /// Contains information to drive the HandGrabVisual moving
     /// the fingers and wrist.
     /// </summary>
-    public interface IHandGrabState
+    public interface IHandGrabState : IHandGrabStateProvider
     {
         bool IsGrabbing { get; }
         float FingersStrength { get; }
@@ -49,5 +49,7 @@ namespace Oculus.Interaction.HandGrab
         Pose WristToGrabPoseOffset { get; }
         HandFingerFlags GrabbingFingers();
         HandGrabTarget HandGrabTarget { get; }
+
+        IHandGrabState IHandGrabStateProvider.Value => this;
     }
 }

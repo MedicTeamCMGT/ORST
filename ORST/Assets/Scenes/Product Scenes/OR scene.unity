@@ -439,7 +439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08f7cfb1f9629da4494ac0840f3a3cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hand: {fileID: 1076287209}
+  _hand: {fileID: 0}
   _shapes:
   - {fileID: 11400000, guid: 49a1bd4698b4278418dbac8f00ce4927, type: 2}
 --- !u!4 &153642457
@@ -2262,18 +2262,6 @@ Transform:
   m_Father: {fileID: 1181391785}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1076287209 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1581845442904829117, guid: c92925a9dc0d50344bd6fdacf8353e12,
-    type: 3}
-  m_PrefabInstance: {fileID: 1977529583}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a379f34d4f4f2e408d34f14bfb753ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1085221334
 GameObject:
   m_ObjectHideFlags: 0
@@ -4639,7 +4627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08f7cfb1f9629da4494ac0840f3a3cfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hand: {fileID: 1076287209}
+  _hand: {fileID: 0}
   _shapes:
   - {fileID: 11400000, guid: 27db86a760b31774285982da83766e1f, type: 2}
 --- !u!4 &1882993383
@@ -4924,18 +4912,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1947708493}
   m_CullTransparentMesh: 1
---- !u!114 &1958428777 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2928911367242478084, guid: c92925a9dc0d50344bd6fdacf8353e12,
-    type: 3}
-  m_PrefabInstance: {fileID: 1977529583}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a379f34d4f4f2e408d34f14bfb753ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1977529583
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6399,10 +6375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88a3bb76548f4b44d89f608ebf72fba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LeftHand: {fileID: 1076287209}
-  m_RightHand: {fileID: 1958428777}
-  m_ShapeRecognizerAim: {fileID: 153642456}
-  m_ShapeRecognizerTeleport: {fileID: 1882993382}
+  m_AimRecognizer: {fileID: 0}
 --- !u!114 &4926590349058944345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7116,7 +7089,7 @@ GameObject:
   - component: {fileID: 1313660237}
   m_Layer: 7
   m_Name: LeftHandAnchor
-  m_TagString: LeftHand
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7133,7 +7106,7 @@ GameObject:
   - component: {fileID: 1887899031}
   m_Layer: 7
   m_Name: RightHandAnchor
-  m_TagString: RightHand
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -5,6 +5,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace ORST.Core.Interactions {
+    [DefaultExecutionOrder(-10)]
     public class HandednessManager : AutoMonoSingleton<HandednessManager> {
         public override bool IsPersistentThroughScenes => true;
 

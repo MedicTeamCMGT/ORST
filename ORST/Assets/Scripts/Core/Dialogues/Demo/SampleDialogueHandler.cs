@@ -1,5 +1,5 @@
 ﻿using Oculus.Interaction;
-using ORST.Foundation.Core;
+using ORST.Foundation;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Assertions;

@@ -7,6 +7,7 @@ using Sirenix.Serialization;
 using UnityEngine;
 
 namespace ORST.Core.Dialogues {
+    [DefaultExecutionOrder(-10)]
     public class DialogueManager : MonoSingleton<DialogueManager> {
         [OdinSerialize, Required, InlineButton(nameof(FindAllDialogueHandlers), "Find")]
         private List<IDialogueHandler> m_DialogueHandlers;
@@ -33,6 +34,7 @@ namespace ORST.Core.Dialogues {
         protected override void OnAwake() {
             base.OnAwake();
 
+            FindAllDialogueHandlers();
             m_DialogueHandlerDictionary = new Dictionary<Dialogue, IDialogueHandler>();
             foreach (IDialogueHandler dialogueHandler in m_DialogueHandlers) {
                 m_DialogueHandlerDictionary.Add(dialogueHandler.Dialogue, dialogueHandler);

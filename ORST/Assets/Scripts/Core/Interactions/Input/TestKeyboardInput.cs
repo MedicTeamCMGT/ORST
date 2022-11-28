@@ -1,5 +1,5 @@
 ﻿using DG.Tweening;
-using ORST.Foundation.Core;
+using ORST.Foundation;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;

@@ -6,8 +6,7 @@ using UnityEngine;
 namespace ORST.Core.Interactions {
     public class RayInteractorCanHaveCandidate : MonoBehaviour, IActiveState {
         [SerializeField, Required] private RayInteractor m_Interactor;
-
-        [ShowInInspector] public bool Active => CouldHaveCandidate();
+        public bool Active => CouldHaveCandidate();
 
         private bool CouldHaveCandidate() {
             if (m_Interactor == null) {
