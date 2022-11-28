@@ -1,9 +1,4 @@
-﻿// Created Date: 16/08/2022
-// Original Author: Teodor Vecerdi
-// 
-// Copyright (c) 2022 ATiStudios. All rights reserved.
-
-namespace ORST.Foundation.Random {
+﻿namespace ORST.Foundation.Random {
     public interface IRandomProvider {
         /// <summary>
         /// Seed used to generate values
