@@ -1,0 +1,69 @@
+diff --git a/ORST/Assets/Oculus/SampleFramework/Core/Locomotion/Scripts/ITeleportPoint.cs b/ORST/Assets/Oculus/SampleFramework/Core/Locomotion/Scripts/ITeleportPoint.cs
+new file mode 100644
+index 0000000..1fb1b7d
+--- /dev/null
++++ b/ORST/Assets/Oculus/SampleFramework/Core/Locomotion/Scripts/ITeleportPoint.cs
+@@ -0,0 +1,5 @@
++﻿using UnityEngine;
++
++public interface ITeleportPoint {
++    Transform DestinationTransform { get; }
++}
+\ No newline at end of file
+diff --git a/ORST/Assets/Oculus/SampleFramework/Core/Locomotion/Scripts/ITeleportPoint.cs.meta b/ORST/Assets/Oculus/SampleFramework/Core/Locomotion/Scripts/ITeleportPoint.cs.meta
+new file mode 100644
+index 0000000..d779d06
+--- /dev/null
++++ b/ORST/Assets/Oculus/SampleFramework/Core/Locomotion/Scripts/ITeleportPoint.cs.meta
+@@ -0,0 +1,3 @@
++﻿fileFormatVersion: 2
++guid: 28c427107d49435e8b60c3b9dd141a28
++timeCreated: 1667469084
+\ No newline at end of file
+diff --git a/ORST/Assets/Oculus/SampleFramework/Core/Locomotion/Scripts/TeleportPoint.cs b/ORST/Assets/Oculus/SampleFramework/Core/Locomotion/Scripts/TeleportPoint.cs
+index 69a4124..b3771dd 100644
+--- a/ORST/Assets/Oculus/SampleFramework/Core/Locomotion/Scripts/TeleportPoint.cs
++++ b/ORST/Assets/Oculus/SampleFramework/Core/Locomotion/Scripts/TeleportPoint.cs
+@@ -22,7 +22,7 @@
+ using UnityEngine;
+ using System.Collections;
+ 
+-public class TeleportPoint : MonoBehaviour {
++public class TeleportPoint : MonoBehaviour, ITeleportPoint {
+ 
+     public float dimmingSpeed = 1;
+     public float fullIntensity = 1;
+@@ -39,10 +39,7 @@ public class TeleportPoint : MonoBehaviour {
+ 
+ 	}
+ 
+-    public Transform GetDestTransform()
+-    {
+-        return destTransform;
+-    }
++    public Transform DestinationTransform => destTransform;
+ 
+ 
+ 
+diff --git a/ORST/Assets/Oculus/SampleFramework/Core/Locomotion/Scripts/TeleportTargetHandlerNode.cs b/ORST/Assets/Oculus/SampleFramework/Core/Locomotion/Scripts/TeleportTargetHandlerNode.cs
+index c8eb023..87f2fc3 100644
+--- a/ORST/Assets/Oculus/SampleFramework/Core/Locomotion/Scripts/TeleportTargetHandlerNode.cs
++++ b/ORST/Assets/Oculus/SampleFramework/Core/Locomotion/Scripts/TeleportTargetHandlerNode.cs
+@@ -38,7 +38,7 @@ protected override bool ConsiderTeleport(Vector3 start, ref Vector3 end)
+ 		{
+ 			return false;
+ 		}
+-		TeleportPoint tp = AimData.TargetHitInfo.collider.gameObject.GetComponent<TeleportPoint>();
++		ITeleportPoint tp = AimData.TargetHitInfo.collider.gameObject.GetComponent<ITeleportPoint>();
+ 		if (tp == null)
+ 		{
+ 			return false;
+@@ -47,7 +47,7 @@ protected override bool ConsiderTeleport(Vector3 start, ref Vector3 end)
+ 		// The targeting test discovered a valid teleport node. Now test to make sure there is line of sight to the 
+ 		// actual destination. Since the teleport destination is expected to be right on the ground, use the LOSOffset 
+ 		// to bump the collision check up off the ground a bit.
+-		var dest = tp.destTransform.position;
++		var dest = tp.DestinationTransform.position;
+ 		var offsetEnd = new Vector3(dest.x, dest.y + LOSOffset, dest.z);
+ 		if (LocomotionTeleport.AimCollisionTest(start, offsetEnd, AimCollisionLayerMask & ~TeleportLayerMask, out AimData.TargetHitInfo))
+ 		{

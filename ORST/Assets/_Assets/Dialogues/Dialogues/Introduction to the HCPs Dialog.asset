@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cb7a3d70b7440efbbe7e1441d19c8da, type: 3}
+  m_Name: Introduction to the HCPs Dialog
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  m_Nodes:
+  - m_Text: "\u2026"
+    m_Options:
+    - m_Text: Hey, It's me. the person from J and J.
+      m_IsCorrect: 0
+      m_Feedback: A Johnson and Johnson representative should always maintain a proper
+        code of conduct when talking to the HCPs.
+    - m_Text: Good morning. I am {PLAYER NAME}. I am here to represent {WRONG COMPANY}
+      m_IsCorrect: 0
+      m_Feedback: A Johnson and Johnson representative should strive to present factual
+        information.
+    - m_Text: Good morning. I am {PLAYER NAME}. I am here to represent {CORRECT COMPANY}
+      m_IsCorrect: 1
+      m_Feedback: 
+  - m_Text: Good morning, I am Brenda Jansen. I am the perioperative nurse for this
+      operation. Remind me again what you are here for today.
+    m_Options:
+    - m_Text: I don't really know.
+      m_IsCorrect: 0
+      m_Feedback: A Johnson and Johnson representative should always be aware of
+        his purpose for being in the Operating Room.
+    - m_Text: I am here to advise and instruct on the proper usage of the Harmonic
+        Synergy Blades.
+      m_IsCorrect: 0
+      m_Feedback: A Johnson and Johnson representative should strive to present factual
+        information.
+    - m_Text: I am here to advise and instruct on the proper usage of the Echelon+
+        Stapler.
+      m_IsCorrect: 1
+      m_Feedback: 
+  - m_Text: 'Ah ok, Your position during this Operation is over there. '
+    m_Options:
+    - m_Text: Ok, thank you
+      m_IsCorrect: 1
+      m_Feedback: 

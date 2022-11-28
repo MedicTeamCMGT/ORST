@@ -1,0 +1,644 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8c3389349cb4574976f8fbc8e48cc1b, type: 3}
+  m_Name: Pose_Point_L
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: m_HandPose
+      Entry: 7
+      Data: 0|Oculus.Interaction.HandGrab.HandPose, Oculus.Interaction
+    - Name: _handedness
+      Entry: 3
+      Data: 0
+    - Name: _fingersFreedom
+      Entry: 7
+      Data: 1|Oculus.Interaction.Input.JointFreedom[], Oculus.Interaction
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: _jointRotations
+      Entry: 7
+      Data: 2|UnityEngine.Quaternion[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 17
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Quaternion, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.375387371
+    - Name: 
+      Entry: 4
+      Data: -0.4245841
+    - Name: 
+      Entry: 4
+      Data: 0.007778898
+    - Name: 
+      Entry: 4
+      Data: 0.8238642
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Quaternion, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.291469336
+    - Name: 
+      Entry: 4
+      Data: -0.140509456
+    - Name: 
+      Entry: 4
+      Data: -0.304171652
+    - Name: 
+      Entry: 4
+      Data: 0.895981252
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Quaternion, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -0.08318525
+    - Name: 
+      Entry: 4
+      Data: 0.06530857
+    - Name: 
+      Entry: 4
+      Data: -0.057455454
+    - Name: 
+      Entry: 4
+      Data: 0.9927305
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Quaternion, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.0793632045
+    - Name: 
+      Entry: 4
+      Data: -0.0511428267
+    - Name: 
+      Entry: 4
+      Data: -0.107244916
+    - Name: 
+      Entry: 4
+      Data: 0.989739537
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Quaternion, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -0.02976254
+    - Name: 
+      Entry: 4
+      Data: -0.03860152
+    - Name: 
+      Entry: 4
+      Data: 0.246615976
+    - Name: 
+      Entry: 4
+      Data: -0.967886746
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Quaternion, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -0.0262719188
+    - Name: 
+      Entry: 4
+      Data: -9.052735E-05
+    - Name: 
+      Entry: 4
+      Data: -0.271652669
+    - Name: 
+      Entry: 4
+      Data: 0.9620367
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Quaternion, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -0.01662625
+    - Name: 
+      Entry: 4
+      Data: 0.02538699
+    - Name: 
+      Entry: 4
+      Data: -0.0380259156
+    - Name: 
+      Entry: 4
+      Data: 0.9988159
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Quaternion, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -0.0372821577
+    - Name: 
+      Entry: 4
+      Data: 0.0512194335
+    - Name: 
+      Entry: 4
+      Data: -0.540445149
+    - Name: 
+      Entry: 4
+      Data: 0.8389908
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Quaternion, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -0.0123074055
+    - Name: 
+      Entry: 4
+      Data: -0.00543488935
+    - Name: 
+      Entry: 4
+      Data: -0.74285984
+    - Name: 
+      Entry: 4
+      Data: 0.6693119
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Quaternion, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -0.08432786
+    - Name: 
+      Entry: 4
+      Data: -0.0199346114
+    - Name: 
+      Entry: 4
+      Data: -0.467656732
+    - Name: 
+      Entry: 4
+      Data: 0.87965256
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Quaternion, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -0.10538134
+    - Name: 
+      Entry: 4
+      Data: 0.06816966
+    - Name: 
+      Entry: 4
+      Data: -0.5948155
+    - Name: 
+      Entry: 4
+      Data: 0.794003844
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Quaternion, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -0.04158234
+    - Name: 
+      Entry: 4
+      Data: -0.0213458315
+    - Name: 
+      Entry: 4
+      Data: -0.700406
+    - Name: 
+      Entry: 4
+      Data: 0.7122125
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Quaternion, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.0260381233
+    - Name: 
+      Entry: 4
+      Data: 0.0280699283
+    - Name: 
+      Entry: 4
+      Data: 0.4673857
+    - Name: 
+      Entry: 4
+      Data: -0.88322407
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Quaternion, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -0.207035869
+    - Name: 
+      Entry: 4
+      Data: 0.140342817
+    - Name: 
+      Entry: 4
+      Data: -0.0183118246
+    - Name: 
+      Entry: 4
+      Data: 0.968041658
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Quaternion, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -0.0376318768
+    - Name: 
+      Entry: 4
+      Data: -0.06520599
+    - Name: 
+      Entry: 4
+      Data: 0.603466
+    - Name: 
+      Entry: 4
+      Data: -0.79382664
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Quaternion, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -0.08933254
+    - Name: 
+      Entry: 4
+      Data: 0.00236998126
+    - Name: 
+      Entry: 4
+      Data: -0.7066915
+    - Name: 
+      Entry: 4
+      Data: 0.7018556
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Quaternion, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -0.00232582726
+    - Name: 
+      Entry: 4
+      Data: 0.0424895063
+    - Name: 
+      Entry: 4
+      Data: 0.49051103
+    - Name: 
+      Entry: 4
+      Data: -0.870395362
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: m_JointPositions
+      Entry: 7
+      Data: 3|UnityEngine.Vector3[], UnityEngine.CoreModule
+    - Name: 
+      Entry: 12
+      Data: 17
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -0.0200693011
+    - Name: 
+      Entry: 4
+      Data: 0.0115540987
+    - Name: 
+      Entry: 4
+      Data: -0.0104965195
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -0.024852559
+    - Name: 
+      Entry: 4
+      Data: -8.881784E-18
+    - Name: 
+      Entry: 4
+      Data: 1.05471186E-17
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -0.03251291
+    - Name: 
+      Entry: 4
+      Data: 1.7763568E-17
+    - Name: 
+      Entry: 4
+      Data: -2.6090241E-17
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -0.03379309
+    - Name: 
+      Entry: 4
+      Data: -1.3322676E-17
+    - Name: 
+      Entry: 4
+      Data: 3.4416914E-17
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -0.09599624
+    - Name: 
+      Entry: 4
+      Data: 0.00731645431
+    - Name: 
+      Entry: 4
+      Data: -0.02355068
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -0.0379273
+    - Name: 
+      Entry: 4
+      Data: -2.220446E-18
+    - Name: 
+      Entry: 4
+      Data: -8.881784E-18
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -0.024303643
+    - Name: 
+      Entry: 4
+      Data: 3.0531133E-18
+    - Name: 
+      Entry: 4
+      Data: 4.440892E-18
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -0.0956466049
+    - Name: 
+      Entry: 4
+      Data: 0.00254315464
+    - Name: 
+      Entry: 4
+      Data: -0.00172590546
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -0.04292699
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -0.0275495835
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: -4.440892E-18
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -0.08869379
+    - Name: 
+      Entry: 4
+      Data: 0.006529307
+    - Name: 
+      Entry: 4
+      Data: 0.0174652413
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -0.0389961
+    - Name: 
+      Entry: 4
+      Data: 7.771561E-18
+    - Name: 
+      Entry: 4
+      Data: -8.881784E-18
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -0.0265733972
+    - Name: 
+      Entry: 4
+      Data: -4.440892E-18
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -0.0340735577
+    - Name: 
+      Entry: 4
+      Data: 0.009419835
+    - Name: 
+      Entry: 4
+      Data: 0.0229985733
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -0.04565054
+    - Name: 
+      Entry: 4
+      Data: 9.982332E-07
+    - Name: 
+      Entry: 4
+      Data: -2.19402546E-06
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -0.030720409
+    - Name: 
+      Entry: 4
+      Data: -3.330669E-18
+    - Name: 
+      Entry: 4
+      Data: -8.881784E-18
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: UnityEngine.Vector3, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: -0.0203113835
+    - Name: 
+      Entry: 4
+      Data: 6.661338E-18
+    - Name: 
+      Entry: 4
+      Data: -8.881784E-18
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 

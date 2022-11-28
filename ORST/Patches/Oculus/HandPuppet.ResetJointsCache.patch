@@ -1,0 +1,39 @@
+diff --git a/ORST/Assets/Oculus/Interaction/Editor/Grab/Visuals/HandPuppetEditor.cs b/ORST/Assets/Oculus/Interaction/Editor/Grab/Visuals/HandPuppetEditor.cs
+index c8d5ce2..58d7abf 100644
+--- a/ORST/Assets/Oculus/Interaction/Editor/Grab/Visuals/HandPuppetEditor.cs
++++ b/ORST/Assets/Oculus/Interaction/Editor/Grab/Visuals/HandPuppetEditor.cs
+@@ -39,12 +39,17 @@ public override void OnInspectorGUI()
+             HandPuppet puppet = target as HandPuppet;
+             if (GUILayout.Button("Auto-Assign Bones"))
+             {
+-                SkinnedMeshRenderer skinnedHand = puppet.GetComponentInChildren<SkinnedMeshRenderer>();
++                SkinnedMeshRenderer skinnedHand = puppet!.GetComponentInChildren<SkinnedMeshRenderer>();
+                 if (skinnedHand != null)
+                 {
+                     SetPrivateValue(puppet, "_jointMaps", AutoAsignBones(skinnedHand));
+                 }
+             }
++
++            if (GUILayout.Button("Reset JointsCache"))
++            {
++                puppet!.ResetJointsCache();
++            }
+         }
+ 
+         private List<HandJointMap> AutoAsignBones(SkinnedMeshRenderer skinnedHand)
+diff --git a/ORST/Assets/Oculus/Interaction/Runtime/Scripts/Grab/Visuals/HandPuppet.cs b/ORST/Assets/Oculus/Interaction/Runtime/Scripts/Grab/Visuals/HandPuppet.cs
+index 1404deb..58155e1 100644
+--- a/ORST/Assets/Oculus/Interaction/Runtime/Scripts/Grab/Visuals/HandPuppet.cs
++++ b/ORST/Assets/Oculus/Interaction/Runtime/Scripts/Grab/Visuals/HandPuppet.cs
+@@ -77,6 +77,11 @@ private JointCollection JointsCache
+             }
+         }
+ 
++        public void ResetJointsCache()
++        {
++            _jointsCache = null;
++        }
++
+         /// <summary>
+         /// Rotates all the joints in this puppet to the desired pose.
+         /// </summary>

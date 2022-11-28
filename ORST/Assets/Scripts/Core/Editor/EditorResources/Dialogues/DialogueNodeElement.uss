@@ -1,0 +1,57 @@
+DialogueNodeElement {
+  flex-grow: 1;
+  padding: 8px 4px;
+  background-color: #323232;
+  margin-top: 8px;
+  border-radius: 8px;
+  border-width: 2px;
+  border-color: #404040;
+}
+
+.dialogue-node-root #dialogue-node-options__foldout {
+  margin-left: -4px;
+  margin-right: -4px;
+  margin-top: 6px;
+  margin-bottom: -8px;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  border-width: 1px;
+  border-color: #404040;
+}
+.dialogue-node-root #dialogue-node-options__foldout > Toggle {
+  background-color: #404040;
+}
+.dialogue-node-root #dialogue-node-options__foldout > #unity-content {
+  margin-left: 0;
+}
+.dialogue-node-root #dialogue-node-options__add-option {
+  border-radius: 10000px;
+  margin: 0;
+  margin-right: 6px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding: 0;
+  width: 26px;
+  height: 26px;
+}
+.dialogue-node-root #dialogue-node__top-container {
+  flex-direction: row;
+}
+.dialogue-node-root #dialogue-node__top-container #dialogue-node__remove-button {
+  border-radius: 10000px;
+  width: 26px;
+  height: 26px;
+  background-color: #622525;
+  transition: background-color 80ms ease-in-out;
+}
+.dialogue-node-root #dialogue-node__top-container #dialogue-node__remove-button:hover {
+  background-color: #7f2f2f;
+}
+.dialogue-node-root #dialogue-node__top-container #dialogue-node__remove-button:focus {
+  border-color: #7f2f2f;
+}
+.dialogue-node-root #dialogue-node-options {
+  margin-left: 16px;
+}
+
+/*# sourceMappingURL=DialogueNodeElement.uss.map */

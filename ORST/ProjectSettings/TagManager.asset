@@ -8,13 +8,13 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - TeleportPoint
   - Water
   - UI
+  - Popup
+  - Player
   - 
-  - 
-  - 
-  - 
+  - Interactable
   - 
   - 
   - 
