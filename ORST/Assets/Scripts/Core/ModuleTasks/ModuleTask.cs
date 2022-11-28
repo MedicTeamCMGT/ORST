@@ -35,7 +35,7 @@ namespace ORST.Core.ModuleTasks {
         /// </summary>
         public bool Completed => m_Completed;
 
-        private void Start() {
+        private void Awake() {
             InitializeModuleTask();
         }
 
