@@ -32,7 +32,7 @@ MonoBehaviour:
       m_Feedback: no no no
   - m_Text: What is your name?
     m_Options:
-    - m_Text: name iz <...>
+    - m_Text: name iz {PLAYER_NAME}
       m_IsCorrect: 1
       m_Feedback: 
     - m_Text: Ligma
