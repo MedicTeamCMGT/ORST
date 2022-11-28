@@ -1,6 +1,7 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using JetBrains.Annotations;
+using ORST.Core.Placeholders;
 using ORST.Foundation;
 using Sirenix.OdinInspector;
 using TMPro;
@@ -45,12 +46,12 @@ namespace ORST.Core.Dialogues {
 
         public void LoadState(DialogueNode node) {
             m_CurrentNode = node;
-            m_Text.text = node.Text;
+            m_Text.text = PlaceholderManager.Resolve(node.Text);
 
             int index = 0;
             foreach (DialogueOption dialogueOption in node.Options) {
                 m_Buttons[index].gameObject.SetActive(true);
-                m_Buttons[index].Text.text = dialogueOption.Text;
+                m_Buttons[index].Text.text = PlaceholderManager.Resolve(dialogueOption.Text);
 
                 index++;
             }
@@ -68,7 +69,7 @@ namespace ORST.Core.Dialogues {
             }
 
             m_IncorrectAnswerContainer.SetActive(true);
-            m_IncorrectHint.text = selectedOption.Feedback;
+            m_IncorrectHint.text = PlaceholderManager.Resolve(selectedOption.Feedback);
             m_IncorrectContinueButton.onClick.RemoveAllListeners();
             m_IncorrectContinueButton.onClick.AddListener(() => {
                 m_IncorrectAnswerContainer.SetActive(false);
