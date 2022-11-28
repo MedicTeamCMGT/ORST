@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using ORST.Core.Placeholders;
@@ -73,7 +73,6 @@ namespace ORST.Core.Dialogues {
             m_IncorrectContinueButton.onClick.RemoveAllListeners();
             m_IncorrectContinueButton.onClick.AddListener(() => {
                 m_IncorrectAnswerContainer.SetActive(false);
-                m_OptionSelectedCallback(index);
             });
         }
     }
