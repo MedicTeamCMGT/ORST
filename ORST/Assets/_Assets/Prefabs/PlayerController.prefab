@@ -131,11 +131,11 @@ GameObject:
   - component: {fileID: 8040552422308573149}
   - component: {fileID: 8040552422308573150}
   - component: {fileID: 8040552422308573144}
-  - component: {fileID: 8040552422308573146}
   - component: {fileID: 8040552422308573147}
   - component: {fileID: 8040552422308573142}
   - component: {fileID: 1226063607}
   - component: {fileID: 1226063608}
+  - component: {fileID: 7060802481878599429}
   m_Layer: 0
   m_Name: LocomotionController
   m_TagString: Untagged
@@ -253,22 +253,6 @@ MonoBehaviour:
     m_Bits: 8
   m_InvalidTeleportPosIndicator: {fileID: 0}
   m_ShowInvalidPositionIndicator: 1
---- !u!114 &8040552422308573146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8040552422308573136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40e31156a98eed94e816056346fac4e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OrientationMode: 0
-  UpdateOrientationDuringAim: 1
-  AimDistanceThreshold: 5
-  AimDistanceMaxRange: 15
 --- !u!114 &8040552422308573147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,7 +278,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActiveState: {fileID: 0}
-  m_AimRecognizer: {fileID: 0}
 --- !u!114 &1226063607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,6 +306,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Range: 100
+--- !u!114 &7060802481878599429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8040552422308573136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2051e49b4d4201418c42b0244b2bb47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8040552421205695959
 PrefabInstance:
   m_ObjectHideFlags: 0
