@@ -58,9 +58,9 @@ namespace ORST.Core.ModuleTasks {
             if (m_CurrentModuleSubtask != null) {
                 //We have subtasks, start subtask
                 m_CurrentModuleSubtask.StartModuleTask();
-                Debug.Log("Task::Subtask started...");
+                Debug.Log($"Task::Subtask '{m_CurrentModuleSubtask.gameObject.name}' started...");
             } else {
-                Debug.Log("Task::Task started...");
+                Debug.Log($"Task::Task '{gameObject.name}' started...");
             }
 
             OnModuleTaskStarted();
@@ -95,7 +95,7 @@ namespace ORST.Core.ModuleTasks {
                 case ModuleTaskState.Successful:
                     //Subtask was successful
                     if (m_ModuleSubtaskQueue.Count > 0) {
-                        Debug.Log("Task::Subtask successful - Advancing...");
+                        Debug.Log($"Task::Subtask '{m_CurrentModuleSubtask.gameObject.name}' successful - Advancing...");
                         m_CurrentModuleSubtask = m_ModuleSubtaskQueue.Dequeue();
                         if (m_CurrentModuleSubtask != null) {
                             m_CurrentModuleSubtask.StartModuleTask();
