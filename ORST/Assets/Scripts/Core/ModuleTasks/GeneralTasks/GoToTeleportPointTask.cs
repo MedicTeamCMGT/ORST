@@ -4,7 +4,6 @@ using Sirenix.OdinInspector;
 
 namespace ORST.Core.ModuleTasks {
     public class GoToTeleportPointTask : ModuleTask {
-        [SerializeField, Required] private AdvancedLocomotionTeleport m_LocomotionTeleport;
         [SerializeField, Required] private TeleportPointORST m_TeleportPoint;
         [LabelText("[?] Track Only When Running"), Tooltip("If this is true then the task will only update while the task is running.")]
         [SerializeField] private bool m_TrackOnlyWhenRunning = true;
@@ -12,11 +11,11 @@ namespace ORST.Core.ModuleTasks {
         private bool m_Teleported;
 
         private void OnEnable() {
-            m_LocomotionTeleport.TeleportedToPoint += OnTeleportedToPoint;
+            AdvancedLocomotionTeleport.Instance.TeleportedToPoint += OnTeleportedToPoint;
         }
 
         private void OnDisable() {
-            m_LocomotionTeleport.TeleportedToPoint -= OnTeleportedToPoint;
+            AdvancedLocomotionTeleport.Instance.TeleportedToPoint -= OnTeleportedToPoint;
         }
 
         private void OnTeleportedToPoint(TeleportPointORST teleportPoint) {
