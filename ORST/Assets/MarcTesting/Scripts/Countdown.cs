@@ -16,29 +16,10 @@ public class Countdown : MonoBehaviour
      private float currentTime;
      private bool updateTime;
 
-
-
-     
-
      private void Start()
-     {
-
+   {
       StartCoroutine(CountdownTimer());
-   
-      
-      /*
-            if (Input.GetKeyDown(KeyCode.Space))
-      {   }
-      currentTime = startTime;
-      countdownCircleTimer.fillAmount = 1.0f;
-      // Easy way to represent only the seconds and skip the
-      // float     
-      countdownText.text = (int)currentTime+ "";
-      // update the countdown on the update
-      updateTime = true;
-
-      */
-     }
+   }
    private IEnumerator CountdownTimer()
    {
       
@@ -63,27 +44,6 @@ public class Countdown : MonoBehaviour
    {
       time.SetActive(false);
       home.SetActive(true);
+      //Return to Main Menu Scene
    }
-
-
-/*
-      private void Update()
-      {
-          if (updateTime)
-          {
-            currentTime -= Time.deltaTime;
-            if (currentTime <= 0.0f)
-            {
-               // Stop the countdown timer              
-               updateTime = false;
-               currentTime = 0.0f;
-            }
-            countdownText.text = (int)currentTime+ "";
-            float normalizedValue = Mathf.Clamp(
-                     currentTime /startTime, 0.0f, 1.0f);
-           countdownCircleTimer.fillAmount = normalizedValue;
-         }
-    }
-
-    */
 }

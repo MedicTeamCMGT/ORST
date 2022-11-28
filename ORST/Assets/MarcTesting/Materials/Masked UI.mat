@@ -11,7 +11,6 @@ Material:
   m_Shader: {fileID: 4800000, guid: 4b4f0202a8684446eb14d392e65fa40a, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords:
-  - PIXELSNAP_ON
   - UNITY_UI_ALPHACLIP
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -32,7 +31,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - PixelSnap: 1
+    - PixelSnap: 0
     - _ColorMask: 15
     - _ID: 1
     - _Stencil: 1
