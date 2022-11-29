@@ -10,7 +10,7 @@ namespace ORST.Core.ModuleTasks.SpecificTasks {
         [SerializeField, Required] private CanvasGroup m_EnterNameCanvasGroup;
         [SerializeField, Required] private GameObject m_EnterNameRoot;
 
-        private bool m_Completed;
+        private bool m_ConfirmedName;
 
         private void Awake() {
             m_EnterNameRoot.gameObject.SetActive(false);
@@ -26,11 +26,11 @@ namespace ORST.Core.ModuleTasks.SpecificTasks {
         }
 
         protected override ModuleTaskState ExecuteModuleTask() {
-            return m_Completed ? ModuleTaskState.Successful : ModuleTaskState.Running;
+            return m_ConfirmedName ? ModuleTaskState.Successful : ModuleTaskState.Running;
         }
 
         private void OnNameConfirmed(string playerName) {
-            m_Completed = true;
+            m_ConfirmedName = true;
             PlaceholderManager.AddPlaceholder("{PLAYER_NAME}", playerName);
 
             m_EnterNameCanvasGroup.blocksRaycasts = false;
