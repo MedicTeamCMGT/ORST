@@ -12,9 +12,10 @@ namespace ORST.Core.ModuleTasks {
     }
 
     public class ModuleTask : MonoBehaviour {
-        [SerializeField, InlineButton(nameof(FindModuleSubtasks), "Find Subtasks")] private List<ModuleTask> m_ModuleSubtasks;
-        [SerializeField] private bool m_IsEligibleForRandom;
+        [TitleGroup("Module Task", order: 1000), SerializeField]
+        private bool m_IsEligibleForRandom;
 
+        private List<ModuleTask> m_AllModuleSubtasks;
         private Queue<ModuleTask> m_ModuleSubtaskQueue;
         private ModuleTask m_CurrentModuleSubtask;
         private bool m_Started;
@@ -36,20 +37,20 @@ namespace ORST.Core.ModuleTasks {
         public bool Completed => m_Completed;
 
         private void Awake() {
-            InitializeModuleTask();
-        }
+            m_AllModuleSubtasks = GetComponentsInChildren<ModuleTask>()
+                                  .Where(task => task != this && task.transform.parent == transform)
+                                  .ToList();
 
-        private void FindModuleSubtasks() {
-            m_ModuleSubtasks = new List<ModuleTask>(GetComponentsInChildren<ModuleTask>().Where(task => task != this));
+            InitializeModuleTask();
         }
 
         private void InitializeModuleTask() {
             // On Subtasks this will be an empty list and will be skipped
-            if (m_ModuleSubtasks.Count <= 0) {
+            if (m_AllModuleSubtasks.Count <= 0) {
                 return;
             }
 
-            m_ModuleSubtaskQueue = new Queue<ModuleTask>(m_ModuleSubtasks);
+            m_ModuleSubtaskQueue = new Queue<ModuleTask>(m_AllModuleSubtasks);
             Debug.Log("Task::Added subtasks: " + m_ModuleSubtaskQueue.Count);
             m_CurrentModuleSubtask = m_ModuleSubtaskQueue.Dequeue();
         }
@@ -129,7 +130,7 @@ namespace ORST.Core.ModuleTasks {
         public IEnumerable<ModuleTask> GetRemainingModuleTasks() {
             yield return this;
 
-            if (m_ModuleSubtasks.Count <= 0) {
+            if (m_AllModuleSubtasks.Count <= 0) {
                 yield break;
             }
 
