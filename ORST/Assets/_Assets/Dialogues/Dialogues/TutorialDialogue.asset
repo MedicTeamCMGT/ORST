@@ -30,8 +30,16 @@ MonoBehaviour:
     - m_Text: No
       m_IsCorrect: 0
       m_Feedback: 
-  - m_Text: First steps - Teleport to any location.
-    m_Options:
-    - m_Text: Ok.
-      m_IsCorrect: 1
-      m_Feedback: 
+  - m_Text: Welcome to the Tutorial, First, we will teach you how to teleport inside
+      the Simulation. To teleport, first form the gesture pictured below with your
+      non-dominant hand.
+    m_Options: []
+  - m_Text: "Great, To select a place to teleport to you now need to aim the ray
+      coming out of your hand towards \u201Cteleport points\u201D and confirm by
+      doing the movement shown below. Try it on the glowing Teleport point to the
+      right!"
+    m_Options: []
+  - m_Text: First steps - Pick up an object.
+    m_Options: []
+  - m_Text: Well done.
+    m_Options: []
