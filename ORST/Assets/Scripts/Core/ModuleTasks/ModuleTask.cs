@@ -3,6 +3,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace ORST.Core.ModuleTasks {
     public enum ModuleTaskState {
@@ -14,6 +15,10 @@ namespace ORST.Core.ModuleTasks {
     public class ModuleTask : MonoBehaviour {
         [TitleGroup("Module Task", order: 1000), SerializeField]
         private bool m_IsEligibleForRandom;
+        [TitleGroup("Module Task", order: 1000), SerializeField]
+        private UnityEvent m_TaskStarted;
+        [TitleGroup("Module Task", order: 1000), SerializeField]
+        private UnityEvent m_TaskCompleted;
 
         private List<ModuleTask> m_AllModuleSubtasks;
         private Queue<ModuleTask> m_ModuleSubtaskQueue;
@@ -64,9 +69,10 @@ namespace ORST.Core.ModuleTasks {
                 Debug.Log($"Task::Task '{gameObject.name}' started...");
             }
 
-            OnModuleTaskStarted();
             m_Completed = false;
             m_Started = true;
+            m_TaskStarted?.Invoke();
+            OnModuleTaskStarted();
         }
 
         public ModuleTaskState UpdateModuleTask() {
@@ -74,6 +80,7 @@ namespace ORST.Core.ModuleTasks {
             if (state == ModuleTaskState.Successful) {
                 m_Started = false;
                 m_Completed = true;
+                m_TaskCompleted?.Invoke();
                 OnModuleTaskCompleted();
             }
 
