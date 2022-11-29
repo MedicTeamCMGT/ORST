@@ -44,9 +44,9 @@ namespace ORST.Core.UI {
             m_TitleLabel.rectTransform.DOAnchorPosY(0.0f, m_AnimationDuration);
             m_IsInputShown = false;
 
+            HideStartInputButton();
             HideConfirmButton();
-            m_TitleLabel.DOKill();
-            m_TitleLabel.DOFade(1.0f, m_AnimationDuration);
+            ShowTitleLabel();
 
             KeyboardInput.Instance.StartInput(string.Empty, OnInputChanged, OnInputFinished);
         }
@@ -71,15 +71,8 @@ namespace ORST.Core.UI {
         }
 
         private void OnInputFinished() {
-            m_TitleLabel.DOKill();
-            m_TitleLabel.DOFade(0.0f, m_AnimationDuration).OnComplete(() => {
-                m_TitleLabel.gameObject.SetActive(false);
-            });
-
-            m_StartInputCanvasGroup.gameObject.SetActive(true);
-            m_StartInputCanvasGroup.alpha = 0.0f;
-            m_StartInputCanvasGroup.DOKill();
-            m_StartInputCanvasGroup.DOFade(1.0f, m_AnimationDuration);
+            HideTitleLabel();
+            ShowStartInputButton();
 
             m_Name = m_InputLabel.text.Trim();
             if (!string.IsNullOrWhiteSpace(m_Name)) {
@@ -105,6 +98,34 @@ namespace ORST.Core.UI {
             m_ConfirmButtonCanvasGroup.DOKill();
             m_ConfirmButtonCanvasGroup.DOFade(0.0f, m_AnimationDuration).OnComplete(() => {
                 m_ConfirmButton.gameObject.SetActive(false);
+            });
+        }
+
+        private void ShowStartInputButton() {
+            m_StartInputButton.gameObject.SetActive(true);
+            m_StartInputCanvasGroup.blocksRaycasts = true;
+            m_StartInputCanvasGroup.DOKill();
+            m_StartInputCanvasGroup.DOFade(1.0f, m_AnimationDuration);
+        }
+
+        private void HideStartInputButton() {
+            m_StartInputCanvasGroup.blocksRaycasts = false;
+            m_StartInputCanvasGroup.DOKill();
+            m_StartInputCanvasGroup.DOFade(0.0f, m_AnimationDuration).OnComplete(() => {
+                m_StartInputButton.gameObject.SetActive(false);
+            });
+        }
+
+        private void ShowTitleLabel() {
+            m_TitleLabel.gameObject.SetActive(true);
+            m_TitleLabel.DOKill();
+            m_TitleLabel.DOFade(1.0f, m_AnimationDuration);
+        }
+
+        private void HideTitleLabel() {
+            m_TitleLabel.DOKill();
+            m_TitleLabel.DOFade(0.0f, m_AnimationDuration).OnComplete(() => {
+                m_TitleLabel.gameObject.SetActive(false);
             });
         }
     }
