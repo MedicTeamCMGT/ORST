@@ -18,21 +18,25 @@ public class Dissolver : MonoBehaviour
         //mat = this.GetComponent<Renderer>().material;
     }
 
+
+    public void HideObject(){
+        hideObject = true;
+    }
+    
+    public void ShowObject(){
+        hideObject = false;
+    }
+
+
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.D))
-        {
-            hideObject = !hideObject;
-        }
-        if(hideObject){
+        if(!hideObject){
             dissolveAmount = Mathf.MoveTowards(dissolveAmount, 1.25f, dissolveSpeed * Time.deltaTime);
         } else {
             dissolveAmount = Mathf.MoveTowards(dissolveAmount, -.25f, dissolveSpeed * Time.deltaTime);
         }
 
         dissolveMaterial.SetFloat("_DissolveAmount", dissolveAmount);
-
-        
     }
 }

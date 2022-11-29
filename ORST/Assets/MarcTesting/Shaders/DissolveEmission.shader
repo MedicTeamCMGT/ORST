@@ -2,8 +2,6 @@
 	Properties {
 		_Color ("Color", Color) = (1,1,1,1)
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
-		_NormalMap ("Normal Map", 2D) = "bump" {}
-		_NormalStrenght ("Normal Strength", Range(0, 1.5)) = 0.5
 		_DissolveMap ("Dissolve Map", 2D) = "white" {}
 		_DissolveAmount ("DissolveAmount", Range(-0.25,1.5)) = 0
 		_DissolveColor ("DissolveColor", Color) = (1,1,1,1)
@@ -33,17 +31,14 @@
 		#pragma target 3.0
 
 		sampler2D _MainTex;
-		sampler2D _NormalMap;
 		sampler2D _DissolveMap;
 
 		struct Input {
 			float2 uv_MainTex;
-			float2 uv_NormalMap;
 			float2 uv_DissolveMap;
 		};
 
 		half _DissolveAmount;
-		half _NormalStrenght;
 		half _Glossiness;
 		half _Metallic;
 		half _DissolveEmission;
@@ -69,7 +64,6 @@
 			o.Metallic = _Metallic;
 			o.Smoothness = _Glossiness;
 			o.Alpha = c.a;
-			o.Normal = UnpackScaleNormal(tex2D(_NormalMap, IN.uv_NormalMap), _NormalStrenght);
 		}
 		ENDCG
 	}
