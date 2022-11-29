@@ -2225,6 +2225,11 @@ PrefabInstance:
       propertyPath: _syntheticHand
       value: 
       objectReference: {fileID: 5164940004272194523}
+    - target: {fileID: 8553364197529364881, guid: 885ecae56b16f13428a67de5ae482a72,
+        type: 3}
+      propertyPath: _velocityCalculator
+      value: 
+      objectReference: {fileID: 2710826109958714557}
     - target: {fileID: 8646129326984794350, guid: 885ecae56b16f13428a67de5ae482a72,
         type: 3}
       propertyPath: _hand
@@ -2238,6 +2243,48 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 845480668236730564}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1997769624199420357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2753911632065613433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fb913c9e194da6449a32f1bf3cc991b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hand: {fileID: 6622308800911624651}
+  _bufferLengthSeconds: 0.1
+  _sampleFrequency: 120
+--- !u!114 &2710826109958714557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2753911632065613433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc8862bea98fed5448c81a6a656d69cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _throwInputDevice: {fileID: 1997769624199420357}
+  _referenceOffset: {x: 0, y: 0, z: 0}
+  _bufferingParams:
+    BufferLengthSeconds: 0.4
+    SampleFrequency: 90
+  _instantVelocityInfluence: 1
+  _trendVelocityInfluence: 1
+  _tangentialVelocityInfluence: 1
+  _externalVelocityInfluence: 0
+  _stepBackTime: 0.08
+  _maxPercentZeroSamplesTrendVeloc: 0.5
+  _filterProps:
+    _minCutoff: 1
+    _beta: 0
+    _dCutoff: 1
 --- !u!114 &7450206770533119762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4010,6 +4057,11 @@ PrefabInstance:
       propertyPath: _syntheticHand
       value: 
       objectReference: {fileID: 6539050665120953127}
+    - target: {fileID: 8553364197529364881, guid: 885ecae56b16f13428a67de5ae482a72,
+        type: 3}
+      propertyPath: _velocityCalculator
+      value: 
+      objectReference: {fileID: 549983053513553351}
     - target: {fileID: 8646129326984794350, guid: 885ecae56b16f13428a67de5ae482a72,
         type: 3}
       propertyPath: _hand
@@ -4035,6 +4087,48 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 9181297365724712848}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &549983053513553351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5973630691326546221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc8862bea98fed5448c81a6a656d69cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _throwInputDevice: {fileID: 1752472597356910667}
+  _referenceOffset: {x: 0, y: 0, z: 0}
+  _bufferingParams:
+    BufferLengthSeconds: 0.4
+    SampleFrequency: 90
+  _instantVelocityInfluence: 1
+  _trendVelocityInfluence: 1
+  _tangentialVelocityInfluence: 1
+  _externalVelocityInfluence: 0
+  _stepBackTime: 0.08
+  _maxPercentZeroSamplesTrendVeloc: 0.5
+  _filterProps:
+    _minCutoff: 1
+    _beta: 0
+    _dCutoff: 1
+--- !u!114 &1752472597356910667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5973630691326546221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fb913c9e194da6449a32f1bf3cc991b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hand: {fileID: 7399809560476194674}
+  _bufferLengthSeconds: 0.1
+  _sampleFrequency: 120
 --- !u!114 &3576289217374293748
 MonoBehaviour:
   m_ObjectHideFlags: 0
