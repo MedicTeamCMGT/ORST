@@ -14,6 +14,7 @@ public class Dissolver : MonoBehaviour
     void Start()
     {
         dissolveAmount = dissolveMaterial.GetFloat("_DissolveAmount");
+        hideObject = true;
         //Material newMat = Resources.Load("Floor mask", typeof(Material)) as Material;
         //mat = this.GetComponent<Renderer>().material;
     }
