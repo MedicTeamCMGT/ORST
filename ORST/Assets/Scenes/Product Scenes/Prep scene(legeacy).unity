@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -183,8 +183,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90afd9e970ed3a4a99202c638db4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ModuleSubtasks: []
   m_IsEligibleForRandom: 0
+  m_TaskStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  m_TaskCompleted:
+    m_PersistentCalls:
+      m_Calls: []
   m_ObjectToPick: {fileID: 0}
   m_TrackOnlyWhenRunning: 1
 --- !u!4 &45533325
@@ -512,8 +517,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af923dfa551d4f4dab2d23f19acfae85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ModuleSubtasks: []
   m_IsEligibleForRandom: 0
+  m_TaskStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  m_TaskCompleted:
+    m_PersistentCalls:
+      m_Calls: []
   m_Dialogue: {fileID: 0}
   m_TrackOnlyWhenRunning: 1
 --- !u!4 &194521769
@@ -756,9 +766,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bb98b620fe25f748a81a28cd498e473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ModuleSubtasks: []
   m_IsEligibleForRandom: 0
-  m_LocomotionTeleport: {fileID: 4926590349058944347}
+  m_TaskStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  m_TaskCompleted:
+    m_PersistentCalls:
+      m_Calls: []
   m_TeleportPoint: {fileID: 1541372406}
   m_TrackOnlyWhenRunning: 1
 --- !u!4 &262152598
@@ -805,8 +819,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90afd9e970ed3a4a99202c638db4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ModuleSubtasks: []
   m_IsEligibleForRandom: 0
+  m_TaskStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  m_TaskCompleted:
+    m_PersistentCalls:
+      m_Calls: []
   m_ObjectToPick: {fileID: 0}
   m_TrackOnlyWhenRunning: 1
 --- !u!4 &278121691
@@ -1213,9 +1232,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d7dce80cb3c37b4ca9a3dcf582a0594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ModuleSubtasks:
-  - {fileID: 1588751490}
   m_IsEligibleForRandom: 0
+  m_TaskStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  m_TaskCompleted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &527564807
 Transform:
   m_ObjectHideFlags: 0
@@ -1383,8 +1406,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 591084779}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.300005, y: 1.5200001, z: -3.0329995}
-  m_LocalScale: {x: 0.22585, y: 3, z: 11.043835}
+  m_LocalPosition: {x: -1.300005, y: 1.5200001, z: -3.1837}
+  m_LocalScale: {x: 0.22585, y: 3, z: 11.146973}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1460,7 +1483,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3b95865535bc8fe4782cdbbfa440f8db,
         type: 3}
       propertyPath: m_RootOrder
-      value: 38
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b95865535bc8fe4782cdbbfa440f8db,
         type: 3}
@@ -1782,11 +1805,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d7dce80cb3c37b4ca9a3dcf582a0594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ModuleSubtasks:
-  - {fileID: 194521768}
-  - {fileID: 1445325543}
-  - {fileID: 1928209958}
   m_IsEligibleForRandom: 0
+  m_TaskStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  m_TaskCompleted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &930030057
 Transform:
   m_ObjectHideFlags: 0
@@ -1928,8 +1953,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956444530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.5, y: 0, z: -4}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 3.5247, y: 0, z: -3.2159}
+  m_LocalScale: {x: 0.97643393, y: 1, z: 1.1012094}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -2038,9 +2063,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bb98b620fe25f748a81a28cd498e473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ModuleSubtasks: []
   m_IsEligibleForRandom: 0
-  m_LocomotionTeleport: {fileID: 4926590349058944347}
+  m_TaskStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  m_TaskCompleted:
+    m_PersistentCalls:
+      m_Calls: []
   m_TeleportPoint: {fileID: 2045931425}
   m_TrackOnlyWhenRunning: 1
 --- !u!4 &1071721304
@@ -2290,12 +2319,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d7dce80cb3c37b4ca9a3dcf582a0594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ModuleSubtasks:
-  - {fileID: 278121690}
-  - {fileID: 45533324}
-  - {fileID: 1969681184}
-  - {fileID: 1071721303}
   m_IsEligibleForRandom: 0
+  m_TaskStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  m_TaskCompleted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1181391785
 Transform:
   m_ObjectHideFlags: 0
@@ -2439,9 +2469,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d7dce80cb3c37b4ca9a3dcf582a0594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ModuleSubtasks:
-  - {fileID: 1841693213}
   m_IsEligibleForRandom: 0
+  m_TaskStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  m_TaskCompleted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1212173071
 Transform:
   m_ObjectHideFlags: 0
@@ -2624,104 +2658,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.15, y: 0.15, z: 0.15}
   m_Center: {x: 0.05, y: 0, z: 0}
---- !u!1 &1328917143
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1328917147}
-  - component: {fileID: 1328917146}
-  - component: {fileID: 1328917145}
-  - component: {fileID: 1328917144}
-  m_Layer: 0
-  m_Name: Floor_1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!64 &1328917144
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1328917143}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &1328917145
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1328917143}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: da0f8f16a7d59ed4bb571c2833d4033f, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1328917146
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1328917143}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1328917147
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1328917143}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.5, y: 0, z: 6}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 36
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1333114745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3021,8 +2957,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50ba23d7085c477188924e033ba43fb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ModuleSubtasks: []
   m_IsEligibleForRandom: 0
+  m_TaskStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  m_TaskCompleted:
+    m_PersistentCalls:
+      m_Calls: []
   m_Dialogue: {fileID: 0}
   m_TrackOnlyWhenRunning: 1
 --- !u!4 &1445325544
@@ -3465,9 +3406,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d7dce80cb3c37b4ca9a3dcf582a0594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ModuleSubtasks:
-  - {fileID: 262152597}
   m_IsEligibleForRandom: 0
+  m_TaskStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  m_TaskCompleted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1579125393
 Transform:
   m_ObjectHideFlags: 0
@@ -3515,9 +3460,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bb98b620fe25f748a81a28cd498e473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ModuleSubtasks: []
   m_IsEligibleForRandom: 0
-  m_LocomotionTeleport: {fileID: 4926590349058944347}
+  m_TaskStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  m_TaskCompleted:
+    m_PersistentCalls:
+      m_Calls: []
   m_TeleportPoint: {fileID: 0}
   m_TrackOnlyWhenRunning: 1
 --- !u!4 &1588751491
@@ -4016,9 +3965,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bb98b620fe25f748a81a28cd498e473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ModuleSubtasks: []
   m_IsEligibleForRandom: 0
-  m_LocomotionTeleport: {fileID: 4926590349058944347}
+  m_TaskStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  m_TaskCompleted:
+    m_PersistentCalls:
+      m_Calls: []
   m_TeleportPoint: {fileID: 0}
   m_TrackOnlyWhenRunning: 1
 --- !u!4 &1841693214
@@ -4046,7 +3999,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3b95865535bc8fe4782cdbbfa440f8db,
         type: 3}
       propertyPath: m_RootOrder
-      value: 37
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b95865535bc8fe4782cdbbfa440f8db,
         type: 3}
@@ -4342,9 +4295,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bb98b620fe25f748a81a28cd498e473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ModuleSubtasks: []
   m_IsEligibleForRandom: 0
-  m_LocomotionTeleport: {fileID: 4926590349058944347}
+  m_TaskStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  m_TaskCompleted:
+    m_PersistentCalls:
+      m_Calls: []
   m_TeleportPoint: {fileID: 1201195762}
   m_TrackOnlyWhenRunning: 1
 --- !u!4 &1928209959
@@ -4498,8 +4455,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e90afd9e970ed3a4a99202c638db4de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ModuleSubtasks: []
   m_IsEligibleForRandom: 0
+  m_TaskStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  m_TaskCompleted:
+    m_PersistentCalls:
+      m_Calls: []
   m_ObjectToPick: {fileID: 0}
   m_TrackOnlyWhenRunning: 1
 --- !u!4 &1969681185
@@ -5856,7 +5818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88a3bb76548f4b44d89f608ebf72fba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AimRecognizer: {fileID: 0}
+  m_ActiveState: {fileID: 0}
 --- !u!114 &4926590349058944345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6825,38 +6787,6 @@ MonoBehaviour:
   _headPoseRelativeOffsetRotation: {x: 0, y: 0, z: 0}
   _headPoseRelativeOffsetTranslation: {x: 0, y: 0, z: 0}
   profilerTcpPort: 32419
-  expandMixedRealityCapturePropertySheet: 0
-  enableMixedReality: 0
-  compositionMethod: 0
-  extraHiddenLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  extraVisibleLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  dynamicCullingMask: 1
-  externalCompositionBackdropColorRift: {r: 0, g: 1, b: 0, a: 1}
-  externalCompositionBackdropColorQuest: {r: 0, g: 0, b: 0, a: 0}
-  capturingCameraDevice: 0
-  flipCameraFrameHorizontally: 0
-  flipCameraFrameVertically: 0
-  handPoseStateLatency: 0
-  sandwichCompositionRenderLatency: 0
-  sandwichCompositionBufferedFrames: 8
-  chromaKeyColor: {r: 0, g: 1, b: 0, a: 1}
-  chromaKeySimilarity: 0.6
-  chromaKeySmoothRange: 0.03
-  chromaKeySpillRange: 0.06
-  useDynamicLighting: 0
-  depthQuality: 1
-  dynamicLightingSmoothFactor: 8
-  dynamicLightingDepthVariationClampingValue: 0.001
-  virtualGreenScreenType: 0
-  virtualGreenScreenTopY: 10
-  virtualGreenScreenBottomY: -10
-  virtualGreenScreenApplyDepthCulling: 0
-  virtualGreenScreenDepthTolerance: 0.2
-  mrcActivationMode: 0
   isInsightPassthroughEnabled: 0
   _trackingOriginType: 1
   usePositionTracking: 1
