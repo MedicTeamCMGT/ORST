@@ -5,6 +5,7 @@ namespace ORST.Core.Movement {
     [DefaultExecutionOrder(-10)]
     public class DisableCurrentTeleportPoint : AutoMonoSingleton<DisableCurrentTeleportPoint> {
         public override bool IsPersistentThroughScenes => true;
+        public bool IsDisabled { get; set; }
 
         private TeleportPointORST m_CurrentTeleportPoint;
 
@@ -17,6 +18,10 @@ namespace ORST.Core.Movement {
         }
 
         private void OnTeleportedToPoint(TeleportPointORST teleportPoint) {
+            if (IsDisabled) {
+                return;
+            }
+
             if (m_CurrentTeleportPoint != null) {
                 TeleportPointManager.EnablePoint(m_CurrentTeleportPoint);
             }
