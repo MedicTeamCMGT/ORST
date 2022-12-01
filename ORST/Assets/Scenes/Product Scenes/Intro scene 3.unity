@@ -21172,5 +21172,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Teleport Reticle
       objectReference: {fileID: 0}
+    - target: {fileID: 7579720677833140542, guid: 3e396b8e64ec3457bb10c8ed6963bc8e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e396b8e64ec3457bb10c8ed6963bc8e, type: 3}
