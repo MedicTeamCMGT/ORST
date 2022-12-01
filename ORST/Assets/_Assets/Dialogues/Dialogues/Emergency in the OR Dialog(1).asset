@@ -22,7 +22,8 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   m_Nodes:
-  - m_Text: You need to move further away from the operating table!
+  - m_Text: You need to move further away from the operating table! Please move away
+      from the table and wait for further instructions.
     m_Options:
     - m_Text: Why?
       m_IsCorrect: 0

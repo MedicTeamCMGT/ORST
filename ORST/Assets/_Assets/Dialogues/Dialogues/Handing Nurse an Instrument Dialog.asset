@@ -40,3 +40,5 @@ MonoBehaviour:
     - m_Text: Yes
       m_IsCorrect: 1
       m_Feedback: 
+  - m_Text: Thank you. Just place it in my hand.
+    m_Options: []

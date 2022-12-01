@@ -27,3 +27,5 @@ MonoBehaviour:
     - m_Text: Okay
       m_IsCorrect: 1
       m_Feedback: 
+  - m_Text: Thank you.
+    m_Options: []
