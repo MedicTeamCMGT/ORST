@@ -18,7 +18,7 @@ namespace ORST.Core.Placeholders {
         }
 
         private void UpdateText() {
-            if (PlaceholderManager.TryGetPlaceholder(m_PlaceholderKey, out string text)) {
+            if (PlaceholderManager.TryGetValue(m_PlaceholderKey, out string text)) {
                 m_SetText.Invoke(text);
             }
         }

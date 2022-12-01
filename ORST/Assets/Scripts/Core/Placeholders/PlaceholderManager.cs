@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace ORST.Core.Placeholders {
     public static class PlaceholderManager {
@@ -10,7 +10,7 @@ namespace ORST.Core.Placeholders {
         /// <param name="key">The key of the placeholder.</param>
         /// <param name="value">Out parameter for the value of the placeholder.</param>
         /// <returns><see langword="true"/> if the placeholder exists, otherwise <see langword="false"/>.</returns>
-        public static bool TryGetPlaceholder(string key, out string value) {
+        public static bool TryGetValue(string key, out string value) {
             return s_Placeholders.TryGetValue(key, out value);
         }
 
