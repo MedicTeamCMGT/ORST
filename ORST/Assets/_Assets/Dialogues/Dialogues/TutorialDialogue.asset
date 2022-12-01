@@ -30,16 +30,17 @@ MonoBehaviour:
     - m_Text: No
       m_IsCorrect: 0
       m_Feedback: 
-  - m_Text: Welcome to the Tutorial, First, we will teach you how to teleport inside
-      the Simulation. To teleport, first form the gesture pictured below with your
+  - m_Text: Welcome to the tutorial! First, we will teach you how to teleport inside
+      the simulation. To teleport, first form the gesture pictured below with your
       non-dominant hand.
     m_Options: []
-  - m_Text: "Great, To select a place to teleport to you now need to aim the ray
+  - m_Text: "Great! To select a place to teleport to you now need to aim the ray
       coming out of your hand towards \u201Cteleport points\u201D and confirm by
       doing the movement shown below. Try it on the glowing Teleport point to the
-      right!"
+      left!"
     m_Options: []
-  - m_Text: First steps - Pick up an object.
+  - m_Text: Now, try to pick up the Echelon Flex in front of you with you dominant
+      hand.
     m_Options: []
-  - m_Text: Well done.
+  - m_Text: You can enter the next room by grabbing and moving down the door handle.
     m_Options: []
