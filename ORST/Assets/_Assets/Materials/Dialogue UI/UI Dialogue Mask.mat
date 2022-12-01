@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Floor mask
+  m_Name: UI Dialogue Mask
   m_Shader: {fileID: 4800000, guid: f998d3b5c50b283478ecc9cce87d8e91, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords:
@@ -84,7 +84,7 @@ Material:
     - _Cutoff: 0.4
     - _CutoffHeight: 0
     - _DetailNormalMapScale: 1
-    - _DissolveAmount: -0.25
+    - _DissolveAmount: 1.25
     - _DissolveEmission: 0.741
     - _DissolveWidth: 0.033
     - _DstBlend: 0
