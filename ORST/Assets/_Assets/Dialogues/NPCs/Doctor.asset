@@ -23,7 +23,7 @@ MonoBehaviour:
     SerializationNodes:
     - Name: m_Identifier
       Entry: 2
-      Data: 23421d72f75f4f67884c72442669e2e6
-  m_NPCName: John Doe
-  m_Role: CEO of John Doe Inc.
-  m_Icon: {fileID: 0}
+      Data: 7b3344a3d9e846459524fe8960262b88
+  m_NPCName: John Son
+  m_Role: HEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+  m_Icon: {fileID: -168845811775739753, guid: 64f884351318b694f942625580e64a8b, type: 3}

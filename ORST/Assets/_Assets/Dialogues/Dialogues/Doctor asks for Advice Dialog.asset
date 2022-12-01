@@ -40,3 +40,5 @@ MonoBehaviour:
       m_IsCorrect: 0
       m_Feedback: A Johnson and Johnson representative should always have knowledge
         about the tools they are representing.
+  - m_Text: 'Ok, Good to know. '
+    m_Options: []
