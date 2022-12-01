@@ -3320,7 +3320,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 382200582}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.2973464, y: -1.25, z: -3.3296676}
+  m_LocalPosition: {x: -1.2973464, y: -1.25, z: -5.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3947,7 +3947,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 491815969}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.267346, y: -1.25, z: 6.6703324}
+  m_LocalPosition: {x: -11.267346, y: -1.25, z: 4.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -5012,7 +5012,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 573440805}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.267346, y: -1.25, z: -3.3296676}
+  m_LocalPosition: {x: -11.267346, y: -1.25, z: -5.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -7432,6 +7432,12 @@ PrefabInstance:
 --- !u!4 &953081728 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 830761557388962290, guid: b10661b061600da45936881f8d4a147b,
+    type: 3}
+  m_PrefabInstance: {fileID: 953081727}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &953081729 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 830761557388962291, guid: b10661b061600da45936881f8d4a147b,
     type: 3}
   m_PrefabInstance: {fileID: 953081727}
   m_PrefabAsset: {fileID: 0}
@@ -10549,7 +10555,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1342052461}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.2973461, y: -1.25, z: 6.6703324}
+  m_LocalPosition: {x: -1.2973461, y: -1.25, z: 4.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -15394,7 +15400,7 @@ MonoBehaviour:
   m_TaskCompleted:
     m_PersistentCalls:
       m_Calls: []
-  m_ObjectToPick: {fileID: 0}
+  m_ObjectToPick: {fileID: 953081729}
   m_TrackOnlyWhenRunning: 1
 --- !u!1 &1974152631
 GameObject:

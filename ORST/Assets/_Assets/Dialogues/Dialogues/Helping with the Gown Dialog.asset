@@ -22,9 +22,10 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   m_Nodes:
-  - m_Text: Hello, I will help you put on your protective gown. Please put your hands
-      through the sleeves
+  - m_Text: 'Hello, I will help you put on your protective gown. '
     m_Options:
     - m_Text: Ok, Thank you
       m_IsCorrect: 1
       m_Feedback: 
+  - m_Text: Please put your hands through the sleeves.
+    m_Options: []
