@@ -57,7 +57,10 @@ namespace ORST.Core.ModuleTasks {
         }
 
         public List<ModuleTask> GetRemainingTasks() {
-            List<ModuleTask> remainingModuleTasks = new(m_TaskQueue.Count + 1) { m_CurrentModuleTask };
+            List<ModuleTask> remainingModuleTasks = new(m_TaskQueue.Count + 1);
+            if(m_CurrentModuleTask != null) {
+                remainingModuleTasks.Add(m_CurrentModuleTask);
+            }
             remainingModuleTasks.AddRange(m_TaskQueue);
             return remainingModuleTasks;
         }
