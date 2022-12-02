@@ -14,7 +14,7 @@ namespace ORST.Core.ModuleTasks {
     /// A custom (hardcoded) implementation of the ORST tutorial.
     /// </summary>
     ///
-    public class TutorialTasks : MonoBehaviour, IDialogueHandler {
+    public class TutorialTasks : MonoBehaviour {
         public Dialogue Dialogue => m_Dialogue;
         [Header("Dialogue")]
         [SerializeField] private Dialogue m_Dialogue;
@@ -75,7 +75,7 @@ namespace ORST.Core.ModuleTasks {
 
             m_DialogueView = Instantiate(m_DialogueViewPrefab);
             m_DialogueView.gameObject.SetActive(true);
-            m_DialogueView.Initialize(m_NPC, OnOptionSelected);
+            m_DialogueView.Initialize(m_NPC, AccessTutorial);
             m_DialogueView.LoadState(m_State.CurrentNode);
         }
 
@@ -85,23 +85,23 @@ namespace ORST.Core.ModuleTasks {
             gameObject.SetActive(false);
         }
 
-        private void OnOptionSelected(int optionIndex) {
-            Debug.Log($"Option {optionIndex} selected.");
+        private void AccessTutorial(int optionIndex) {
             m_DialogueView.LoadState(m_State.CurrentNode);
 
-            //If the user has selected the last option, we can end the dialogue.
-            if (m_State.CurrentNodeIndex == 0) {
-                if (optionIndex == 1) {
-                    //Close tutorial
-                    TerminateDialogue();
-                } else {
-                    StartCoroutine(Tutorial());
-                }
+            if (optionIndex == 1) {
+                //Close tutorial
+                TerminateDialogue();
+            } else {
+                StartCoroutine(Tutorial());
             }
 
             if (!m_State.Advance()) {
              TerminateDialogue();
             }
+        }
+
+        private void AdvanceTutorial() {
+            
         }
 
         private void TerminateDialogue() {
@@ -153,7 +153,7 @@ namespace ORST.Core.ModuleTasks {
             dialogueTransform.rotation = canvasTransform.rotation;
             m_DialogueView.gameObject.SetActive(true);
             if (continueDialogue) {
-                OnOptionSelected(0);
+                AccessTutorial(0);
             }
 
             yield return new WaitForSeconds(waitDelay);
