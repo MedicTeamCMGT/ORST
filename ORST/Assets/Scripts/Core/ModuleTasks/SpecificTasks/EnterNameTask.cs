@@ -4,7 +4,7 @@ using ORST.Core.UI;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace ORST.Core.ModuleTasks.SpecificTasks {
+namespace ORST.Core.ModuleTasks {
     public class EnterNameTask : ModuleTask {
         [SerializeField, Required] private EnterNameUI m_EnterNameUI;
         [SerializeField, Required] private CanvasGroup m_EnterNameCanvasGroup;
