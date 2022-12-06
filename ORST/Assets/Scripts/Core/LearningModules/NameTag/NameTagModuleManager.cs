@@ -1,6 +1,7 @@
 ﻿using System;
 using DG.Tweening;
 using Oculus.Interaction;
+using Oculus.Interaction.HandGrab;
 using ORST.Core.UI.Components;
 using ORST.Foundation;
 using Sirenix.OdinInspector;
@@ -39,11 +40,12 @@ namespace ORST.Core.LearningModules {
             NameTagConfirmed?.Invoke();
 
             m_HelpLabel.text = m_ConfirmedMessage.Replace("{Selection}", GetNameTagName(NameTag.Kind));
+            HideConfirmButton();
 
-            // Note: Setting MaxGrabPoints to 0 will essentially prevent the user
-            // from grabbing the name tag again.
-            m_EthiconNameTag.MaxGrabPoints = 0;
-            m_DePuyNameTag.MaxGrabPoints = 0;
+            Destroy(m_EthiconNameTag.GetComponentInChildren<HandGrabInteractable>());
+            Destroy(m_DePuyNameTag.GetComponentInChildren<HandGrabInteractable>());
+            Destroy(m_EthiconNameTag);
+            Destroy(m_DePuyNameTag);
         }
 
         private void Start() {
