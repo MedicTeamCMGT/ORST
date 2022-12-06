@@ -27,6 +27,11 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4284431115
       objectReference: {fileID: 0}
+    - target: {fileID: 4440159047978832444, guid: 2f55ef4d9217cfd42bced188079d9955,
+        type: 3}
+      propertyPath: _interactables.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4440159048634877437, guid: 2f55ef4d9217cfd42bced188079d9955,
         type: 3}
       propertyPath: m_Name
@@ -92,6 +97,17 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 4440159048934419541, guid: 2f55ef4d9217cfd42bced188079d9955,
+        type: 3}
+    - target: {fileID: 5380047522687019105, guid: 2f55ef4d9217cfd42bced188079d9955,
+        type: 3}
+      propertyPath: m_Kind
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5380047522687019105, guid: 2f55ef4d9217cfd42bced188079d9955,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 5380047522687019105, guid: 2f55ef4d9217cfd42bced188079d9955,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f55ef4d9217cfd42bced188079d9955, type: 3}
