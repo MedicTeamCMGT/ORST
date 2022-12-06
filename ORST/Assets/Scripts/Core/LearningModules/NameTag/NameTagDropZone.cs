@@ -92,7 +92,7 @@ namespace ORST.Core.LearningModules {
             float progress = (Time.time - m_EnterStateTime) / m_GoToCenterAnimationDuration;
 
             Vector3 targetPosition = m_DropZoneCollider.bounds.center;
-            Quaternion targetRotation = Quaternion.Euler(-90.0f, 0.0f, 0.0f);
+            Quaternion targetRotation = Quaternion.Euler(m_RotateOffsetAngle);
 
             m_NameTagObject.Rigidbody.position = Vector3.Lerp(m_OriginalPosition, targetPosition, progress);
             m_NameTagObject.Rigidbody.rotation = Quaternion.Lerp(m_OriginalRotation, targetRotation, progress);
@@ -106,10 +106,10 @@ namespace ORST.Core.LearningModules {
         }
 
         private void ContinuouslyRotateAndBobbleAnimation() {
-            float angle = Time.time * m_Rotate360AnimationSpeed * 360.0f;
+            float angle = (Time.time - m_EnterStateTime) * m_Rotate360AnimationSpeed * 360.0f;
             m_NameTagObject.Rigidbody.rotation = Quaternion.Euler(m_RotateOffsetAngle.x, m_RotateOffsetAngle.y + angle, m_RotateOffsetAngle.z);
 
-            float bobbleAmount = Mathf.Sin(Time.time * m_BobbleAnimationSpeed) * m_BobbleAmount;
+            float bobbleAmount = Mathf.Sin((Time.time - m_EnterStateTime) * m_BobbleAnimationSpeed) * m_BobbleAmount;
             float y = m_DropZoneCollider.bounds.center.y + bobbleAmount;
 
             Vector3 rigidbodyPosition = m_NameTagObject.Rigidbody.position;
