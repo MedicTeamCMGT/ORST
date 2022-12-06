@@ -1,0 +1,18 @@
+{
+    "name": "EPOutline.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:0a929ac27a2d26f4ebf8d072047bc86d"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
