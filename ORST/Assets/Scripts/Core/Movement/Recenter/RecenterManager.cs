@@ -37,12 +37,20 @@ namespace ORST.Core.Movement {
 
         private void OnEnable() {
             AdvancedLocomotionTeleport.Instance.TeleportedToPoint += OnTeleportedToPoint;
-            OVRManager.display.RecenteredPose += OnRecenteredPose;
+
+            if (OVRManager.display != null) {
+                OVRManager.display.RecenteredPose += OnRecenteredPose;
+            }
         }
 
         private void OnDisable() {
-            AdvancedLocomotionTeleport.Instance.TeleportedToPoint -= OnTeleportedToPoint;
-            OVRManager.display.RecenteredPose -= OnRecenteredPose;
+            if (AdvancedLocomotionTeleport.Instance != null) {
+                AdvancedLocomotionTeleport.Instance.TeleportedToPoint -= OnTeleportedToPoint;
+            }
+
+            if (OVRManager.display != null) {
+                OVRManager.display.RecenteredPose -= OnRecenteredPose;
+            }
         }
 
         private void RecenterPosition() {
