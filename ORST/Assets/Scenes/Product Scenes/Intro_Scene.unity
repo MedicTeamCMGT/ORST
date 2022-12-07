@@ -2660,8 +2660,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.9955064, g: 1, b: 0.81509435, a: 1}
-  m_Intensity: 0.75
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -8116,7 +8116,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1566076229}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1417033481
 MonoBehaviour:
@@ -8643,12 +8643,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1510118267}
   - {fileID: 1417033480}
+  - {fileID: 1510118267}
   - {fileID: 2078354152}
   - {fileID: 1016251921}
-  - {fileID: 951371814}
   - {fileID: 1156904713}
+  - {fileID: 951371814}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

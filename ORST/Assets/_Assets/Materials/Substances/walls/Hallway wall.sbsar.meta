@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 658189addc0380841adad4cd672e889d
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: dda12f74ff9116a42b23482252b2c482, type: 3}
+  _instancesCopy:
+  - {fileID: 11400000, guid: 581fe2de0c3b30d41b128b649d523575, type: 2}
+  _fileAsset: {instanceID: 0}
+  _assetPath: Assets/_Assets/Materials/Substances/walls/Hallway wall.sbsar
