@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: fbd15c7c8e37b7343abaf4a3f140b889
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: dda12f74ff9116a42b23482252b2c482, type: 3}
+  _instancesCopy:
+  - {fileID: 11400000, guid: f7f01d8b7f83d6c4181a99b9b8d81e26, type: 2}
+  _fileAsset: {instanceID: 0}
+  _assetPath: Assets/_Assets/Materials/Substances/floor operating room.sbsar

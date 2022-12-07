@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f9e2988add423304e844dd1bd2cc1fff
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: dda12f74ff9116a42b23482252b2c482, type: 3}
+  _instancesCopy:
+  - {fileID: 11400000, guid: af5ef84a9a252d34f9769b304569341d, type: 2}
+  _fileAsset: {instanceID: 0}
+  _assetPath: Assets/_Assets/Materials/Substances/walls/Instrument wall room.sbsar
