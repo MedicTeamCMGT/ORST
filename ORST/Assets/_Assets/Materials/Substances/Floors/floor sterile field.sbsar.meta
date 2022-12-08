@@ -10,5 +10,6 @@ ScriptedImporter:
   script: {fileID: 11500000, guid: dda12f74ff9116a42b23482252b2c482, type: 3}
   _instancesCopy:
   - {fileID: 11400000, guid: dc3649edc1ed3824f8721e6c3c5152e1, type: 2}
-  _fileAsset: {instanceID: 0}
-  _assetPath: Assets/_Assets/Materials/Substances/floor sterile field.sbsar
+  _fileAsset: {fileID: 6013892654665635331, guid: a404040f267c5c648b843b75c5270ff0,
+    type: 3}
+  _assetPath: Assets/_Assets/Materials/Substances/Floors/floor sterile field.sbsar
