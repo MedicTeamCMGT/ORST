@@ -718,22 +718,8 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
-    Android: LETAI_TRUESHADOW;ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1;EPO_DOTWEEN
-    EmbeddedLinux: EPO_DOTWEEN
-    GameCoreScarlett: EPO_DOTWEEN
-    GameCoreXboxOne: EPO_DOTWEEN
-    LinuxHeadlessSimulation: EPO_DOTWEEN
-    Lumin: EPO_DOTWEEN
-    Nintendo Switch: EPO_DOTWEEN
-    PS4: EPO_DOTWEEN
-    PS5: EPO_DOTWEEN
-    Stadia: EPO_DOTWEEN
-    Standalone: ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1;LETAI_TRUESHADOW;EPO_DOTWEEN
-    WebGL: EPO_DOTWEEN
-    Windows Store Apps: EPO_DOTWEEN
-    XboxOne: EPO_DOTWEEN
-    iPhone: EPO_DOTWEEN
-    tvOS: EPO_DOTWEEN
+    Android: LETAI_TRUESHADOW;ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1;UNITY_POST_PROCESSING_STACK_V2;EPO_DOTWEEN
+    Standalone: ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1;LETAI_TRUESHADOW;UNITY_POST_PROCESSING_STACK_V2;EPO_DOTWEEN
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
