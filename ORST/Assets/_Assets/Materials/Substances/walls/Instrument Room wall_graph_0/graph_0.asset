@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eed5864476f84ce4b85454db09ca4eaa, type: 3}
   m_Name: graph_0
   m_EditorClassIdentifier: 
-  AssetPath: Assets/_Assets/Materials/Substances/walls/Instrument wall room.sbsar
-  OutputPath: Assets/_Assets/Materials/Substances/walls/Instrument wall room_graph_0
-  RawData: {fileID: -244192453324840774, guid: f9e2988add423304e844dd1bd2cc1fff, type: 3}
+  AssetPath: Assets/_Assets/Materials/Substances/walls/Instrument Room wall.sbsar
+  OutputPath: Assets/_Assets/Materials/Substances/walls/Instrument Room wall_graph_0
+  RawData: {fileID: -244192453324840774, guid: d09e71a08072bd9468a63e005dfce098, type: 3}
   Name: graph_0
   IsRoot: 1
   FlagedForDelete: 0
-  GUID: 287b5c1c-58a3-4bf7-a00a-6f509024d378
+  GUID: 3f0f8992-d84b-4e26-b5d2-465dd8ced6e4
   Index: 0
   Input:
   - rid: 1000
@@ -37,7 +37,7 @@ MonoBehaviour:
       Index: 0
       Type: 8
       Channel: baseColor
-    OutputTexture: {fileID: 2800000, guid: 809b92d69131e164db7447164f725ffe, type: 3}
+    OutputTexture: {fileID: 2800000, guid: 1706a86e164e10344995b8566130ff9d, type: 3}
     sRGB: 1
     IsVirtual: 0
     IsStandardOutput: 1
@@ -53,7 +53,7 @@ MonoBehaviour:
       Index: 1
       Type: 8
       Channel: normal
-    OutputTexture: {fileID: 2800000, guid: 700d279021c366c45a151add445080a5, type: 3}
+    OutputTexture: {fileID: 2800000, guid: 4afe70f17cf51be409034bef4edde496, type: 3}
     sRGB: 0
     IsVirtual: 0
     IsStandardOutput: 1
@@ -85,7 +85,7 @@ MonoBehaviour:
       Index: 3
       Type: 8
       Channel: metallic
-    OutputTexture: {fileID: 2800000, guid: 65d7494891b1b0944938ad7a993ac17d, type: 3}
+    OutputTexture: {fileID: 2800000, guid: 2c0570687eba8f944890ea3c3f3f647a, type: 3}
     sRGB: 0
     IsVirtual: 0
     IsStandardOutput: 1
@@ -101,7 +101,7 @@ MonoBehaviour:
       Index: 4
       Type: 8
       Channel: height
-    OutputTexture: {fileID: 2800000, guid: d6f71900f52ce854da4e66fd2d294635, type: 3}
+    OutputTexture: {fileID: 2800000, guid: 1e5de69fe03c01a41891949005eab85b, type: 3}
     sRGB: 1
     IsVirtual: 0
     IsStandardOutput: 1
@@ -117,7 +117,7 @@ MonoBehaviour:
       Index: 5
       Type: 8
       Channel: ambientOcclusion
-    OutputTexture: {fileID: 2800000, guid: 8ed0d4645d16428429e1b2269a1f1c90, type: 3}
+    OutputTexture: {fileID: 2800000, guid: 011c7ef6ab13abc47afec6cb0cf75747, type: 3}
     sRGB: 0
     IsVirtual: 0
     IsStandardOutput: 1
@@ -132,14 +132,13 @@ MonoBehaviour:
   HasThumbnail: 1
   CurrentStatePreset: " <sbspreset pkgurl=\"pkg://wall\" label=\"\" >\n  <presetinput
     identifier=\"$outputsize\" uid=\"2697275188\" type=\"8\" value=\"10,10\" />\n 
-    <presetinput identifier=\"Roughness\" uid=\"3443086852\" type=\"0\" value=\"1.54\"
-    />\n  <presetinput identifier=\"outputcolor\" uid=\"3443085764\" type=\"3\" value=\"1,0.98052,0,1\"
-    />\n  <presetinput identifier=\"outputcolor_1\" uid=\"3443085747\" type=\"3\"
-    value=\"1,1,1,1\" />\n </sbspreset>\n"
+    <presetinput identifier=\"outputcolor\" uid=\"3443085764\" type=\"3\" value=\"0,0.811321,0.122706,1\"
+    />\n  <presetinput identifier=\"Tiling_1\" uid=\"3443441414\" type=\"4\" value=\"16\"
+    />\n </sbspreset>\n"
   IsRuntimeOnly: 0
   GenerateAllOutputs: 0
   GenerateAllMipmaps: 1
-  OutputMaterial: {fileID: 2100000, guid: 5535ea9046b03c449b06bec67983ed7f, type: 2}
+  OutputMaterial: {fileID: 2100000, guid: c51f0bdfde106a044874b3ec3321ff8d, type: 2}
   DefaultPreset: " <sbspreset pkgurl=\"pkg://wall\" label=\"\" >\n  <presetinput
     identifier=\"$outputsize\" uid=\"2697275188\" type=\"8\" value=\"10,10\" />\n</sbspreset>\n"
   MaterialShader: Standard
@@ -200,7 +199,7 @@ MonoBehaviour:
           GuiDescription: 
           Type: 0
           WidgetType: 1
-        Data: 1.54
+        Data: 0.91
         NumericalDescription:
           DefaultValue: 0.91
           MinValue: 0
@@ -221,7 +220,7 @@ MonoBehaviour:
             output image
           Type: 3
           WidgetType: 3
-        Data: {x: 1, y: 0.98051965, z: 0, w: 1}
+        Data: {x: 0, y: 0.8113208, z: 0.12270599, w: 1}
         NumericalDescription:
           DefaultValue: {x: 0.46713, y: 0.613446, z: 0.649425, w: 1}
           MinValue: {x: 0, y: 0, z: 0, w: 0}
@@ -242,7 +241,7 @@ MonoBehaviour:
             output image
           Type: 3
           WidgetType: 3
-        Data: {x: 1, y: 1, z: 1, w: 1}
+        Data: {x: 0.83908, y: 0.83705, z: 0.780198, w: 1}
         NumericalDescription:
           DefaultValue: {x: 0.83908, y: 0.83705, z: 0.780198, w: 1}
           MinValue: {x: 0, y: 0, z: 0, w: 0}
@@ -264,9 +263,9 @@ MonoBehaviour:
           WidgetType: 1
         Data: 16
         NumericalDescription:
-          DefaultValue: 16
+          DefaultValue: 5
           MinValue: 0
-          MaxValue: 32
+          MaxValue: 34
           SliderStep: 1
           SliderClamp: 0
           LabelFalse: 
@@ -284,12 +283,12 @@ MonoBehaviour:
           GuiDescription: 
           Type: 0
           WidgetType: 1
-        Data: -0.31
+        Data: 0.09
         NumericalDescription:
-          DefaultValue: -0.31
-          MinValue: -2.24
-          MaxValue: 1
-          SliderStep: 0.01
+          DefaultValue: 0.09
+          MinValue: 0.09
+          MaxValue: 2.38
+          SliderStep: 0
           SliderClamp: 1
           EnumValueCount: 0
           EnumValues: []

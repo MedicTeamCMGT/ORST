@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f9e2988add423304e844dd1bd2cc1fff
+guid: d09e71a08072bd9468a63e005dfce098
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -9,6 +9,6 @@ ScriptedImporter:
   assetBundleVariant: 
   script: {fileID: 11500000, guid: dda12f74ff9116a42b23482252b2c482, type: 3}
   _instancesCopy:
-  - {fileID: 11400000, guid: af5ef84a9a252d34f9769b304569341d, type: 2}
+  - {fileID: 11400000, guid: 5c47909f450272142ba81ce3b4c22db5, type: 2}
   _fileAsset: {instanceID: 0}
-  _assetPath: Assets/_Assets/Materials/Substances/walls/Instrument wall room.sbsar
+  _assetPath: Assets/_Assets/Materials/Substances/walls/Instrument Room wall.sbsar

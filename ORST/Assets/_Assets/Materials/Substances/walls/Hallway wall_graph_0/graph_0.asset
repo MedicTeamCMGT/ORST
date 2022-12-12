@@ -18,7 +18,7 @@ MonoBehaviour:
   Name: graph_0
   IsRoot: 1
   FlagedForDelete: 0
-  GUID: 33e29b9a-6d64-42e2-b422-83c697d45563
+  GUID: cddc147e-8fb1-409e-83e1-81e6802e69a4
   Index: 0
   Input:
   - rid: 1000
@@ -132,7 +132,7 @@ MonoBehaviour:
   HasThumbnail: 1
   CurrentStatePreset: " <sbspreset pkgurl=\"pkg://wall\" label=\"\" >\n  <presetinput
     identifier=\"$outputsize\" uid=\"2697275188\" type=\"8\" value=\"10,10\" />\n 
-    <presetinput identifier=\"outputcolor\" uid=\"3443085764\" type=\"3\" value=\"1,0.0407854,0,1\"
+    <presetinput identifier=\"Tiling_1\" uid=\"3443441414\" type=\"4\" value=\"16\"
     />\n </sbspreset>\n"
   IsRuntimeOnly: 0
   GenerateAllOutputs: 0
@@ -219,7 +219,7 @@ MonoBehaviour:
             output image
           Type: 3
           WidgetType: 3
-        Data: {x: 1, y: 0.04078544, z: 0, w: 1}
+        Data: {x: 0.46713, y: 0.613446, z: 0.649425, w: 1}
         NumericalDescription:
           DefaultValue: {x: 0.46713, y: 0.613446, z: 0.649425, w: 1}
           MinValue: {x: 0, y: 0, z: 0, w: 0}
@@ -262,9 +262,9 @@ MonoBehaviour:
           WidgetType: 1
         Data: 16
         NumericalDescription:
-          DefaultValue: 16
+          DefaultValue: 5
           MinValue: 0
-          MaxValue: 32
+          MaxValue: 34
           SliderStep: 1
           SliderClamp: 0
           LabelFalse: 
@@ -282,12 +282,12 @@ MonoBehaviour:
           GuiDescription: 
           Type: 0
           WidgetType: 1
-        Data: -0.31
+        Data: 0.09
         NumericalDescription:
-          DefaultValue: -0.31
-          MinValue: -2.24
-          MaxValue: 1
-          SliderStep: 0.01
+          DefaultValue: 0.09
+          MinValue: 0.09
+          MaxValue: 2.38
+          SliderStep: 0
           SliderClamp: 1
           EnumValueCount: 0
           EnumValues: []
