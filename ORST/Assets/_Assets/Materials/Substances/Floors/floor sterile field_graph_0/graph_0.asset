@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: graph_0
   m_EditorClassIdentifier: 
   AssetPath: Assets/_Assets/Materials/Substances/Floors/floor sterile field.sbsar
-  OutputPath: Assets/_Assets/Materials/Substances/floor sterile field_graph_0
+  OutputPath: Assets/_Assets/Materials/Substances/Floors/floor sterile field_graph_0
   RawData: {fileID: -244192453324840774, guid: a404040f267c5c648b843b75c5270ff0, type: 3}
   Name: graph_0
   IsRoot: 1
   FlagedForDelete: 0
-  GUID: 9c1e94e6-5b73-4f8c-81c7-79826683a3a2
+  GUID: 4e8e8f03-efd6-46d0-ae7a-a9979784dd10
   Index: 0
   Input:
   - rid: 1000
@@ -39,7 +39,7 @@ MonoBehaviour:
       Index: 0
       Type: 8
       Channel: baseColor
-    OutputTexture: {fileID: 0}
+    OutputTexture: {fileID: 2800000, guid: 4ba5942b16407204f91e73db961fa738, type: 3}
     sRGB: 1
     IsVirtual: 0
     IsStandardOutput: 1
@@ -55,7 +55,7 @@ MonoBehaviour:
       Index: 1
       Type: 8
       Channel: normal
-    OutputTexture: {fileID: 0}
+    OutputTexture: {fileID: 2800000, guid: 474a22aa14fbd4d419ae3adc412f8268, type: 3}
     sRGB: 0
     IsVirtual: 0
     IsStandardOutput: 1
@@ -87,7 +87,7 @@ MonoBehaviour:
       Index: 3
       Type: 8
       Channel: metallic
-    OutputTexture: {fileID: 0}
+    OutputTexture: {fileID: 2800000, guid: d52e3ea84bbf8fd4ca2559968f9874b9, type: 3}
     sRGB: 0
     IsVirtual: 0
     IsStandardOutput: 1
@@ -103,7 +103,7 @@ MonoBehaviour:
       Index: 4
       Type: 8
       Channel: height
-    OutputTexture: {fileID: 0}
+    OutputTexture: {fileID: 2800000, guid: 1e9b067c43715724db394a321d8d6f72, type: 3}
     sRGB: 1
     IsVirtual: 0
     IsStandardOutput: 1
@@ -119,7 +119,7 @@ MonoBehaviour:
       Index: 5
       Type: 8
       Channel: ambientOcclusion
-    OutputTexture: {fileID: 0}
+    OutputTexture: {fileID: 2800000, guid: b14e35759a1e6204c81d2a3743d6d5d1, type: 3}
     sRGB: 0
     IsVirtual: 0
     IsStandardOutput: 1
@@ -134,8 +134,7 @@ MonoBehaviour:
   HasThumbnail: 0
   CurrentStatePreset: " <sbspreset pkgurl=\"pkg://Substance_graph\" label=\"\" >\n 
     <presetinput identifier=\"$outputsize\" uid=\"3795302352\" type=\"8\" value=\"10,10\"
-    />\n  <presetinput identifier=\"outputcolor_1\" uid=\"2412553005\" type=\"3\"
-    value=\"0.846473,1,0.767925,1\" />\n </sbspreset>\n"
+    />\n </sbspreset>\n"
   IsRuntimeOnly: 0
   GenerateAllOutputs: 0
   GenerateAllMipmaps: 1
@@ -143,7 +142,7 @@ MonoBehaviour:
   DefaultPreset: " <sbspreset pkgurl=\"pkg://Substance_graph\" label=\"\" >\n  <presetinput
     identifier=\"$outputsize\" uid=\"3795302352\" type=\"8\" value=\"10,10\" />\n</sbspreset>\n"
   MaterialShader: Standard
-  RenderTextures: 1
+  RenderTextures: 0
   OutputRemaped: 0
   references:
     version: 2
@@ -324,7 +323,7 @@ MonoBehaviour:
             output image
           Type: 3
           WidgetType: 3
-        Data: {x: 0.8464731, y: 1, z: 0.76792455, w: 1}
+        Data: {x: 0.793605, y: 0.95977, z: 0.707199, w: 1}
         NumericalDescription:
           DefaultValue: {x: 0.793605, y: 0.95977, z: 0.707199, w: 1}
           MinValue: {x: 0, y: 0, z: 0, w: 0}

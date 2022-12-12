@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: graph_0
   m_EditorClassIdentifier: 
   AssetPath: Assets/_Assets/Materials/Substances/Floors/floor operating room.sbsar
-  OutputPath: Assets/_Assets/Materials/Substances/floor operating room_graph_0
+  OutputPath: Assets/_Assets/Materials/Substances/Floors/floor operating room_graph_0
   RawData: {fileID: -244192453324840774, guid: fbd15c7c8e37b7343abaf4a3f140b889, type: 3}
   Name: graph_0
   IsRoot: 1
   FlagedForDelete: 0
-  GUID: 49f81e95-f521-4ae0-a329-1644c24fdf42
+  GUID: 2ca26ffd-589c-4cda-9d89-92becd874f3d
   Index: 0
   Input:
   - rid: 1000
@@ -39,7 +39,7 @@ MonoBehaviour:
       Index: 0
       Type: 8
       Channel: baseColor
-    OutputTexture: {fileID: 0}
+    OutputTexture: {fileID: 2800000, guid: 7c540b19c33fbfe41bb41ea6ca19616f, type: 3}
     sRGB: 1
     IsVirtual: 0
     IsStandardOutput: 1
@@ -55,7 +55,7 @@ MonoBehaviour:
       Index: 1
       Type: 8
       Channel: normal
-    OutputTexture: {fileID: 0}
+    OutputTexture: {fileID: 2800000, guid: 34829ee871b6e0d45aa281a90fbc24df, type: 3}
     sRGB: 0
     IsVirtual: 0
     IsStandardOutput: 1
@@ -87,7 +87,7 @@ MonoBehaviour:
       Index: 3
       Type: 8
       Channel: metallic
-    OutputTexture: {fileID: 0}
+    OutputTexture: {fileID: 2800000, guid: ffd6cf33b8a3cb84588fb6b32383be92, type: 3}
     sRGB: 0
     IsVirtual: 0
     IsStandardOutput: 1
@@ -103,7 +103,7 @@ MonoBehaviour:
       Index: 4
       Type: 8
       Channel: height
-    OutputTexture: {fileID: 0}
+    OutputTexture: {fileID: 2800000, guid: 515e7c4fa03a66a4085c44e9afbce871, type: 3}
     sRGB: 1
     IsVirtual: 0
     IsStandardOutput: 1
@@ -119,7 +119,7 @@ MonoBehaviour:
       Index: 5
       Type: 8
       Channel: ambientOcclusion
-    OutputTexture: {fileID: 0}
+    OutputTexture: {fileID: 2800000, guid: 5387ac70e7684044b8db3bb38689fd17, type: 3}
     sRGB: 0
     IsVirtual: 0
     IsStandardOutput: 1
@@ -134,10 +134,7 @@ MonoBehaviour:
   HasThumbnail: 0
   CurrentStatePreset: " <sbspreset pkgurl=\"pkg://Substance_graph\" label=\"\" >\n 
     <presetinput identifier=\"$outputsize\" uid=\"3795302352\" type=\"8\" value=\"10,10\"
-    />\n  <presetinput identifier=\"scale\" uid=\"2412554260\" type=\"4\" value=\"246\"
-    />\n  <presetinput identifier=\"balance\" uid=\"2412554374\" type=\"0\" value=\"0.699\"
-    />\n  <presetinput identifier=\"contrast\" uid=\"2412553732\" type=\"0\" value=\"1\"
-    />\n  <presetinput identifier=\"Luminosity\" uid=\"2412553295\" type=\"0\" value=\"-1.13\"
+    />\n  <presetinput identifier=\"Luminosity\" uid=\"2412553295\" type=\"0\" value=\"-0.12\"
     />\n </sbspreset>\n"
   IsRuntimeOnly: 0
   GenerateAllOutputs: 0
@@ -146,7 +143,7 @@ MonoBehaviour:
   DefaultPreset: " <sbspreset pkgurl=\"pkg://Substance_graph\" label=\"\" >\n  <presetinput
     identifier=\"$outputsize\" uid=\"3795302352\" type=\"8\" value=\"10,10\" />\n</sbspreset>\n"
   MaterialShader: Standard
-  RenderTextures: 1
+  RenderTextures: 0
   OutputRemaped: 0
   references:
     version: 2
@@ -203,7 +200,7 @@ MonoBehaviour:
           GuiDescription: 
           Type: 4
           WidgetType: 1
-        Data: 246
+        Data: 256
         NumericalDescription:
           DefaultValue: 256
           MinValue: 0
@@ -287,7 +284,7 @@ MonoBehaviour:
           GuiDescription: Adjusts the balance between dark and bright values.
           Type: 0
           WidgetType: 1
-        Data: 0.699
+        Data: 0.6
         NumericalDescription:
           DefaultValue: 0.6
           MinValue: 0
@@ -307,7 +304,7 @@ MonoBehaviour:
           GuiDescription: Adjusts the contrast of the image.
           Type: 0
           WidgetType: 1
-        Data: 1
+        Data: 0.51
         NumericalDescription:
           DefaultValue: 0.51
           MinValue: 0
@@ -327,7 +324,7 @@ MonoBehaviour:
           GuiDescription: 
           Type: 0
           WidgetType: 1
-        Data: -1.13
+        Data: -0.12
         NumericalDescription:
           DefaultValue: -0.31
           MinValue: -3
