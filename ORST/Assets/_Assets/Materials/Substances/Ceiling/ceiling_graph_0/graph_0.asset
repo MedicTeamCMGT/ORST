@@ -18,7 +18,7 @@ MonoBehaviour:
   Name: graph_0
   IsRoot: 1
   FlagedForDelete: 0
-  GUID: 5c27192d-6223-4ad4-ba3b-3ba9ff81e5f7
+  GUID: 91708668-043e-49c1-a7dd-eceab54825d4
   Index: 0
   Input:
   - rid: 1000
@@ -146,7 +146,8 @@ MonoBehaviour:
   HasThumbnail: 0
   CurrentStatePreset: " <sbspreset pkgurl=\"pkg://ceiling\" label=\"\" >\n  <presetinput
     identifier=\"$outputsize\" uid=\"3316396136\" type=\"8\" value=\"10,10\" />\n 
-    <presetinput identifier=\"Tiling\" uid=\"2823403558\" type=\"4\" value=\"1\"
+    <presetinput identifier=\"outputcolor\" uid=\"2823537549\" type=\"3\" value=\"0,0,0,1\"
+    />\n  <presetinput identifier=\"Tiling\" uid=\"2823403558\" type=\"4\" value=\"9\"
     />\n </sbspreset>\n"
   IsRuntimeOnly: 0
   GenerateAllOutputs: 0
@@ -213,7 +214,7 @@ MonoBehaviour:
             output image
           Type: 3
           WidgetType: 3
-        Data: {x: 0.729412, y: 0.712644, z: 0.712644, w: 1}
+        Data: {x: 0, y: 0, z: 0, w: 1}
         NumericalDescription:
           DefaultValue: {x: 0.729412, y: 0.712644, z: 0.712644, w: 1}
           MinValue: {x: 0, y: 0, z: 0, w: 0}
@@ -254,7 +255,7 @@ MonoBehaviour:
           GuiDescription: 
           Type: 4
           WidgetType: 1
-        Data: 1
+        Data: 9
         NumericalDescription:
           DefaultValue: 19
           MinValue: 1
