@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c07844af799cf854c92b8b6fa7c3288d
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: dda12f74ff9116a42b23482252b2c482, type: 3}
+  _instancesCopy:
+  - {fileID: 11400000, guid: 739fca14e91404d45908f625cf45aacd, type: 2}
+  _fileAsset: {instanceID: 0}
+  _assetPath: Assets/_Assets/Materials/Substances/walls/Locker room wall.sbsar
