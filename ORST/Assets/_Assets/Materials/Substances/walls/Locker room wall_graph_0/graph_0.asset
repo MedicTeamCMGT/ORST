@@ -132,8 +132,8 @@ MonoBehaviour:
   HasThumbnail: 1
   CurrentStatePreset: " <sbspreset pkgurl=\"pkg://wall\" label=\"\" >\n  <presetinput
     identifier=\"$outputsize\" uid=\"2697275188\" type=\"8\" value=\"10,10\" />\n 
-    <presetinput identifier=\"outputcolor\" uid=\"3443085764\" type=\"3\" value=\"0,0.616419,0.783019,1\"
-    />\n  <presetinput identifier=\"Tiling_1\" uid=\"3443441414\" type=\"4\" value=\"16\"
+    <presetinput identifier=\"outputcolor\" uid=\"3443085764\" type=\"3\" value=\"0.0246707,0.59434,0.0262292,1\"
+    />\n  <presetinput identifier=\"Tiling_1\" uid=\"3443441414\" type=\"4\" value=\"10\"
     />\n </sbspreset>\n"
   IsRuntimeOnly: 0
   GenerateAllOutputs: 0
@@ -220,7 +220,7 @@ MonoBehaviour:
             output image
           Type: 3
           WidgetType: 3
-        Data: {x: 0, y: 0.61641896, z: 0.7830189, w: 1}
+        Data: {x: 0.024670675, y: 0.5943396, z: 0.026229205, w: 1}
         NumericalDescription:
           DefaultValue: {x: 0.46713, y: 0.613446, z: 0.649425, w: 1}
           MinValue: {x: 0, y: 0, z: 0, w: 0}
@@ -261,7 +261,7 @@ MonoBehaviour:
           GuiDescription: 
           Type: 4
           WidgetType: 1
-        Data: 16
+        Data: 10
         NumericalDescription:
           DefaultValue: 5
           MinValue: 0
