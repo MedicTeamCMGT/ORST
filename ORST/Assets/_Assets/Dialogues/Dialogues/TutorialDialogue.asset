@@ -22,24 +22,23 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   m_Nodes:
-  - m_Text: Hello - Do you want to access the tutorial?
+  - m_Text: Most interactions with Health Care Professionals are done using dialog
+      windows like this. Here it says the text spoken by the Health Care Professional
+      and below are all of the possible answer possibilities. To progress, you have
+      to find the correct answers. Try to select one of the using the gestures shown
+      before.
     m_Options:
-    - m_Text: Yes
+    - m_Text: I understand
       m_IsCorrect: 1
       m_Feedback: lmao
-    - m_Text: No
+    - m_Text: I don't understand
       m_IsCorrect: 0
+      m_Feedback: A popup text like this will tell you why your answer was incorrect.
+  - m_Text: Second
+    m_Options:
+    - m_Text: I understand
+      m_IsCorrect: 1
       m_Feedback: 
-  - m_Text: Welcome to the Tutorial, First, we will teach you how to teleport inside
-      the Simulation. To teleport, first form the gesture pictured below with your
-      non-dominant hand.
-    m_Options: []
-  - m_Text: "Great, To select a place to teleport to you now need to aim the ray
-      coming out of your hand towards \u201Cteleport points\u201D and confirm by
-      doing the movement shown below. Try it on the glowing Teleport point to the
-      right!"
-    m_Options: []
-  - m_Text: First steps - Pick up an object.
-    m_Options: []
-  - m_Text: Well done.
-    m_Options: []
+    - m_Text: I don't understand
+      m_IsCorrect: 0
+      m_Feedback: A popup text like this will tell you why your answer was incorrect.
