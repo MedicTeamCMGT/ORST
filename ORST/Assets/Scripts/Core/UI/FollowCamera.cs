@@ -1,4 +1,4 @@
-using DG.Tweening;
+﻿using DG.Tweening;
 using ORST.Foundation;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -30,9 +30,22 @@ namespace ORST.Core.UI {
         }
 
         private void Start() {
-            if (m_DistanceFromCamera > 0.0f) {
-                Reposition();
-            }
+            //if (m_DistanceFromCamera > 0.0f) {
+            //    Reposition();
+            //}
+        }
+
+        public void SnapCamera(in Vector3 position) {
+            m_IsFollowing = false;
+            m_ShouldFollowCamera = false;
+            m_TweenMove?.Kill();
+            m_TweenMove = null;
+            SetPosition(position);
+        }
+
+        public void UnsnapCamera() {
+            m_IsFollowing = false;
+            m_ShouldFollowCamera = false;
         }
 
         private void Update() {
@@ -73,11 +86,16 @@ namespace ORST.Core.UI {
             popupRotation.x = 0f;
 
             transform.SetPositionAndRotation(targetPosition, Quaternion.Euler(popupRotation));
+            Debug.LogError($"Repositioned to {targetPosition}");
         }
 
+        private void SetPosition(in Vector3 position) {
+            transform.position = position;
+        }
+        
         private void UpdateToLookAtCamera() {
             Vector3 axisAngle = m_Camera.transform.rotation.eulerAngles;
-            transform.DORotate(new Vector3(0f, axisAngle.y, 0f), m_FollowLatency);
+            transform.DORotate(axisAngle, m_FollowLatency);
         }
 
         private void UpdateFollowPosition() {
