@@ -174,9 +174,9 @@ namespace ORST.Foundation {
         public static void DrawSolidDisc(Vector3 center, Vector3 normal, float radius) {}
         public static void DrawWireDisc(Vector3 center, Vector3 normal, float radius) {}
         public static void DrawWireDisc(Vector3 center, Vector3 normal, float radius, float thickness) {}
-        public static void DrawSolidArc(Vector3 center, Vector3 normal, Vector3 from, float angle, float radius) {}
-        public static void DrawWireArc(Vector3 center, Vector3 normal, Vector3 from, float angle, float radius) {}
-        public static void DrawWireDisc(Vector3 center, Vector3 normal, float radius, float thickness) {}
+        public static void DrawSolidArc(Vector3 center, Vector3 normal, Vector3 from, Degrees angle, float radius) {}
+        public static void DrawWireArc(Vector3 center, Vector3 normal, Vector3 from, Degrees angle, float radius) {}
+        public static void DrawWireArc(Vector3 center, Vector3 normal, Vector3 from, Degrees angle, float radius, float thickness) {}
         public static void DrawSolidRectangleWithOutline(Rect rect, Color faceColor, Color outlineColor) {}
         public static void DrawSolidRectangleWithOutline(Vector3[] points, Color faceColor, Color outlineColor) {}
     }
