@@ -1,38 +1,20 @@
-﻿using Oculus.Interaction;
+﻿using ORST.Core.Attachments;
+using ORST.Core.Effects;
 using ORST.Foundation;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace ORST.Core.LearningModules {
     public class NameTagObject : BaseMonoBehaviour {
-        [SerializeField, Required] private Grabbable m_Grabbable;
-        [SerializeField, Required] private PointableUnityEventWrapper m_PointableEventWrapper;
+        [SerializeField, Required] private AttachableObject m_AttachableObject;
+        [SerializeField, Required] private OutlineGlow m_OutlineGlow;
         [SerializeField] private NameTagKind m_Kind;
 
         private Vector3 m_OriginalPosition;
         private Quaternion m_OriginalRotation;
-        private Rigidbody m_Rigidbody;
 
-        public Grabbable Grabbable => m_Grabbable;
-        public PointableUnityEventWrapper PointableEventWrapper => m_PointableEventWrapper;
-        public Rigidbody Rigidbody => m_Rigidbody;
-
-        private void Awake() {
-            m_Rigidbody = m_Grabbable.GetComponent<Rigidbody>();
-            m_OriginalPosition = m_Grabbable.transform.position;
-            m_OriginalRotation = m_Grabbable.transform.rotation;
-        }
-
+        public AttachableObject AttachableObject => m_AttachableObject;
+        public OutlineGlow OutlineGlow => m_OutlineGlow;
         public NameTagKind Kind => m_Kind;
-
-        public void ResetPosition() {
-            m_Grabbable.transform.position = m_OriginalPosition;
-            m_Grabbable.transform.rotation = m_OriginalRotation;
-
-            if (m_Rigidbody != null) {
-                m_Rigidbody.velocity = Vector3.zero;
-                m_Rigidbody.angularVelocity = Vector3.zero;
-            }
-        }
     }
 }

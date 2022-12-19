@@ -1,6 +1,4 @@
-﻿using System;
-using System.ComponentModel;
-using ORST.Core.LearningModules;
+﻿using ORST.Core.LearningModules;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -33,7 +31,7 @@ namespace ORST.Core.ModuleTasks {
         }
 
         private void OnNameTagConfirmed() {
-            this.m_NameTagConfirmed = true;
+            m_NameTagConfirmed = true;
         }
     }
 }

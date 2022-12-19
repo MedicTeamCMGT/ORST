@@ -65,7 +65,11 @@ namespace ORST.Core.Attachments {
         }
 
         private void OnTriggerEnter(Collider other) {
-            if (other.GetComponent<AttachableObject>() is not { Grabbable: { SelectingPointsCount: > 0 } } attachedObject) return;
+            if (other.GetComponent<AttachableObject>() is not { Grabbable: { SelectingPointsCount: > 0 } } attachedObject) {
+                // Object is not an attachable or is not being grabbed. We don't allow objects which aren't grabbed
+                // because then you might just run into an object accidentally.
+                return;
+            }
 
             m_PotentialAttachables.Add(attachedObject);
             InitializeAttachableObject(attachedObject);

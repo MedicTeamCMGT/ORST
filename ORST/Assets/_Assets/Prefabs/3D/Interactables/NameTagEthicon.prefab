@@ -150,8 +150,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 3.105}
+  m_AnchoredPosition: {x: 0, y: -0.7}
+  m_SizeDelta: {x: 0, y: 1.95}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!23 &4440159047898794853
 MeshRenderer:
@@ -488,7 +488,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4440159048196175535}
   m_LocalRotation: {x: 0.70710677, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -500,7 +500,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.002}
+  m_AnchoredPosition: {x: 0, y: 0.0023}
   m_SizeDelta: {x: 15.35863, y: 5.83936}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4440159048562534685
@@ -616,6 +616,8 @@ GameObject:
   - component: {fileID: 4440159048634877433}
   - component: {fileID: 6076303366335983545}
   - component: {fileID: 3664990201370641217}
+  - component: {fileID: 5681175844358456912}
+  - component: {fileID: 5229325561468415981}
   m_Layer: 9
   m_Name: NameTagEthicon
   m_TagString: Untagged
@@ -663,8 +665,8 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  m_Grabbable: {fileID: 4440159048634877432}
-  m_PointableEventWrapper: {fileID: 4440159048634877435}
+  m_AttachableObject: {fileID: 5229325561468415981}
+  m_OutlineGlow: {fileID: 5681175844358456912}
   m_Kind: 1
 --- !u!54 &4440159048634877439
 Rigidbody:
@@ -860,6 +862,59 @@ MonoBehaviour:
     fillPass:
       shader: {fileID: 0}
       serializedProperties: []
+--- !u!114 &5681175844358456912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4440159048634877437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5fb4ef01ff9403eae520bbca628f1a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  m_Outlinable: {fileID: 3664990201370641217}
+  m_GlowType: 0
+  m_MinAlpha: 0.75
+  m_MaxAlpha: 1
+  m_MinColor: {r: 1, g: 1, b: 1, a: 1}
+  m_MaxColor: {r: 1, g: 1, b: 1, a: 1}
+  m_GlowDuration: 1
+  m_ShowDuration: 0.5
+--- !u!114 &5229325561468415981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4440159048634877437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1155d1a7ca094494b737787aab56ea12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  m_Rigidbody: {fileID: 4440159048634877439}
+  m_Grabbable: {fileID: 4440159048634877432}
+  m_EventWrapper: {fileID: 4440159048634877435}
 --- !u!1 &4440159048807198418
 GameObject:
   m_ObjectHideFlags: 0
@@ -1436,7 +1491,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Medical Devices Companies
+  m_text: MedTech Company
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 518b8b940aaee493a999b523fa50ea47, type: 2}
   m_sharedMaterial: {fileID: 3230686367167018601, guid: 518b8b940aaee493a999b523fa50ea47,
@@ -1470,7 +1525,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 24
   m_fontSizeMax: 96
-  m_fontStyle: 17
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
