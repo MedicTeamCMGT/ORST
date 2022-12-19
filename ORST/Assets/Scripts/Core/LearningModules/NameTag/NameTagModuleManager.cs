@@ -1,7 +1,9 @@
-using System;
+﻿using System;
 using DG.Tweening;
 using Oculus.Interaction;
 using Oculus.Interaction.HandGrab;
+using ORST.Core.Attributes;
+using ORST.Core.Effects;
 using ORST.Core.UI.Components;
 using ORST.Foundation;
 using Sirenix.OdinInspector;
@@ -13,14 +15,16 @@ namespace ORST.Core.LearningModules {
         public event Action NameTagConfirmed;
 
         [Title("References")]
-        [SerializeField, Required] private NameTagDropZone m_DropZone;
+        [SerializeField, Required, SdfIcon(SdfIconType.InboxFill)] private NameTagDropZone m_DropZone;
         [SerializeField, Required] private ParticleSystem m_ParticleSystem;
+        [SerializeField, Required] private CanvasGroup m_CanvasGroup;
         [Space]
-        [SerializeField, Required] private TextMeshProUGUI m_HelpLabel;
-        [SerializeField, Required] private VRButton m_ConfirmButton;
+        [SerializeField, Required, SdfIcon(SdfIconType.TextareaT)] private TextMeshProUGUI m_HelpLabel;
+        [SerializeField, Required, SdfIcon(SdfIconType.CheckSquareFill)] private VRButton m_ConfirmButton;
         [Space]
-        [SerializeField, Required] private Grabbable m_EthiconNameTag;
-        [SerializeField, Required] private Grabbable m_DePuyNameTag;
+        [SerializeField, Required, SdfIcon(SdfIconType.TagsFill, Color = "#ff1c2c")] private NameTagObject m_EthiconNameTag;
+        [SerializeField, Required, SdfIcon(SdfIconType.TagsFill, Color = "#1b99f7")] private NameTagObject m_DePuyNameTag;
+
         [Title("Settings")]
         [SerializeField, SuffixLabel("seconds")] private float m_ConfirmButtonAnimationDuration = 0.5f;
 
@@ -32,10 +36,14 @@ namespace ORST.Core.LearningModules {
         [SerializeField] private OutlineGlow m_EthiconOutline;
         [SerializeField] private OutlineGlow m_DePuyOutline;
 
-
         private void Awake() {
             m_DropZone.NameTagChanged += OnNameTagChanged;
             m_ConfirmButton.Button.onClick.AddListener(OnConfirmButtonClicked);
+
+            m_EthiconNameTag.PointableEventWrapper.WhenSelect.AddListener(OnNameTagPickedUp);
+            m_EthiconNameTag.PointableEventWrapper.WhenUnselect.AddListener(OnNameTagReleased);
+            m_DePuyNameTag.PointableEventWrapper.WhenSelect.AddListener(OnNameTagPickedUp);
+            m_DePuyNameTag.PointableEventWrapper.WhenUnselect.AddListener(OnNameTagReleased);
         }
 
         private void OnConfirmButtonClicked() {
@@ -46,8 +54,8 @@ namespace ORST.Core.LearningModules {
 
             Destroy(m_EthiconNameTag.GetComponentInChildren<HandGrabInteractable>());
             Destroy(m_DePuyNameTag.GetComponentInChildren<HandGrabInteractable>());
-            Destroy(m_EthiconNameTag);
-            Destroy(m_DePuyNameTag);
+            Destroy(m_EthiconNameTag.GetComponent<Grabbable>());
+            Destroy(m_DePuyNameTag.GetComponent<Grabbable>());
         }
 
         private void Start() {
@@ -86,6 +94,16 @@ namespace ORST.Core.LearningModules {
         private void HideConfirmButton() {
             m_ConfirmButton.CanvasGroup.blocksRaycasts = false;
             m_ConfirmButton.CanvasGroup.DOFade(0.0f, m_ConfirmButtonAnimationDuration);
+        }
+
+        private void OnNameTagPickedUp() {
+            m_EthiconOutline.StopGlow();
+        }
+
+        private void OnNameTagReleased() {
+            if (NameTag.Kind is NameTagKind.None) {
+                m_EthiconOutline.StartGlow();
+            }
         }
 
         private void UpdateHelpMessage(NameTagKind nameTagKind) {
