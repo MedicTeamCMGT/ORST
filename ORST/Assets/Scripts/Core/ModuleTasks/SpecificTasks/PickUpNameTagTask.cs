@@ -13,6 +13,7 @@ namespace ORST.Core.ModuleTasks {
             base.OnModuleTaskStarted();
 
             m_NameTagModuleManager.NameTagConfirmed += OnNameTagConfirmed;
+            m_NameTagModuleManager.HandleTaskStarted();
         }
 
         protected override void OnModuleTaskCompleted() {
