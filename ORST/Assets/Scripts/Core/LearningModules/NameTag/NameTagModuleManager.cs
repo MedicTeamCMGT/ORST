@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using DG.Tweening;
 using Oculus.Interaction;
 using Oculus.Interaction.HandGrab;
@@ -21,14 +21,16 @@ namespace ORST.Core.LearningModules {
         [Space]
         [SerializeField, Required] private Grabbable m_EthiconNameTag;
         [SerializeField, Required] private Grabbable m_DePuyNameTag;
+        [Title("Settings")]
+        [SerializeField, SuffixLabel("seconds")] private float m_ConfirmButtonAnimationDuration = 0.5f;
 
         [Title("Help Text")]
         [SerializeField, TextArea(3, 6)] private string m_DefaultMessage;
         [SerializeField, TextArea(3, 6)] private string m_SelectionMessage;
         [SerializeField, TextArea(3, 6)] private string m_ConfirmedMessage;
 
-        [Title("Settings")]
-        [SerializeField, SuffixLabel("seconds")] private float m_ConfirmButtonAnimationDuration = 0.5f;
+        [SerializeField] private OutlineGlow m_EthiconOutline;
+        [SerializeField] private OutlineGlow m_DePuyOutline;
 
 
         private void Awake() {
@@ -51,6 +53,14 @@ namespace ORST.Core.LearningModules {
         private void Start() {
             UpdateHelpMessage(NameTagKind.None);
             HideConfirmButton();
+            m_CanvasGroup.alpha = 0.0f;
+            m_CanvasGroup.blocksRaycasts = false;
+        }
+
+        public void HandleTaskStarted() {
+            m_CanvasGroup.DOFade(1.0f, 0.5f);
+            m_EthiconOutline.Show().OnComplete(() => m_EthiconOutline.StartGlow());
+            m_DePuyOutline.Show().OnComplete(() => m_DePuyOutline.StartGlow());
         }
 
         private void OnNameTagChanged(NameTagKind nameTagKind) {
