@@ -6,6 +6,7 @@ using Oculus.Interaction.HandGrab;
 using ORST.Core.Attachments;
 using ORST.Core.Attributes;
 using ORST.Core.UI.Components;
+using ORST.Core.Utilities;
 using ORST.Foundation;
 using Sirenix.OdinInspector;
 using TMPro;
@@ -132,7 +133,7 @@ namespace ORST.Core.LearningModules {
         private void OnNameTagReleased(AttachableObject attachableObject) {
             // Wait a bit before checking so we make sure all events fired
             // and NameTag.Kind is updated.
-            StartCoroutine(WaitFramesAndThen(2, () => {
+            StartCoroutine(Coroutines.WaitFramesAndThen(2, () => {
                 if (NameTag.Kind is NameTagKind.None) {
                     m_EthiconNameTag.OutlineGlow.StartGlow();
                     m_DePuyNameTag.OutlineGlow.StartGlow();
@@ -148,14 +149,6 @@ namespace ORST.Core.LearningModules {
 
             // TODO: Maybe add some animation here so it's not so sudden
             m_HelpLabel.text = helpText;
-        }
-
-        private IEnumerator WaitFramesAndThen(int frames, Action action) {
-            for (int i = 0; i < frames; i++) {
-                yield return null;
-            }
-
-            action?.Invoke();
         }
 
         private static string GetNameTagName(NameTagKind nameTagKind) {
