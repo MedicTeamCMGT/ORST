@@ -73,11 +73,16 @@ namespace ORST.Core.Attachments {
 
             m_PotentialAttachables.Add(attachedObject);
             InitializeAttachableObject(attachedObject);
-
         }
 
         private void OnTriggerExit(Collider other) {
             if (other.GetComponent<AttachableObject>() is not { } attachableObject) {
+                return;
+            }
+
+            if (attachableObject == m_AttachedObject) {
+                // idk why but for some reason this is called when the object is attached
+                // probably because we change the parent to be a child of this object
                 return;
             }
 

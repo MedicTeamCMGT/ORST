@@ -492,9 +492,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stage: 1
   renderingStrategy: 1
-  renderingMode: 0
+  renderingMode: 1
   outlineLayerMask: -1
-  primaryBufferSizeMode: 3
+  primaryBufferSizeMode: 0
   primaryRendererScale: 0.75
   primarySizeReference: 800
   blurShift: 1
