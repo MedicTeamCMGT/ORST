@@ -1,4 +1,6 @@
-﻿using Oculus.Interaction;
+using System;
+using Oculus.Interaction;
+using ORST.Core.Utilities;
 using ORST.Foundation;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -9,27 +11,30 @@ namespace ORST.Core.Attachments {
         [Title("References")]
         [SerializeField, Required] private Rigidbody m_Rigidbody;
         [SerializeField, Required] private Grabbable m_Grabbable;
-        [SerializeField, Required] private PointableUnityEventWrapper m_EventWrapper;
 
         public Rigidbody Rigidbody => m_Rigidbody;
         public Grabbable Grabbable => m_Grabbable;
 
-        public UnityEvent<AttachableObject> Grabbed { get; private set; }
-        public UnityEvent<AttachableObject> Released { get; private set; }
+        public UnityEvent<AttachableObject> Grabbed { get; } = new();
+        public UnityEvent<AttachableObject> Released { get; } = new();
 
-        private void Awake() {
-            Grabbed = new UnityEvent<AttachableObject>();
-            Released = new UnityEvent<AttachableObject>();
-            m_EventWrapper.WhenSelect.AddListener(InvokeGrabbed);
-            m_EventWrapper.WhenUnselect.AddListener(InvokeReleased);
+        private void OnEnable() {
+            // Wait a frame so that we subscribe after PhysicsGrabbable
+            StartCoroutine(Coroutines.WaitFramesAndThen(1, () => {
+                Grabbable.WhenPointerEventRaised += OnPointerEventRaised;
+            }));
         }
 
-        private void OnDestroy() {
-            m_EventWrapper.WhenSelect.RemoveListener(InvokeGrabbed);
-            m_EventWrapper.WhenUnselect.RemoveListener(InvokeReleased);
+        private void OnDisable() {
+            Grabbable.WhenPointerEventRaised -= OnPointerEventRaised;
         }
 
-        private void InvokeGrabbed() => Grabbed?.Invoke(this);
-        private void InvokeReleased() => Released?.Invoke(this);
+        private void OnPointerEventRaised(PointerEvent pointerEvent) {
+            if (pointerEvent.Type == PointerEventType.Select) {
+                Grabbed.Invoke(this);
+            } else if (pointerEvent.Type == PointerEventType.Unselect) {
+                Released.Invoke(this);
+            }
+        }
     }
 }
