@@ -1,14 +1,15 @@
 ﻿using DG.Tweening;
-using EPOOutline;
+using ORST.Core.Gfx;
 using ORST.Foundation;
 using ORST.Foundation.Extensions;
+using QOutline;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace ORST.Core.Effects {
     public class OutlineGlow : BaseMonoBehaviour {
         [Title("References")]
-        [SerializeField, Required] private Outlinable m_Outlinable;
+        [SerializeField, Required] private QuickOutline m_Outlinable;
 
         [Title("Settings")]
         [SerializeField] private GlowType m_GlowType = GlowType.AlphaOnly;
@@ -32,8 +33,8 @@ namespace ORST.Core.Effects {
         private void Awake() {
             m_IsVisible = false;
             m_IsGlowing = false;
-            m_Outlinable.FrontParameters.Color = m_GlowType == GlowType.AlphaOnly
-                ? m_Outlinable.FrontParameters.Color.WithA(0.0f)
+            m_Outlinable.OutlineColor = m_GlowType == GlowType.AlphaOnly
+                ? m_Outlinable.OutlineColor.WithA(0.0f)
                 : m_MinColor.WithA(0.0f);
         }
 
@@ -47,8 +48,8 @@ namespace ORST.Core.Effects {
             }
 
             return m_ShowHideTween = m_GlowType is GlowType.AlphaOnly
-                ? m_Outlinable.FrontParameters.DOFade(m_MaxAlpha, m_ShowDuration)
-                : m_Outlinable.FrontParameters.DOColor(m_MaxColor, m_ShowDuration);
+                ? m_Outlinable.DOFade(m_MaxAlpha, m_ShowDuration)
+                : m_Outlinable.DOColor(m_MaxColor, m_ShowDuration);
         }
 
         public Tween Hide() {
@@ -61,8 +62,8 @@ namespace ORST.Core.Effects {
             }
 
             return m_ShowHideTween = m_GlowType is GlowType.AlphaOnly
-                ? m_Outlinable.FrontParameters.DOFade(0.0f, m_ShowDuration)
-                : m_Outlinable.FrontParameters.DOColor(m_MinColor.WithA(0.0f), m_ShowDuration);
+                ? m_Outlinable.DOFade(0.0f, m_ShowDuration)
+                : m_Outlinable.DOColor(m_MinColor.WithA(0.0f), m_ShowDuration);
         }
 
         public Tween StartGlow() {
@@ -76,8 +77,8 @@ namespace ORST.Core.Effects {
 
             m_IsGlowing = true;
             return m_GlowTween = m_GlowType is GlowType.AlphaOnly
-                ? m_Outlinable.FrontParameters.DOFade(m_MinAlpha, m_GlowDuration).From(m_MaxAlpha).SetLoops(-1, LoopType.Yoyo)
-                : m_Outlinable.FrontParameters.DOColor(m_MinColor, m_GlowDuration).From(m_MaxColor).SetLoops(-1, LoopType.Yoyo);
+                ? m_Outlinable.DOFade(m_MinAlpha, m_GlowDuration).From(m_MaxAlpha).SetLoops(-1, LoopType.Yoyo)
+                : m_Outlinable.DOColor(m_MinColor, m_GlowDuration).From(m_MaxColor).SetLoops(-1, LoopType.Yoyo);
         }
 
         public Tween StopGlow(bool hide = true) {
@@ -93,12 +94,12 @@ namespace ORST.Core.Effects {
 
             if (hide) {
                 return m_ShowHideTween = m_GlowType is GlowType.AlphaOnly
-                    ? m_Outlinable.FrontParameters.DOFade(0.0f, m_ShowDuration)
-                    : m_Outlinable.FrontParameters.DOColor(m_MinColor.WithA(0.0f), m_ShowDuration);
+                    ? m_Outlinable.DOFade(0.0f, m_ShowDuration)
+                    : m_Outlinable.DOColor(m_MinColor.WithA(0.0f), m_ShowDuration);
             } else {
                 return m_ShowHideTween = m_GlowType is GlowType.AlphaOnly
-                    ? m_Outlinable.FrontParameters.DOFade(m_MaxAlpha, m_ShowDuration)
-                    : m_Outlinable.FrontParameters.DOColor(m_MaxColor, m_ShowDuration);
+                    ? m_Outlinable.DOFade(m_MaxAlpha, m_ShowDuration)
+                    : m_Outlinable.DOColor(m_MaxColor, m_ShowDuration);
             }
         }
 

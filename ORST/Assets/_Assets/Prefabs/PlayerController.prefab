@@ -427,6 +427,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5818413284500854226, guid: 470946c88bf2b374baf65cf3cc693b12,
+        type: 3}
+      propertyPath: m_PositionDeadZone
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6834552798070243282, guid: 470946c88bf2b374baf65cf3cc693b12,
         type: 3}
       propertyPath: m_RootOrder

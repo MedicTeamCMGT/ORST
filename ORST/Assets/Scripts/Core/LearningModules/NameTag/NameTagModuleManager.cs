@@ -43,6 +43,18 @@ namespace ORST.Core.LearningModules {
             m_EthiconNameTag.AttachableObject.Released.AddListener(OnNameTagReleased);
             m_DePuyNameTag.AttachableObject.Grabbed.AddListener(OnNameTagPickedUp);
             m_DePuyNameTag.AttachableObject.Released.AddListener(OnNameTagReleased);
+
+            UpdateHelpMessage(NameTagKind.None);
+            HideConfirmButton();
+            m_CanvasGroup.alpha = 0.0f;
+            m_CanvasGroup.blocksRaycasts = false;
+        }
+
+        public void HandleTaskStarted() {
+            m_CanvasGroup.DOFade(1.0f, 0.5f);
+            m_CanvasGroup.blocksRaycasts = true;
+            m_EthiconNameTag.OutlineGlow.Show().OnComplete(() => m_EthiconNameTag.OutlineGlow.StartGlow());
+            m_DePuyNameTag.OutlineGlow.Show().OnComplete(() => m_DePuyNameTag.OutlineGlow.StartGlow());
         }
 
         private void OnConfirmButtonClicked() {
@@ -50,6 +62,9 @@ namespace ORST.Core.LearningModules {
 
             m_HelpLabel.text = m_ConfirmedMessage.Replace("{Selection}", GetNameTagName(NameTag.Kind));
             HideConfirmButton();
+
+            m_EthiconNameTag.OutlineGlow.Hide();
+            m_DePuyNameTag.OutlineGlow.Hide();
 
             Destroy(m_EthiconNameTag.GetComponentInChildren<HandGrabInteractable>());
             Destroy(m_EthiconNameTag.GetComponent<Grabbable>());
@@ -62,25 +77,14 @@ namespace ORST.Core.LearningModules {
             Destroy(m_NameTagAttachmentPoint);
         }
 
-        private void Start() {
-            UpdateHelpMessage(NameTagKind.None);
-            HideConfirmButton();
-            m_CanvasGroup.alpha = 0.0f;
-            m_CanvasGroup.blocksRaycasts = false;
-        }
-
-        public void HandleTaskStarted() {
-            m_CanvasGroup.DOFade(1.0f, 0.5f);
-            m_EthiconNameTag.OutlineGlow.Show().OnComplete(() => m_EthiconNameTag.OutlineGlow.StartGlow());
-            m_DePuyNameTag.OutlineGlow.Show().OnComplete(() => m_DePuyNameTag.OutlineGlow.StartGlow());
-        }
-
         private void OnNameTagAttached(AttachableObject attachableObject) {
             NameTagObject nameTagObject = GetAttachedNameTag(attachableObject);
+            Debug.Log($"OnNameTagAttached: {attachableObject.name}");
             OnNameTagChanged(nameTagObject.Kind);
         }
 
         private void OnNameTagDetached(AttachableObject attachableObject) {
+            Debug.Log($"OnNameTagDetached: {attachableObject.name}");
             OnNameTagChanged(NameTagKind.None);
         }
 
