@@ -11,7 +11,12 @@ namespace ORST.Core.Attachments {
         public event Action<AttachableObject> ObjectDetached;
 
         [Title("References")]
+        // Note: this is not used in the code but required for OnTriggerEnter/Exit to work
         [SerializeField, Required] private Collider m_AttachmentCollider;
+
+        [Title("Settings")]
+        [Tooltip("When enabled you can attach another object while there is already one attached, replacing the old one")]
+        [SerializeField] private bool m_AllowAttachmentOverride = true;
 
         private readonly HashSet<AttachableObject> m_PotentialAttachables = new();
         private AttachableObject m_AttachedObject;
@@ -96,6 +101,10 @@ namespace ORST.Core.Attachments {
         }
 
         private void OnAttachableObjectReleased(AttachableObject attachableObject) {
+            if (!m_AllowAttachmentOverride && m_AttachedObject != null) {
+                return;
+            }
+
             AttachObject(attachableObject);
         }
     }
