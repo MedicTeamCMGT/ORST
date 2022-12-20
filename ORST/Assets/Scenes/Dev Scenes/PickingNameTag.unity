@@ -1238,6 +1238,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   m_AttachmentCollider: {fileID: 398393238}
+  m_AllowAttachmentOverride: 0
 --- !u!4 &427737379 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1423532509852908938, guid: d4c3433c4f2c703459484dc775128d6a,
@@ -5596,7 +5597,7 @@ MonoBehaviour:
     Modules you will experience later on.
   m_SelectionMessage: You chose '{Selection}'. This will influence the kind of Learning
     Modules you will experience later on. You can switch your choice by dragging
-    the other name tag into the highlighted area.
+    the current name tag out and placing the other name tag in the highlighted area.
   m_ConfirmedMessage: You chose '{Selection}'. This will influence the kind of Learning
     Modules you will experience later on.
 --- !u!4 &1757048139
