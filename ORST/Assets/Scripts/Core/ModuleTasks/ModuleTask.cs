@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using ORST.Core.LearningModules;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
@@ -15,8 +16,14 @@ namespace ORST.Core.ModuleTasks {
     public class ModuleTask : MonoBehaviour {
         [TitleGroup("Module Task", order: 1000), SerializeField]
         private bool m_IsEligibleForRandom;
+
+        [InfoBox("The name tag requirement only affects root tasks and not subtasks.")]
+        [TitleGroup("Module Task", order: 1000), SerializeField]
+        private NameTagKind m_NameTagRequirement;
+
         [TitleGroup("Module Task", order: 1000), SerializeField]
         private UnityEvent m_TaskStarted;
+
         [TitleGroup("Module Task", order: 1000), SerializeField]
         private UnityEvent m_TaskCompleted;
 
@@ -30,6 +37,11 @@ namespace ORST.Core.ModuleTasks {
         /// Gets a value indicating whether this task is eligible for randomization.
         /// </summary>
         public bool IsEligibleForRandom => m_IsEligibleForRandom;
+
+        /// <summary>
+        /// Gets the name tag requirement.
+        /// </summary>
+        public NameTagKind NameTagRequirement => m_NameTagRequirement;
 
         /// <summary>
         /// Gets a value indicating whether this task has started.
