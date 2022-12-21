@@ -11,14 +11,20 @@ namespace ORST.Core.ModuleTasks {
         [SerializeField] private bool m_RandomizeEligibleModuleTasks;
         [ShowInInspector] private Queue<ModuleTask> m_TaskQueue;
         private ModuleTask m_CurrentModuleTask;
+        private bool m_Completed;
 
         private void Start() {
             InitiateModuleTaskManager();
         }
 
         private void Update() {
+            if (m_Completed) {
+                return;
+            }
+
             //This stops execution when all tasks are done or there weren't tasks in the first place
             if (m_CurrentModuleTask == null) {
+                m_Completed = true;
                 return;
             }
 
@@ -32,6 +38,7 @@ namespace ORST.Core.ModuleTasks {
                     } else {
                         m_CurrentModuleTask = null;
                         Debug.Log("TaskManager::All tasks done.");
+                        m_Completed = true;
                     }
 
                     break;
