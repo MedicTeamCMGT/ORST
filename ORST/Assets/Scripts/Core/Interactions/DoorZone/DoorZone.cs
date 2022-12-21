@@ -11,7 +11,7 @@ using UnityEngine.SceneManagement;
 
 namespace ORST.Core.Interactions {
     public class DoorZone : MonoBehaviour {
-        public Action ExitedDoor;
+        public event Action ExitedDoor;
         [SerializeField, Required] private HandGrabInteractable m_DoorHandle;
         [SerializeField, Required] int m_SceneIndex;
         private OneGrabRotateTransformer m_DoorHandleRotateTransformer;
