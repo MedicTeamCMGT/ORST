@@ -89,8 +89,7 @@ namespace ORST.Core.Interactions {
             if (m_PlayerInZoneNoTasks) {
                 if ((m_HandSensor.position - m_DominantHand.position).magnitude < m_SensorDetectionDistance ||
                     (m_HandSensor.position - m_NonDominantHand.position).magnitude < m_SensorDetectionDistance) {
-                    m_PlayerInZoneNoTasks = false;
-                    ExitedDoor?.Invoke();
+                    InitiateSceneTransition();
                 }
 
             }
@@ -101,6 +100,7 @@ namespace ORST.Core.Interactions {
                 return;
             }
 
+            m_PlayerInZoneNoTasks = false;
             m_TransitionStarted = true;
             ExitedDoor?.Invoke();
             StartCoroutine(ChangeScene());
