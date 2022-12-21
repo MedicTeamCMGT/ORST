@@ -10,9 +10,10 @@ namespace ORST.Core {
         public Action ItemBucketFilled;
 
         [SerializeField] private List<GameObject> m_Items;
+        [SerializeField] private LayerMask m_Mask;
 
         private void OnTriggerEnter(Collider collider) {
-            if (!collider.CompareTag("Interactable") || !m_Items.Contains(collider.gameObject)) {
+            if (((1 << collider.gameObject.layer) & m_Mask) == 0 || !m_Items.Contains(collider.gameObject)) {
                 return;
             }
 
