@@ -17,7 +17,7 @@ namespace ORST.Core.ModuleTasks {
     /// </summary>
     public class TutorialDialogueHandler : MonoBehaviour {
         public Action<bool> TutorialCompleted;
-        
+
         //Dialogue Manager
         public TutorialDialogue Dialogue => m_Dialogue;
         [Header("Dialogue")]
@@ -63,17 +63,11 @@ namespace ORST.Core.ModuleTasks {
         private bool m_ButtonClicked;
         private bool m_DialogueEnded;
 
-        private bool m_TutorialDecisionMade;
         private TeleportPointORST m_EnabledTeleportPoint;
         private bool m_TeleportedToEnabledPoint;
 
         private SampleDialogueTrigger m_SampleDialogueTrigger;
-
-        private void Start() {
-            StartTutorial();
-        }
-
-        private void StartTutorial() {
+        public void StartTutorial() {
             //Note: The tutorial implementation should start itself, currently only one exists.
             //Can be adjusted to facilitate multiple handlers if so desired.
             HandGrabInteractable interactable = m_ObjectToPick.GetComponentInChildren<HandGrabInteractable>();
@@ -88,6 +82,10 @@ namespace ORST.Core.ModuleTasks {
             //Put this in a separate method.
             m_DialogueView.transform.position = m_GestureCanvasPosition.position;
             m_DialogueView.transform.rotation = m_GestureCanvasPosition.rotation;
+
+            if (!m_Started) {
+                StartCoroutine(Tutorial());
+            }
         }
 
         private void HandleDialogueStarted() {
@@ -120,13 +118,8 @@ namespace ORST.Core.ModuleTasks {
             m_State = default;
         }
 
-        private void StartButtonClicked() {
-            if (!m_Started) {
-                StartCoroutine(Tutorial());
-            } 
-            else {
-                m_ButtonClicked = true;
-            }
+        private void ViewButtonClicked() {
+            m_ButtonClicked = true;
         }
 
         private void InitializeTutorial() {
@@ -140,7 +133,7 @@ namespace ORST.Core.ModuleTasks {
             m_DialogueView = Instantiate(m_DialogueViewPrefab);
             m_DialogueView.LoadState(m_State.CurrentNode);
             m_DialogueView.gameObject.SetActive(true);
-            m_DialogueView.Initialize(StartButtonClicked);
+            m_DialogueView.Initialize(ViewButtonClicked);
         }
 
         private IEnumerator Tutorial() {
@@ -169,7 +162,7 @@ namespace ORST.Core.ModuleTasks {
             m_DialogueView.SetButtonText("Click to continue");
             yield return ValidateTask(m_MenuCanvasPosition, null, () => m_ButtonClicked);
 
-           // m_ButtonClicked = false;
+            // m_ButtonClicked = false;
             m_DialogueView.SetButtonText("Initiate dialogue");
             yield return ValidateTask(m_MenuCanvasPosition, null, () => m_ButtonClicked);
             m_DialogueView.DisableButton();
@@ -178,10 +171,10 @@ namespace ORST.Core.ModuleTasks {
             m_SampleDialogueTrigger.InitiateDialogue();
             DialogueManager.DialogueEnded += DialogueEnded;
             yield return ValidateTask(m_MenuCanvasPosition, null, () => m_DialogueEnded);
-            
+
             //Task board
 
-           
+
             //Task - Door
             yield return ValidateTask(m_DoorCanvasPosition, m_DoorPoint, () => m_DoorOpened);
             TutorialCompleted?.Invoke(true);
@@ -238,7 +231,7 @@ namespace ORST.Core.ModuleTasks {
         }
 
         private void CheckDoorOpened() {
-              m_DoorOpened = true;
+            m_DoorOpened = true;
         }
 
         private void ProcessPointerEvent(PointerEvent pointerEvent) {
