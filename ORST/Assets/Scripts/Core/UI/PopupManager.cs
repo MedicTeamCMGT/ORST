@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using ORST.Core.ModuleTasks;
 using ORST.Foundation.Singleton;
 using UnityEngine;
@@ -10,7 +10,20 @@ namespace ORST.Core.UI {
         [SerializeField] private GameObject m_TaskPrefab;
         [SerializeField] private GameObject m_PopupInfoPrefab;
         [SerializeField] private Transform m_VerticalLayoutPanel;
+        private FollowCamera m_FollowCamera;
 
+        private void Start() {
+            m_FollowCamera = m_PopupCanvas.GetComponent<FollowCamera>();
+        }
+        
+        public void SnapPopupToTransform(Vector3 position) {
+            m_FollowCamera.SnapCamera(position);
+        }
+
+        public void UnsnapPopup() {
+            m_FollowCamera.UnsnapCamera();
+        }
+        
         public void OpenPopup() {
             m_PopupCanvas.gameObject.SetActive(true);
         }

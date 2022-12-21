@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Oculus.Interaction;
@@ -10,7 +11,9 @@ using UnityEngine.SceneManagement;
 
 namespace ORST.Core.Interactions {
     public class DoorZone : MonoBehaviour {
+        public event Action ExitedDoor;
         [SerializeField, Required] private HandGrabInteractable m_DoorHandle;
+        [SerializeField, Required] int m_SceneIndex;
         private OneGrabRotateTransformer m_DoorHandleRotateTransformer;
         private bool m_DoorsUnlocked;
         private bool m_TransitionStarted;
@@ -30,7 +33,7 @@ namespace ORST.Core.Interactions {
         }
 
         private void OnTriggerEnter(Collider other) {
-            if (!other.CompareTag("Player")) {
+            if (!other.CompareTag("Player") || m_Player != null) {
                 return;
             }
 
@@ -44,8 +47,9 @@ namespace ORST.Core.Interactions {
         }
 
         private void OnTriggerExit(Collider other) {
-            if (m_Player == other.gameObject) {
+            if (m_Player != null && m_Player == other.gameObject) {
                 PopupManager.Instance.ClosePopup();
+                m_Player = null;
             }
         }
 
@@ -53,15 +57,16 @@ namespace ORST.Core.Interactions {
             if (!m_DoorsUnlocked) {
                 return;
             }
+
             m_TransitionStarted = true;
+            ExitedDoor?.Invoke();
             StartCoroutine(ChangeScene());
-            Debug.LogWarning("Teleport to next room");
         }
 
         private IEnumerator ChangeScene() {
             OVRScreenFade.instance.FadeOut();
             yield return new WaitUntil(() => OVRScreenFade.instance.currentAlpha >= 1.0f);
-            SceneManager.LoadScene(10);
+            SceneManager.LoadScene(m_SceneIndex);
         }
 
         private void ProcessPointerEvent(PointerEvent pointerEvent) {
