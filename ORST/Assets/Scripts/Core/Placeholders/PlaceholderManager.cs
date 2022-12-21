@@ -10,8 +10,18 @@ namespace ORST.Core.Placeholders {
         /// <param name="key">The key of the placeholder.</param>
         /// <param name="value">Out parameter for the value of the placeholder.</param>
         /// <returns><see langword="true"/> if the placeholder exists, otherwise <see langword="false"/>.</returns>
-        public static bool TryGetPlaceholder(string key, out string value) {
+        public static bool TryGetValue(string key, out string value) {
             return s_Placeholders.TryGetValue(key, out value);
+        }
+
+        /// <summary>
+        /// Gets the value of the given placeholder key, or the default value if the placeholder does not exist.
+        /// </summary>
+        /// <param name="key">The key of the placeholder.</param>
+        /// <param name="defaultValue">The default value to return if the placeholder does not exist.</param>
+        /// <returns>The value of the placeholder, or the default value if the placeholder does not exist.</returns>
+        public static string GetValueOrDefault(string key, string defaultValue) {
+            return s_Placeholders.GetValueOrDefault(key, defaultValue);
         }
 
         /// <summary>

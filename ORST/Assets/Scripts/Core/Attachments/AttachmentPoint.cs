@@ -11,7 +11,12 @@ namespace ORST.Core.Attachments {
         public event Action<AttachableObject> ObjectDetached;
 
         [Title("References")]
+        // Note: this is not used in the code but required for OnTriggerEnter/Exit to work
         [SerializeField, Required] private Collider m_AttachmentCollider;
+
+        [Title("Settings")]
+        [Tooltip("When enabled you can attach another object while there is already one attached, replacing the old one")]
+        [SerializeField] private bool m_AllowAttachmentOverride = true;
 
         private readonly HashSet<AttachableObject> m_PotentialAttachables = new();
         private AttachableObject m_AttachedObject;
@@ -65,15 +70,24 @@ namespace ORST.Core.Attachments {
         }
 
         private void OnTriggerEnter(Collider other) {
-            if (other.GetComponent<AttachableObject>() is not { Grabbable: { SelectingPointsCount: > 0 } } attachedObject) return;
+            if (other.GetComponent<AttachableObject>() is not { Grabbable: { SelectingPointsCount: > 0 } } attachedObject) {
+                // Object is not an attachable or is not being grabbed. We don't allow objects which aren't grabbed
+                // because then you might just run into an object accidentally.
+                return;
+            }
 
             m_PotentialAttachables.Add(attachedObject);
             InitializeAttachableObject(attachedObject);
-
         }
 
         private void OnTriggerExit(Collider other) {
             if (other.GetComponent<AttachableObject>() is not { } attachableObject) {
+                return;
+            }
+
+            if (attachableObject == m_AttachedObject) {
+                // idk why but for some reason this is called when the object is attached
+                // probably because we change the parent to be a child of this object
                 return;
             }
 
@@ -87,6 +101,10 @@ namespace ORST.Core.Attachments {
         }
 
         private void OnAttachableObjectReleased(AttachableObject attachableObject) {
+            if (!m_AllowAttachmentOverride && m_AttachedObject != null) {
+                return;
+            }
+
             AttachObject(attachableObject);
         }
     }

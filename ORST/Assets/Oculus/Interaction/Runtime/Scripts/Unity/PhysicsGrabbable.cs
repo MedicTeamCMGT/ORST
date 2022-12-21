@@ -37,6 +37,9 @@ namespace Oculus.Interaction
         [Tooltip("If enabled, the object's mass will scale appropriately as the scale of the object changes.")]
         private bool _scaleMassWithSize = true;
 
+        [Tooltip("If enabled, the PhysicsGrabbable will save the object's isKinematic state at startup instead of when the object is grabbed.")]
+        [SerializeField] private bool m_SaveInitialStateOnly = false;
+
         private bool _savedIsKinematicState = false;
         private bool _isBeingTransformed = false;
         private Vector3 _initialScale;
@@ -59,6 +62,10 @@ namespace Oculus.Interaction
             this.BeginStart(ref _started);
             Assert.IsNotNull(_grabbable);
             Assert.IsNotNull(_rigidbody);
+
+            if (m_SaveInitialStateOnly) {
+                CachePhysicsState();
+            }
             this.EndStart(ref _started);
         }
 
@@ -102,7 +109,9 @@ namespace Oculus.Interaction
         private void DisablePhysics()
         {
             _isBeingTransformed = true;
-            CachePhysicsState();
+            if (!m_SaveInitialStateOnly) {
+                CachePhysicsState();
+            }
             _rigidbody.isKinematic = true;
         }
 
