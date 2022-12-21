@@ -226,7 +226,6 @@ namespace ORST.Core.ModuleTasks {
             if (m_EnabledTeleportPoint != null && m_EnabledTeleportPoint == teleportPoint) {
                 m_TeleportedToEnabledPoint = true;
                 TeleportPointManager.DisablePoint(m_EnabledTeleportPoint);
-
             }
         }
 

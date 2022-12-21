@@ -17,7 +17,6 @@ namespace ORST.Core {
         [SerializeField, Required] private List<Image> m_Images;
         [SerializeField, Required] private Button m_Button;
 
-        private TutorialDialogueNode m_CurrentDialogueNode;
         private Action m_OptionSelectedCallback;
         private TutorialDialogueNode m_CurrentNode;
 

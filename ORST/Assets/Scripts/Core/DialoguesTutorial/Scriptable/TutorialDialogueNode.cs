@@ -9,10 +9,10 @@ namespace ORST.Core.Dialogues {
         [SerializeField, TextArea(5,15)] private string m_Text;
         [SerializeField] private Sprite[] m_Images;
         [SerializeField] private bool m_ShowPopup;
-        [SerializeField, ShowIf("m_ShowPopup")] private string m_PopupTitle;
-        [SerializeField, ShowIf("m_ShowPopup"), TextArea(3, 10)] private string m_PopupText;
-        [SerializeField, ShowIf("m_ShowPopup")] private bool m_SnapPopupToPosition;
-        [SerializeField, ShowIf("m_SnapPopupToPosition")] private Transform m_SnapPosition;
+        [SerializeField, ShowIf(nameof(m_ShowPopup))] private string m_PopupTitle;
+        [SerializeField, ShowIf(nameof(m_ShowPopup)), TextArea(3, 10)] private string m_PopupText;
+        [SerializeField, ShowIf(nameof(m_ShowPopup))] private bool m_SnapPopupToPosition;
+        [SerializeField, ShowIf(nameof(m_SnapPopupToPosition))] private Transform m_SnapPosition;
 
         public string Title => m_Title;
         public string Text => m_Text;

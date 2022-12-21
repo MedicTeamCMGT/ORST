@@ -7,7 +7,7 @@ using UnityEngine;
 namespace ORST.Core {
     [RequireComponent(typeof(BoxCollider))]
     public class ItemBucket : MonoBehaviour {
-        public Action ItemBucketFilled;
+        public event Action ItemBucketFilled;
 
         [SerializeField] private List<GameObject> m_Items;
         [SerializeField] private LayerMask m_Mask;
