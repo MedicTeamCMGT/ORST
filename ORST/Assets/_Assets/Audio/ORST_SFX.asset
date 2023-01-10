@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2204bf128383ced4f8a374a536984a4c, type: 3}
+  m_Name: ORST_SFX
+  m_EditorClassIdentifier: 
+  soundCategories:
+  - UI Sounds
+  - INT Game
+  musicCategories:
+  - 
+  Sounds:
+  - {fileID: 11400000, guid: 32be31a2f5721a34bb1e1d6514c45694, type: 2}
+  - {fileID: 11400000, guid: 7eff49777fc8f894190c24ab2237ea34, type: 2}
+  - {fileID: 11400000, guid: d12cb9484b49c63418070419d3552d2d, type: 2}
+  - {fileID: 11400000, guid: 7adc20d79f1c1004f8f1bf572553f8cd, type: 2}
+  - {fileID: 11400000, guid: 1befc52326116a44280a7e83097faf20, type: 2}
+  - {fileID: 11400000, guid: f7a7cee2cc4dc004fa4bd328f583ab48, type: 2}
+  - {fileID: 11400000, guid: 5c483324f6fc6ce448b8b5492fa76065, type: 2}
+  - {fileID: 11400000, guid: 9caa9435c8be87b4f86e1593a10fd031, type: 2}
+  - {fileID: 11400000, guid: 1d02a365f52b08f42888d2b396498a2f, type: 2}
+  - {fileID: 11400000, guid: fc705b35f99bfc94db4a2d947caaee58, type: 2}
+  - {fileID: 11400000, guid: a9e87bf3f9c3e9e4bbad89478a955942, type: 2}
+  - {fileID: 11400000, guid: a28195ec49ceae546bd3c3a736af3a75, type: 2}
+  - {fileID: 11400000, guid: 338b69573375d9e4e8273aa5c6b29443, type: 2}
+  - {fileID: 11400000, guid: 9904568abb796b34080bb186d5b66dd2, type: 2}
+  - {fileID: 11400000, guid: 20eb01e5487857b4b8f341790c18f1ef, type: 2}
+  - {fileID: 11400000, guid: e2690781c9b62a64b8bb239deb29c209, type: 2}
+  - {fileID: 11400000, guid: 1843f656e5bbc3f4e9992a3620318c8d, type: 2}
+  - {fileID: 11400000, guid: fc7c7120d87dd8e43ae3617043438165, type: 2}
+  - {fileID: 11400000, guid: 0f6c7136b22db5c448749a3baa49b3b6, type: 2}
+  - {fileID: 11400000, guid: ecd32da77e346a9448bac21653d93d9f, type: 2}
+  - {fileID: 11400000, guid: 33753e36854b85c40beb3107d9d85a0f, type: 2}
+  Music: []
+  useCustomNames: 0
+  generatedName: ORST_SFX
+  musicEnum: 
+  musicEnumGenerated: ORST_SFXMusic
+  musicNamespace: 
+  musicNamespaceGenerated: 
+  soundEnum: 
+  soundEnumGenerated: ORST_SFXSounds
+  soundNamespace: 
+  soundNamespaceGenerated: 
+  soundCategoriesToList:
+  - name: UI Sounds
+    files:
+    - {fileID: 11400000, guid: fc705b35f99bfc94db4a2d947caaee58, type: 2}
+    - {fileID: 11400000, guid: a9e87bf3f9c3e9e4bbad89478a955942, type: 2}
+    - {fileID: 11400000, guid: a28195ec49ceae546bd3c3a736af3a75, type: 2}
+    - {fileID: 11400000, guid: 338b69573375d9e4e8273aa5c6b29443, type: 2}
+    - {fileID: 11400000, guid: 9904568abb796b34080bb186d5b66dd2, type: 2}
+    - {fileID: 11400000, guid: 20eb01e5487857b4b8f341790c18f1ef, type: 2}
+    - {fileID: 11400000, guid: e2690781c9b62a64b8bb239deb29c209, type: 2}
+    - {fileID: 11400000, guid: 1843f656e5bbc3f4e9992a3620318c8d, type: 2}
+    - {fileID: 11400000, guid: fc7c7120d87dd8e43ae3617043438165, type: 2}
+    - {fileID: 11400000, guid: 0f6c7136b22db5c448749a3baa49b3b6, type: 2}
+    - {fileID: 11400000, guid: ecd32da77e346a9448bac21653d93d9f, type: 2}
+    - {fileID: 11400000, guid: 33753e36854b85c40beb3107d9d85a0f, type: 2}
+    foldout: 1
+  - name: INT Game
+    files:
+    - {fileID: 11400000, guid: 32be31a2f5721a34bb1e1d6514c45694, type: 2}
+    - {fileID: 11400000, guid: 7eff49777fc8f894190c24ab2237ea34, type: 2}
+    - {fileID: 11400000, guid: d12cb9484b49c63418070419d3552d2d, type: 2}
+    - {fileID: 11400000, guid: 7adc20d79f1c1004f8f1bf572553f8cd, type: 2}
+    - {fileID: 11400000, guid: 1befc52326116a44280a7e83097faf20, type: 2}
+    - {fileID: 11400000, guid: f7a7cee2cc4dc004fa4bd328f583ab48, type: 2}
+    - {fileID: 11400000, guid: 5c483324f6fc6ce448b8b5492fa76065, type: 2}
+    - {fileID: 11400000, guid: 9caa9435c8be87b4f86e1593a10fd031, type: 2}
+    - {fileID: 11400000, guid: 1d02a365f52b08f42888d2b396498a2f, type: 2}
+    foldout: 1
+  musicCategoriesToList:
+  - name: 
+    files: []
+    foldout: 1

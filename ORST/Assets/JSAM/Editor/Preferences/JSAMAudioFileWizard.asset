@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e51d38e4c293f4cbdf6025e7240cc2, type: 3}
+  m_Name: JSAMAudioFileWizard
+  m_EditorClassIdentifier: 
+  files:
+  - {fileID: 8300000, guid: 1bfbaa1bf179501438bb34299774e1bd, type: 3}
+  - {fileID: 8300000, guid: 65b015029b96d694f8626a81375fdf16, type: 3}
+  - {fileID: 8300000, guid: 404c8fd6a6e09344fa91b46ebcb86080, type: 3}
+  - {fileID: 8300000, guid: db2fe2a136b46864ba215082cf26600f, type: 3}
+  - {fileID: 8300000, guid: e8b504cbb0e130e48b16a27d61e3ffd2, type: 3}
+  - {fileID: 8300000, guid: ce215b4c10cb5d140b96510ed95e44a2, type: 3}
+  - {fileID: 8300000, guid: 47785591503bf6e46b9e7b3745b004e2, type: 3}
+  - {fileID: 8300000, guid: 65c066f4fc9377040b6232b5235e100e, type: 3}
+  - {fileID: 8300000, guid: ebf923b255993e549b5519ed8e02c859, type: 3}
+  fileType: 1
+  selectedSoundPreset:
+    savedObject: {fileID: 2655988077585873504, guid: f4f29525ffc0bb94b8ac4a1d51c2ff70,
+      type: 2}
+  selectedMusicPreset:
+    savedObject: {fileID: 2655988077585873504, guid: ad816adb60d8e0b4aa34c37ab1ce9f8e,
+      type: 2}
+  outputFolder: Assets/_Assets/Audio/Audio Files/In Game
