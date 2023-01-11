@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cb7a3d70b7440efbbe7e1441d19c8da, type: 3}
+  m_Name: Signing in at the reception
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  m_Nodes:
+  - m_Text: ...
+    m_Options:
+    - m_Text: Good morning. I am {PLAYER NAME}. I am here to represent Johnson and
+        Johnson
+      m_IsCorrect: 1
+      m_Feedback: 
+  - m_Text: 'Good morning, I am Brenda Jansen. You are expected in Operating Room
+      3. Please pick up one of the nametags in front of you, attach it to your chest,
+      and then head towards OR 3. '
+    m_Options:
+    - m_Text: Ok, thank you
+      m_IsCorrect: 1
+      m_Feedback: 
