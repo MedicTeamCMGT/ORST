@@ -161,7 +161,7 @@ GameObject:
   - component: {fileID: 8040552422308573143}
   - component: {fileID: 8040552422308573148}
   - component: {fileID: 8040552422308573149}
-  - component: {fileID: 8040552422308573150}
+  - component: {fileID: 551477726837306549}
   - component: {fileID: 8040552422308573144}
   - component: {fileID: 8040552422308573147}
   - component: {fileID: 8040552422308573142}
@@ -232,7 +232,7 @@ MonoBehaviour:
   UseCharacterCollisionData: 0
   AimCollisionRadius: 0.1
   AimCollisionHeight: 2
---- !u!114 &8040552422308573150
+--- !u!114 &551477726837306549
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -245,23 +245,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EnterAim:
-    AudioClip: {fileID: 8300000, guid: 452cab5cd4cc31a4bbda065fe1729e0d, type: 3}
-    Loop: 0
-    Priority: 1
-  m_CancelAim:
-    AudioClip: {fileID: 8300000, guid: 80fbb8c0c68727f429e4d50ddadd683b, type: 3}
-    Loop: 0
-    Priority: 1
-  m_Teleporting:
     AudioClip: {fileID: 0}
     Loop: 0
     Priority: 0
+  m_CancelAim:
+    AudioClip: {fileID: 0}
+    Loop: 0
+    Priority: 0
+  m_Teleporting:
+    AudioClip: {fileID: 8300000, guid: a4228920573b8754d9c62152117ea9df, type: 3}
+    Loop: 0
+    Priority: 0
   m_IntersectEnter:
-    AudioClip: {fileID: 8300000, guid: 98e759dfda69aa7468d95f5a2c88e366, type: 3}
+    AudioClip: {fileID: 8300000, guid: 045e516cdac7d434b93b3792b1cbba32, type: 3}
     Loop: 0
     Priority: 0
   m_IntersectExit:
-    AudioClip: {fileID: 8300000, guid: 523f822c1c7b699489c49fea2353c2de, type: 3}
+    AudioClip: {fileID: 8300000, guid: 4db72e06cb90ae5458264c9e3613b093, type: 3}
     Loop: 0
     Priority: 0
 --- !u!114 &8040552422308573144

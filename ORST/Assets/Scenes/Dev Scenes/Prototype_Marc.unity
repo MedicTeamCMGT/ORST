@@ -946,6 +946,36 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 551477726837306549, guid: e54e7fae792249849bcbfff668f73867,
         type: 3}
+      propertyPath: m_Teleporting.Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 551477726837306549, guid: e54e7fae792249849bcbfff668f73867,
+        type: 3}
+      propertyPath: m_EnterAim.AudioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 551477726837306549, guid: e54e7fae792249849bcbfff668f73867,
+        type: 3}
+      propertyPath: m_IntersectExit.Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 551477726837306549, guid: e54e7fae792249849bcbfff668f73867,
+        type: 3}
+      propertyPath: m_CancelAim.AudioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 551477726837306549, guid: e54e7fae792249849bcbfff668f73867,
+        type: 3}
+      propertyPath: m_Teleporting.Priority
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 551477726837306549, guid: e54e7fae792249849bcbfff668f73867,
+        type: 3}
+      propertyPath: m_Teleporting.AudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 922570afef8d9fa4292fcc7de1d59d6a, type: 3}
+    - target: {fileID: 551477726837306549, guid: e54e7fae792249849bcbfff668f73867,
+        type: 3}
       propertyPath: m_IntersectExit.Priority
       value: 1
       objectReference: {fileID: 0}
@@ -958,12 +988,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IntersectExit.AudioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 045e516cdac7d434b93b3792b1cbba32, type: 3}
+      objectReference: {fileID: 8300000, guid: 9c26e439e62786a4badef47e8b64b5a3, type: 3}
     - target: {fileID: 551477726837306549, guid: e54e7fae792249849bcbfff668f73867,
         type: 3}
       propertyPath: m_IntersectEnter.AudioClip
       value: 
-      objectReference: {fileID: 8300000, guid: d716392289ac6764994885f5821f7d7b, type: 3}
+      objectReference: {fileID: 8300000, guid: 1d147eb554ae2bc41b895523a70f86ce, type: 3}
     - target: {fileID: 3321126087507037398, guid: e54e7fae792249849bcbfff668f73867,
         type: 3}
       propertyPath: m_IsActive
