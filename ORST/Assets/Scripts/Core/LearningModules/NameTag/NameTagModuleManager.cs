@@ -48,14 +48,28 @@ namespace ORST.Core.LearningModules {
             UpdateHelpMessage(NameTagKind.None);
             HideConfirmButton();
             m_CanvasGroup.alpha = 0.0f;
-            m_CanvasGroup.blocksRaycasts = false;
+            m_CanvasGroup.transform.parent.gameObject.SetActive(false);
+
+            m_EthiconNameTag.gameObject.SetActive(false);
+            m_DePuyNameTag.gameObject.SetActive(false);
+            if (m_NameTagAttachmentPoint.VisualsTransform != null) {
+                m_NameTagAttachmentPoint.VisualsTransform.gameObject.SetActive(false);
+            }
         }
 
         public void HandleTaskStarted() {
             m_CanvasGroup.DOFade(1.0f, 0.5f);
-            m_CanvasGroup.blocksRaycasts = true;
+            m_CanvasGroup.transform.parent.gameObject.SetActive(true);
+
             m_EthiconNameTag.OutlineGlow.Show().OnComplete(() => m_EthiconNameTag.OutlineGlow.StartGlow());
             m_DePuyNameTag.OutlineGlow.Show().OnComplete(() => m_DePuyNameTag.OutlineGlow.StartGlow());
+
+            m_EthiconNameTag.gameObject.SetActive(true);
+            m_DePuyNameTag.gameObject.SetActive(true);
+
+            if (m_NameTagAttachmentPoint.VisualsTransform != null) {
+                m_NameTagAttachmentPoint.VisualsTransform.gameObject.SetActive(true);
+            }
         }
 
         private void OnConfirmButtonClicked() {
@@ -69,13 +83,21 @@ namespace ORST.Core.LearningModules {
 
             Destroy(m_EthiconNameTag.GetComponentInChildren<HandGrabInteractable>());
             Destroy(m_EthiconNameTag.GetComponent<Grabbable>());
+            Destroy(m_EthiconNameTag.GetComponent<OneGrabFreeTransformer>());
             Destroy(m_EthiconNameTag.GetComponent<AttachableObject>());
             Destroy(m_EthiconNameTag.GetComponent<NameTagObject>());
             Destroy(m_DePuyNameTag.GetComponentInChildren<HandGrabInteractable>());
+            Destroy(m_DePuyNameTag.GetComponent<OneGrabFreeTransformer>());
             Destroy(m_DePuyNameTag.GetComponent<Grabbable>());
             Destroy(m_DePuyNameTag.GetComponent<AttachableObject>());
             Destroy(m_DePuyNameTag.GetComponent<NameTagObject>());
             Destroy(m_NameTagAttachmentPoint);
+
+            Destroy(NameTag.Kind == NameTagKind.Ethicon ? m_DePuyNameTag.gameObject : m_EthiconNameTag.gameObject);
+
+            if (m_NameTagAttachmentPoint.VisualsTransform != null) {
+                m_NameTagAttachmentPoint.VisualsTransform.gameObject.SetActive(false);
+            }
         }
 
         private void OnNameTagAttached(AttachableObject attachableObject) {
