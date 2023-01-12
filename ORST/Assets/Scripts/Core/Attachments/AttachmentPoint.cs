@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using Oculus.Interaction;
 using ORST.Foundation;
 using Sirenix.OdinInspector;
@@ -13,6 +14,7 @@ namespace ORST.Core.Attachments {
         [Title("References")]
         // Note: this is not used in the code but required for OnTriggerEnter/Exit to work
         [SerializeField, Required] private Collider m_AttachmentCollider;
+        [SerializeField, Oculus.Interaction.Optional] private Transform m_VisualsTransform;
 
         [Title("Settings")]
         [Tooltip("When enabled you can attach another object while there is already one attached, replacing the old one")]
@@ -21,6 +23,8 @@ namespace ORST.Core.Attachments {
         private readonly HashSet<AttachableObject> m_PotentialAttachables = new();
         private AttachableObject m_AttachedObject;
         private Transform m_AttachedObjectParent;
+
+        [CanBeNull] public Transform VisualsTransform => m_VisualsTransform;
 
         private void InitializeAttachableObject(AttachableObject attachableObject) {
             // This probably means that it's not being grabbed so we can go ahead and immediately attach it

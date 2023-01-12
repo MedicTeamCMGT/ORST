@@ -2809,6 +2809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsEligibleForRandom: 0
+  m_NameTagRequirement: 0
   m_TaskStarted:
     m_PersistentCalls:
       m_Calls: []
@@ -5629,6 +5630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsEligibleForRandom: 0
+  m_NameTagRequirement: 0
   m_TaskStarted:
     m_PersistentCalls:
       m_Calls: []

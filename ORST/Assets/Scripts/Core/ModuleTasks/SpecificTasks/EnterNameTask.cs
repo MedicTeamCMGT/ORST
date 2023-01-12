@@ -32,6 +32,7 @@ namespace ORST.Core.ModuleTasks {
         private void OnNameConfirmed(string playerName) {
             m_ConfirmedName = true;
             PlaceholderManager.AddPlaceholder("{PLAYER_NAME}", playerName);
+            PlaceholderManager.AddPlaceholder("{PLAYER NAME}", playerName);
 
             m_EnterNameCanvasGroup.blocksRaycasts = false;
             m_EnterNameCanvasGroup.DOFade(0.0f, 0.5f).OnComplete(() => {

@@ -225,7 +225,7 @@ MonoBehaviour:
   EnableRotationDuringAim: 0
   EnableRotationDuringPreTeleport: 0
   EnableRotationDuringPostTeleport: 1
-  TeleportDestinationPrefab: {fileID: 114000013141257940, guid: 1b474618c4fc5f54e8a8b803c8352c7d,
+  TeleportDestinationPrefab: {fileID: 6312075814015884052, guid: f13c581e6e7e1604289a852d95be2a2c,
     type: 3}
   TeleportDestinationLayer: 3
   AimCollisionType: 0
@@ -357,6 +357,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6418076804324522913}
     m_Modifications:
+    - target: {fileID: 1154240599148666116, guid: 470946c88bf2b374baf65cf3cc693b12,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.35
+      objectReference: {fileID: 0}
     - target: {fileID: 3375464631500731786, guid: 470946c88bf2b374baf65cf3cc693b12,
         type: 3}
       propertyPath: m_RootOrder
@@ -427,11 +432,37 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4307699105058783074, guid: 470946c88bf2b374baf65cf3cc693b12,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307699105058783074, guid: 470946c88bf2b374baf65cf3cc693b12,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4307699105058783074, guid: 470946c88bf2b374baf65cf3cc693b12,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5818413284500854226, guid: 470946c88bf2b374baf65cf3cc693b12,
         type: 3}
       propertyPath: m_PositionDeadZone
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 5818413284500854226, guid: 470946c88bf2b374baf65cf3cc693b12,
+        type: 3}
+      propertyPath: m_RotationDeadZone.m_Value
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6003912189440178245, guid: 470946c88bf2b374baf65cf3cc693b12,
+        type: 3}
+      propertyPath: serializationData.Prefab
+      value: 
+      objectReference: {fileID: 6003912189440178245, guid: 470946c88bf2b374baf65cf3cc693b12,
+        type: 3}
     - target: {fileID: 6834552798070243282, guid: 470946c88bf2b374baf65cf3cc693b12,
         type: 3}
       propertyPath: m_RootOrder
