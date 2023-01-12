@@ -50,7 +50,7 @@ public class TeleportDestination : MonoBehaviour
 	private readonly Action<bool, Vector3?, Quaternion?, Quaternion?> _updateTeleportDestinationAction;
 	private bool _eventsActive;
 
-	TeleportDestination()
+	protected TeleportDestination()
 	{
 		_updateTeleportDestinationAction = UpdateTeleportDestination;
 	}
