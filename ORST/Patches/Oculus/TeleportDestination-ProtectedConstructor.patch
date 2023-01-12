@@ -1,0 +1,13 @@
+diff --git a/ORST/Assets/Oculus/SampleFramework/Core/Locomotion/Scripts/TeleportDestination.cs b/ORST/Assets/Oculus/SampleFramework/Core/Locomotion/Scripts/TeleportDestination.cs
+index b99d4d6..60a589d 100644
+--- a/ORST/Assets/Oculus/SampleFramework/Core/Locomotion/Scripts/TeleportDestination.cs
++++ b/ORST/Assets/Oculus/SampleFramework/Core/Locomotion/Scripts/TeleportDestination.cs
+@@ -50,7 +50,7 @@ public class TeleportDestination : MonoBehaviour
+ 	private readonly Action<bool, Vector3?, Quaternion?, Quaternion?> _updateTeleportDestinationAction;
+ 	private bool _eventsActive;
+ 
+-	TeleportDestination()
++	protected TeleportDestination()
+ 	{
+ 		_updateTeleportDestinationAction = UpdateTeleportDestination;
+ 	}

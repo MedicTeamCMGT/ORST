@@ -59,9 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Roboto-Black SDF
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: 220891248
   material: {fileID: 2122110550686215270}
-  materialHashCode: 0
+  materialHashCode: -2104674096
   m_Version: 1.1.0
   m_SourceFontFileGUID: 2db6dc7cc0f35468eba1870b7f7dcdc5
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 2db6dc7cc0f35468eba1870b7f7dcdc5,
@@ -95,7 +95,7 @@ MonoBehaviour:
   - {fileID: -6613425890368674464}
   m_AtlasTextureIndex: 0
   m_IsMultiAtlasTexturesEnabled: 0
-  m_ClearDynamicDataOnBuild: 0
+  m_ClearDynamicDataOnBuild: 1
   m_UsedGlyphRects: []
   m_FreeGlyphRects:
   - m_X: 0

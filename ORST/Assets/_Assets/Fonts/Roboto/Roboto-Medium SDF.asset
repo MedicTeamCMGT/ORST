@@ -59,9 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Roboto-Medium SDF
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: -737250198
   material: {fileID: 3280789755087192649}
-  materialHashCode: 0
+  materialHashCode: 1251382410
   m_Version: 1.1.0
   m_SourceFontFileGUID: b0b19696ec574457091ddadb8e359be9
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: b0b19696ec574457091ddadb8e359be9,
@@ -95,7 +95,7 @@ MonoBehaviour:
   - {fileID: -4392107832927393555}
   m_AtlasTextureIndex: 0
   m_IsMultiAtlasTexturesEnabled: 0
-  m_ClearDynamicDataOnBuild: 0
+  m_ClearDynamicDataOnBuild: 1
   m_UsedGlyphRects: []
   m_FreeGlyphRects:
   - m_X: 0
