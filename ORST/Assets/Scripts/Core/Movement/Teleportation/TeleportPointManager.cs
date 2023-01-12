@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.Pool;
 
 namespace ORST.Core.Movement {
@@ -57,6 +56,10 @@ namespace ORST.Core.Movement {
         /// Enables teleportation to the given <see cref="TeleportPointORST"/>.
         /// </summary>
         public static void EnablePoint(TeleportPointORST teleportPoint) {
+            if (!s_TeleportPoints.ContainsKey(teleportPoint)) {
+                return;
+            }
+
             s_TeleportPoints[teleportPoint].Enabled = true;
             teleportPoint.Visuals.SetActive(true);
         }
@@ -65,7 +68,7 @@ namespace ORST.Core.Movement {
         /// Enables all <see cref="TeleportPointORST"/>.
         /// </summary>
         public static void EnableAllPoints() {
-            foreach (var teleportPoint in s_TeleportPoints) {
+            foreach (KeyValuePair<TeleportPointORST, TeleportPointInfo> teleportPoint in s_TeleportPoints) {
                 teleportPoint.Value.Enabled = true;
                 teleportPoint.Key.Visuals.SetActive(true);
             }
@@ -75,6 +78,10 @@ namespace ORST.Core.Movement {
         /// Disables teleportation to the given <see cref="TeleportPointORST"/>.
         /// </summary>
         public static void DisablePoint(TeleportPointORST teleportPoint) {
+            if (!s_TeleportPoints.ContainsKey(teleportPoint)) {
+                return;
+            }
+
             s_TeleportPoints[teleportPoint].Enabled = false;
             teleportPoint.Visuals.SetActive(false);
         }
