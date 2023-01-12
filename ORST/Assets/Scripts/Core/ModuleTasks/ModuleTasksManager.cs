@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Linq;
+using ORST.Core.LearningModules;
 using ORST.Foundation.Extensions;
 using ORST.Foundation.Singleton;
 using Sirenix.OdinInspector;
@@ -11,29 +13,33 @@ namespace ORST.Core.ModuleTasks {
         [SerializeField] private bool m_RandomizeEligibleModuleTasks;
         [ShowInInspector] private Queue<ModuleTask> m_TaskQueue;
         private ModuleTask m_CurrentModuleTask;
+        private bool m_Completed;
 
         private void Start() {
             InitiateModuleTaskManager();
         }
 
         private void Update() {
+            if (m_Completed) {
+                return;
+            }
+
             //This stops execution when all tasks are done or there weren't tasks in the first place
             if (m_CurrentModuleTask == null) {
+                m_Completed = true;
                 return;
             }
 
             switch (m_CurrentModuleTask.UpdateModuleTask()) {
                 case ModuleTaskState.Successful:
-                    //Task was successful
-                    if (m_TaskQueue.Count > 0) {
+                    m_CurrentModuleTask = DequeueNextValidTask();
+                    if (m_CurrentModuleTask != null) {
                         Debug.Log("TaskManager::Task successful - Advancing...");
-                        m_CurrentModuleTask = m_TaskQueue.Dequeue();
                         m_CurrentModuleTask.StartModuleTask();
                     } else {
-                        m_CurrentModuleTask = null;
                         Debug.Log("TaskManager::All tasks done.");
+                        m_Completed = true;
                     }
-
                     break;
                 case ModuleTaskState.Failure:
                     break;
@@ -61,7 +67,7 @@ namespace ORST.Core.ModuleTasks {
             if(m_CurrentModuleTask != null) {
                 remainingModuleTasks.Add(m_CurrentModuleTask);
             }
-            remainingModuleTasks.AddRange(m_TaskQueue);
+            remainingModuleTasks.AddRange(m_TaskQueue.Where(ShouldStartTask));
             return remainingModuleTasks;
         }
 
@@ -90,10 +96,47 @@ namespace ORST.Core.ModuleTasks {
 
             m_TaskQueue = new Queue<ModuleTask>(m_RandomizeEligibleModuleTasks ? adjustedList : m_AllTasks);
 
-            if (m_TaskQueue.Count > 0) {
-                m_CurrentModuleTask = m_TaskQueue.Dequeue();
+            m_CurrentModuleTask = DequeueNextValidTask();
+            if (m_CurrentModuleTask != null) {
                 m_CurrentModuleTask.StartModuleTask();
+                return;
             }
+
+            Debug.Log("TaskManager::No tasks to do.");
+            m_Completed = true;
+        }
+
+        /// <summary>
+        /// Returns <c>true</c> if the given <see cref="ModuleTask"/> should
+        /// be started based on the selected <see cref="NameTagKind"/>.
+        /// </summary>
+        public static bool ShouldStartTask(ModuleTask moduleTask) {
+            if (NameTag.Kind is NameTagKind.None) {
+                return true;
+            }
+
+            if (moduleTask == null) {
+                return false;
+            }
+
+            return moduleTask.NameTagRequirement is NameTagKind.None || moduleTask.NameTagRequirement == NameTag.Kind;
+        }
+
+        private ModuleTask DequeueNextValidTask() {
+            if (m_TaskQueue.Count == 0) {
+                return null;
+            }
+
+            ModuleTask nextTask = m_TaskQueue.Dequeue();
+            while (!ShouldStartTask(nextTask)) {
+                if (m_TaskQueue.Count == 0) {
+                    return null;
+                }
+
+                nextTask = m_TaskQueue.Dequeue();
+            }
+
+            return nextTask;
         }
     }
 }
