@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using DG.Tweening;
 using Oculus.Interaction;
 using Oculus.Interaction.HandGrab;
