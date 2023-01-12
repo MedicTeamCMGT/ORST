@@ -1,4 +1,5 @@
 ﻿using Oculus.Interaction;
+using ORST.Core.Utilities;
 using ORST.Foundation;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -10,7 +11,8 @@ namespace ORST.Core.Dialogues {
         [SerializeField, Required] private DialogueNPC m_NPC;
         [SerializeField] private PointableUnityEventWrapper m_Button;
         [SerializeField] private bool m_CloseDialogueOnCompletion;
-        [SerializeField, Required] private DialogueView m_DialogueViewPrefab;
+        [SerializeField] private bool m_InstantiateCanvas = true;
+        [SerializeField, Required, LabelText("@m_InstantiateCanvas ? \"Dialogue View Prefab\" : \"Dialogue View\"")] private DialogueView m_DialogueViewPrefab;
 
         private DialogueState m_State;
         private bool m_FinishedInteractingWithUI;
@@ -28,7 +30,8 @@ namespace ORST.Core.Dialogues {
             m_State = new DialogueState(Dialogue);
             Assert.IsTrue(m_State.Advance(), "m_State.Advance() returned false; the dialogue is empty.");
 
-            m_DialogueView = Instantiate(m_DialogueViewPrefab);
+            m_DialogueView = m_InstantiateCanvas ? Instantiate(m_DialogueViewPrefab) : m_DialogueViewPrefab;
+
             m_DialogueView.gameObject.SetActive(true);
             m_DialogueView.Initialize(m_NPC, OnOptionSelected);
             m_DialogueView.LoadState(m_State.CurrentNode);
@@ -41,7 +44,8 @@ namespace ORST.Core.Dialogues {
             if (m_State.CurrentNodeIndex == m_State.NodeCount) {
                 m_FinishedInteractingWithUI = true;
                 if (m_CloseDialogueOnCompletion) {
-                    CloseAndResetDialogue();
+                    // Skip a frame so the event system finishes processing before we destroy/disable the canvas
+                    StartCoroutine(Coroutines.WaitFramesAndThen(1, CloseAndResetDialogue));
                     return;
                 }
             }
@@ -54,8 +58,13 @@ namespace ORST.Core.Dialogues {
                 return;
             }
 
-            Destroy(m_DialogueView.gameObject);
-            m_DialogueView = null;
+            m_DialogueView.gameObject.SetActive(false);
+
+            if (m_InstantiateCanvas) {
+                Destroy(m_DialogueView.gameObject);
+                m_DialogueView = null;
+            }
+
             DialogueManager.EndDialogue(true);
 
             m_FinishedInteractingWithUI = false;
