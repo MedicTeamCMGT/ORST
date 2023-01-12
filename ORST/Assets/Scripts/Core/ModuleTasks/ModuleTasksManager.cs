@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using ORST.Core.LearningModules;
 using ORST.Foundation.Extensions;
 using ORST.Foundation.Singleton;
@@ -66,7 +67,7 @@ namespace ORST.Core.ModuleTasks {
             if(m_CurrentModuleTask != null) {
                 remainingModuleTasks.Add(m_CurrentModuleTask);
             }
-            remainingModuleTasks.AddRange(m_TaskQueue);
+            remainingModuleTasks.AddRange(m_TaskQueue.Where(ShouldStartTask));
             return remainingModuleTasks;
         }
 
