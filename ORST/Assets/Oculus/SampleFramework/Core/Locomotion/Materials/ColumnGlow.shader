@@ -23,8 +23,8 @@ Shader "Custom/ColumnGlow"
 	SubShader
 	{
 		Tags { "RenderType"="Transparent" "IgnoreProjector"="True"  "Queue"="Transparent" }
-		Blend SrcAlpha One
-		Cull Off Lighting Off ZWrite On
+		Blend SrcAlpha OneMinusSrcAlpha
+		Cull Off Lighting Off ZWrite Off
 
 		LOD 0
 
@@ -43,6 +43,7 @@ Shader "Custom/ColumnGlow"
 				float4 vertex : POSITION;
 				float4 normal : NORMAL;
 				float2 uv : TEXCOORD0;
+    			UNITY_VERTEX_INPUT_INSTANCE_ID //Insert
 			};
 
 			struct v2f
@@ -52,6 +53,8 @@ Shader "Custom/ColumnGlow"
 				float3 normal : NORMAL;
 				float3 origPosition : POSITION1;
 				float3 eyeDir : DIRECTION;
+    			UNITY_VERTEX_OUTPUT_STEREO //Insert
+
 			};
 
 			fixed4 _TintColor;
@@ -65,6 +68,11 @@ Shader "Custom/ColumnGlow"
 			v2f vert (appdata v)
 			{
 				v2f o;
+
+    			UNITY_SETUP_INSTANCE_ID(v); //Insert
+    			UNITY_INITIALIZE_OUTPUT(v2f, o); //Insert
+    			UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o); //Insert
+
 				o.vertex = UnityObjectToClipPos(v.vertex);
 				o.normal = normalize(mul(UNITY_MATRIX_IT_MV,v.normal).xyz);
 				o.origPosition = v.vertex;
@@ -75,6 +83,10 @@ Shader "Custom/ColumnGlow"
 
 			fixed4 frag (v2f i) : SV_Target
 			{
+    			UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i); //Insert
+    
+    			//fixed4 col = UNITY_SAMPLE_SCREENSPACE_TEXTURE(_MainTex, i.uv); //Insert
+
 				float d = 	dot(i.normal,i.eyeDir);
 				float p = smoothstep (0,_Thickness,dot(i.normal,i.eyeDir)) * smoothstep(_FadeStart,_FadeEnd,i.origPosition.y);
 				return float4((p * _TintColor * _Intensity).xyz,p) ;
