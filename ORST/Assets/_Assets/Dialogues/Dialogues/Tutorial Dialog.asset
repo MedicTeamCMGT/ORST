@@ -25,7 +25,7 @@ MonoBehaviour:
   - m_Text: Most interactions with Health Care Professionals are done using dialog
       windows like this. Here it says the text spoken by the Health Care Professional
       and below are all of the possible answer possibilities. To progress, you have
-      to find the correct answers. Try to select one of the using the gestures shown
+      to find the correct answers. Try to select one of them using the gestures shown
       before.
     m_Options:
     - m_Text: I understand
