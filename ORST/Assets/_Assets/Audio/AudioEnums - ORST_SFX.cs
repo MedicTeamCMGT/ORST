@@ -3,7 +3,6 @@
         INT_dropmetalobjectMixdown1,
         INT_grabmetal_object_mixed,
         INT_opendrawer,
-        INT_peoplewalking_3rd,
         INT_soapdispenser,
         INT_waterrunning,
         INT_waterstarting,
@@ -22,4 +21,5 @@
         UI_wrong_answer_v2
     }
     public enum ORST_SFXMusic {
+        INT_peoplewalking_3rd
     }

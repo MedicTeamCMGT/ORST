@@ -16,13 +16,12 @@ MonoBehaviour:
   - UI Sounds
   - INT Game
   musicCategories:
-  - 
+  - people chatter
   Sounds:
   - {fileID: 11400000, guid: 32be31a2f5721a34bb1e1d6514c45694, type: 2}
   - {fileID: 11400000, guid: 7eff49777fc8f894190c24ab2237ea34, type: 2}
   - {fileID: 11400000, guid: d12cb9484b49c63418070419d3552d2d, type: 2}
   - {fileID: 11400000, guid: 7adc20d79f1c1004f8f1bf572553f8cd, type: 2}
-  - {fileID: 11400000, guid: 1befc52326116a44280a7e83097faf20, type: 2}
   - {fileID: 11400000, guid: f7a7cee2cc4dc004fa4bd328f583ab48, type: 2}
   - {fileID: 11400000, guid: 5c483324f6fc6ce448b8b5492fa76065, type: 2}
   - {fileID: 11400000, guid: 9caa9435c8be87b4f86e1593a10fd031, type: 2}
@@ -39,7 +38,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0f6c7136b22db5c448749a3baa49b3b6, type: 2}
   - {fileID: 11400000, guid: ecd32da77e346a9448bac21653d93d9f, type: 2}
   - {fileID: 11400000, guid: 33753e36854b85c40beb3107d9d85a0f, type: 2}
-  Music: []
+  Music:
+  - {fileID: 11400000, guid: 1befc52326116a44280a7e83097faf20, type: 2}
   useCustomNames: 0
   generatedName: ORST_SFX
   musicEnum: 
@@ -72,13 +72,13 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 7eff49777fc8f894190c24ab2237ea34, type: 2}
     - {fileID: 11400000, guid: d12cb9484b49c63418070419d3552d2d, type: 2}
     - {fileID: 11400000, guid: 7adc20d79f1c1004f8f1bf572553f8cd, type: 2}
-    - {fileID: 11400000, guid: 1befc52326116a44280a7e83097faf20, type: 2}
     - {fileID: 11400000, guid: f7a7cee2cc4dc004fa4bd328f583ab48, type: 2}
     - {fileID: 11400000, guid: 5c483324f6fc6ce448b8b5492fa76065, type: 2}
     - {fileID: 11400000, guid: 9caa9435c8be87b4f86e1593a10fd031, type: 2}
     - {fileID: 11400000, guid: 1d02a365f52b08f42888d2b396498a2f, type: 2}
     foldout: 1
   musicCategoriesToList:
-  - name: 
-    files: []
+  - name: people chatter
+    files:
+    - {fileID: 11400000, guid: 1befc52326116a44280a7e83097faf20, type: 2}
     foldout: 1
