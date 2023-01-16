@@ -20,7 +20,12 @@ namespace ORST.Core {
             HandGrabInteractable interactable = collider.GetComponentInChildren<HandGrabInteractable>();
 
             if (interactable == null) {
-                return;
+                //If still null try to access its immediate parent; still unsuccessful - return.
+                if (collider.transform.parent != null && ((1 << collider.transform.parent.gameObject.layer) & m_Mask) != 0) {
+                    interactable = collider.transform.parent.GetComponent<HandGrabInteractable>();
+                } else if(interactable == null)  {
+                    return;
+                }
             }
 
             //If it's currently still in the user's hand, hook the remove function up to the pointer event and check for unselect.
