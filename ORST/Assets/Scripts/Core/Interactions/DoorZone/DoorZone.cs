@@ -97,7 +97,6 @@ namespace ORST.Core.Interactions {
                     (m_HandSensor.position - m_NonDominantHand.position).magnitude < m_SensorDetectionDistance) {
                     InitiateSceneTransition();
                 }
-
             }
         }
 
