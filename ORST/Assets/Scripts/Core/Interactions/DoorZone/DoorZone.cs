@@ -18,10 +18,10 @@ namespace ORST.Core.Interactions {
         [SerializeField] private DoorInteractor m_DoorInteractor = DoorInteractor.Doorhandle;
 
         [Header("Door Handle")]
-        [SerializeField, Required] private HandGrabInteractable m_DoorHandle;
+        [SerializeField] private HandGrabInteractable m_DoorHandle;
 
         [Header("Hand Sensor")]
-        [SerializeField, Required] private Transform m_HandSensor;
+        [SerializeField] private Transform m_HandSensor;
         [SerializeField, Range(0.2f, 10.0f)] private float m_SensorDetectionDistance;
 
         private OneGrabRotateTransformer m_DoorHandleRotateTransformer;
@@ -38,11 +38,17 @@ namespace ORST.Core.Interactions {
                 m_DoorHandle.WhenPointerEventRaised += ProcessPointerEvent;
                 //Skipping this assignment is valid since it is only used in the event handler method.
                 m_DoorHandleRotateTransformer = m_DoorHandle.transform.GetComponent<OneGrabRotateTransformer>();
+                if (m_HandSensor.gameObject != null) {
+                    m_HandSensor.gameObject.SetActive(false);
+                }
             } else if (m_DoorInteractor == DoorInteractor.Sensor) {
                 Assert.IsNotNull(m_HandSensor, "Hand sensor is null");
                 //Cache hand references
                 m_DominantHand = HandednessManager.DominantHand.transform;
                 m_NonDominantHand = HandednessManager.NonDominantHand.transform;
+                if (m_DoorHandle.gameObject != null) {
+                    m_DoorHandle.gameObject.SetActive(false);
+                }
             }
         }
 
