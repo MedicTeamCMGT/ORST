@@ -34,7 +34,7 @@ namespace ORST.Core.Interactions {
 
         private void Start() {
             if (m_DoorInteractor == DoorInteractor.Doorhandle) {
-                Assert.IsNotNull(m_DoorHandle, "Hand sensor is null");
+                Assert.IsNotNull(m_DoorHandle, "Door handle is null");
                 m_DoorHandle.WhenPointerEventRaised += ProcessPointerEvent;
                 //Skipping this assignment is valid since it is only used in the event handler method.
                 m_DoorHandleRotateTransformer = m_DoorHandle.transform.GetComponent<OneGrabRotateTransformer>();
