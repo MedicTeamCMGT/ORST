@@ -38,7 +38,7 @@ namespace ORST.Core.Interactions {
                 m_DoorHandle.WhenPointerEventRaised += ProcessPointerEvent;
                 //Skipping this assignment is valid since it is only used in the event handler method.
                 m_DoorHandleRotateTransformer = m_DoorHandle.transform.GetComponent<OneGrabRotateTransformer>();
-                if (m_HandSensor.gameObject != null) {
+                if (m_HandSensor != null) {
                     m_HandSensor.gameObject.SetActive(false);
                 }
             } else if (m_DoorInteractor == DoorInteractor.Sensor) {
@@ -46,7 +46,7 @@ namespace ORST.Core.Interactions {
                 //Cache hand references
                 m_DominantHand = HandednessManager.DominantHand.transform;
                 m_NonDominantHand = HandednessManager.NonDominantHand.transform;
-                if (m_DoorHandle.gameObject != null) {
+                if (m_DoorHandle != null) {
                     m_DoorHandle.gameObject.SetActive(false);
                 }
             }
