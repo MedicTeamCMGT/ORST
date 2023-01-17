@@ -5,51 +5,27 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Dev Scenes/SampleScene.unity
-    guid: 554d601d501ca324cb7723a74c788b6a
   - enabled: 1
-    path: Assets/Scenes/Dev Scenes/PickingNameTag.unity
-    guid: 1447dbe71568874428ad22255de01a4d
+    path: Assets/Scenes/Dev Scenes/AttachmentPoints.unity
+    guid: 0914cda750f290f4dbdc80e865390d58
   - enabled: 1
-    path: Assets/Scenes/Dev Scenes/EnterNameTask.unity
-    guid: 4d2905e7b8a8dba4896189c20dd5da8a
+    path: Assets/Scenes/Product Scenes/Intro_Scene.unity
+    guid: 48f6acf4621e43a44806edc9f951c513
   - enabled: 1
-    path: Assets/Oculus/Interaction/Samples/Scenes/Examples/DistanceGrabExamples.unity
-    guid: e1c1f1d4144ac8849ac1833b99bdfd23
+    path: Assets/Scenes/Product Scenes/Locker_Room.unity
+    guid: a10ca71292eedfb4aaa57cba0c88e15b
   - enabled: 1
-    path: Assets/Oculus/Interaction/Samples/Scenes/Examples/GestureExamples.unity
-    guid: 4ee2a082a0e621b49ab01667c66f1599
+    path: Assets/Scenes/Product Scenes/Hallway.unity
+    guid: febcafd41924ae2408f068fcd0d39705
   - enabled: 1
-    path: Assets/Oculus/Interaction/Samples/Scenes/Examples/HandGrabExamples.unity
-    guid: 39ae0e546b9edc0408d3b11c6a7c2814
+    path: Assets/Scenes/Product Scenes/OR_Scene_no_prep.unity
+    guid: 244fa5b12edc22048955c5481f0b56cb
   - enabled: 1
-    path: Assets/Oculus/Interaction/Samples/Scenes/Examples/HandGrabUseExamples.unity
-    guid: 509f8fa80c708b343a603a4771d35c85
+    path: Assets/Scenes/Product Scenes/Instrument_Room.unity
+    guid: b542e0c588d03ff438b7de0110fb9ffd
   - enabled: 1
-    path: Assets/Oculus/Interaction/Samples/Scenes/Examples/PokeExamples.unity
-    guid: ada3086bde0ab18459589e22d8d9e182
-  - enabled: 1
-    path: Assets/Oculus/Interaction/Samples/Scenes/Examples/PoseExamples.unity
-    guid: 4fe358b21fe17764db89a9ab9f202327
-  - enabled: 1
-    path: Assets/Oculus/Interaction/Samples/Scenes/Examples/RayExamples.unity
-    guid: 1b2d3f90c0f50b94cb910c66c773d00d
-  - enabled: 1
-    path: Assets/Oculus/Interaction/Samples/Scenes/Examples/TouchGrabExamples.unity
-    guid: ade7d3882b4495145a8fe79f5624beab
-  - enabled: 1
-    path: Assets/Oculus/Interaction/Samples/Scenes/Examples/TransformerExamples.unity
-    guid: 7475942f60c376744ba1ec487d140105
-  - enabled: 0
-    path: Assets/Scenes/Dev Scenes/PrototypeScene_1.unity
-    guid: 64fecd8b5a3a401499a237177e9d35ff
-  - enabled: 0
-    path: Assets/Scenes/Dev Scenes/PrototypeScene_0.unity
-    guid: 6a252ef03820bba47ba556d83709b7b8
-  - enabled: 1
-    path: Assets/Scenes/Dev Scenes/EnterNameTask.unity
-    guid: 4d2905e7b8a8dba4896189c20dd5da8a
+    path: Assets/Scenes/Product Scenes/OR_Scene_prep.unity
+    guid: 2eab1751eb653234b8d9b78073190382
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}

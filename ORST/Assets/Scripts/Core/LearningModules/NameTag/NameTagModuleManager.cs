@@ -51,6 +51,7 @@ namespace ORST.Core.LearningModules {
 
             m_EthiconNameTag.gameObject.SetActive(false);
             m_DePuyNameTag.gameObject.SetActive(false);
+
             if (m_NameTagAttachmentPoint.VisualsTransform != null) {
                 m_NameTagAttachmentPoint.VisualsTransform.gameObject.SetActive(false);
             }
@@ -101,12 +102,10 @@ namespace ORST.Core.LearningModules {
 
         private void OnNameTagAttached(AttachableObject attachableObject) {
             NameTagObject nameTagObject = GetAttachedNameTag(attachableObject);
-            Debug.Log($"OnNameTagAttached: {attachableObject.name}");
             OnNameTagChanged(nameTagObject.Kind);
         }
 
         private void OnNameTagDetached(AttachableObject attachableObject) {
-            Debug.Log($"OnNameTagDetached: {attachableObject.name}");
             OnNameTagChanged(NameTagKind.None);
         }
 
