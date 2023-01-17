@@ -126,6 +126,7 @@ MonoBehaviour:
   _grabbable: {fileID: 5116664334685600857}
   _rigidbody: {fileID: 7358512482416852406}
   _scaleMassWithSize: 1
+  m_SaveInitialStateOnly: 0
 --- !u!1 &830761557760816730
 GameObject:
   m_ObjectHideFlags: 0

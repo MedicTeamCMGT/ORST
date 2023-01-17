@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2427328862692745311}
   - component: {fileID: 9101613647135302301}
   - component: {fileID: -2332982187222450569}
+  - component: {fileID: 6726752181023786756}
   m_Layer: 9
   m_Name: OR_Scissors_4
   m_TagString: Untagged
@@ -190,3 +191,16 @@ MonoBehaviour:
   _grabbable: {fileID: 9101613647135302301}
   _rigidbody: {fileID: 7884538599597363032}
   _scaleMassWithSize: 1
+  m_SaveInitialStateOnly: 0
+--- !u!114 &6726752181023786756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7544733612647697237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9633cfe5da36814faa25a55acb7c960, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

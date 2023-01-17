@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7466316775777316383}
   - component: {fileID: 7466316775777316382}
   - component: {fileID: 75187493331050784}
+  - component: {fileID: 633501887716135336}
   m_Layer: 9
   m_Name: OR_Tweezers_1
   m_TagString: Untagged
@@ -190,3 +191,16 @@ MonoBehaviour:
   _grabbable: {fileID: 7466316775777316382}
   _rigidbody: {fileID: 7466316775777316385}
   _scaleMassWithSize: 1
+  m_SaveInitialStateOnly: 0
+--- !u!114 &633501887716135336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742559012395150115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9633cfe5da36814faa25a55acb7c960, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
