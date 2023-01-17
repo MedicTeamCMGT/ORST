@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using ORST.Core.LearningModules;
@@ -12,8 +13,12 @@ namespace ORST.Core.ModuleTasks {
         [SerializeField] private List<ModuleTask> m_AllTasks;
         [SerializeField] private bool m_RandomizeEligibleModuleTasks;
         [ShowInInspector] private Queue<ModuleTask> m_TaskQueue;
+
         private ModuleTask m_CurrentModuleTask;
         private bool m_Completed;
+
+        public event Action<ModuleTask> TaskStarted;
+        public event Action<ModuleTask> TaskCompleted;
 
         private void Start() {
             InitiateModuleTaskManager();
@@ -32,8 +37,12 @@ namespace ORST.Core.ModuleTasks {
 
             switch (m_CurrentModuleTask.UpdateModuleTask()) {
                 case ModuleTaskState.Successful:
+                    TaskCompleted?.Invoke(m_CurrentModuleTask);
+
                     m_CurrentModuleTask = DequeueNextValidTask();
                     if (m_CurrentModuleTask != null) {
+                        TaskStarted?.Invoke(m_CurrentModuleTask);
+
                         Debug.Log("TaskManager::Task successful - Advancing...");
                         m_CurrentModuleTask.StartModuleTask();
                     } else {
@@ -98,6 +107,7 @@ namespace ORST.Core.ModuleTasks {
 
             m_CurrentModuleTask = DequeueNextValidTask();
             if (m_CurrentModuleTask != null) {
+                TaskStarted?.Invoke(m_CurrentModuleTask);
                 m_CurrentModuleTask.StartModuleTask();
                 return;
             }
