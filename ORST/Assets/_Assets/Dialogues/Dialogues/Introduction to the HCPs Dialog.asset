@@ -47,11 +47,11 @@ MonoBehaviour:
       m_IsCorrect: 0
       m_Feedback: A Johnson and Johnson representative should strive to present factual
         information.
-    - m_Text: I am here to advise and instruct on the proper usage of the Echelon+
+    - m_Text: I am here to advise and instruct on the proper usage of the ECHELON+
         Stapler.
       m_IsCorrect: 1
       m_Feedback: 
-  - m_Text: 'Ah ok, Your position during this Operation is over there. '
+  - m_Text: 'Alright, your position during this operation is over there. '
     m_Options:
     - m_Text: Ok, thank you
       m_IsCorrect: 1

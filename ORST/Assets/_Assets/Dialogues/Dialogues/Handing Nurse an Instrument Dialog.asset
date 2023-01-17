@@ -22,13 +22,13 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   m_Nodes:
-  - m_Text: "Can you hand me the Echelon Stapler so I can prepare it for the doctor\r?"
+  - m_Text: "Can you hand me the ECHELON+ Stapler so I can prepare it for the doctor\r?"
     m_Options:
-    - m_Text: Don't worry, I'll give it to them myself
+    - m_Text: Don't worry, I'll give it to them myself.
       m_IsCorrect: 0
       m_Feedback: A Johnson and Johnson representative should never directly interfere
         in the Operation itself.
-    - m_Text: Whats that?
+    - m_Text: What's that?
       m_IsCorrect: 0
       m_Feedback: A Johnson and Johnson representative should always have knowledge
         about the tools they are representing.

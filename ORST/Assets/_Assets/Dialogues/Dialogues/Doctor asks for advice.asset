@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9cb7a3d70b7440efbbe7e1441d19c8da, type: 3}
-  m_Name: Emergency in the OR Dialog(1)
+  m_Name: Doctor asks for advice
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -22,17 +22,23 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   m_Nodes:
-  - m_Text: You need to move further away from the operating table! Please move away
-      from the table and wait for further instructions.
+  - m_Text: Hey, can I also use the ECHELON+ Stapler with a white reload on thicker
+      tissue?
     m_Options:
-    - m_Text: Why?
+    - m_Text: Yes, that should be fine.
       m_IsCorrect: 0
-      m_Feedback: A Johnson and Johnson representative should always follow the instruction
-        of the present Health Care Professionals.
-    - m_Text: Okay
+      m_Feedback: A Johnson and Johnson representative should always have knowledge
+        about the proper usage of the tools they are representing.
+    - m_Text: No, the white reload is designed for thin tissue.
       m_IsCorrect: 1
       m_Feedback: 
-    - m_Text: Can I help?
+    - m_Text: Give it to me. I will take care of it.
       m_IsCorrect: 0
       m_Feedback: A Johnson and Johnson representative should never directly interfere
         in the Operation itself.
+    - m_Text: What is an ECHELON+ Stapler?
+      m_IsCorrect: 0
+      m_Feedback: A Johnson and Johnson representative should always have knowledge
+        about the tools they are representing.
+  - m_Text: 'Ok, Good to know. '
+    m_Options: []

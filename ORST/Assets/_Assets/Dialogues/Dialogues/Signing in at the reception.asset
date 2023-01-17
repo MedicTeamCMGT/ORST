@@ -28,9 +28,9 @@ MonoBehaviour:
         Johnson
       m_IsCorrect: 1
       m_Feedback: 
-  - m_Text: 'Good morning, I am Brenda Jansen. You are expected in Operating Room
-      3. Please pick up one of the nametags in front of you, attach it to your chest,
-      and then head towards OR 3. '
+  - m_Text: Good morning, I am Brenda Jansen. You are expected in Operating Room
+      3. Please pick up one of the name tags in front of you, attach it to your chest,
+      and then head towards OR 3.
     m_Options:
     - m_Text: Ok, thank you
       m_IsCorrect: 1

@@ -22,10 +22,10 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   m_Nodes:
-  - m_Text: Hey, While assembling the ECHELON+ Stapler.  Does the orientation of
-      the battery pack matter when inserting it?
+  - m_Text: Hey, I'm assembling the ECHELON+ Stapler. Does the orientation of the
+      battery pack matter when inserting it?
     m_Options:
-    - m_Text: No, The orientation matters
+    - m_Text: Yes, the orientation matters.
       m_IsCorrect: 0
       m_Feedback: A Johnson and Johnson representative should always have knowledge
         about the proper usage of the tools they are representing.
