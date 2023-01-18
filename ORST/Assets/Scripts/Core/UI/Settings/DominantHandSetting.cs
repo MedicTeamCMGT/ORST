@@ -18,7 +18,7 @@ namespace ORST.Core.UI {
             m_RightHandedButton.onClick.AddListener(OnRightHandedButtonClicked);
 
             HandednessManager.HandednessChanged += OnHandednessChanged;
-            OnHandednessChanged(HandednessManager.Handedness);
+            // OnHandednessChanged(HandednessManager.Handedness);
         }
 
         private void OnDestroy() {
@@ -34,8 +34,8 @@ namespace ORST.Core.UI {
         }
 
         private void OnHandednessChanged(Handedness newValue) {
-            m_LeftHandedButton.interactable = newValue is not Handedness.Left;
-            m_RightHandedButton.interactable = newValue is not Handedness.Right;
+            //m_LeftHandedButton.interactable = newValue is not Handedness.Left;
+            //m_RightHandedButton.interactable = newValue is not Handedness.Right;
         }
     }
 }
