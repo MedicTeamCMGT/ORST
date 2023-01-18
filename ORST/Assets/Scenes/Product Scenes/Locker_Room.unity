@@ -4913,11 +4913,12 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  <Dialogue>k__BackingField: {fileID: 11400000, guid: 49fa7d78aa22df84db27e34258f559e5,
+  <Dialogue>k__BackingField: {fileID: 11400000, guid: 426188cf9d7458a4f98e91cff36d530f,
     type: 2}
   m_NPC: {fileID: 11400000, guid: ed9855758140c984481e5858579a23b0, type: 2}
   m_Button: {fileID: 1328550335}
   m_CloseDialogueOnCompletion: 1
+  m_InstantiateCanvas: 0
   m_DialogueViewPrefab: {fileID: 273886858}
 --- !u!1 &527133040
 GameObject:
@@ -5066,7 +5067,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2c60db8c154c56b0989dd847f4dcf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Dialogue: {fileID: 11400000, guid: 49fa7d78aa22df84db27e34258f559e5, type: 2}
+  m_Dialogue: {fileID: 11400000, guid: 426188cf9d7458a4f98e91cff36d530f, type: 2}
+  m_AllowOnlyOnce: 0
 --- !u!4 &551911025
 Transform:
   m_ObjectHideFlags: 0
@@ -7913,7 +7915,7 @@ MonoBehaviour:
   m_TaskCompleted:
     m_PersistentCalls:
       m_Calls: []
-  m_Dialogue: {fileID: 11400000, guid: 49fa7d78aa22df84db27e34258f559e5, type: 2}
+  m_Dialogue: {fileID: 11400000, guid: 426188cf9d7458a4f98e91cff36d530f, type: 2}
   m_TrackOnlyWhenRunning: 1
 --- !u!1001 &839875102
 PrefabInstance:

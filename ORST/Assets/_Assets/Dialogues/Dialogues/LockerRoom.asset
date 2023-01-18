@@ -21,4 +21,9 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  m_Nodes: []
+  m_Nodes:
+  - m_Text: Hello
+    m_Options:
+    - m_Text: Ok
+      m_IsCorrect: 1
+      m_Feedback: 
