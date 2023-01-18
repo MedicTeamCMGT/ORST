@@ -26,7 +26,15 @@ namespace ORST.Core.ModuleTasks {
         }
 
         protected override ModuleTaskState ExecuteModuleTask() {
+            if (Input.GetKeyDown(KeyCode.Y)) {
+                m_ConfirmedName = true;
+            }
             return m_ConfirmedName ? ModuleTaskState.Successful : ModuleTaskState.Running;
+        }
+
+        protected override void OnModuleTaskCompleted() {
+            base.OnModuleTaskCompleted();
+            m_EnterNameRoot.gameObject.SetActive(false);
         }
 
         private void OnNameConfirmed(string playerName) {
