@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Dev Scenes/AttachmentPoints.unity
-    guid: 0914cda750f290f4dbdc80e865390d58
-  - enabled: 1
     path: Assets/Scenes/Product Scenes/Intro_Scene.unity
     guid: 48f6acf4621e43a44806edc9f951c513
   - enabled: 1
@@ -18,11 +15,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Product Scenes/Hallway.unity
     guid: febcafd41924ae2408f068fcd0d39705
   - enabled: 1
-    path: Assets/Scenes/Product Scenes/OR_Scene_no_prep.unity
-    guid: 244fa5b12edc22048955c5481f0b56cb
-  - enabled: 1
     path: Assets/Scenes/Product Scenes/Instrument_Room.unity
     guid: b542e0c588d03ff438b7de0110fb9ffd
+  - enabled: 1
+    path: Assets/Scenes/Product Scenes/OR_Scene_no_prep.unity
+    guid: 244fa5b12edc22048955c5481f0b56cb
   - enabled: 1
     path: Assets/Scenes/Product Scenes/OR_Scene_prep.unity
     guid: 2eab1751eb653234b8d9b78073190382
