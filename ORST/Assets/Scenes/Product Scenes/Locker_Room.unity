@@ -14139,7 +14139,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a2facbb683d52649ba4b948718979f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1612259207
+--- !u!114 &1612259210 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6102781204587741998, guid: e3f4c27ff597cde4d869453306c29b0b,
+    type: 3}
+  m_PrefabInstance: {fileID: 2066886080}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612259197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9a7676b01585ce43908639a27765dfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1612259215
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14148,10 +14160,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1612259197}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2e3f01e6cc633841af440866fdaafe5, type: 3}
+  m_Script: {fileID: 11500000, guid: 1464721f2283eb14e94a33e812b47be4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_InteractablePickedUp:
+  _interactableView: {fileID: 1612259210}
+  _whenHover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenUnhover:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelect:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1612259206}
@@ -14166,7 +14185,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_InteractableDropped:
+  _whenUnselect:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1612259203}
@@ -14181,6 +14200,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _whenInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  _whenSelectingInteractorViewRemoved:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1623746992
 PrefabInstance:
   m_ObjectHideFlags: 0
