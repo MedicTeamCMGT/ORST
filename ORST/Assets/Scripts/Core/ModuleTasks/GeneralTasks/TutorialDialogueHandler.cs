@@ -247,8 +247,6 @@ namespace ORST.Core.ModuleTasks {
             if (dialogue == m_SampleDialogueTrigger.Dialogue) {
                 m_DialogueEnded = true;
             }
-
-            Debug.LogError("Dialogue ended");
         }
     }
 }
