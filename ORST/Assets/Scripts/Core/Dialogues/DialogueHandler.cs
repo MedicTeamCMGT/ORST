@@ -10,6 +10,7 @@ namespace ORST.Core.Dialogues {
         [field: SerializeField] public Dialogue Dialogue { get; private set; }
         [SerializeField, Required] private DialogueNPC m_NPC;
         [SerializeField] private PointableUnityEventWrapper m_Button;
+        [SerializeField] private bool m_DisableButtonOnCompletion;
         [SerializeField] private bool m_CloseDialogueOnCompletion;
         [SerializeField] private bool m_InstantiateCanvas = true;
         [SerializeField, Required, LabelText("@m_InstantiateCanvas ? \"Dialogue View Prefab\" : \"Dialogue View\"")] private DialogueView m_DialogueViewPrefab;
@@ -46,6 +47,10 @@ namespace ORST.Core.Dialogues {
                 if (m_CloseDialogueOnCompletion) {
                     // Skip a frame so the event system finishes processing before we destroy/disable the canvas
                     StartCoroutine(Coroutines.WaitFramesAndThen(1, CloseAndResetDialogue));
+                    if(m_DisableButtonOnCompletion) {
+                        m_Button.gameObject.SetActive(false);
+                    }
+
                     return;
                 }
             }
