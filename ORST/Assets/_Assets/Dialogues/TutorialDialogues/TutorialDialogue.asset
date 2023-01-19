@@ -32,22 +32,23 @@ MonoBehaviour:
     m_SnapPopupToPosition: 0
     m_SnapPosition: {fileID: 0}
   - m_Title: Teleporting - Gesture
-    m_Text: Welcome to the Tutorial, First, we will teach you how to teleport inside
-      the Simulation. To teleport, first form the gesture pictured below with your
+    m_Text: Welcome to the tutorial! First, we will teach you how to teleport inside
+      the simulation. To teleport, first form the gesture pictured below with your
       non-dominant hand.
     m_Images:
-    - {fileID: -1846593167967636393, guid: 64f884351318b694f942625580e64a8b, type: 3}
+    - {fileID: -5845762946607932882, guid: 64f884351318b694f942625580e64a8b, type: 3}
     m_ShowPopup: 0
     m_PopupTitle: 
     m_PopupText: 
     m_SnapPopupToPosition: 0
     m_SnapPosition: {fileID: 0}
   - m_Title: Teleporting
-    m_Text: "Great, To select a place to teleport to you now need to aim the ray
+    m_Text: "Great! To select a place to teleport to, you now need to aim the ray
       coming out of your hand towards \u201Cteleport points\u201D and confirm by
       doing the movement shown below. Try it on the glowing Teleport point to the
       right!"
-    m_Images: []
+    m_Images:
+    - {fileID: -1846593167967636393, guid: 64f884351318b694f942625580e64a8b, type: 3}
     m_ShowPopup: 0
     m_PopupTitle: 
     m_PopupText: 
@@ -64,7 +65,7 @@ MonoBehaviour:
     m_SnapPopupToPosition: 1
     m_SnapPosition: {fileID: 0}
   - m_Title: Item Interaction - Throw
-    m_Text: Good job, Now try throwing all of the items into the bin before you.
+    m_Text: Good job! Now try throwing the stapler into the bin right next to you.
     m_Images: []
     m_ShowPopup: 0
     m_PopupTitle: 
@@ -72,9 +73,9 @@ MonoBehaviour:
     m_SnapPopupToPosition: 0
     m_SnapPosition: {fileID: 0}
   - m_Title: Item Interaction - Throw
-    m_Text: Good work, To proceed please teleport to the next teleport point to your
-      right. To teleport use the left gesture to emit the teleport ray and the right
-      gesture to confirm a teleport location
+    m_Text: Good work! To proceed, please teleport to the next teleport point to
+      your left. To teleport use the left gesture to emit the teleport ray and the
+      right gesture to confirm a teleport location.
     m_Images:
     - {fileID: -5845762946607932882, guid: 64f884351318b694f942625580e64a8b, type: 3}
     - {fileID: -1846593167967636393, guid: 64f884351318b694f942625580e64a8b, type: 3}
@@ -86,7 +87,7 @@ MonoBehaviour:
   - m_Title: Menu and Dialog - Interactions
     m_Text: To navigate a menu or a dialog, point towards the interface with your
       fingers in an open pinching position. Then pinch with your index finger and
-      thumb to click. Click the button below!
+      thumb to click. Click the button below.
     m_Images: []
     m_ShowPopup: 0
     m_PopupTitle: 
@@ -94,9 +95,9 @@ MonoBehaviour:
     m_SnapPopupToPosition: 0
     m_SnapPosition: {fileID: 0}
   - m_Title: Menu and Dialog - Interactions
-    m_Text: Great, during this simulation you will also have to speak to Health Care
-      Professionals via the dialog system. To initiate a dialog with selected Health
-      Care Professionals, press the button below.
+    m_Text: Great, during this simulation you will also have to speak to health care
+      professionals via the dialog system. To initiate a dialog with selected health
+      care professionals, press the button below.
     m_Images: []
     m_ShowPopup: 0
     m_PopupTitle: 
@@ -112,7 +113,7 @@ MonoBehaviour:
     m_SnapPopupToPosition: 0
     m_SnapPosition: {fileID: 0}
   - m_Title: Door
-    m_Text: To exit the room grab the door handle with either hand and move it downwards.
+    m_Text: To exit the room, grab the door handle with either hand and move it downwards.
     m_Images: []
     m_ShowPopup: 0
     m_PopupTitle: 
