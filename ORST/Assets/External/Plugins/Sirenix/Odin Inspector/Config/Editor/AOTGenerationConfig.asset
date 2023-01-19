@@ -12,9 +12,46 @@ MonoBehaviour:
   m_Script: {fileID: 1726182683, guid: a4865f1ab4504ed8a368670db22f409c, type: 3}
   m_Name: AOTGenerationConfig
   m_EditorClassIdentifier: 
-  automateBeforeBuilds: 0
+  automateBeforeBuilds: 1
   deleteDllAfterBuilds: 1
   AutomateForAllAOTPlatforms: 1
-  automateForPlatforms: 0900000014000000
-  lastScan: 0
-  supportSerializedTypes: []
+  automateForPlatforms: 0d000000
+  lastScan: 638097337987096811
+  supportSerializedTypes:
+  - TypeName: ORST.Core.Interactions.ActiveStateFilter+Filters, ORST.Core
+    IsCustom: 0
+    Emit: 1
+  - TypeName: ORST.Core.Interactions.ActiveStateFilter+FilterSettings, ORST.Core
+    IsCustom: 0
+    Emit: 1
+  - TypeName: ORST.Core.Interactions.ActiveStateFilter+FilterSettings[], ORST.Core
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Boolean, mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Guid, mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: ORST.Core.Dialogues.IDialogueHandler, ORST.Core
+    IsCustom: 0
+    Emit: 1
+  - TypeName: Oculus.Interaction.HandGrab.IHandGrabState, Oculus.Interaction
+    IsCustom: 0
+    Emit: 1
+  - TypeName: Oculus.Interaction.HandGrab.IHandGrabStateProvider, Oculus.Interaction
+    IsCustom: 0
+    Emit: 1
+  - TypeName: Oculus.Interaction.IRayInteractorProvider, Oculus.Interaction
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.List`1[[ORST.Core.Dialogues.IDialogueHandler,
+      ORST.Core]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Object, mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: TeleportInputHandler, Oculus.SampleFramework.Locomotion
+    IsCustom: 0
+    Emit: 1

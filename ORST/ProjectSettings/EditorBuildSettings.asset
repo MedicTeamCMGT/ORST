@@ -22,7 +22,7 @@ EditorBuildSettings:
     guid: 244fa5b12edc22048955c5481f0b56cb
   - enabled: 1
     path: Assets/Scenes/Product Scenes/Instrument_Room.unity
-    guid: b542e0c588d03ff438b7de0110fb9ffd
+    guid: 4d16bd3c1c8c430428b3781fd00c64cd
   - enabled: 1
     path: Assets/Scenes/Product Scenes/OR_Scene_prep.unity
     guid: 2eab1751eb653234b8d9b78073190382
