@@ -26,12 +26,10 @@ namespace ORST.Core.Interactions {
         [SerializeField, Range(0.2f, 10.0f)] private float m_SensorDetectionDistance;
 
         private OneGrabRotateTransformer m_DoorHandleRotateTransformer;
-        private bool m_DoorsUnlocked;
         private bool m_TransitionStarted;
         private GameObject m_Player;
         private Transform m_LeftHandTransform;
         private Transform m_RightHandTransform;
-        private bool m_PlayerInZoneNoTasks;
 
         private void Start() {
             if (m_DoorInteractor == DoorInteractor.Doorhandle) {
@@ -57,7 +55,11 @@ namespace ORST.Core.Interactions {
         }
 
         private void Update() {
-            CheckSensor(); //Do bool check here -> less overhead
+            if (m_DoorInteractor != DoorInteractor.Sensor) {
+                return;
+            }
+
+            CheckSensor();
         }
 
         private void OnDestroy() {
@@ -72,19 +74,15 @@ namespace ORST.Core.Interactions {
             }
 
             m_Player = other.gameObject;
-            List<ModuleTask> remainingTasks = ModuleTasksManager.Instance.GetRemainingTasks();
-            m_DoorsUnlocked = remainingTasks.Count <= 0;
-            if (!m_DoorsUnlocked) {
+            if (!ModuleTasksManager.Instance.AllTasksCompleted) {
                 if (!m_DisplayRemainingTasks) {
                     return;
                 }
 
+                List<ModuleTask> remainingTasks = ModuleTasksManager.Instance.GetRemainingTasks();
                 PopupManager.Instance.DisplayTasks(remainingTasks);
                 PopupManager.Instance.OpenPopup();
-                return;
             }
-
-            m_PlayerInZoneNoTasks = true;
         }
 
         private void OnTriggerExit(Collider other) {
@@ -94,29 +92,23 @@ namespace ORST.Core.Interactions {
                 }
 
                 m_Player = null;
-                m_PlayerInZoneNoTasks = false;
             }
         }
 
         private void CheckSensor() {
-            if (m_DoorInteractor != DoorInteractor.Sensor) {
-                return;
-            }
-
-            if (m_PlayerInZoneNoTasks) {
-                if ((m_HandSensor.position - m_LeftHandTransform.position).magnitude < m_SensorDetectionDistance ||
-                    (m_HandSensor.position - m_RightHandTransform.position).magnitude < m_SensorDetectionDistance) {
+            if (ModuleTasksManager.Instance.AllTasksCompleted) {
+                if ((m_HandSensor.position - m_LeftHandTransform.position).sqrMagnitude < m_SensorDetectionDistance * m_SensorDetectionDistance ||
+                    (m_HandSensor.position - m_RightHandTransform.position).sqrMagnitude < m_SensorDetectionDistance * m_SensorDetectionDistance) {
                     InitiateSceneTransition();
                 }
             }
         }
 
         private void InitiateSceneTransition() {
-            if (!m_DoorsUnlocked) {
+            if (m_TransitionStarted || !ModuleTasksManager.Instance.AllTasksCompleted) {
                 return;
             }
 
-            m_PlayerInZoneNoTasks = false;
             m_TransitionStarted = true;
             ExitedDoor?.Invoke();
             StartCoroutine(ChangeScene());
@@ -124,7 +116,7 @@ namespace ORST.Core.Interactions {
 
         private IEnumerator ChangeScene() {
             OVRScreenFade.instance.FadeOut();
-            yield return new WaitUntil(() => OVRScreenFade.instance.currentAlpha >= 1.0f);
+            yield return new WaitUntil(() => Mathf.Abs(OVRScreenFade.instance.currentAlpha - 1.0f) < 0.01f);
             SceneManager.LoadScene(m_SceneIndex);
         }
 
@@ -133,9 +125,13 @@ namespace ORST.Core.Interactions {
                 return;
             }
 
-            if (m_DoorHandleRotateTransformer.Constraints.MaxAngle.Constrain &&
-                !Mathf.Approximately(m_DoorHandle.transform.rotation.eulerAngles.z,
-                                     m_DoorHandleRotateTransformer.Constraints.MaxAngle.Value)) {
+            if (!ModuleTasksManager.Instance.AllTasksCompleted) {
+                return;
+            }
+
+            bool shouldConstrain = m_DoorHandleRotateTransformer.Constraints.MaxAngle.Constrain;
+            if (shouldConstrain &&
+                !Mathf.Approximately(m_DoorHandle.transform.rotation.eulerAngles.z, m_DoorHandleRotateTransformer.Constraints.MaxAngle.Value)) {
                 return;
             }
 
