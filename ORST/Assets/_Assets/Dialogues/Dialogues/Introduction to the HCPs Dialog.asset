@@ -22,7 +22,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   m_Nodes:
-  - m_Text: "\u2026"
+  - m_Text: ...
     m_Options:
     - m_Text: Hey, It's me. the person from J and J.
       m_IsCorrect: 0
