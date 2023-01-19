@@ -45,8 +45,8 @@ MonoBehaviour:
   - m_Title: Teleporting
     m_Text: "Great! To select a place to teleport to, you now need to aim the ray
       coming out of your hand towards \u201Cteleport points\u201D and confirm by
-      doing the movement shown below. Try it on the glowing Teleport point to the
-      right!"
+      doing the movement shown below. Try it on the glowing teleport point to the
+      left!"
     m_Images:
     - {fileID: -1846593167967636393, guid: 64f884351318b694f942625580e64a8b, type: 3}
     m_ShowPopup: 0
