@@ -13,9 +13,9 @@ using UnityEngine.SceneManagement;
 namespace ORST.Core.Interactions {
     public class DoorZone : MonoBehaviour {
         public event Action ExitedDoor;
-        [SerializeField, Required] int m_SceneIndex;
-
+        [SerializeField, Required] private int m_SceneIndex;
         [SerializeField] private DoorInteractor m_DoorInteractor = DoorInteractor.Doorhandle;
+        [SerializeField] private bool m_DisplayRemainingTasks = true;
 
         [Header("Door Handle")]
         [SerializeField] private HandGrabInteractable m_DoorHandle;
@@ -71,6 +71,10 @@ namespace ORST.Core.Interactions {
             List<ModuleTask> remainingTasks = ModuleTasksManager.Instance.GetRemainingTasks();
             m_DoorsUnlocked = remainingTasks.Count <= 0;
             if (!m_DoorsUnlocked) {
+                if (!m_DisplayRemainingTasks) {
+                    return;
+                }
+
                 PopupManager.Instance.DisplayTasks(remainingTasks);
                 PopupManager.Instance.OpenPopup();
                 return;
@@ -81,7 +85,10 @@ namespace ORST.Core.Interactions {
 
         private void OnTriggerExit(Collider other) {
             if (m_Player != null && m_Player == other.gameObject) {
-                PopupManager.Instance.ClosePopup();
+                if (m_DisplayRemainingTasks) {
+                    PopupManager.Instance.ClosePopup();
+                }
+
                 m_Player = null;
                 m_PlayerInZoneNoTasks = false;
             }

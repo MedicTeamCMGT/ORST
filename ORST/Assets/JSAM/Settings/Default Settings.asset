@@ -16,7 +16,7 @@ MonoBehaviour:
   startingSoundChannels: 16
   startingMusicChannels: 3
   defaultSoundMaxDistance: 7
-  disableConsoleLogs: 0
+  disableConsoleLogs: 1
   dontDestroyOnLoad: 1
   dynamicSourceAllocation: 1
   stopSoundsOnSceneLoad: 1

@@ -502,6 +502,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7573220823949159280, guid: 470946c88bf2b374baf65cf3cc693b12,
         type: 3}
+    - target: {fileID: 7829597254967582127, guid: 470946c88bf2b374baf65cf3cc693b12,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7829597254967582127, guid: 470946c88bf2b374baf65cf3cc693b12,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7829597254967582127, guid: 470946c88bf2b374baf65cf3cc693b12,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8480036217890603303, guid: 470946c88bf2b374baf65cf3cc693b12,
         type: 3}
       propertyPath: m_AnchorMax.y

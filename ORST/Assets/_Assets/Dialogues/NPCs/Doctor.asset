@@ -25,5 +25,5 @@ MonoBehaviour:
       Entry: 2
       Data: 7b3344a3d9e846459524fe8960262b88
   m_NPCName: John Son
-  m_Role: HEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
-  m_Icon: {fileID: -168845811775739753, guid: 64f884351318b694f942625580e64a8b, type: 3}
+  m_Role: Doctor
+  m_Icon: {fileID: 21300000, guid: d3b5ac4c8b01ef14a8a66d7e2a4991cc, type: 3}
