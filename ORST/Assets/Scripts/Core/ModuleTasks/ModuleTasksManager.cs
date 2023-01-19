@@ -20,6 +20,8 @@ namespace ORST.Core.ModuleTasks {
         public event Action<ModuleTask> TaskStarted;
         public event Action<ModuleTask> TaskCompleted;
 
+        public bool AllTasksCompleted => m_Completed;
+
         private void Start() {
             InitiateModuleTaskManager();
         }
