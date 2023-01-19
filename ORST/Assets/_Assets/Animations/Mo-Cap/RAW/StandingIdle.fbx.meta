@@ -42,8 +42,8 @@ ModelImporter:
       name: StandingIdle
       takeName: StandingIdle
       internalID: 0
-      firstFrame: 1451
-      lastFrame: 5384
+      firstFrame: 1600
+      lastFrame: 4875
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
