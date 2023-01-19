@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using ORST.Core.Placeholders;
 using ORST.Foundation;
+using ORST.Foundation.Extensions;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
@@ -34,6 +35,8 @@ namespace ORST.Core.Dialogues {
             }
 
             m_IncorrectAnswerContainer.gameObject.SetActive(false);
+
+            m_IncorrectAnswerContainer.GetComponent<Image>().color = Color.black.WithA(0.95f);
         }
 
         public void Initialize(DialogueNPC npc, [NotNull] Action<int> optionSelectedCallback) {
