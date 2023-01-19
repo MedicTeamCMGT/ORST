@@ -5,6 +5,7 @@ using Oculus.Interaction;
 using Oculus.Interaction.HandGrab;
 using ORST.Core.ModuleTasks;
 using ORST.Core.UI;
+using ORST.Foundation.Extensions;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -28,27 +29,30 @@ namespace ORST.Core.Interactions {
         private bool m_DoorsUnlocked;
         private bool m_TransitionStarted;
         private GameObject m_Player;
-        private Transform m_DominantHand;
-        private Transform m_NonDominantHand;
+        private Transform m_LeftHandTransform;
+        private Transform m_RightHandTransform;
         private bool m_PlayerInZoneNoTasks;
 
         private void Start() {
             if (m_DoorInteractor == DoorInteractor.Doorhandle) {
                 Assert.IsNotNull(m_DoorHandle, "Door handle is null");
                 m_DoorHandle.WhenPointerEventRaised += ProcessPointerEvent;
-                //Skipping this assignment is valid since it is only used in the event handler method.
+
+                // Skipping this assignment is valid since it is only used in the event handler method.
                 m_DoorHandleRotateTransformer = m_DoorHandle.transform.GetComponent<OneGrabRotateTransformer>();
-                if (m_HandSensor != null) {
-                    m_HandSensor.gameObject.SetActive(false);
-                }
+
+                m_HandSensor.OrNull()?.gameObject.SetActive(false);
             } else if (m_DoorInteractor == DoorInteractor.Sensor) {
                 Assert.IsNotNull(m_HandSensor, "Hand sensor is null");
-                //Cache hand references
-                m_DominantHand = HandednessManager.DominantHand.transform;
-                m_NonDominantHand = HandednessManager.NonDominantHand.transform;
-                if (m_DoorHandle != null) {
-                    m_DoorHandle.gameObject.SetActive(false);
-                }
+                // Cache hand references
+
+                OVRCameraRig cameraRig = FindObjectOfType<OVRCameraRig>();
+                Assert.IsNotNull(cameraRig, "OVRCameraRig not found");
+
+                m_LeftHandTransform = cameraRig.leftHandAnchor;
+                m_RightHandTransform = cameraRig.rightHandAnchor;
+
+                m_DoorHandle.OrNull()?.gameObject.SetActive(false);
             }
         }
 
@@ -100,8 +104,8 @@ namespace ORST.Core.Interactions {
             }
 
             if (m_PlayerInZoneNoTasks) {
-                if ((m_HandSensor.position - m_DominantHand.position).magnitude < m_SensorDetectionDistance ||
-                    (m_HandSensor.position - m_NonDominantHand.position).magnitude < m_SensorDetectionDistance) {
+                if ((m_HandSensor.position - m_LeftHandTransform.position).magnitude < m_SensorDetectionDistance ||
+                    (m_HandSensor.position - m_RightHandTransform.position).magnitude < m_SensorDetectionDistance) {
                     InitiateSceneTransition();
                 }
             }
