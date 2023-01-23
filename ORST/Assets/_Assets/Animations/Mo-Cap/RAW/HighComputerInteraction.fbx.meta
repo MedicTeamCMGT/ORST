@@ -42,19 +42,19 @@ ModelImporter:
       name: HighComputerInteraction
       takeName: HighComputerInteraction
       internalID: 0
-      firstFrame: 980
-      lastFrame: 5756
+      firstFrame: 2101
+      lastFrame: 4888
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
-      loopBlendOrientation: 0
+      loopBlendOrientation: 1
       loopBlendPositionY: 1
-      loopBlendPositionXZ: 0
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
