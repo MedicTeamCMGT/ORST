@@ -27,5 +27,9 @@ MonoBehaviour:
     - m_Text: Okay
       m_IsCorrect: 1
       m_Feedback: 
-  - m_Text: Thank you.
-    m_Options: []
+  - m_Text: Thank you for your cooperation! You can either go back or leave the operating
+      room and initiate the last dialog.
+    m_Options:
+    - m_Text: Thank you! You are welcome
+      m_IsCorrect: 1
+      m_Feedback: 

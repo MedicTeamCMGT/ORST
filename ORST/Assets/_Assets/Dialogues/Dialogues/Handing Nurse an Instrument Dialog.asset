@@ -41,4 +41,7 @@ MonoBehaviour:
       m_IsCorrect: 1
       m_Feedback: 
   - m_Text: Thank you. Just place it in my hand.
-    m_Options: []
+    m_Options:
+    - m_Text: Okay
+      m_IsCorrect: 1
+      m_Feedback: 

@@ -22,9 +22,9 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   m_Nodes:
-  - m_Text: Good Job! You finished the operation and the patient is safe. Click the
-      button below to return to the main menu.
+  - m_Text: 'Good Job! You finished the operation and the patient is safe. You can
+      now turn around and leave the simulation. '
     m_Options:
-    - m_Text: Go back to main menu
+    - m_Text: Okay
       m_IsCorrect: 1
       m_Feedback: 

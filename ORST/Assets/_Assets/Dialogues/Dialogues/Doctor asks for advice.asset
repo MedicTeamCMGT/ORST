@@ -41,4 +41,13 @@ MonoBehaviour:
       m_Feedback: A Johnson and Johnson representative should always have knowledge
         about the tools they are representing.
   - m_Text: 'Ok, Good to know. '
-    m_Options: []
+    m_Options:
+    - m_Text: You are welcome!
+      m_IsCorrect: 1
+      m_Feedback: 
+  - m_Text: Please teleport to the next teleport point in right in front of you,
+      to access the next dialogue.
+    m_Options:
+    - m_Text: Ok
+      m_IsCorrect: 1
+      m_Feedback: 
