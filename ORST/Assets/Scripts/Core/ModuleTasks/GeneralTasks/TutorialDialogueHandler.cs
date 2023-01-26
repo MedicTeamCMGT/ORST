@@ -193,7 +193,7 @@ namespace ORST.Core.ModuleTasks {
             Transform dialogueTransform = m_DialogueView.transform;
             dialogueTransform.position = canvasTransform.position;
             dialogueTransform.rotation = canvasTransform.rotation;
-            //m_DialogueView.gameObject.SetActive(true);
+            m_DialogueView.gameObject.SetActive(true);
 
             if (continueDialogue) {
                 AdvanceTutorial();
@@ -217,9 +217,9 @@ namespace ORST.Core.ModuleTasks {
 
             m_EnabledTeleportPoint = null;
             m_TeleportedToEnabledPoint = false;
-            //m_DialogueView.gameObject.SetActive(false);
-            //PopupManager.Instance.ClosePopup();
-            //PopupManager.Instance.UnsnapPopup();
+            m_DialogueView.gameObject.SetActive(false);
+            PopupManager.Instance.ClosePopup();
+            PopupManager.Instance.UnsnapPopup();
         }
 
         private void CheckActiveTeleportPoint(TeleportPointORST teleportPoint) {
