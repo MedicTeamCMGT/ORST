@@ -22,7 +22,8 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   m_Nodes:
-  - m_Text: Hello
+  - m_Text: Please pick your watch from the wrist. Afterwards. pick up the item in
+      the locker.
     m_Options:
     - m_Text: Ok
       m_IsCorrect: 1

@@ -149,7 +149,7 @@ namespace ORST.Core.ModuleTasks {
         public IEnumerable<ModuleTask> GetRemainingModuleTasks() {
             yield return this;
 
-            if (m_AllModuleSubtasks.Count <= 0) {
+            if (m_AllModuleSubtasks is not { Count: > 0 }) {
                 yield break;
             }
 
