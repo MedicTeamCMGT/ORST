@@ -57,9 +57,9 @@ namespace ORST.Core {
                 m_Images[i].gameObject.SetActive(false);
             }
 
-            // if (node.ShowPopup) {
-            //     PopupManager.Instance.DisplayInfo(node.PopupTitle, node.PopupText);
-            // }
+             if (node.ShowPopup) {
+                 PopupManager.Instance.DisplayInfo(node.PopupTitle, node.PopupText);
+             }
         }
     }
 }
