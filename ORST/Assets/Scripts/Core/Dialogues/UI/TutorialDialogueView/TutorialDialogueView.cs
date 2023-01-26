@@ -44,7 +44,7 @@ namespace ORST.Core {
             m_CurrentNode = node;
             m_Title.text = PlaceholderManager.Resolve(node.Title);
             m_Text.text = PlaceholderManager.Resolve(node.Text);
-            //PopupManager.Instance.ClosePopup();
+            PopupManager.Instance.ClosePopup();
 
             int index = 0;
             foreach (Sprite dialogueSprite in node.Images) {
@@ -57,9 +57,9 @@ namespace ORST.Core {
                 m_Images[i].gameObject.SetActive(false);
             }
 
-             if (node.ShowPopup) {
-                 PopupManager.Instance.DisplayInfo(node.PopupTitle, node.PopupText);
-             }
+            if (node.ShowPopup) {
+                PopupManager.Instance.DisplayInfo(node.PopupTitle, node.PopupText);
+            }
         }
     }
 }
