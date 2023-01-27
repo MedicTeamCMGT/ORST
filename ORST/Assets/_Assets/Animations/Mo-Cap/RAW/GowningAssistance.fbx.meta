@@ -42,8 +42,8 @@ ModelImporter:
       name: GowningAssistance
       takeName: GowningAssistance
       internalID: 0
-      firstFrame: 903
-      lastFrame: 8717
+      firstFrame: 2027
+      lastFrame: 3973
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -52,9 +52,9 @@ ModelImporter:
       hasAdditiveReferencePose: 0
       loopTime: 0
       loopBlend: 0
-      loopBlendOrientation: 0
+      loopBlendOrientation: 1
       loopBlendPositionY: 1
-      loopBlendPositionXZ: 0
+      loopBlendPositionXZ: 1
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
