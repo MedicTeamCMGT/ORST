@@ -80,7 +80,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1d22de29c576c294fbae13217397a82e,
         type: 3}
       propertyPath: m_Name
-      value: Nurse3_2
+      value: Nurse3_2 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2083498425525941860, guid: 1d22de29c576c294fbae13217397a82e,
         type: 3}
@@ -129,7 +129,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 251476182665555787}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 2f931484735b704409f8431fed12e92c, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 1d22de29c576c294fbae13217397a82e, type: 3}
   m_Controller: {fileID: 9100000, guid: 8a4b461678d5248a780ac6737fefc6dd, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
