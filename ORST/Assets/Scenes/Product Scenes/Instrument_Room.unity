@@ -9907,8 +9907,9 @@ MonoBehaviour:
     SerializationNodes: []
   <Dialogue>k__BackingField: {fileID: 11400000, guid: 49fa7d78aa22df84db27e34258f559e5,
     type: 2}
-  m_NPC: {fileID: 11400000, guid: aa9e1f5e6b787d14e80a49dbb7b7a1a9, type: 2}
+  m_NPC: {fileID: 11400000, guid: ed9855758140c984481e5858579a23b0, type: 2}
   m_Button: {fileID: 1736549038}
+  m_DisableButtonOnCompletion: 0
   m_CloseDialogueOnCompletion: 1
   m_InstantiateCanvas: 0
   m_DialogueViewPrefab: {fileID: 1946536651}

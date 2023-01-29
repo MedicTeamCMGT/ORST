@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75a771a2967f45e18a280e2b0d2d8d7a, type: 3}
-  m_Name: Nurse
+  m_Name: Nurse (Male)
   m_EditorClassIdentifier: 
   serializationData:
     SerializedFormat: 2
@@ -23,7 +23,7 @@ MonoBehaviour:
     SerializationNodes:
     - Name: m_Identifier
       Entry: 2
-      Data: d7a7db085363497abb807a175eba6d2e
-  m_NPCName: Brenda Jansen
-  m_Role: Head Nurse
+      Data: 6ceeb3a8c1eb46579152b1b89c8619a0
+  m_NPCName: Tom Olson
+  m_Role: Nurse
   m_Icon: {fileID: 21300000, guid: d3b5ac4c8b01ef14a8a66d7e2a4991cc, type: 3}

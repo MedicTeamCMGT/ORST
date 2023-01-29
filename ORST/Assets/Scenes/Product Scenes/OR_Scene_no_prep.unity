@@ -7612,6 +7612,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39eb2f7967d9c274eb48ddbb73a67d44, type: 3}
+--- !u!114 &1088977563 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8074285702337394282, guid: 39eb2f7967d9c274eb48ddbb73a67d44,
+    type: 3}
+  m_PrefabInstance: {fileID: 1088977562}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088977564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2f8f6e9e6f3e114b9bf9a57c2160615, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1088977564 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2461573137483907096, guid: 39eb2f7967d9c274eb48ddbb73a67d44,
@@ -8336,8 +8348,8 @@ MonoBehaviour:
     SerializationNodes: []
   <Dialogue>k__BackingField: {fileID: 11400000, guid: cbbc50565efba5d4097d0e9786f95e12,
     type: 2}
-  m_NPC: {fileID: 11400000, guid: aa9e1f5e6b787d14e80a49dbb7b7a1a9, type: 2}
-  m_Button: {fileID: 0}
+  m_NPC: {fileID: 11400000, guid: ed9855758140c984481e5858579a23b0, type: 2}
+  m_Button: {fileID: 1088977563}
   m_DisableButtonOnCompletion: 0
   m_CloseDialogueOnCompletion: 1
   m_InstantiateCanvas: 0
